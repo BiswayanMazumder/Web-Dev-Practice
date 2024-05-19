@@ -3,8 +3,11 @@ body {
     font-family: poppins;
     font-weight: 400;
     font-size: auto;
-
-
+    background-color: azure;
+    .container {
+        display: flex;
+        justify-content: center;
+    }
     p2 {
         font-weight: lighter !important;
         text-overflow: ellipsis;
@@ -44,12 +47,59 @@ body {
         box-shadow: 5px 5px 5px indianred;
 
     }
-
-    .Places {
-        list-style-position: inside;
-        text-align: start;
-        padding-left: 41vw;
-        list-style-type: disc;
+    .places{
+        width: 25vw;
+        border: 0.3px solid black;
+        height: 90vh;
+        box-shadow: 5px 5px 5px rebeccapurple;
+        border-radius: 10px;
+        background-color: blanchedalmond;
+        margin: 20px;
     }
-
+    .container .places img{
+        position: relative;
+        top: 5px;
+        border-radius: 10px;
+        height: 290px;
+        width: 24vw;
+    }
+    .container .places .p1{
+        font-size: 14px;
+        padding-left: 10px;
+        padding-right: 10px;
+        text-align: justify;
+        color: grey;
+    }
+    .container .places .readbutton{
+        width: 10vw;
+        height: 4vh;
+        border-radius: 25px;
+        background-color:cadetblue;
+        box-shadow: 2px 2px 2px purple;
+    }
+    .container .places .p2{
+        color: black;
+        padding-top: 3px;
+        text-align: center;
+    }
+    .container .places .rowoptions{
+        display: flex;
+        justify-content: start;
+        padding-left: 10px;
+        padding-top: 10px;
+        
+    }
+    .container .places .rowoptions .row1{
+        /* margin: 20px; */
+        height: 30px;
+        width: 100px;
+        margin: 10px;
+        border: 0.3px solid black;
+        border-radius: 25px;
+    }
+    .container .places .rowoptions .row1 .nature{
+        font-size: 10px;
+        font-weight: bolder;
+        
+    }
 }
