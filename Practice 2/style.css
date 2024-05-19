@@ -1,5 +1,9 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
 body {
-    margin: 50px auto;
+    /* margin: 50px auto; */
     font-family: poppins;
     font-weight: 400;
     font-size: auto;
@@ -7,6 +11,25 @@ body {
     .container {
         display: flex;
         justify-content: center;
+        /* Other styles for larger screens */
+    }
+    
+    @media (max-width: 600px) {
+        .container {
+            display: grid;
+            justify-content: center;
+            /* Additional grid styles for smaller screens */
+        }
+    }
+    .navbar{
+        background-color: rgb(13, 232, 79);
+    }
+    .Lists{
+        display: flex;
+    }
+    .Lists .Navbar_Items{
+        padding: 20px;
+        list-style: none;
     }
     p2 {
         font-weight: lighter !important;
@@ -100,6 +123,8 @@ body {
     .container .places .rowoptions .row1 .nature{
         font-size: 10px;
         font-weight: bolder;
+        padding-top: 8px;
+        text-align: center;
         
     }
 }
