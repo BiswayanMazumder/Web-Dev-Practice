@@ -8,7 +8,9 @@ body {
     .box1{
         /* position: relative; */
         /* top: 20; */
+        position:sticky;
         height: 400px;
+        top: 0px;
         /* z-index: 1; */
         width: 80vw;
         border: 2px solid black;
@@ -18,7 +20,7 @@ body {
         /* position: relative;
         top: -30px;
         left: 30px; */
-        position:fixed;
+        /* position:fixed; */
         height: 200px;
         left:100px;
         width: 80vw;
@@ -26,7 +28,7 @@ body {
         background-color: yellow;
     }
     .box3{
-        height: 400px;
+        height: 500px;
         width: 80vw;
         border: 2px solid black;
         background-color: green;
