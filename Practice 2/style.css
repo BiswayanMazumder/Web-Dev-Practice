@@ -3,7 +3,7 @@ body {
     font-family: poppins;
     font-weight: 400;
     font-size: auto;
-    
+
 
     p2 {
         font-weight: lighter !important;
@@ -43,6 +43,13 @@ body {
         background-color: antiquewhite;
         box-shadow: 5px 5px 5px indianred;
 
+    }
+
+    .Places {
+        list-style-position: inside;
+        text-align: start;
+        padding-left: 40vw;
+        list-style-type: disc;
     }
 
 }
