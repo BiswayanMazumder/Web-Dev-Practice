@@ -1,0 +1,48 @@
+body {
+    margin: 50px auto;
+    font-family: poppins;
+    font-weight: 400;
+    font-size: auto;
+    
+
+    p2 {
+        font-weight: lighter !important;
+        text-overflow: ellipsis;
+        /* border: 2px solid red ; */
+        overflow: scroll;
+    }
+
+    h2 {
+        font-weight: lighter;
+    }
+
+    h3 {
+        font-weight: 400;
+    }
+
+    h1 {
+        color-scheme: initial;
+        color: blue !important;
+
+    }
+
+    .About {
+        box-sizing: border-box;
+        border: 2px thin black;
+        /* width: 2048px; */
+        width: 82vw;
+        overflow: auto auto;
+        text-align: start;
+        /* height: 10vh; */
+        margin: 50px auto;
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-bottom: 20px;
+        padding-top: 20px;
+        border-radius: 10px;
+        background-color: antiquewhite;
+        box-shadow: 5px 5px 5px indianred;
+
+    }
+
+}
