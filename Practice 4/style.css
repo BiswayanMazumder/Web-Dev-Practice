@@ -1,6 +1,6 @@
 body {
     .box {
-        height: 100vh;
+        height: 1000px;
         width: 90vw;
         border: 2px solid black;
         background-color: antiquewhite;
@@ -8,7 +8,7 @@ body {
     .box1{
         /* position: relative; */
         /* top: 20; */
-        height: 20vh;
+        height: 400px;
         /* z-index: 1; */
         width: 80vw;
         border: 2px solid black;
@@ -18,13 +18,15 @@ body {
         /* position: relative;
         top: -30px;
         left: 30px; */
-        height: 20vh;
+        position:fixed;
+        height: 200px;
+        left:100px;
         width: 80vw;
         border: 2px solid black;
         background-color: yellow;
     }
     .box3{
-        height: 20vh;
+        height: 400px;
         width: 80vw;
         border: 2px solid black;
         background-color: green;
