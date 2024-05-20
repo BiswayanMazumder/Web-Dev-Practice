@@ -5,16 +5,16 @@
 
 body {
     .heading {
-        height: 500px;
-        display: flex;
-        background-image: url("https://images.pexels.com/photos/20137893/pexels-photo-20137893/free-photo-of-rain-cloud-over-mountain-peak-in-snow.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+        height: 700px;
+        display: grid;
+        background-image: url("https://images.pexels.com/photos/1624504/pexels-photo-1624504.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
     }
     .Lists{
         display: flex;
-        list-style: none !important;
+        list-style: none;
     }
     .heading .Lists .Navbar_Items{
         padding-left: 80px;
@@ -24,7 +24,7 @@ body {
         
     }
     .heading .Lists .Heading_Options1{
-        padding-left: 80vw;
+        padding-left: 70vw;
         padding-top: 10px;
         color: white;
         font-weight: bolder;
@@ -34,5 +34,40 @@ body {
         padding-top: 10px;
         color: white;
         font-weight: bolder;
+    }
+    .heading .traveloptions {
+        height: 120px;
+        position: absolute;
+        z-index: 1;
+        border-radius: 10px;
+        background-color: white;
+        width: 50vw;
+        left: 50%;
+        box-shadow: 2px 2px 10px black;
+        transform: translateX(-50%);
+    }
+    .heading .traveloptions .flights{
+        font-weight: bolder;
+        margin-left: 20px;
+    }
+    .heading .traveloptions .flights .travel-img{
+        margin-left: 5vw;
+        margin-top: 2vw;
+    }
+    .heading .traveloptions .flights .travel-text{
+        margin-left: 5vw;
+    }
+    .heading .traveldestinations{
+        height: 250px;
+        position: relative;
+        /* border-radius: 20px; */
+        background-color: white;
+        width: 80vw;
+        top: -30px;
+        border-radius: 10px;
+        margin-top: 5%;
+        /* margin-left: 25%;
+        margin-right: 25%; */
+        margin-bottom: 30%;
     }
 }
