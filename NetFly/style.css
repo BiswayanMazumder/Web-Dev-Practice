@@ -1,0 +1,142 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: grey !important;
+    font-family: poppins;
+}
+
+.Banner {
+    position: relative;
+    text-align: center;
+    color: white;
+    font-weight: bolder;
+
+}
+
+/* .Banner .homeimage {
+    z-index: 10;
+    display: block;
+    background-color: rgb(0, 0, 0);
+    backdrop-filter: brightness(20%) contrast(90%) blur(10px);
+} */
+
+.Banner .Banner_Text {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: 900;
+    font-size: 2rem;
+    text-align: center;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+
+}
+
+@media only screen and (max-width: 680px) {
+    .Banner .Banner_Text {
+        font-size: 1rem;
+    }
+}
+
+.Banner .heading {
+    position: absolute;
+    top: 4%;
+    padding-left: 1px !important;
+    transform: translate(-25%, -40%);
+}
+
+.Banner .secondbannertext {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: 300;
+    font-size: 1.5rem;
+    text-align: center;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+
+}
+
+@media only screen and (max-width: 650px) and (max-width:800px) {
+    .Banner .secondbannertext {
+        top: 60%;
+        font-size: 1rem;
+    }
+}
+
+
+.firstsection {
+    position: relative;
+    background-color: black;
+    height: 500px;
+
+}
+
+.firstsection .firstsectiontext {
+    position: absolute;
+    top: 40%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: 900;
+    font-size: 2rem;
+    text-align: center;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+@media only screen and (max-width: 650px) and (max-width:800px) {
+    .firstsection .firstsectiontext {
+        position: absolute;
+        top: 40%;
+        left: 40%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-weight: 900;
+        font-size: 2rem;
+        text-align: center;
+        width: 100%;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+}
+
+.secondsection {
+    background-color: black;
+    height: 500px;
+    margin-top: 5px;
+}
+
+.thirdsection {
+    background-color: black;
+    height: 500px;
+    margin-top: 5px;
+}
+
+.fourthsection {
+    background-color: black;
+    height: 500px;
+    margin-top: 5px;
+}
