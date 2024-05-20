@@ -64,7 +64,7 @@ body {
     align-items: center;
     color: white;
     font-weight: 300;
-    font-size: 1.5rem;
+    font-size: 18px;
     text-align: center;
     width: 100%;
     padding: 0 20px;
@@ -74,12 +74,14 @@ body {
 
 @media only screen and (max-width: 650px) and (max-width:800px) {
     .Banner .secondbannertext {
-        top: 60%;
+        top: 75%;
         font-size: 1rem;
     }
 }
-
-
+.firstsection .firstsectionimage .FirstSectionImage{
+    left:50%;
+    position: absolute;
+}
 .firstsection {
     position: relative;
     background-color: black;
@@ -100,15 +102,15 @@ body {
     font-size: 2rem;
     text-align: center;
     width: 100%;
-    padding: 0 20px;
-    box-sizing: border-box;
+    /* padding: 0 20px; */
+    /* box-sizing: border-box; */
 }
 
 @media only screen and (max-width: 650px) and (max-width:800px) {
     .firstsection .firstsectiontext {
         position: absolute;
-        top: 40%;
-        left: 40%;
+        top: 20%;
+        left: 50%;
         transform: translate(-50%, -50%);
         display: flex;
         justify-content: center;
@@ -122,7 +124,41 @@ body {
         box-sizing: border-box;
     }
 }
+.firstsection .firstsectionsubtext {
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: 400;
+    font-size: 18px;
+    text-align: center;
+    width: 100%;
+    /* padding: 0 20px; */
+    /* box-sizing: border-box; */
+}
 
+@media only screen and (max-width: 650px) and (max-width:800px) {
+    .firstsection .firstsectionsubtext {
+        position: absolute;
+        top: 35%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-weight: 400;
+        font-size: 16px;
+        text-align: center;
+        width: 100%;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+}
 .secondsection {
     background-color: black;
     height: 500px;
