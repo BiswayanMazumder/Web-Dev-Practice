@@ -69,7 +69,18 @@ body {
     box-sizing: border-box;
 
 }
-
+.Banner button{
+    background-color: red;
+    color: white;
+    width: 150px;
+    height: 48px;
+}
+@media  only screen and (max-width: 600px) {
+    .Banner button {
+        height: 30px;
+    }
+    
+}
 .Banner .emailinput {
     position: absolute;
     top: 60%;
