@@ -40,25 +40,29 @@ body {
         font-size: 2rem;
     }
 }
+
 @media only screen and (max-width: 600px) {
     .Banner .Banner_Text {
         font-size: 1rem;
     }
 }
+
 .Banner .heading {
     position: absolute;
     top: 4%;
     padding-left: 1px !important;
     transform: translate(-25%, -40%);
 }
-.Banner .signin{
+
+.Banner .signin {
     position: absolute;
     top: 4%;
     left: 75%;
     padding-left: 1px !important;
     transform: translate(-50%, -50%);
 }
-.Banner .signin .Signin{
+
+.Banner .signin .Signin {
     background-color: red;
     width: 77px;
     height: 32px;
@@ -68,8 +72,9 @@ body {
     border: 0.3px solid red;
     border-radius: 5px;
 }
+
 @media screen and (max-width:680px) {
-    .Banner .signin{
+    .Banner .signin {
         position: absolute;
         top: 8%;
         left: 75%;
@@ -78,6 +83,7 @@ body {
     }
 
 }
+
 .Banner .secondbannertext {
     position: absolute;
     top: 50%;
@@ -95,7 +101,8 @@ body {
     box-sizing: border-box;
 
 }
-.Banner input{
+
+.Banner input {
     margin-right: 5px;
     background-color: transparent;
     height: 48px;
@@ -106,15 +113,17 @@ body {
     font-size: 20px;
     border: 2px solid grey;
 }
-@media  only screen and (max-width: 600px) {
+
+@media only screen and (max-width: 600px) {
     .Banner input {
         height: 38px;
         width: 300px;
         font-size: 15px;
     }
-    
+
 }
-.Banner .GetStarted{
+
+.Banner .GetStarted {
     background-color: red;
     color: white;
     width: 150px;
@@ -124,14 +133,15 @@ body {
     border-radius: 5px;
     font-size: 20px;
 }
-@media  only screen and (max-width: 600px) {
+
+@media only screen and (max-width: 600px) {
     .Banner .GetStarted {
         height: 42px;
         width: 120px;
         font-size: 15px;
         border: 3px solid red;
     }
-    
+
 }
 
 
@@ -153,37 +163,42 @@ body {
     box-sizing: border-box;
 
 }
-@media  only screen and (max-width: 600px) {
+
+@media only screen and (max-width: 600px) {
     .Banner .secondbannertext {
         top: 65%;
         font-size: 1rem;
     }
-    
+
 }
-@media  only screen and (max-width: 600px) {
+
+@media only screen and (max-width: 600px) {
     .Banner .emailinput {
         top: 85%;
         /* font-size: 1rem; */
     }
-    
+
 }
 
-.firstsection .firstsectionimage .FirstSectionImage{
-    left:30%;
+.firstsection .firstsectionimage .FirstSectionImage {
+    left: 30%;
     position: absolute;
     z-index: 1;
 }
-.firstsection video{
+
+.firstsection video {
     left: 55%;
     position: absolute;
     top: 20%;
 }
+
 @media screen and (min-width:2550px) {
     .firstsection video {
         left: 53%;
     }
-    
+
 }
+
 .firstsection {
     position: relative;
     background-color: black;
@@ -193,9 +208,10 @@ body {
 
 @media only screen and (max-width: 650px) and (max-width:800px) {
     .firstsection {
-        display:block;
+        display: block;
     }
 }
+
 .firstsection .firstsectiontext {
     position: absolute;
     top: 40%;
@@ -247,6 +263,7 @@ body {
     padding: 0 20px;
     box-sizing: border-box;
 }
+
 .thirdsection .thirdsectiontext {
     position: absolute;
     top: 40%;
@@ -282,6 +299,7 @@ body {
         box-sizing: border-box;
     }
 }
+
 .thirdsection .thirdsectionsubtext {
     position: absolute;
     top: 66%;
@@ -298,7 +316,8 @@ body {
     padding: 0 20px;
     box-sizing: border-box;
 }
-.secondsection .secondsectiontext{
+
+.secondsection .secondsectiontext {
     position: absolute;
     top: 40%;
     left: 50%;
@@ -314,7 +333,8 @@ body {
     padding: 0 20px;
     box-sizing: border-box;
 }
-.secondsection .secondsectionsubtext{
+
+.secondsection .secondsectionsubtext {
     position: absolute;
     top: 66%;
     left: 50%;
@@ -330,6 +350,7 @@ body {
     padding: 0 20px;
     box-sizing: border-box;
 }
+
 @media only screen and (max-width: 650px) and (max-width:800px) {
     .secondsection .secondsectiontext {
         position: absolute;
@@ -348,7 +369,8 @@ body {
         box-sizing: border-box;
     }
 }
-.fourthsection .fourthsectiontext{
+
+.fourthsection .fourthsectiontext {
     position: absolute;
     top: 40%;
     left: 50%;
@@ -364,7 +386,8 @@ body {
     padding: 0 20px;
     box-sizing: border-box;
 }
-.fourthsection .fourthsectionsubtext{
+
+.fourthsection .fourthsectionsubtext {
     position: absolute;
     top: 66%;
     left: 50%;
@@ -380,6 +403,7 @@ body {
     padding: 0 20px;
     box-sizing: border-box;
 }
+
 @media only screen and (max-width: 650px) and (max-width:800px) {
     .fourthsection .fourthsectiontext {
         position: absolute;
@@ -398,6 +422,24 @@ body {
         box-sizing: border-box;
     }
 }
+
+.fifthsection .fifthsectiontext {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: 900;
+    font-size: 3rem;
+    text-align: center;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
 /* @media only screen and (max-width: 650px) and (max-width:800px) {
     .firstsection .firstsectionsubtext {
         position: absolute;
@@ -453,17 +495,18 @@ body {
     
     }
 } */
-.Banner .homeimage{
+.Banner .homeimage {
     background-color: black;
     height: 700px;
     filter: grayscale(30%) brightness(50%);
 
 }
-@media  only screen and (max-width: 600px) {
+
+@media only screen and (max-width: 600px) {
     .Banner .homeimage {
         height: 300px;
     }
-    
+
 }
 
 /* @media only screen and (max-width: 200px) and (max-width:300px) {
@@ -519,7 +562,15 @@ body {
     margin-top: 5px;
     position: relative;
 }
-.thirdsection  .thirdsectionimg .ThirdSectionImage{
+
+.fifthsection {
+    background-color: black;
+    height: 800px;
+    margin-top: 5px;
+    position: relative;
+}
+
+.thirdsection .thirdsectionimg .ThirdSectionImage {
     left: 50%;
     position: relative;
     align-items: center;
@@ -527,11 +578,13 @@ body {
     bottom: 10%;
     z-index: 1;
 }
-.thirdsection .thirdsectionimg .thirdsectionvideo{
+
+.thirdsection .thirdsectionimg .thirdsectionvideo {
     position: absolute;
     top: 18%;
     left: 58%;
 }
+
 /* @media screen and (min-width:2000px) {
     .thirdsection .thirdsectionimg .thirdsectionvideo{
         position: absolute;
