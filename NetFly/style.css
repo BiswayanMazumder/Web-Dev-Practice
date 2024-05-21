@@ -69,6 +69,24 @@ body {
     box-sizing: border-box;
 
 }
+
+.Banner .emailinput {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: 300;
+    font-size: 18px;
+    text-align: center;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+
+}
 @media  only screen and (max-width: 600px) {
     .Banner .secondbannertext {
         top: 65%;
@@ -76,6 +94,14 @@ body {
     }
     
 }
+@media  only screen and (max-width: 600px) {
+    .Banner .emailinput {
+        top: 85%;
+        /* font-size: 1rem; */
+    }
+    
+}
+
 .firstsection .firstsectionimage .FirstSectionImage{
     left:50%;
     position: absolute;
