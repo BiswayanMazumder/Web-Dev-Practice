@@ -348,6 +348,56 @@ body {
         box-sizing: border-box;
     }
 }
+.fourthsection .fourthsectiontext{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: 900;
+    font-size: 3rem;
+    text-align: center;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+.fourthsection .fourthsectionsubtext{
+    position: absolute;
+    top: 66%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: 400;
+    font-size: 18px;
+    text-align: center;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+@media only screen and (max-width: 650px) and (max-width:800px) {
+    .fourthsection .fourthsectiontext {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-weight: 900;
+        font-size: 2rem;
+        text-align: center;
+        width: 100%;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+}
 /* @media only screen and (max-width: 650px) and (max-width:800px) {
     .firstsection .firstsectionsubtext {
         position: absolute;
@@ -467,6 +517,7 @@ body {
     background-color: black;
     height: 500px;
     margin-top: 5px;
+    position: relative;
 }
 .thirdsection  .thirdsectionimg .ThirdSectionImage{
     left: 50%;
