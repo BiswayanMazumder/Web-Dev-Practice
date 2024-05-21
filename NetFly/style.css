@@ -143,9 +143,15 @@ body {
     z-index: 1;
 }
 .firstsection video{
-    left: 55.5%;
+    left: 55%;
     position: absolute;
     top: 20%;
+}
+@media screen and (min-width:2550px) {
+    .firstsection video {
+        left: 53%;
+    }
+    
 }
 .firstsection {
     position: relative;
