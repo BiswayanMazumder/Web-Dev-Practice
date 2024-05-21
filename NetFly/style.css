@@ -535,7 +535,7 @@ body {
     }
 }
 .fifthsection .faq1box{
-    background-color: grey;
+    background-color: #2D2D2D;
     height: 120px;
     width: 80%;
     left: 50%;
@@ -549,6 +549,19 @@ body {
     .fifthsection .faq1box {
         position: relative;
         top: 20%;
+    }
+}
+.faq1box .faqs{
+    color: white;
+    position: relative;
+    top: 50%;
+    text-align: start;
+    font-size: 24px;
+    padding-left: 20px;
+}
+@media only screen and (max-width: 650px) {
+    .faq1box .faqs {
+        font-size: 18px;
     }
 }
 /* @media only screen and (max-width: 650px) and (max-width:800px) {
