@@ -540,6 +540,7 @@ body {
     width: 80%;
     left: 50%;
     top: 20%;
+    position:absolute;
     
     transform: translate(-50%, -50%);
     text-align: center;
@@ -554,12 +555,20 @@ body {
 }
 .faq1box .faqs{
     color: white;
+    display: flex;
     position: relative;
     top: 40%;
     margin-top: 10px;
     text-align: start;
     font-size: 24px;
     padding-left: 20px;
+}
+.faq1box .faqs .plus{
+    position: relative;
+    margin-left: auto;
+    padding-right: 50px;
+    text-align: end;
+    justify-content: end;
 }
 @media only screen and (max-width: 650px) {
     .faq1box .faqs {
