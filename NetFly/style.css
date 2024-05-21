@@ -51,7 +51,23 @@ body {
     padding-left: 1px !important;
     transform: translate(-25%, -40%);
 }
-
+.Banner .signin{
+    position: absolute;
+    top: 4%;
+    left: 75%;
+    padding-left: 1px !important;
+    transform: translate(-50%, -50%);
+}
+.Banner .signin .Signin{
+    background-color: red;
+    width: 77px;
+    height: 32px;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    border: 0.3px solid red;
+    border-radius: 5px;
+}
 .Banner .secondbannertext {
     position: absolute;
     top: 50%;
@@ -87,7 +103,7 @@ body {
     }
     
 }
-.Banner button{
+.Banner .GetStarted{
     background-color: red;
     color: white;
     width: 150px;
