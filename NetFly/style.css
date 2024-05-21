@@ -96,6 +96,7 @@ body {
 
 }
 .Banner input{
+    margin-right: 10px;
     background-color: transparent;
     height: 48px;
     width: 500px;
@@ -119,14 +120,15 @@ body {
     width: 150px;
     border: 0.3px solid red;
     height: 55px;
-    font-weight: bold;
+    font-weight: 500;
     border-radius: 5px;
-    font-size: 15px;
+    font-size: 20px;
 }
 @media  only screen and (max-width: 600px) {
     .Banner .GetStarted {
         height: 42px;
         width: 120px;
+        font-size: 15px;
         border: 3px solid red;
     }
     
@@ -143,6 +145,7 @@ body {
     align-items: center;
     color: white;
     font-weight: 300;
+    padding-right: 50px;
     font-size: 18px;
     text-align: center;
     width: 100%;
@@ -295,9 +298,56 @@ body {
     padding: 0 20px;
     box-sizing: border-box;
 }
-
-
-
+.secondsection .secondsectiontext{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: 900;
+    font-size: 3rem;
+    text-align: center;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+.secondsection .secondsectionsubtext{
+    position: absolute;
+    top: 66%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: 400;
+    font-size: 18px;
+    text-align: center;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+@media only screen and (max-width: 650px) and (max-width:800px) {
+    .secondsection .secondsectiontext {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-weight: 900;
+        font-size: 2rem;
+        text-align: center;
+        width: 100%;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+}
 /* @media only screen and (max-width: 650px) and (max-width:800px) {
     .firstsection .firstsectionsubtext {
         position: absolute;
@@ -354,12 +404,10 @@ body {
     }
 } */
 .Banner .homeimage{
-    opacity: 1;
     background-color: black;
     height: 700px;
     filter: grayscale(30%) brightness(50%);
-    /* Optional: Add a slight vignette effect */
-    box-shadow: inset 0 0 50px 20px rgba(0, 0, 0, 0.7);
+
 }
 @media  only screen and (max-width: 600px) {
     .Banner .homeimage {
@@ -405,6 +453,7 @@ body {
     background-color: black;
     height: 500px;
     margin-top: 5px;
+    position: relative;
 }
 
 .thirdsection {
