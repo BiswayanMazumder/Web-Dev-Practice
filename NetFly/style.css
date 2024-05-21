@@ -541,7 +541,6 @@ body {
     left: 50%;
     top: 20%;
     position:absolute;
-    
     transform: translate(-50%, -50%);
     text-align: center;
     margin-top: 5px;
@@ -562,6 +561,7 @@ body {
     text-align: start;
     font-size: 24px;
     padding-left: 20px;
+    
 }
 .faq1box .faqs .plus{
     position: relative;
@@ -570,6 +570,7 @@ body {
     text-align: end;
     justify-content: end;
 }
+
 @media only screen and (max-width: 650px) {
     .faq1box .faqs {
         font-size: 18px;
