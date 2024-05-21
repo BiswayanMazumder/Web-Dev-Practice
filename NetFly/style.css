@@ -138,8 +138,8 @@ body {
 }
 
 .firstsection .firstsectionimage .FirstSectionImage{
-    left:50%;
-    position: relative;
+    left:30%;
+    position: absolute;
     z-index: 1;
 }
 .firstsection video{
@@ -156,7 +156,7 @@ body {
 .firstsection {
     position: relative;
     background-color: black;
-    height: 500px;
+    height: 450px;
 
 }
 
@@ -167,7 +167,7 @@ body {
 }
 .firstsection .firstsectiontext {
     position: absolute;
-    top: 20%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
@@ -202,7 +202,7 @@ body {
 } */
 .firstsection .firstsectionsubtext {
     position: absolute;
-    top: 40%;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
@@ -218,7 +218,7 @@ body {
 }
 .thirdsection .thirdsectiontext {
     position: absolute;
-    top: 20%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
@@ -236,7 +236,7 @@ body {
 @media only screen and (max-width: 650px) and (max-width:800px) {
     .thirdsection .thirdsectiontext {
         position: absolute;
-        top: 20%;
+        top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         display: flex;
@@ -253,7 +253,7 @@ body {
 }
 .thirdsection .thirdsectionsubtext {
     position: absolute;
-    top: 40%;
+    top: 66%;
     left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
@@ -378,7 +378,7 @@ body {
 
 .thirdsection {
     background-color: black;
-    height: 550px;
+    height: 450px;
     margin-top: 5px;
     position: relative;
 }
