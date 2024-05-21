@@ -460,6 +460,10 @@ body {
         top: 70%;
     }
 }
+.fifthsection .faq1box:hover{
+    background-color: rgb(75, 72, 69);
+    /* color: white !important; */
+}
 .fifthsection .emailinput {
     position: absolute;
     top: 75%;
