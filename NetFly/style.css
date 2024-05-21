@@ -514,7 +514,7 @@ body {
 @media only screen and (max-width: 650px) and (max-width:800px) {
     .fifthsection .fifthsectiontext {
         position: absolute;
-        top: 30%;
+        top: 8%;
         left: 50%;
         transform: translate(-50%, -50%);
         display: flex;
@@ -539,6 +539,12 @@ body {
     text-align: center;
     margin-top: 5px;
     position: relative;
+}
+@media only screen and (max-width: 650px) and (max-width:800px) {
+    .fifthsection .faq1box {
+        position: relative;
+        top: 20%;
+    }
 }
 /* @media only screen and (max-width: 650px) and (max-width:800px) {
     .firstsection .firstsectionsubtext {
