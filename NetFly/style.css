@@ -69,18 +69,41 @@ body {
     box-sizing: border-box;
 
 }
+.Banner input{
+    background-color: transparent;
+    height: 48px;
+    width: 500px;
+    border-radius: 10px;
+    font-weight: bolder;
+    color: white;
+    font-size: 20px;
+    border: 3px solid grey;
+}
+@media  only screen and (max-width: 600px) {
+    .Banner input {
+        height: 40px;
+        width: 200px;
+        font-size: 15px;
+    }
+    
+}
 .Banner button{
     background-color: red;
     color: white;
     width: 150px;
-    height: 48px;
+    height: 55px;
+    border-radius: 10px;
+    font-size: 20px;
 }
 @media  only screen and (max-width: 600px) {
     .Banner button {
-        height: 30px;
+        height: 48px;
+        width: 120px;
     }
     
 }
+
+
 .Banner .emailinput {
     position: absolute;
     top: 60%;
@@ -221,7 +244,13 @@ body {
 .Banner .homeimage{
     opacity: 1;
     background-color: black;
-    height: auto;
+    height: 700px;
+}
+@media  only screen and (max-width: 600px) {
+    .Banner .homeimage {
+        height: 300px;
+    }
+    
 }
 @media only screen and (max-width: 200px) and (max-width:300px) {
     .firstsection .firstsectionsubtext {
