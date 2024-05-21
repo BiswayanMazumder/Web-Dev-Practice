@@ -238,7 +238,7 @@ body {
 @media only screen and (min-width: 2550px) {
     .firstsection .firstsectionsubtext {
         position: absolute;
-        top: 40%;
+        top: 48%;
         left: 21%;
         transform: translate(-50%, -50%);
         display: flex;
