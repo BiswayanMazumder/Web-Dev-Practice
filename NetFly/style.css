@@ -5,7 +5,7 @@
 
 body {
     background-color: grey !important;
-    font-family: poppins;
+    font-family: sans-serif;
 }
 
 .Banner {
@@ -16,12 +16,6 @@ body {
 
 }
 
-/* .Banner .homeimage {
-    z-index: 10;
-    display: block;
-    background-color: rgb(0, 0, 0);
-    backdrop-filter: brightness(20%) contrast(90%) blur(10px);
-} */
 
 .Banner .Banner_Text {
     position: absolute;
@@ -33,7 +27,7 @@ body {
     align-items: center;
     color: white;
     font-weight: 900;
-    font-size: 2rem;
+    font-size: 3rem;
     text-align: center;
     width: 100%;
     padding: 0 20px;
@@ -41,12 +35,16 @@ body {
 
 }
 
-@media only screen and (max-width: 680px) {
+@media only screen and (max-width: 1044px) {
+    .Banner .Banner_Text {
+        font-size: 2rem;
+    }
+}
+@media only screen and (max-width: 600px) {
     .Banner .Banner_Text {
         font-size: 1rem;
     }
 }
-
 .Banner .heading {
     position: absolute;
     top: 4%;
@@ -71,12 +69,12 @@ body {
     box-sizing: border-box;
 
 }
-
-@media only screen and (max-width: 650px) and (max-width:800px) {
+@media  only screen and (max-width: 600px) {
     .Banner .secondbannertext {
-        top: 75%;
+        top: 65%;
         font-size: 1rem;
     }
+    
 }
 .firstsection .firstsectionimage .FirstSectionImage{
     left:50%;
@@ -89,9 +87,14 @@ body {
 
 }
 
+@media only screen and (max-width: 650px) and (max-width:800px) {
+    .firstsection {
+        display:block;
+    }
+}
 .firstsection .firstsectiontext {
     position: absolute;
-    top: 40%;
+    top: 30%;
     left: 20%;
     transform: translate(-50%, -50%);
     display: flex;
@@ -127,7 +130,7 @@ body {
 .firstsection .firstsectionsubtext {
     position: absolute;
     top: 50%;
-    left: 25%;
+    left: 23%;
     transform: translate(-50%, -50%);
     display: flex;
     justify-content: center;
@@ -159,6 +162,63 @@ body {
         box-sizing: border-box;
     }
 }
+@media only screen and (max-width: 650px) and (max-width:800px) {
+    .firstsection .firstsectionsubtext {
+        position: absolute;
+        top: 35%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-weight: 400;
+        font-size: 16px;
+        text-align: center;
+        width: 100%;
+        padding: 0 20px;
+        box-sizing: border-box;
+    
+    }
+}
+.Banner .homeimage{
+    opacity: 1;
+    background-color: black;
+    height: auto;
+}
+@media only screen and (max-width: 200px) and (max-width:300px) {
+    .firstsection .firstsectionsubtext {
+         position: absolute;
+        top: 35%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-weight: 400;
+        font-size: 16px;
+        text-align: center;
+        width: 100%;
+        padding: 0 20px;
+        box-sizing: border-box;
+    
+    }
+}
+@media only screen and (max-width:649px) {
+    .firstsection .firstsectionsubtext {
+        top: 35%;
+    
+    }
+}
+@media only screen and (min-width:600px) and  (max-width:800px) {
+    .firstsection .firstsectionsubtext {
+        top: 40%;
+        left: 26%;
+    
+    }
+}
+
 .secondsection {
     background-color: black;
     height: 500px;
