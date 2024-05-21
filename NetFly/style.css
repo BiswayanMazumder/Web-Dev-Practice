@@ -68,6 +68,16 @@ body {
     border: 0.3px solid red;
     border-radius: 5px;
 }
+@media screen and (max-width:680px) {
+    .Banner .signin{
+        position: absolute;
+        top: 8%;
+        left: 75%;
+        padding-left: 1px !important;
+        transform: translate(-50%, -50%);
+    }
+
+}
 .Banner .secondbannertext {
     position: absolute;
     top: 50%;
@@ -97,8 +107,8 @@ body {
 }
 @media  only screen and (max-width: 600px) {
     .Banner input {
-        height: 45px;
-        width: 200px;
+        height: 38px;
+        width: 300px;
         font-size: 15px;
     }
     
@@ -107,13 +117,15 @@ body {
     background-color: red;
     color: white;
     width: 150px;
+    border: 0.3px solid red;
     height: 55px;
+    font-weight: bold;
     border-radius: 5px;
-    font-size: 20px;
+    font-size: 15px;
 }
 @media  only screen and (max-width: 600px) {
-    .Banner button {
-        height: 48px;
+    .Banner .GetStarted {
+        height: 42px;
         width: 120px;
         border: 3px solid red;
     }
