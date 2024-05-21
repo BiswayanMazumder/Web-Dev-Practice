@@ -536,10 +536,11 @@ body {
 }
 .fifthsection .faq1box{
     background-color: #2D2D2D;
-    height: 120px;
+    height: 100px;
     width: 80%;
     left: 50%;
     top: 20%;
+    
     transform: translate(-50%, -50%);
     text-align: center;
     margin-top: 5px;
@@ -554,7 +555,8 @@ body {
 .faq1box .faqs{
     color: white;
     position: relative;
-    top: 50%;
+    top: 40%;
+    margin-top: 10px;
     text-align: start;
     font-size: 24px;
     padding-left: 20px;
