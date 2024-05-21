@@ -455,7 +455,7 @@ body {
     top: 18%;
     left: 58%;
 }
-@media screen and (min-width:2550px) {
+@media screen and (min-width:2000px) {
     .thirdsection .thirdsectionimg .thirdsectionvideo{
         position: absolute;
         top: 15%;
