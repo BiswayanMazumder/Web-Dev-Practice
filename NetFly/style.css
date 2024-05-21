@@ -252,61 +252,6 @@ body {
     /* box-sizing: border-box; */
 }
 
-@media only screen and (max-width: 650px) and (max-width:800px) {
-    .thirdsection .thirdsectionsubtext {
-        position: absolute;
-        top: 35%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: white;
-        font-weight: 400;
-        font-size: 16px;
-        text-align: center;
-        width: 100%;
-        padding: 0 20px;
-        box-sizing: border-box;
-    }
-}
-@media only screen and (min-width: 2550px) {
-    .thirdsection .thirdsectionsubtext {
-        position: absolute;
-        top: 48%;
-        left: 21%;
-        transform: translate(-50%, -50%);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: white;
-        font-weight: 400;
-        font-size: 16px;
-        text-align: center;
-        width: 100%;
-        padding: 0 20px;
-        box-sizing: border-box;
-    }
-}
-@media only screen and (max-width: 650px) and (max-width:800px) {
-    .thirdsection .thirdsectionsubtext {
-        position: absolute;
-        top: 35%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: white;
-        font-weight: 400;
-        font-size: 16px;
-        text-align: center;
-        width: 100%;
-        padding: 0 20px;
-        box-sizing: border-box;
-    
-    }
-}
 .firstsection .firstsectionsubtext {
     position: absolute;
     top: 50%;
@@ -462,3 +407,108 @@ body {
         left: 54.7%;
     }
 }
+@media only screen and (max-width: 650px) and (max-width:800px) {
+    .thirdsection .thirdsectionsubtext {
+        position: absolute;
+        top: 35%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-weight: 400;
+        font-size: 16px;
+        text-align: center;
+        width: 100%;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+}
+@media only screen and (min-width: 2550px) {
+    .thirdsection .thirdsectionsubtext {
+        position: absolute;
+        top: 48%;
+        left: 21%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-weight: 400;
+        font-size: 16px;
+        text-align: center;
+        width: 100%;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+}
+@media only screen and (max-width: 650px) and (max-width:800px) {
+    .thirdsection .thirdsectionsubtext {
+        position: absolute;
+        top: 35%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-weight: 400;
+        font-size: 16px;
+        text-align: center;
+        width: 100%;
+        padding: 0 20px;
+        box-sizing: border-box;
+    
+    }
+}
+@media only screen and (max-width: 200px) and (max-width:300px) {
+    .thirdsection .thirdsectionsubtext {
+         position: absolute;
+        top: 35%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-weight: 400;
+        font-size: 16px;
+        text-align: center;
+        width: 100%;
+        padding: 0 20px;
+        box-sizing: border-box;
+    
+    }
+}
+@media only screen and (max-width:649px) {
+    .thirdsection .thirdsectionsubtext {
+        top: 35%;
+    
+    }
+}
+@media only screen and (min-width:600px) and  (max-width:800px) {
+    .thirdsection .thirdsectionsubtext {
+        top: 40%;
+        left: 26%;
+    
+    }
+}
+@media only screen and (min-width:2000px) {
+    .thirdsection .thirdsectionsubtext {
+         position: absolute;
+        top: 50%;
+        left: 24.5%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-weight: 400;
+        font-size: 16px;
+        text-align: center;
+        width: 100%;
+        padding: 0 20px;
+        box-sizing: border-box;
+    
+    }}
