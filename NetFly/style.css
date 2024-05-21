@@ -167,22 +167,22 @@ body {
 }
 .firstsection .firstsectiontext {
     position: absolute;
-    top: 30%;
-    left: 20%;
+    top: 20%;
+    left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
     font-weight: 900;
-    font-size: 2rem;
+    font-size: 3rem;
     text-align: center;
     width: 100%;
-    /* padding: 0 20px; */
-    /* box-sizing: border-box; */
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
-@media only screen and (max-width: 650px) and (max-width:800px) {
+/* @media only screen and (max-width: 650px) and (max-width:800px) {
     .firstsection .firstsectiontext {
         position: absolute;
         top: 20%;
@@ -199,22 +199,38 @@ body {
         padding: 0 20px;
         box-sizing: border-box;
     }
+} */
+.firstsection .firstsectionsubtext {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: 400;
+    font-size: 18px;
+    text-align: center;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 .thirdsection .thirdsectiontext {
-    position: relative;
-    top: 30%;
-    left: 20%;
+    position: absolute;
+    top: 20%;
+    left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
     font-weight: 900;
-    font-size: 2rem;
+    font-size: 3rem;
     text-align: center;
     width: 100%;
-    /* padding: 0 20px; */
-    /* box-sizing: border-box; */
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
 @media only screen and (max-width: 650px) and (max-width:800px) {
@@ -236,26 +252,9 @@ body {
     }
 }
 .thirdsection .thirdsectionsubtext {
-    position: relative;
-    top: 40%;
-    left: 30%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-weight: 400;
-    font-size: 18px;
-    text-align: center;
-    width: 100%;
-    /* padding: 0 20px; */
-    /* box-sizing: border-box; */
-}
-
-.firstsection .firstsectionsubtext {
     position: absolute;
-    top: 50%;
-    left: 23%;
+    top: 40%;
+    left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
     justify-content: center;
@@ -265,11 +264,13 @@ body {
     font-size: 18px;
     text-align: center;
     width: 100%;
-    /* padding: 0 20px; */
-    /* box-sizing: border-box; */
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
-@media only screen and (max-width: 650px) and (max-width:800px) {
+
+
+/* @media only screen and (max-width: 650px) and (max-width:800px) {
     .firstsection .firstsectionsubtext {
         position: absolute;
         top: 35%;
@@ -286,8 +287,8 @@ body {
         padding: 0 20px;
         box-sizing: border-box;
     }
-}
-@media only screen and (min-width: 2550px) {
+} */
+/* @media only screen and (min-width: 2550px) {
     .firstsection .firstsectionsubtext {
         position: absolute;
         top: 48%;
@@ -307,7 +308,7 @@ body {
 }
 @media only screen and (max-width: 650px) and (max-width:800px) {
     .firstsection .firstsectionsubtext {
-        position: absolute;
+        position: relative;
         top: 35%;
         left: 50%;
         transform: translate(-50%, -50%);
@@ -323,7 +324,7 @@ body {
         box-sizing: border-box;
     
     }
-}
+} */
 .Banner .homeimage{
     opacity: 1;
     background-color: black;
@@ -336,9 +337,9 @@ body {
     
 }
 
-@media only screen and (max-width: 200px) and (max-width:300px) {
+/* @media only screen and (max-width: 200px) and (max-width:300px) {
     .firstsection .firstsectionsubtext {
-         position: absolute;
+         position: relative;
         top: 35%;
         left: 50%;
         transform: translate(-50%, -50%);
@@ -367,7 +368,7 @@ body {
         left: 26%;
     
     }
-}
+} */
 
 .secondsection {
     background-color: black;
@@ -400,7 +401,7 @@ body {
     top: 18%;
     left: 58%;
 }
-@media screen and (min-width:2000px) {
+/* @media screen and (min-width:2000px) {
     .thirdsection .thirdsectionimg .thirdsectionvideo{
         position: absolute;
         top: 16%;
@@ -511,4 +512,4 @@ body {
         padding: 0 20px;
         box-sizing: border-box;
     
-    }}
+    }} */
