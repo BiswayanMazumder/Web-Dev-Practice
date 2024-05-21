@@ -73,15 +73,15 @@ body {
     background-color: transparent;
     height: 48px;
     width: 500px;
-    border-radius: 10px;
+    border-radius: 5px;
     font-weight: bolder;
     color: white;
     font-size: 20px;
-    border: 3px solid grey;
+    border: 2px solid grey;
 }
 @media  only screen and (max-width: 600px) {
     .Banner input {
-        height: 40px;
+        height: 45px;
         width: 200px;
         font-size: 15px;
     }
@@ -92,13 +92,14 @@ body {
     color: white;
     width: 150px;
     height: 55px;
-    border-radius: 10px;
+    border-radius: 5px;
     font-size: 20px;
 }
 @media  only screen and (max-width: 600px) {
     .Banner button {
         height: 48px;
         width: 120px;
+        border: 3px solid red;
     }
     
 }
