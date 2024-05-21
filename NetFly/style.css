@@ -441,7 +441,7 @@ body {
 }
 .fifthsection .fifthsectionsubtext{
     position: absolute;
-    top: 80%;
+    top: 70%;
     left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
@@ -455,9 +455,14 @@ body {
     padding: 0 20px;
     box-sizing: border-box;
 }
+@media only screen and (max-width: 650px) and (max-width:800px) {
+    .fifthsection .fifthsectionsubtext {
+        top: 70%;
+    }
+}
 .fifthsection .emailinput {
     position: absolute;
-    top: 85%;
+    top: 75%;
     left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
@@ -475,7 +480,7 @@ body {
 }
 @media only screen and (max-width: 600px) {
     .fifthsection .emailinput {
-        top: 85%;
+        top: 75%;
         /* font-size: 1rem; */
     }
 
@@ -534,7 +539,7 @@ body {
     height: 120px;
     width: 80%;
     left: 50%;
-    top: 28%;
+    top: 20%;
     transform: translate(-50%, -50%);
     text-align: center;
     margin-top: 5px;
