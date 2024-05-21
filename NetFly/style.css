@@ -139,7 +139,13 @@ body {
 
 .firstsection .firstsectionimage .FirstSectionImage{
     left:50%;
+    position: relative;
+    z-index: 1;
+}
+.firstsection video{
+    left: 55.5%;
     position: absolute;
+    top: 20%;
 }
 .firstsection {
     position: relative;
