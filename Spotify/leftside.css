@@ -1,0 +1,13 @@
+.container .leftside{
+    /* margin-top: 10px;
+    margin-left:10px;
+    
+    background-color:#1E1E1E; */
+    border-radius: 5px;
+    height:99.4vh;
+    width: 322px;
+    border: 2px solid black;
+}
+.container .leftside .firstpart{
+    
+}

@@ -1,0 +1,12 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    display: flex;
+    height:100vh;
+    /* background-color: black; */
+    width: 100vw;
+    border: 2px solid red;
+    box-sizing: border-box;
+}
