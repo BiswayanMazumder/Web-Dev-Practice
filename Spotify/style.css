@@ -6,7 +6,7 @@ body{
     background-color: black;
 }
 .container{
-    overflow: hidden;
+    overflow: scroll;
     display: flex;
     height:100vh;
     position: absolute;
