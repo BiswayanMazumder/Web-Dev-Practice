@@ -47,10 +47,12 @@ body {
     /* position: relative; */
     margin-top: 10px;
     margin-left: 10px;
+    display: flex;
+    flex-direction: column;
     margin-bottom: 15px;
     background-color: #121212;
     border-radius: 5px;
-    /* position: absolute; */
+    position: relative;
 }
 
 @media screen and (min-width:2000px) {
@@ -182,4 +184,16 @@ body {
 }
 .container .secondpart .playlists .button .getplaylist:hover{
     box-shadow: 2px 2px 5px green;
+}
+.container .leftside .secondpart .options{
+    margin-top: auto; /* This pushes the element to the bottom */
+    height: auto;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    background-color: #121212;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+    padding-bottom: 50px;
 }
