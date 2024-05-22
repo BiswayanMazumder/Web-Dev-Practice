@@ -180,3 +180,6 @@ body {
     border-radius: 20px;
     border: 1px solid white;
 }
+.container .secondpart .playlists .button .getplaylist:hover{
+    box-shadow: 2px 2px 5px green;
+}
