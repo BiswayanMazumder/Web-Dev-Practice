@@ -159,3 +159,23 @@ body {
     }
     
 }
+.container .secondpart .playlists .button{
+    position: relative;
+    top:30%;
+    padding-left: 5%;
+    
+    
+}
+.container .secondpart .playlists .button .getplaylist{
+    background-color: white;
+    color: #000000;
+    font-weight: 700;
+    font-size: 14px;
+    position: relative;
+    /* top: 90%; */
+    justify-content: center;
+    text-align: center;
+    width: 150px;
+    height: 35px;
+    border-radius: 20px;
+}
