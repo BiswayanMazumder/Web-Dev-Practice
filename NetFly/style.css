@@ -439,7 +439,8 @@ body {
     padding: 0 20px;
     box-sizing: border-box;
 }
-.fifthsection .fifthsectionsubtext{
+
+.fifthsection .fifthsectionsubtext {
     position: absolute;
     top: 70%;
     left: 50%;
@@ -455,15 +456,18 @@ body {
     padding: 0 20px;
     box-sizing: border-box;
 }
+
 @media only screen and (max-width: 650px) and (max-width:800px) {
     .fifthsection .fifthsectionsubtext {
         top: 75%;
     }
 }
-.fifthsection .faq1box:hover{
+
+.fifthsection .faq1box:hover {
     background-color: rgb(75, 72, 69);
     /* color: white !important; */
 }
+
 .fifthsection .emailinput {
     position: absolute;
     top: 75%;
@@ -482,6 +486,7 @@ body {
     box-sizing: border-box;
 
 }
+
 @media only screen and (max-width: 600px) {
     .fifthsection .emailinput {
         top: 82%;
@@ -489,7 +494,8 @@ body {
     }
 
 }
-.fifthsection input{
+
+.fifthsection input {
     margin-right: 5px;
     background-color: transparent;
     height: 48px;
@@ -500,6 +506,7 @@ body {
     font-size: 20px;
     border: 2px solid grey;
 }
+
 .fifthsection .GetStarted {
     background-color: red;
     color: white;
@@ -510,6 +517,7 @@ body {
     border-radius: 5px;
     font-size: 20px;
 }
+
 @media only screen and (max-width: 600px) {
     .fifthsection .GetStarted {
         height: 42px;
@@ -519,6 +527,7 @@ body {
     }
 
 }
+
 @media only screen and (max-width: 650px) and (max-width:800px) {
     .fifthsection .fifthsectiontext {
         position: absolute;
@@ -537,25 +546,28 @@ body {
         box-sizing: border-box;
     }
 }
-.fifthsection .faq1box{
+
+.fifthsection .faq1box {
     background-color: #2D2D2D;
     height: 100px;
     width: 80%;
     left: 50%;
     top: 20%;
-    position:absolute;
+    position: absolute;
     transform: translate(-50%, -50%);
     text-align: center;
     margin-top: 5px;
     position: relative;
 }
+
 @media only screen and (max-width: 650px) and (max-width:800px) {
     .fifthsection .faq1box {
         position: relative;
         top: 20%;
     }
 }
-.faq1box .faqs{
+
+.faq1box .faqs {
     color: white;
     display: flex;
     position: relative;
@@ -564,9 +576,10 @@ body {
     text-align: start;
     font-size: 24px;
     padding-left: 20px;
-    
+
 }
-.faq1box .faqs .plus{
+
+.faq1box .faqs .plus {
     position: relative;
     margin-left: auto;
     padding-right: 50px;
@@ -579,6 +592,7 @@ body {
         font-size: 18px;
     }
 }
+
 /* @media only screen and (max-width: 650px) and (max-width:800px) {
     .firstsection .firstsectionsubtext {
         position: absolute;
@@ -708,6 +722,7 @@ body {
     margin-top: 5px;
     position: relative;
 }
+
 .thirdsection .thirdsectionimg .ThirdSectionImage {
     left: 50%;
     position: relative;
@@ -723,16 +738,17 @@ body {
     left: 58%;
 }
 
-.sixthsection{
- 
+.sixthsection {
+
     background-color: black;
     height: 500px;
     margin-top: 5px;
     position: relative;
 
 }
-.sixthsection .sixthsectiontext{
-    color:grey;
+
+.sixthsection .sixthsectiontext {
+    color: grey;
     font-size: 16px;
     text-align: start;
     left: 10%;
@@ -740,10 +756,12 @@ body {
     position: absolute;
     /* display: grid; */
 }
-.sixthsection .sixthsectiontext .helpoptions li{
+
+.sixthsection .sixthsectiontext .helpoptions li {
     list-style: none;
     font-size: 14px;
 }
+
 /* @media screen and (min-width:2000px) {
     .thirdsection .thirdsectionimg .thirdsectionvideo{
         position: absolute;
