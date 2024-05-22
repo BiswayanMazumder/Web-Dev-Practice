@@ -510,7 +510,6 @@ body {
     border-radius: 5px;
     font-size: 20px;
 }
-
 @media only screen and (max-width: 600px) {
     .fifthsection .GetStarted {
         height: 42px;
@@ -705,11 +704,10 @@ body {
 
 .fifthsection {
     background-color: black;
-    height: 1500px;
+    height: 1300px;
     margin-top: 5px;
     position: relative;
 }
-
 .thirdsection .thirdsectionimg .ThirdSectionImage {
     left: 50%;
     position: relative;
@@ -725,6 +723,27 @@ body {
     left: 58%;
 }
 
+.sixthsection{
+ 
+    background-color: black;
+    height: 500px;
+    margin-top: 5px;
+    position: relative;
+
+}
+.sixthsection .sixthsectiontext{
+    color:grey;
+    font-size: 16px;
+    text-align: start;
+    left: 10%;
+    top: 10%;
+    position: absolute;
+    /* display: grid; */
+}
+.sixthsection .sixthsectiontext .helpoptions li{
+    list-style: none;
+    font-size: 14px;
+}
 /* @media screen and (min-width:2000px) {
     .thirdsection .thirdsectionimg .thirdsectionvideo{
         position: absolute;
