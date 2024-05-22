@@ -124,6 +124,8 @@ body {
     top: 12%;
     height: 150px;
     width: auto;
+    display: flex;
+    flex-direction: column;
     position: relative;
     background-color:#242424;
     margin-left: 10px;
@@ -133,13 +135,27 @@ body {
 .container .secondpart .playlists .Playlist_text{
     color: white;
     font-weight: 700;
-    top: 5%;
+    top: 10%;
     position: relative;
     padding-left: 5%;
 }
 @media screen and (max-width:620px) {
     .container .secondpart .playlists .Playlist_text{
         font-size: 14px;
+    }
+    
+}
+.container .secondpart .playlists .playlist_subtext{
+    color: white;
+    font-weight: 400;
+    top: 15%;
+    font-weight: 14px;
+    position: relative;
+    padding-left: 5%;
+}
+@media screen and (max-width:620px) {
+    .container .secondpart .playlists .playlist_subtext{
+        font-size: 12px;
     }
     
 }
