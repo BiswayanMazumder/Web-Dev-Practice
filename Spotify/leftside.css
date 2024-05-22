@@ -40,6 +40,7 @@ body {
 
 }
 
+
 .container .leftside .secondpart {
     /* border: 2px solid green; */
     height: 71.5%;
@@ -90,16 +91,25 @@ body {
     position: relative;
     display: flex;
     top: 25%;
-    color: grey;
+    color: white;
     font-weight: 700;
     font-size: 16px;
     padding-left: 20px;
 }
-
+.container .firstpart .searchicon:hover{
+    color:white;
+}
 @media screen and (min-width:2000px) {
     .container .firstpart .home {
         position: relative;
-        top: 30%;
+        top: 28%;
         padding-left: 20px;
     }
 }
+/* @media screen and (min-width:1000px) {
+    .container .firstpart .searchicon {
+        position: relative;
+        top: 45%;
+        padding-left: 20px;
+    }
+} */
