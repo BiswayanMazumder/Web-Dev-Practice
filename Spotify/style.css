@@ -6,8 +6,10 @@ body{
     background-color: black;
 }
 .container{
+    overflow: hidden;
     display: flex;
     height:100vh;
+    position: absolute;
     /* background-color: black; */
     width: 100vw;
     /* border: 2px solid red; */
