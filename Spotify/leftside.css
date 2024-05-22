@@ -137,7 +137,7 @@ body {
     position: relative;
     padding-left: 5%;
 }
-@media screen and (max-width:620) {
+@media screen and (max-width:620px) {
     .container .secondpart .playlists .Playlist_text{
         font-size: 14px;
     }
