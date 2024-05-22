@@ -178,4 +178,5 @@ body {
     width: 150px;
     height: 35px;
     border-radius: 20px;
+    border: 1px solid white;
 }
