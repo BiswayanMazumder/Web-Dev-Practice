@@ -130,3 +130,10 @@ body {
     margin-right: 10px;
     border-radius: 10px;
 }
+.container .secondpart .playlists .Playlist_text{
+    color: white;
+    font-weight: 700;
+    top: 5%;
+    position: relative;
+    padding-left: 5%;
+}
