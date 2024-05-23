@@ -112,3 +112,27 @@
 .rightside .firstrightpart .popularartists .showall .showalltext .showmore:hover{
     color: white;
 }
+.rightside .firstrightpart .pritam{
+    /* padding-left: 30px; */
+    /* padding-top: 10px; */
+    margin-left: 20px;
+    /* padding: 5px; */
+    padding-top: 10px;
+    padding-left: 10px;
+    width: 208px;
+    height: auto;
+    position: relative;
+    border-radius: 5px;
+}
+.rightside .firstrightpart img{
+height: 200px;
+width: 200px;
+border-radius: 50%;
+box-shadow: 2px 5px 5px #1e1e1e;
+
+}
+.rightside .firstrightpart .pritam:hover{
+    background-color: #222222;
+
+    border-radius: 5px;
+}
