@@ -25,6 +25,7 @@
 @media screen and (max-width:650px) {
     .container .firstrightpart {
         width: 250%;
+        overflow: scroll;
     }
 }
 
