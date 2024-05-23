@@ -1,15 +1,18 @@
 .container .rightside {
-    /* margin-left: 5px; */
+
     border-radius: 5px;
     width: 100%;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    /* overflow: scroll; */
     height: 99.2vh;
-    /* border: 2px solid blue; */
+    overflow-y: scroll; 
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
-
+.container .rightside::-webkit-scrollbar {
+    display: none;
+}
 .container .firstrightpart {
     height: 98%;
     overflow: hidden;
