@@ -165,6 +165,12 @@
     border-radius: 50%;
     box-shadow: 2px 5px 5px #1e1e1e;
 }
+.rightside .firstrightpart .popularalbums {
+    height: 200px;
+    width: 200px;
+    /* border-radius: 50%; */
+    box-shadow: 2px 5px 5px #1e1e1e;
+}
 
 .rightside .firstrightpart .pritam .playbutton {
     position: absolute;
