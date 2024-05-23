@@ -1,4 +1,4 @@
-.container .rightside{
+.container .rightside {
     /* margin-left: 5px; */
     border-radius: 5px;
     width: 100%;
@@ -7,7 +7,8 @@
     height: 99.2vh;
     /* border: 2px solid blue; */
 }
-.container .firstrightpart{
+
+.container .firstrightpart {
     height: 98%;
     background-color: #1e1e1e;
     width: auto;
@@ -18,13 +19,15 @@
     border-radius: 5px;
     /* border: 2px solid white; */
 }
+
 @media screen and (max-width:650px) {
-    .container .firstrightpart{
+    .container .firstrightpart {
         width: 250%;
     }
 }
-.rightside .firstrightpart .appbar{
-    background-color:#111111;
+
+.rightside .firstrightpart .appbar {
+    background-color: #111111;
     height: 70px;
     position: relative;
     width: 100%;
@@ -32,12 +35,14 @@
     display: flex;
     flex-direction: row;
 }
-.rightside .firstrightpart .appbar .back{
+
+.rightside .firstrightpart .appbar .back {
     top: 40%;
     padding-left: 20px;
     position: relative;
 }
-.rightside .firstrightpart .appbar .buttons .signup{
+
+.rightside .firstrightpart .appbar .buttons .signup {
     top: 10%;
     color: grey;
     font-weight: 700;
@@ -46,7 +51,8 @@
     margin-right: 30px;
     position: relative;
 }
-.rightside .firstrightpart .appbar .buttons{
+
+.rightside .firstrightpart .appbar .buttons {
     top: 25%;
     margin-left: auto;
     display: flex;
@@ -55,7 +61,8 @@
     margin-right: 30px;
     position: relative;
 }
-.rightside .firstrightpart .appbar .signin .login{
+
+.rightside .firstrightpart .appbar .signin .login {
     background-color: white;
     color: #000;
     font-weight: bold;
@@ -69,12 +76,39 @@
     justify-content: center;
     border-radius: 50px;
 }
-.rightside .firstrightpart .appbar .signin .login:hover{
+
+.rightside .firstrightpart .appbar .signin .login:hover {
     box-shadow: 2px 2px 5px green;
     /* background-color: #1e1e1e; */
     /* color: white; */
 }
-.rightside .firstrightpart .appbar .buttons .signup:hover{
-    color:white;
+
+.rightside .firstrightpart .appbar .buttons .signup:hover {
+    color: white;
     font-weight: bolder;
+}
+.rightside .firstrightpart .popularartists{
+    padding-left: 30px;
+    padding-top: 30px;
+    display: flex;
+    flex-direction: row;
+}
+.rightside .firstrightpart .popularartists .showall{
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+    padding-right: 20px;
+}
+.rightside .firstrightpart .popularartists .showall .showalltext .showmore{
+    display: flex;
+    top: 10px;
+    font-weight: 700;
+    font-size: 14px;
+    color: grey;
+    flex-direction: row;
+    margin-right: auto;
+    position: relative;
+}
+.rightside .firstrightpart .popularartists .showall .showalltext .showmore:hover{
+    color: white;
 }

@@ -99,9 +99,11 @@ body {
     font-size: 16px;
     padding-left: 20px;
 }
-.container .firstpart .searchicon:hover{
-    color:white;
+
+.container .firstpart .searchicon:hover {
+    color: white;
 }
+
 @media screen and (min-width:2000px) {
     .container .firstpart .home {
         position: relative;
@@ -109,7 +111,8 @@ body {
         padding-left: 20px;
     }
 }
-.container .secondpart .library{
+
+.container .secondpart .library {
     position: relative;
     display: flex;
     top: 6%;
@@ -119,35 +122,40 @@ body {
     padding-left: 20px;
     text-decoration: none;
 }
-.container .secondpart .library:hover{
-    color:white;
+
+.container .secondpart .library:hover {
+    color: white;
 }
-.container .secondpart .playlists{
+
+.container .secondpart .playlists {
     top: 12%;
     height: 150px;
     width: auto;
     display: flex;
     flex-direction: column;
     position: relative;
-    background-color:#242424;
+    background-color: #242424;
     margin-left: 10px;
     margin-right: 10px;
     border-radius: 10px;
 }
-.container .secondpart .playlists .Playlist_text{
+
+.container .secondpart .playlists .Playlist_text {
     color: white;
     font-weight: 700;
     top: 10%;
     position: relative;
     padding-left: 5%;
 }
+
 @media screen and (max-width:620px) {
-    .container .secondpart .playlists .Playlist_text{
+    .container .secondpart .playlists .Playlist_text {
         font-size: 14px;
     }
-    
+
 }
-.container .secondpart .playlists .playlist_subtext{
+
+.container .secondpart .playlists .playlist_subtext {
     color: white;
     font-weight: 400;
     top: 18%;
@@ -155,20 +163,23 @@ body {
     position: relative;
     padding-left: 5%;
 }
+
 @media screen and (max-width:620px) {
-    .container .secondpart .playlists .playlist_subtext{
+    .container .secondpart .playlists .playlist_subtext {
         font-size: 12px;
     }
-    
+
 }
-.container .secondpart .playlists .button{
+
+.container .secondpart .playlists .button {
     position: relative;
-    top:30%;
+    top: 30%;
     padding-left: 5%;
-    
-    
+
+
 }
-.container .secondpart .playlists .button .getplaylist{
+
+.container .secondpart .playlists .button .getplaylist {
     background-color: white;
     color: #000000;
     font-weight: 700;
@@ -182,11 +193,14 @@ body {
     border-radius: 20px;
     border: 1px solid white;
 }
-.container .secondpart .playlists .button .getplaylist:hover{
+
+.container .secondpart .playlists .button .getplaylist:hover {
     box-shadow: 2px 2px 5px green;
 }
-.container .leftside .secondpart .options{
-    margin-top: auto; /* This pushes the element to the bottom */
+
+.container .leftside .secondpart .options {
+    margin-top: auto;
+    /* This pushes the element to the bottom */
     height: auto;
     width: auto;
     display: flex;
