@@ -7,12 +7,20 @@
     height: 99.2vh;
     /* border: 2px solid blue; */
 }
+@media screen and (max-width:600px) {
+    .container .rightside .firstrightpart{
+        /* margin-left: 5px; */
+        width: 250%;
+        overflow: scroll;
+        margin-right: 10px;
+    }
+}
 .container .firstrightpart{
     height: 98%;
     background-color: #1e1e1e;
     width: auto;
     /* margin: 10px; */
-    margin-top: 10px;
+    margin-top: 12px;
     margin-left: 10px;
     margin-right: 10px;
     border-radius: 5px;
@@ -23,6 +31,7 @@
     height: 70px;
     position: relative;
     width: 100%;
+    border-radius: 5px;
 }
 .rightside .firstrightpart .appbar .back{
     top: 40%;
