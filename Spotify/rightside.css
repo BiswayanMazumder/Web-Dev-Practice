@@ -147,7 +147,7 @@
     border-radius: 5px;
 }
 
-.rightside .firstrightpart img {
+.rightside .firstrightpart .images {
     height: 200px;
     width: 200px;
     border-radius: 50%;
@@ -170,8 +170,8 @@
     position: relative;
     height: 24px;
     width: 24px;
-    top: 20%;
-    padding-left: 20%;
+    top: 28%;
+    padding-left: 30%;
 }
 
 .rightside .firstrightpart .pritam:hover {
