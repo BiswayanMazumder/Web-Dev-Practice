@@ -30,12 +30,12 @@
     /* border: 2px solid white; */
 }
 
-/* @media screen and (max-width:650px) {
+@media screen and (max-width:650px) {
     .container .firstrightpart {
         width: 250%;
         overflow: auto;
     }
-} */
+}
 
 @media screen and (max-width:650px) {
     .container .rightside .firstrightpart header {
