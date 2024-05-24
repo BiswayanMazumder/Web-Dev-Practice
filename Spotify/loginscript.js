@@ -15,6 +15,10 @@ let phonebutton=document.getElementById("PhoneLogin");
 phonebutton.addEventListener("click",function(){
     alert("Phone Login Started")
 })
+let loginbutton=document.getElementById("EmailLogin");
+loginbutton.addEventListener("click",function(){
+    alert("Email Login Started")
+})
 // let githubbutton=document.getElementById("GithubLogin");
 // githubbutton.addEventListener("click",function(){
 //     alert("Github Login Started")
