@@ -32,3 +32,17 @@ loginbutton.addEventListener("click",function(){
 // else{
 //     console.log("Email address found")
 // }
+// let prom1= new Promise((resolve,reject)=>{
+//     let number=Math.random()
+//     console.log(number)
+//     if(number>0.5){
+//         resolve(alert("Resolved"))
+//     }else{
+//         reject(alert("Rejected"));
+//     }
+// })
+// prom1.then(
+//     console.log("Success")
+// ).catch((err)=>{
+//     console.log(err)
+// })
