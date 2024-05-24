@@ -15,7 +15,16 @@ let phonebutton=document.getElementById("PhoneLogin");
 phonebutton.addEventListener("click",function(){
     alert("Phone Login Started")
 })
-let githubbutton=document.getElementById("GithubLogin");
-githubbutton.addEventListener("click",function(){
-    alert("Github Login Started")
-})
+// let githubbutton=document.getElementById("GithubLogin");
+// githubbutton.addEventListener("click",function(){
+//     alert("Github Login Started")
+// })
+// let emailaddress=document.getElementById("email");
+// if(emailaddress==null){
+//     console.log("Email address not found")
+//     document.querySelector(".glogin").innerHTML+=" <div style='color: red;font-size: 14px;font-weight: 400;'>Please enter your Spotify username or email address.</div>"
+//     console.log(document.querySelector(".glogin").innerHTML)
+// }
+// else{
+//     console.log("Email address found")
+// }
