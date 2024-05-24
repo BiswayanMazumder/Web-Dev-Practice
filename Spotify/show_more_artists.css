@@ -1,0 +1,68 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color: black;
+    font-family: sans-serif;
+}
+.container{
+    margin: 10px;
+    overflow-y: scroll;
+    /* margin-right: 10px; */
+    background-color: #1e1e1e;
+    height: 98vh;
+    width:auto;
+    border-radius: 10px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+.container .appbar{
+    background-color: #111111;
+    height: 70px;
+    position: relative;
+    width: 100%;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+}
+.container .appbar .logo{
+    top: 30%;
+    left: 20px;
+    justify-content: center;
+    text-align: center;
+    position: absolute;
+}
+.container .popartists{
+    padding-left: 35px;
+    padding-top: 70px;
+    display: flex;
+    flex-direction: row;
+    color:white;
+    font-size: 24px;
+    font-weight: 700;
+    font-family: sans-serif;
+}
+.container .aritists{
+    height: auto;
+    width:208px;
+    border-radius:5px;
+    /* background-color: blue; */
+    margin-top: 20px;
+    margin-left: 20px;
+
+}
+.container .aritists .Images{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    box-shadow: 2px 5px 5px #1e1e1e;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    position: relative;
+}
+.container .aritists:hover{
+    background-color: #222222;
+    box-shadow: 2px 2px 5px #1DB954;
+}

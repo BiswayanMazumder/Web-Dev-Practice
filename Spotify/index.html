@@ -12,11 +12,6 @@
 </head>
 
 <body>
-    <script>
-        document.addEventListener('contextmenu', function (event) {
-            event.preventDefault();
-        });
-    </script>
     <div class="container">
         <div class="leftside">
             <div class="firstpart">
@@ -114,13 +109,13 @@
                 </header>
                 <div class="popularartists" style="color: white; font-weight: 700; font-size: 24px;">
                     Popular Artists
-                    <div class="showall">
-                        <span class="showalltext"><a href="" class="showmore" style="text-decoration: none;">Show
-                                all</a></span>
+                    <div class="showall" id="PopularArtists">
+                        <span class="showalltext"><a href="Show_More_Artists.html" class="showmore" style="text-decoration: none;">Show
+                                all</span>
                     </div>
                 </div>
                 <br>
-                <div class="popartists" style="display: flex; flex-direction: row;">
+                <div class="popartists" style="display: flex; flex-direction: row; flex-wrap: wrap;">
                     <a href="https://open.spotify.com/playlist/37i9dQZF1E4wTBsBegbIu8" target="_blank" class="Pritam"
                         style="text-decoration: none;">
                         <div class="pritam">
@@ -289,13 +284,13 @@
                 </div>
                 <div class="popularartists" style="color: white; font-weight: 700; font-size: 24px;">
                     Popular Albums
-                    <div class="showall">
+                    <div class="showall" id="PopularAlbums">
                         <span class="showalltext"><a href="" class="showmore" style="text-decoration: none;">Show
                                 all</a></span>
                     </div>
                 </div>
                 <br>
-                <div class="popartists" style="display: flex; flex-direction: row;">
+                <div class="popartists" style="display: flex; flex-direction: row; flex-wrap: wrap;">
                     <a href="https://open.spotify.com/album/0a183xiCHiC1GQd8ou7WXO" target="_blank" class="Pritam"
                         style="text-decoration: none;">
                         <div class="pritam">
