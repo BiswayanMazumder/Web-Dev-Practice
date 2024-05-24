@@ -48,8 +48,9 @@ body{
     width:208px;
     border-radius:5px;
     /* background-color: blue; */
-    margin-top: 20px;
-    margin-left: 20px;
+    margin-top: 25px;
+    margin-left: 35px;
+    position: relative;
 
 }
 .container .aritists .Images{
@@ -65,4 +66,25 @@ body{
 .container .aritists:hover{
     background-color: #222222;
     box-shadow: 2px 2px 5px #1DB954;
+}
+.container .aritists .playbutton {
+    position: absolute;
+    z-index: 1;
+    background-color: #1DB954;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    margin-left: 69%;
+    top: 55%;
+    display: none;
+}
+.container .aritists .playbutton .Play_png {
+    position: relative;
+    height: 24px;
+    width: 24px;
+    top: 28%;
+    padding-left: 30%;
+}
+.container .aritists:hover .playbutton{
+    display: flex;
 }
