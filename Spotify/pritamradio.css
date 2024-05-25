@@ -8,6 +8,7 @@ body {
     color: white;
     overflow: scroll;
     overflow-x: hidden;
+    background-color: black;
 
     .appbar {
         background-color: #774747;
@@ -41,7 +42,7 @@ body {
     }
 
     .playdetails .playowner .owner {
-        font-size: 20px;
+        font-size: 50px;
         padding-left: 20px;
         top: 10px;
         position: relative;
@@ -56,6 +57,27 @@ body {
         }
     }
 
+    .playdetails .playowner  .ownernames {
+        position: relative;
+        padding-left: 20px;
+        font-weight: 700;
+        font-size: 14px;
+        color: grey;
+        padding-top: 5px;
+    }
+    
+    @media screen and (max-width:1000px) {
+        .playdetails .playowner .owner {
+            top: 28px;
+            position: relative;
+        }
+    }
+    @media screen and (max-width:1000px) {
+        .playdetails .playowner  .ownernames {
+            top: 55px;
+            position: relative;
+        }
+    }
     .songs {
         position: relative;
         height: 100vh;
@@ -80,14 +102,16 @@ body {
         position: relative;
         width: 65px;
     }
-    .songs .songscontrols .playbutton .Play_png{
+
+    .songs .songscontrols .playbutton .Play_png {
         position: relative;
-    height: 30px;
-    width: 30px;
-    top: 29%;
-    padding-left:30%;
+        height: 30px;
+        width: 30px;
+        top: 29%;
+        padding-left: 30%;
     }
-    .songs .songscontrols .playbutton:hover{
+
+    .songs .songscontrols .playbutton:hover {
         height: 68px;
         width: 68px;
         position: relative;
