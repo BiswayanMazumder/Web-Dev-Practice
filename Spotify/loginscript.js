@@ -1,5 +1,7 @@
 console.log("Login Page reached")
 let googlebutton=document.getElementById("GoogleLogin");
+let emailaddress=document.getElementById("emailaddress");
+let password=document.getElementById("Password");
 googlebutton.addEventListener("click",function(){
     alert("Google Login Started")
 })
@@ -17,21 +19,22 @@ phonebutton.addEventListener("click",function(){
 })
 let loginbutton=document.getElementById("EmailLogin");
 loginbutton.addEventListener("click",function(){
-    alert("Email Login Started")
+    // alert("Email Login Started")
+    if(emailaddress.value=="biswayanmazumder27@gmail.com" && password.value=="123456789"){
+        console.log("Email address  found")
+        // console.log(document.querySelector(".glogin").innerHTML)
+        window.location.href="loggedinpage.html"
+    }
+    else{
+        console.log("Email address not found")
+    }
 })
 // let githubbutton=document.getElementById("GithubLogin");
 // githubbutton.addEventListener("click",function(){
 //     alert("Github Login Started")
 // })
-// let emailaddress=document.getElementById("email");
-// if(emailaddress==null){
-//     console.log("Email address not found")
-//     document.querySelector(".glogin").innerHTML+=" <div style='color: red;font-size: 14px;font-weight: 400;'>Please enter your Spotify username or email address.</div>"
-//     console.log(document.querySelector(".glogin").innerHTML)
-// }
-// else{
-//     console.log("Email address found")
-// }
+
+
 // let prom1= new Promise((resolve,reject)=>{
 //     let number=Math.random()
 //     console.log(number)

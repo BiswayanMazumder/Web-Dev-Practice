@@ -1,0 +1,213 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container .leftside {
+    /* margin-top: 10px;
+    margin-left:10px;
+    background-color:#1E1E1E; */
+    border-radius: 5px;
+    height: 99.2vh;
+    width: 500px;
+    border: 2px solid black;
+    /* display: grid; */
+    position: relative;
+}
+
+.container .leftside .firstpart {
+    /* border: 2px solid green; */
+    height: 25%;
+    background-color: #121212;
+    margin-top: 10px;
+    margin-left: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+@media screen and (min-width:2000px) {
+    .container .leftside .firstpart {
+        height: 20%;
+        /* background-color: blue; */
+        margin-top: 10px;
+        margin-left: 10px;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+
+}
+
+
+.container .leftside .secondpart {
+    /* border: 2px solid green; */
+    height: 71.5%;
+    /* position: relative; */
+    margin-top: 10px;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    background-color: #121212;
+    border-radius: 5px;
+    position: relative;
+}
+
+@media screen and (min-width:2000px) {
+    .container .leftside .secondpart {
+        height: 77.4%;
+        margin-top: 10px;
+        margin-left: 10px;
+        margin-bottom: 15px;
+        background-color: #121212;
+        border-radius: 5px;
+    }
+}
+
+.container .leftside .firstpart .Logo {
+    position: relative;
+    top: 20px;
+    padding-left: 20px;
+}
+
+.container .firstpart .searchicon {
+    position: relative;
+    display: flex;
+    top: 45%;
+    color: grey;
+    font-weight: 700;
+    font-size: 16px;
+    padding-left: 20px;
+}
+
+@media screen and (min-width:2000px) {
+    .container .firstpart .searchicon {
+        position: relative;
+        top: 50%;
+        padding-left: 20px;
+    }
+}
+
+.container .firstpart .home {
+    position: relative;
+    display: flex;
+    top: 25%;
+    color: white;
+    font-weight: 700;
+    font-size: 16px;
+    padding-left: 20px;
+}
+
+.container .firstpart .searchicon:hover {
+    color: white;
+}
+
+@media screen and (min-width:2000px) {
+    .container .firstpart .home {
+        position: relative;
+        top: 28%;
+        padding-left: 20px;
+    }
+}
+
+.container .secondpart .library {
+    position: relative;
+    display: flex;
+    top: 6%;
+    color: grey;
+    font-weight: 700;
+    font-size: 16px;
+    padding-left: 20px;
+    text-decoration: none;
+}
+
+.container .secondpart .library:hover {
+    color: white;
+}
+
+.container .secondpart .playlists {
+    top: 12%;
+    height: 150px;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: #242424;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+}
+
+.container .secondpart .playlists .Playlist_text {
+    color: white;
+    font-weight: 700;
+    top: 10%;
+    position: relative;
+    padding-left: 5%;
+}
+
+@media screen and (max-width:620px) {
+    .container .secondpart .playlists .Playlist_text {
+        font-size: 14px;
+    }
+
+}
+
+.container .secondpart .playlists .playlist_subtext {
+    color: white;
+    font-weight: 400;
+    top: 18%;
+    font-weight: 14px;
+    position: relative;
+    padding-left: 5%;
+}
+
+@media screen and (max-width:620px) {
+    .container .secondpart .playlists .playlist_subtext {
+        font-size: 12px;
+    }
+
+}
+
+.container .secondpart .playlists .button {
+    position: relative;
+    top: 30%;
+    padding-left: 5%;
+
+
+}
+
+.container .secondpart .playlists .button .getplaylist {
+    background-color: white;
+    color: #000000;
+    font-weight: 700;
+    font-size: 14px;
+    position: relative;
+    /* top: 90%; */
+    justify-content: center;
+    text-align: center;
+    width: 150px;
+    height: 35px;
+    border-radius: 20px;
+    border: 1px solid white;
+}
+
+.container .secondpart .playlists .button .getplaylist:hover {
+    box-shadow: 2px 2px 5px #1DB954;
+}
+
+.container .leftside .secondpart .options {
+    margin-top: auto;
+    /* This pushes the element to the bottom */
+    height: auto;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    background-color: #121212;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+    padding-bottom: 50px;
+}
