@@ -12,7 +12,8 @@ body {
 
     .appbar {
         background-color: #774747;
-        width: auto;
+        width: 100vw;
+        position: relative;
         height: 80px;
     }
 
@@ -27,7 +28,7 @@ body {
         position: relative;
         background-color: #5C3737;
         width: auto;
-        height: 230px;
+        height: 300px;
         display: flex;
         flex-direction: row;
         padding-top: 20px;
@@ -52,7 +53,7 @@ body {
     @media screen and (min-width:1000px) {
         .playdetails .playowner .owner {
             font-size: 96px;
-            top: 2px;
+            top: 10px;
             position: relative;
         }
     }
@@ -63,12 +64,12 @@ body {
         font-weight: 700;
         font-size: 14px;
         color: grey;
-        padding-top: 5px;
+        padding-top: 30px;
     }
     
     @media screen and (max-width:1000px) {
         .playdetails .playowner .owner {
-            top: 28px;
+            top: 40px;
             position: relative;
         }
     }
