@@ -8,7 +8,7 @@ body {
     color: white;
     overflow: scroll;
     overflow-x: hidden;
-    background-color: black;
+    background-color: #5C3737;
 
     .appbar {
         background-color: #774747;
