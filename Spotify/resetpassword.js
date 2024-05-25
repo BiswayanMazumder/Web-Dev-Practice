@@ -9,10 +9,7 @@ reset.addEventListener("click", function () {
         EmailAddress.style.border = "1px solid gray"
     } else {
         console.log("Email not found")
-        EmailAddress.style.border = "2px solid red"
-        isadded?hii:document.querySelector(".textfield").innerHTML+="<div class='error' style='color: red;font-size: 15px;font-weight: 500;position: relative;text-align: start;justify-content: start;'>This field is required</div>"
-        isadded=true
-
+        EmailAddress.style.border = "2px solid red"    
     }
 })
 
