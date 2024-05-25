@@ -6,10 +6,12 @@
 body {
     font-family: sans-serif;
     color: white;
+    overflow: scroll;
+    overflow-x: hidden;
 
     .appbar {
         background-color: #774747;
-        width: 100%;
+        width: auto;
         height: 80px;
     }
 
@@ -63,7 +65,7 @@ body {
 
     .songs .songscontrols {
         height: 100px;
-        width: 100%;
+        width: auto;
         position: relative;
         display: flex;
         flex-direction: row;
