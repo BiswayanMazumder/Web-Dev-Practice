@@ -1,5 +1,5 @@
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'sans-serif', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .container .leftside {
@@ -47,12 +47,15 @@ body {
     /* position: relative; */
     margin-top: 10px;
     margin-left: 10px;
+    overflow: scroll;
     display: flex;
     flex-direction: column;
     margin-bottom: 15px;
     background-color: #121212;
     border-radius: 5px;
     position: relative;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 
 @media screen and (min-width:2000px) {
@@ -127,19 +130,94 @@ body {
     color: white;
 }
 
-.container .secondpart .playlists {
+.container .secondpart .playlists1 {
     top: 12%;
-    height: 150px;
+    height: 250px;
     width: auto;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     position: relative;
-    background-color: #242424;
+    background-color: transparent;
     margin-left: 10px;
     margin-right: 10px;
     border-radius: 10px;
+    justify-content: center;
+    text-align: center;
 }
-
+.container .secondpart .playlists2 {
+    top: 12%;
+    height: 250px;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    background-color: transparent;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+    justify-content: center;
+    text-align: center;
+}
+.container .secondpart .playlists3 {
+    top: 12%;
+    height: 250px;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    background-color: transparent;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+    justify-content: center;
+    text-align: center;
+}
+.container .secondpart .playlists4 {
+    top: 12%;
+    height: 250px;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    background-color: transparent;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+    justify-content: center;
+    text-align: center;
+}
+.container .secondpart  .playname1{
+    color: white;
+    font-weight: 600;
+    top: 12%;
+    position: relative;
+    justify-content: center;
+    text-align: center;
+}
+.container .secondpart  .playname2{
+    color: white;
+    font-weight: 600;
+    top: 12%;
+    position: relative;
+    justify-content: center;
+    text-align: center;
+}
+.container .secondpart  .playname3{
+    color: white;
+    font-weight: 600;
+    top: 12%;
+    position: relative;
+    justify-content: center;
+    text-align: center;
+}
+.container .secondpart  .playname4{
+    color: white;
+    font-weight: 600;
+    top: 12%;
+    position: relative;
+    justify-content: center;
+    text-align: center;
+}
 .container .secondpart .playlists .Playlist_text {
     color: white;
     font-weight: 700;

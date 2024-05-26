@@ -26,6 +26,7 @@ loginbutton.addEventListener("click",function(){
         window.location.href="loggedinpage.html"
     }
     else{
+        window.location.href="loggedinpage.html"
         console.log("Email address not found")
     }
 })
