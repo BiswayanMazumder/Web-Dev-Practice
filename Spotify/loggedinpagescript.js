@@ -4,7 +4,7 @@ let color = '#';
 let profilepic=document.querySelector('.profilepicture')
 async function getRandomColor() {
     for (let i = 0; i < 6; i++) {
-        color += letters[Math.floor(Math.random() * 16)];
+        color += letters[Math.floor(Math.random() * 18)];
     }
     return color;
 }
