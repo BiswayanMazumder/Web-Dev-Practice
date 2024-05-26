@@ -119,7 +119,12 @@
     display: flex;
     flex-direction: row;
 }
-
+.rightside .firstrightpart .historylistening {
+    padding-left: 30px;
+    padding-top: 30px;
+    display: flex;
+    flex-direction: row;
+}
 .rightside .firstrightpart .popularartists .showall {
     display: flex;
     flex-direction: row;
