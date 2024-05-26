@@ -26,7 +26,7 @@ body {
 
     .playdetails {
         position: relative;
-        background-color: #5C3737;
+        background:linear-gradient(to bottom, black, #5C3737);
         width: auto;
         height: 300px;
         display: flex;
@@ -84,8 +84,7 @@ body {
     .songs {
         position: relative;
         height: 100vh;
-        background-color: #332020;
-
+        background: linear-gradient(to bottom, #332020, #5C3737, black);
     }
 
     .songs .songscontrols {
