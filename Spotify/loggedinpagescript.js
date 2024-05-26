@@ -130,3 +130,52 @@ getplaylistname1();
 getplaylistname2();
 getplaylistname3();
 getplaylistname4();
+let firstpart=document.querySelector('.firstrightpart')
+listeninghistory1.addEventListener('mouseover',function(){
+    firstpart.style.background='linear-gradient(to bottom, #28282E, black)'
+})
+listeninghistory1.addEventListener('mouseout',function(){
+    firstpart.style.background='linear-gradient(to bottom, #24333E, black)'
+})
+listeninghistory2.addEventListener('mouseover',function(){
+    firstpart.style.background='linear-gradient(to bottom, #530C06, black)'
+})
+listeninghistory2.addEventListener('mouseout',function(){
+    firstpart.style.background='linear-gradient(to bottom, #24333E, black)'
+})
+listeninghistory3.addEventListener('mouseover',function(){
+    firstpart.style.background='linear-gradient(to bottom, #26455E, black)'
+})
+listeninghistory3.addEventListener('mouseout',function(){
+    firstpart.style.background='linear-gradient(to bottom, #24333E, black)'
+})
+listeninghistory4.addEventListener('mouseover',function(){
+    firstpart.style.background='linear-gradient(to bottom, #025802, black)'
+})
+listeninghistory4.addEventListener('mouseout',function(){
+    firstpart.style.background='linear-gradient(to bottom, #24333E, black)'
+})
+listeninghistory5.addEventListener('mouseover',function(){
+    firstpart.style.background='linear-gradient(to bottom, #411411, black)'
+})
+listeninghistory5.addEventListener('mouseout',function(){
+    firstpart.style.background='linear-gradient(to bottom, #24333E, black)'
+})
+listeninghistory6.addEventListener('mouseover',function(){
+    firstpart.style.background='linear-gradient(to bottom, #411411, black)'
+})
+listeninghistory6.addEventListener('mouseout',function(){
+    firstpart.style.background='linear-gradient(to bottom, #24333E, black)'
+})
+listeninghistory7.addEventListener('mouseover',function(){
+    firstpart.style.background='linear-gradient(to bottom, #1A202F, black)'
+})
+listeninghistory7.addEventListener('mouseout',function(){
+    firstpart.style.background='linear-gradient(to bottom, #24333E, black)'
+})
+listeninghistory8.addEventListener('mouseover',function(){
+    firstpart.style.background='linear-gradient(to bottom, #3A363F, black)'
+})
+listeninghistory8.addEventListener('mouseout',function(){
+    firstpart.style.background='linear-gradient(to bottom, #24333E, black)'
+})

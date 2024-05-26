@@ -17,7 +17,7 @@
 .container .firstrightpart {
     height: 98%;
     overflow: hidden;
-    background-color: #24313B;
+    background: linear-gradient(to bottom, #24333E, black);
     width: auto;
     /* margin: 10px; */
     margin-top: 12px;
@@ -45,7 +45,7 @@
 }
 
 .rightside .firstrightpart .appbar {
-    background-color: #24313B;
+    background-color: transparent;
     height: 70px;
     position: relative;
     width: 100%;
@@ -230,7 +230,7 @@
 }
 .rightside .firstrightpart .history:hover{
     background-color: #32292A;
-    border: 0.3px solid #1DB954;
+    /* border: 0.3px solid #1DB954; */
 }
 .rightside .firstrightpart .history .singername{
     color: white;
