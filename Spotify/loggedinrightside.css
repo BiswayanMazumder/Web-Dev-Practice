@@ -207,3 +207,36 @@
     display: flex;
     
 }
+.listeningdetails{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: relative;
+    justify-content: start;
+    text-align: start;
+}
+.rightside .firstrightpart .history{
+    background-color: #222222;
+    border-radius: 5px;
+    margin-left: 13px;
+    /* margin-top: 10px; */
+    margin-bottom: 10px;
+    padding-left: 1px;
+    height: 50px;
+    width:232px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.rightside .firstrightpart .history:hover{
+    background-color: #32292A;
+    border: 0.3px solid #1DB954;
+}
+.rightside .firstrightpart .history .singername{
+    color: white;
+    position: relative;
+    top: 14px;
+    font-weight: 700;
+    font-size: 14px;
+    padding-left: 10px;
+}
