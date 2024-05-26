@@ -8,6 +8,65 @@
     <link rel="stylesheet" href="musicplayer.css">
 </head>
 <body>
+    <div class="container">
+        <div class="headers" style="position: relative;justify-content: space-between;display: flex;flex-direction: row;">
+            <div class="backbutton" style="height: 40px;width: 40px;border-radius: 50%;background-color:transparent;position: relative;left: 10px;top: 30px;border: 0.2px solid white;">
+                <div class="back" style="top: 12px;position: relative;left: 3px;">
+                    <a href="index.html" class="back" style="text-decoration: none;">
+                        <svg data-encore-id="icon" role="img" aria-hidden="true" height="24" width="24"
+                            viewBox="0 0 24 24" class="Svg-sc-ytk21e-0 cAMMLk IYDlXmBmmUKHveMzIPCF"
+                            viewBox="0 0 16 16">
+                            <path
+                                d="M11.03.47a.75.75 0 0 1 0 1.06L4.56 8l6.47 6.47a.75.75 0 1 1-1.06 1.06L2.44 8 9.97.47a.75.75 0 0 1 1.06 0z"
+                                fill="white"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+           <div class="texts" style="position: relative;top: 40px;font-size: 20px;font-family: sans-serif;font-weight: 700;">Now Playing</div>
+            <div class="backbutton" style="height: 40px;width: 40px;border-radius: 50%;background-color:transparent;position: relative;right: 10px;top: 30px;border: 0.2px solid white;">
+                <div class="back" style="top: 12px;position: relative;left: 3px;">
+                    <a href="" class="back" style="text-decoration: none;">
+                        <svg data-encore-id="icon" role="img" aria-hidden="true" height="24" width="24"
+                            viewBox="0 0 24 24" class="Svg-sc-ytk21e-0 cAMMLk IYDlXmBmmUKHveMzIPCF"
+                            viewBox="0 0 16 16">
+                            <path
+                                d="M4.97.47a.75.75 0 0 0 0 1.06L11.44 8l-6.47 6.47a.75.75 0 1 0 1.06 1.06L13.56 8 6.03.47a.75.75 0 0 0-1.06 0z"
+                                fill="white"></path>
+                        </svg>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+        <div class="songdetails">
+            <div class="songtype" style="font-weight: 500;font-family: sans-serif;font-size: 18px;">
+                Album</div>
+                <br><br>
+                <div class="songname" style="font-weight: 800;font-family: sans-serif;font-size: 30px;">
+                    Subhanallah</div>
+                    <br><br>
+                    <div class="songtype" style="font-weight: 500;font-family: sans-serif;font-size: 18px;">
+                        Pritam . 2011</div>
+                    <div class="singer">
+                        <img src="https://seeded-session-images.scdn.co/v2/img/540/r/artist/1wRPtKGflJrBx9BmLsSwlU/en-GB"
+            alt="Pritam Image" class="playimage"
+            style="height: 200px;position: relative; width: 200px;position: relative;top: 50px;border-radius: 50%;">
+                    </div>
+        </div>
+        <nav class="bottom-nav">
+            <a href="#previous" class="nav-prev">
+                <svg data-encore-id="icon" role="img" aria-hidden="true" height="24" width="24" viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 dYnaPI"><path d="M3.3 1a.7.7 0 0 1 .7.7v5.15l9.95-5.744a.7.7 0 0 1 1.05.606v12.575a.7.7 0 0 1-1.05.607L4 9.149V14.3a.7.7 0 0 1-.7.7H1.7a.7.7 0 0 1-.7-.7V1.7a.7.7 0 0 1 .7-.7h1.6z" fill="#681FFF"></path></svg>
+            </a>
+            <a href="#play" class="nav-play">
+                <svg data-encore-id="icon" role="img" aria-hidden="true" height="24" width="24" viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 dYnaPI"><path d="M2.7 1a.7.7 0 0 0-.7.7v12.6a.7.7 0 0 0 .7.7h2.6a.7.7 0 0 0 .7-.7V1.7a.7.7 0 0 0-.7-.7H2.7zm8 0a.7.7 0 0 0-.7.7v12.6a.7.7 0 0 0 .7.7h2.6a.7.7 0 0 0 .7-.7V1.7a.7.7 0 0 0-.7-.7h-2.6z" fill="#681FFF"></path></svg>
+            </a>
+            <a href="#next" class="nav-forward">
+                <svg data-encore-id="icon" role="img" aria-hidden="true" height="24" width="24" viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 dYnaPI"><path d="M12.7 1a.7.7 0 0 0-.7.7v5.15L2.05 1.107A.7.7 0 0 0 1 1.712v12.575a.7.7 0 0 0 1.05.607L12 9.149V14.3a.7.7 0 0 0 .7.7h1.6a.7.7 0 0 0 .7-.7V1.7a.7.7 0 0 0-.7-.7h-1.6z" fill="#681FFF"></path></svg>
+            </a>
+        </nav>
+        
+    </div>
     <script src="musicplayer.js"></script>
 </body>
 </html>
