@@ -11,6 +11,7 @@ let listeninghistory5 = document.querySelector('#history5')
 let listeninghistory6 = document.querySelector('#history6')
 let listeninghistory7 = document.querySelector('#history7')
 let listeninghistory8 = document.querySelector('#history8')
+let placetoinsert=document.querySelector('.container')
 async function getRandomColor() {
     for (let i = 0; i < 6; i++) {
         color += letters[Math.floor(Math.random() * 18)];
@@ -40,24 +41,38 @@ async function main() {
     rightside.style.backgroundColor = color;
 }
 main();
-let names = 'Leo';
-let images = 'https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO3iW9AR-default.jpg';
-listeninghistory1.innerHTML += `<img src="https://i.scdn.co/image/ab67616100005174debeea13700496b7d2b345d9" alt="Krsna" class="krsna" height="50px" style="border-radius: 5px;">`
-listeninghistory2.innerHTML += `<img src="https://i.scdn.co/image/ab67616d00001e02d045f5b403653ae1d59e46bb" alt="Krsna" class="krsna" height="50px" style="border-radius: 5px;">`
-listeninghistory3.innerHTML += `<img src="https://i.scdn.co/image/ab67616d00001e02d5bf86c4e1fd46800b122641" alt="Krsna" class="krsna" height="50px" style="border-radius: 5px;">`
-listeninghistory4.innerHTML += `<img src="https://i.scdn.co/image/ab67706f0000000207714ab1ffa0044de5633c9f" alt="Krsna" class="krsna" height="50px" style="border-radius: 5px;">`
-listeninghistory5.innerHTML += `<img src="https://i.scdn.co/image/ab67616d00001e023bf0683f6ac36cc954339d03" alt="Krsna" class="krsna" height="50px" style="border-radius: 5px;">`
-listeninghistory6.innerHTML += `<img src="${images}" alt="Krsna" class="krsna" height="50px" style="border-radius: 5px;">`
-listeninghistory7.innerHTML += `<img src="https://i.scdn.co/image/ab67706f0000000233fab13281f6d0d067511882" alt="Krsna" class="krsna" height="50px" style="border-radius: 5px;">`
-listeninghistory8.innerHTML += `<img src="https://dailymix-images.scdn.co/v2/img/ab6761610000e5ebeddbb664c4723f268a60d8c1/1/en/default" alt="Krsna" class="krsna" height="50px" style="border-radius: 5px;">`
-listeninghistory1.innerHTML += `<div class="singername">KR$NA</div>`
-listeninghistory2.innerHTML += `<div class="singername">Joota Japani</div>`
-listeninghistory3.innerHTML += `<div class="singername">True Stories</div>`
-listeninghistory4.innerHTML += `<div class="singername">Trending Songs India</div>`
-listeninghistory5.innerHTML += `<div class="singername">${names}</div>`
-listeninghistory6.innerHTML += `<div class="singername">This is KR$NA</div>`
-listeninghistory7.innerHTML += `<div class="singername">This is Parmish Verma</div>`
-listeninghistory8.innerHTML += `<div class="singername">Daily Mix #1</div>`
+let name5 = 'Leo';
+let images1='https://i.scdn.co/image/ab67616100005174debeea13700496b7d2b345d9'
+let images2='https://i.scdn.co/image/ab67616d00001e02d045f5b403653ae1d59e46bb'
+let images3='https://i.scdn.co/image/ab67616d00001e02d5bf86c4e1fd46800b122641'
+let images4='https://i.scdn.co/image/ab67706f0000000207714ab1ffa0044de5633c9f'
+let images5='https://i.scdn.co/image/ab67616d00001e023bf0683f6ac36cc954339d03'
+let images6 = 'https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO3iW9AR-default.jpg'
+let images7='https://i.scdn.co/image/ab67706f0000000233fab13281f6d0d067511882'
+let images8='https://dailymix-images.scdn.co/v2/img/ab6761610000e5ebeddbb664c4723f268a60d8c1/1/en/default'
+listeninghistory1.innerHTML += `<img src=${images1} alt="Krsna" class="krsna" height="50px" style="border-radius: 5px;">`
+listeninghistory2.innerHTML += `<img src=${images2} alt="Krsna" class="krsna" height="50px" style="border-radius: 5px;">`
+listeninghistory3.innerHTML += `<img src=${images3} alt="Krsna" class="krsna" height="50px" style="border-radius: 5px;">`
+listeninghistory4.innerHTML += `<img src=${images4} alt="Krsna" class="krsna" height="50px" style="border-radius: 5px;">`
+listeninghistory5.innerHTML += `<img src=${images5} alt="Krsna" class="krsna" height="50px" style="border-radius: 5px;">`
+listeninghistory6.innerHTML += `<img src="${images6}" alt="Krsna" class="krsna" height="50px" style="border-radius: 5px;">`
+listeninghistory7.innerHTML += `<img src=${images7} alt="Krsna" class="krsna" height="50px" style="border-radius: 5px;">`
+listeninghistory8.innerHTML += `<img src=${images8} alt="Krsna" class="krsna" height="50px" style="border-radius: 5px;">`
+let name1='KR$NA'
+let name2='Joota Japani'
+let name3='True Stories'
+let name4='Trending Songs India'
+let name6='This is KR$NA'
+let name7='This is Parmish Verma'
+let name8='Daily Mix #1'
+listeninghistory1.innerHTML += `<div class="singername">${name1}</div>`
+listeninghistory2.innerHTML += `<div class="singername">${name2}</div>`
+listeninghistory3.innerHTML += `<div class="singername">${name3}</div>`
+listeninghistory4.innerHTML += `<div class="singername">${name4}</div>`
+listeninghistory5.innerHTML += `<div class="singername">${name5}</div>`
+listeninghistory6.innerHTML += `<div class="singername">${name6}</div>`
+listeninghistory7.innerHTML += `<div class="singername">${name7}</div>`
+listeninghistory8.innerHTML += `<div class="singername">${name8}</div>`
 try {
     profilepic.innerHTML += '<img src="favicon.ico" alt="ProfilePicture" class="profilepicture" height="20px" width="20px" style="position: relative;justify-content: center;text-align: center;top: 22%;left: 22%;border-radius: 50%;">'
 } catch (error) {
@@ -139,6 +154,27 @@ let firstpart = document.querySelector('.firstrightpart')
 listeninghistory1.addEventListener('mouseover', function () {
     firstpart.style.background = 'linear-gradient(to bottom, #28282E, black)'
 })
+listeninghistory2.addEventListener('click', function () {
+    changeImageAndName(images2,name2)
+})
+listeninghistory3.addEventListener('click', function () {
+    changeImageAndName(images3,name3)
+})
+listeninghistory4.addEventListener('click', function () {
+    changeImageAndName(images4,name4)
+})
+listeninghistory5.addEventListener('click', function () {
+    changeImageAndName(images5,name5)
+})
+listeninghistory6.addEventListener('click', function () {
+    changeImageAndName(images6,name6)
+})
+listeninghistory7.addEventListener('click', function () {
+    changeImageAndName(images7,name7)
+})
+listeninghistory8.addEventListener('click', function () {
+    changeImageAndName(images8,name8)
+})
 listeninghistory1.addEventListener('mouseout', function () {
     firstpart.style.background = 'linear-gradient(to bottom, #24333E, black)'
 })
@@ -184,13 +220,56 @@ listeninghistory8.addEventListener('mouseover', function () {
 listeninghistory8.addEventListener('mouseout', function () {
     firstpart.style.background = 'linear-gradient(to bottom, #24333E, black)'
 })
-// listeninghistory1.addEventListener('mouseover', function () {
-//     listeninghistory1.innerHTML += `<div class="equaliser" style="position: relative; left:85%;top: 30%;">
-//     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
-//         <path class="bar" d="M3.99902 14H5.99902V0H3.99902V14Z" fill="#1DB954"/>
-//         <path class="bar" d="M-0.000976562 14H1.99902V4H-0.000976562V14Z" fill="#1DB954"/>
-//         <path class="bar" d="M12 7V14H14V7H12Z" fill="#1DB954"/>
-//         <path class="bar" d="M8.00002 14H10V10H8.00002V14Z" fill="#1DB954"/>
-//     </svg>
-// </div>`
-// })
+let navigationbar=document.querySelector('.bottom-nav')
+function changeImageAndName(imageSrc, name){
+    navigationbar.innerHTML+=`<div class="songname"
+    style="position: relative;justify-content: start;text-align: start;display: flex;flex-direction: row;">
+    <img src=${imageSrc} alt="Krsna" class="krsna"
+        height="50px" style="border-radius: 5px;padding-left: 5px;top: 10px;position: relative;">
+    <div class="songname"
+        style="color: white;margin-left: 10px;position: relative;top: 15px;font-size: 14px;font-weight: 600;display: flex;flex-direction: column;font-family: sans-serif;">
+        ${name}
+        <div class="singername"
+            style="color: gray;position: relative;top: 10px;font-size: 10px;font-weight: 600;display: flex;flex-direction: column;font-family: sans-serif;">
+            KR$NA, Raftaar
+        </div>
+    </div>
+</div>
+<div class="controls"
+    style="position: absolute;justify-content: center;text-align: center;left: 50%;top: 10px;display: flex;flex-direction: column;">
+    <div class="navigation">
+        <a href="#previous" class="nav-prev"
+            style="position: relative;top: 5px;padding-right: 10px;text-decoration: none;">
+            <svg data-encore-id="icon" role="img" aria-hidden="true" height="16" width="16"
+                viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 dYnaPI">
+                <path
+                    d="M3.3 1a.7.7 0 0 1 .7.7v5.15l9.95-5.744a.7.7 0 0 1 1.05.606v12.575a.7.7 0 0 1-1.05.607L4 9.149V14.3a.7.7 0 0 1-.7.7H1.7a.7.7 0 0 1-.7-.7V1.7a.7.7 0 0 1 .7-.7h1.6z"
+                    fill="grey"></path>
+            </svg>
+        </a>
+        <a href="#play" class="nav-play" style="position: relative;top: 5px;text-decoration: none;">
+            <svg data-encore-id="icon" role="img" aria-hidden="true" height="16" width="16"
+                viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 dYnaPI">
+                <path
+                    d="M2.7 1a.7.7 0 0 0-.7.7v12.6a.7.7 0 0 0 .7.7h2.6a.7.7 0 0 0 .7-.7V1.7a.7.7 0 0 0-.7-.7H2.7zm8 0a.7.7 0 0 0-.7.7v12.6a.7.7 0 0 0 .7.7h2.6a.7.7 0 0 0 .7-.7V1.7a.7.7 0 0 0-.7-.7h-2.6z"
+                    fill="white"></path>
+            </svg>
+        </a>
+        <a href="#next" class="nav-forward"
+            style="position: relative;top: 5px;position: relative;top: 5px;padding-left: 10px;text-decoration: none;">
+            <svg data-encore-id="icon" role="img" aria-hidden="true" height="16" width="16"
+                viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 dYnaPI">
+                <path
+                    d="M12.7 1a.7.7 0 0 0-.7.7v5.15L2.05 1.107A.7.7 0 0 0 1 1.712v12.575a.7.7 0 0 0 1.05.607L12 9.149V14.3a.7.7 0 0 0 .7.7h1.6a.7.7 0 0 0 .7-.7V1.7a.7.7 0 0 0-.7-.7h-1.6z"
+                    fill="grey"></path>
+            </svg>
+        </a>
+    </div>
+    <div class="slider" style="position: relative;top: 10px;display: flex;flex-direction: row;">
+    <div class="inititaltimer" style="color: gray;font-size: 12px;font-weight: 500;padding-right: 10px;">00:00</div>
+    <input type="range" min="0" max="100" value="0" id="volumeSlider">
+    <div class="endingtimer" style="color: gray;font-size: 12px;font-weight: 500;padding-left: 10px;">4:15</div>
+    </div>
+</div>
+<br><br><br>`
+}
