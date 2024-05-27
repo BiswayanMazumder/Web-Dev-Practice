@@ -11,7 +11,7 @@ let listeninghistory5 = document.querySelector('#history5')
 let listeninghistory6 = document.querySelector('#history6')
 let listeninghistory7 = document.querySelector('#history7')
 let listeninghistory8 = document.querySelector('#history8')
-let placetoinsert=document.querySelector('.container')
+let placetoinsert = document.querySelector('.container')
 async function getRandomColor() {
     for (let i = 0; i < 6; i++) {
         color += letters[Math.floor(Math.random() * 18)];
@@ -42,14 +42,14 @@ async function main() {
 }
 main();
 let name5 = 'Leo';
-let images1='https://i.scdn.co/image/ab67616100005174debeea13700496b7d2b345d9'
-let images2='https://i.scdn.co/image/ab67616d00001e02d045f5b403653ae1d59e46bb'
-let images3='https://i.scdn.co/image/ab67616d00001e02d5bf86c4e1fd46800b122641'
-let images4='https://i.scdn.co/image/ab67706f0000000207714ab1ffa0044de5633c9f'
-let images5='https://i.scdn.co/image/ab67616d00001e023bf0683f6ac36cc954339d03'
+let images1 = 'https://i.scdn.co/image/ab67616100005174debeea13700496b7d2b345d9'
+let images2 = 'https://i.scdn.co/image/ab67616d00001e02d045f5b403653ae1d59e46bb'
+let images3 = 'https://i.scdn.co/image/ab67616d00001e02d5bf86c4e1fd46800b122641'
+let images4 = 'https://i.scdn.co/image/ab67706f0000000207714ab1ffa0044de5633c9f'
+let images5 = 'https://i.scdn.co/image/ab67616d00001e023bf0683f6ac36cc954339d03'
 let images6 = 'https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO3iW9AR-default.jpg'
-let images7='https://i.scdn.co/image/ab67706f0000000233fab13281f6d0d067511882'
-let images8='https://dailymix-images.scdn.co/v2/img/ab6761610000e5ebeddbb664c4723f268a60d8c1/1/en/default'
+let images7 = 'https://i.scdn.co/image/ab67706f0000000233fab13281f6d0d067511882'
+let images8 = 'https://dailymix-images.scdn.co/v2/img/ab6761610000e5ebeddbb664c4723f268a60d8c1/1/en/default'
 listeninghistory1.innerHTML += `<img src=${images1} alt="Krsna" class="krsna" height="50px" style="border-radius: 5px;">`
 listeninghistory2.innerHTML += `<img src=${images2} alt="Krsna" class="krsna" height="50px" style="border-radius: 5px;">`
 listeninghistory3.innerHTML += `<img src=${images3} alt="Krsna" class="krsna" height="50px" style="border-radius: 5px;">`
@@ -58,13 +58,13 @@ listeninghistory5.innerHTML += `<img src=${images5} alt="Krsna" class="krsna" he
 listeninghistory6.innerHTML += `<img src="${images6}" alt="Krsna" class="krsna" height="50px" style="border-radius: 5px;">`
 listeninghistory7.innerHTML += `<img src=${images7} alt="Krsna" class="krsna" height="50px" style="border-radius: 5px;">`
 listeninghistory8.innerHTML += `<img src=${images8} alt="Krsna" class="krsna" height="50px" style="border-radius: 5px;">`
-let name1='KR$NA'
-let name2='Joota Japani'
-let name3='True Stories'
-let name4='Trending Songs India'
-let name6='This is KR$NA'
-let name7='This is Parmish Verma'
-let name8='Daily Mix #1'
+let name1 = 'KR$NA'
+let name2 = 'Joota Japani'
+let name3 = 'True Stories'
+let name4 = 'Trending Songs India'
+let name6 = 'This is KR$NA'
+let name7 = 'This is Parmish Verma'
+let name8 = 'Daily Mix #1'
 listeninghistory1.innerHTML += `<div class="singername">${name1}</div>`
 listeninghistory2.innerHTML += `<div class="singername">${name2}</div>`
 listeninghistory3.innerHTML += `<div class="singername">${name3}</div>`
@@ -155,25 +155,25 @@ listeninghistory1.addEventListener('mouseover', function () {
     firstpart.style.background = 'linear-gradient(to bottom, #28282E, black)'
 })
 listeninghistory2.addEventListener('click', function () {
-    changeImageAndName(images2,name2)
+    changeImageAndName(images2, name2)
 })
 listeninghistory3.addEventListener('click', function () {
-    changeImageAndName(images3,name3)
+    changeImageAndName(images3, name3)
 })
 listeninghistory4.addEventListener('click', function () {
-    changeImageAndName(images4,name4)
+    changeImageAndName(images4, name4)
 })
 listeninghistory5.addEventListener('click', function () {
-    changeImageAndName(images5,name5)
+    changeImageAndName(images5, name5)
 })
 listeninghistory6.addEventListener('click', function () {
-    changeImageAndName(images6,name6)
+    changeImageAndName(images6, name6)
 })
 listeninghistory7.addEventListener('click', function () {
-    changeImageAndName(images7,name7)
+    changeImageAndName(images7, name7)
 })
 listeninghistory8.addEventListener('click', function () {
-    changeImageAndName(images8,name8)
+    changeImageAndName(images8, name8)
 })
 listeninghistory1.addEventListener('mouseout', function () {
     firstpart.style.background = 'linear-gradient(to bottom, #24333E, black)'
@@ -220,7 +220,7 @@ listeninghistory8.addEventListener('mouseover', function () {
 listeninghistory8.addEventListener('mouseout', function () {
     firstpart.style.background = 'linear-gradient(to bottom, #24333E, black)'
 })
-let navigationbar=document.querySelector('.bottom-nav')
+let navigationbar = document.querySelector('.bottom-nav')
 // function changeImageAndName(imageSrc, name){
 //     navigationbar.innerHTML+=`<div class="songname"
 //     style="position: relative;justify-content: start;text-align: start;display: flex;flex-direction: row;">
@@ -273,18 +273,31 @@ let navigationbar=document.querySelector('.bottom-nav')
 // </div>
 // <br><br><br>`
 // }
-var audiobutton=document.querySelector('.nav-play')
-var audioplay=document.querySelector('.audioplay')
-var isplaying=false;
-audiobutton.addEventListener('click', function(){
-    if(isplaying==false){
+var audiobutton = document.querySelector('.nav-play')
+var audioplay = document.querySelector('.audioplay')
+var isplaying = false;
+var playbutton = document.querySelector('#playpause');
+var playsvg = `<svg data-encore-id="icon" role="img" aria-hidden="true" height="16" width="16"
+viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 dYnaPI">
+<path d="M3 2v12l10-6-10-6z" fill="white"/>
+</svg>`
+var pausesvg = `<svg data-encore-id="icon" role="img" aria-hidden="true" height="16" width="16"
+viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 dYnaPI">
+<path
+    d="M2.7 1a.7.7 0 0 0-.7.7v12.6a.7.7 0 0 0 .7.7h2.6a.7.7 0 0 0 .7-.7V1.7a.7.7 0 0 0-.7-.7H2.7zm8 0a.7.7 0 0 0-.7.7v12.6a.7.7 0 0 0 .7.7h2.6a.7.7 0 0 0 .7-.7V1.7a.7.7 0 0 0-.7-.7h-2.6z"
+    fill="white"></path>
+</svg>`
+audiobutton.addEventListener('click', function () {
+    if (isplaying == false) {
         audioplay.play()
-        isplaying=true;
+        isplaying = true;
+        playbutton.innerHTML = pausesvg
         console.log(isplaying);
-    }else if(isplaying==true){
+    } else if (isplaying == true) {
         audioplay.pause()
-        isplaying=false
+        isplaying = false
+        playbutton.innerHTML = playsvg
         console.log(isplaying);
     }
-    
+
 })

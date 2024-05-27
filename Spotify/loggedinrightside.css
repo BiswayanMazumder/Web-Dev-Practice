@@ -256,6 +256,7 @@
     color: whitesmoke;
     text-decoration: none;
 }
-.playingsongname:hover{
+
+.playingsongname:hover {
     text-decoration: underline;
 }
