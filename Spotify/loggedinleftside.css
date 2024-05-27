@@ -9,7 +9,7 @@ body {
     border-radius: 5px;
     height: 99.2vh;
     width: 500px;
-    border: 2px solid black;
+    /* border: 2px solid black; */
     /* display: grid; */
     position: relative;
 }
