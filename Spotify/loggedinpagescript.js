@@ -42,6 +42,7 @@ async function main() {
 }
 main();
 let name5 = 'Leo';
+let singername5='Shubh';
 let images1 = 'https://i.scdn.co/image/ab67616100005174debeea13700496b7d2b345d9'
 let images2 = 'https://i.scdn.co/image/ab67616d00001e02d045f5b403653ae1d59e46bb'
 let images3 = 'https://i.scdn.co/image/ab67616d00001e02d5bf86c4e1fd46800b122641'
@@ -58,13 +59,20 @@ listeninghistory5.innerHTML += `<img src=${images5} alt="Krsna" class="krsna" he
 listeninghistory6.innerHTML += `<img src="${images6}" alt="Krsna" class="krsna" height="50px" style="border-radius: 5px;">`
 listeninghistory7.innerHTML += `<img src=${images7} alt="Krsna" class="krsna" height="50px" style="border-radius: 5px;">`
 listeninghistory8.innerHTML += `<img src=${images8} alt="Krsna" class="krsna" height="50px" style="border-radius: 5px;">`
-let name1 = 'KR$NA'
+let name1 = 'Prarthana'
+let singername1='KR$NA'
 let name2 = 'Joota Japani'
+let singername2='KR$NA'
 let name3 = 'True Stories'
+let singername3='AP Dhillon'
 let name4 = 'Trending Songs India'
+let singername4='Album'
 let name6 = 'This is KR$NA'
+let singername6='Album'
 let name7 = 'This is Parmish Verma'
+let singername7='Parmish Verma'
 let name8 = 'Daily Mix #1'
+let singername8='Album'
 listeninghistory1.innerHTML += `<div class="singername">${name1}</div>`
 listeninghistory2.innerHTML += `<div class="singername">${name2}</div>`
 listeninghistory3.innerHTML += `<div class="singername">${name3}</div>`
@@ -87,6 +95,14 @@ let playlistImg3 = '';
 let playlistName3 = '';
 let playlistImg4 = '';
 let playlistName4 = '';
+let audio1='songs/Prarthana_320(PagalWorld.com.sb).mp3'
+let audio2='songs/jootajapani.mp3'
+let audio3='songs/truestories.mp3'
+let audio4='songs/subhanallah.mp3'
+let audio5='songs/safetyoff.mp3'
+let audio6='songs/khattaflow.mp3'
+let audio7='songs/aamjahemunde.mp3'
+let audio8='songs/Prarthana_320(PagalWorld.com.sb).mp3'
 let imageslinks = ['https://i.scdn.co/image/ab67706f0000000233fab13281f6d0d067511882', 'https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO3iW9AR-default.jpg', 'https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO3ckHLO-default.jpg', 'https://i.scdn.co/image/ab67706f00000002754d1154dfbc2662171cb5c3', 'https://image-cdn-ak.spotifycdn.com/image/ab67706c0000da84f2c5413e0ce355f28e6a6540', 'https://i.scdn.co/image/ab67706f000000024783416ea0e27510ecc91c76', 'https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO1aUtIB-default.jpg'];
 let playnames = ['This is Parmish Verma', 'This is KR$NA', 'This is Shubh', 'This is Badshah', 'Sad Songs', 'Trending Punjabi Songs', 'This is Imran Khan'];
 let play1 = Math.floor(Math.random() * imageslinks.length);
@@ -157,43 +173,43 @@ listeninghistory1.addEventListener('mouseover', function () {
 })
 listeninghistory1.addEventListener('click', function () {
     playerloaded = true;
-    changeImageAndName(images1, name1)
+    changeImageAndName(images1, name1,singername1,audio1)
     playpause();
 })
 listeninghistory2.addEventListener('click', function () {
     playerloaded = true;
-    changeImageAndName(images2, name2,)
+    changeImageAndName(images2, name2,singername2,audio2)
     playpause();
 })
 listeninghistory3.addEventListener('click', function () {
     playerloaded = true;
-    changeImageAndName(images3, name3,)
+    changeImageAndName(images3, name3,singername3,audio3)
     playpause();
 })
 listeninghistory4.addEventListener('click', function () {
     playerloaded = true;
-    changeImageAndName(images4, name4,)
+    changeImageAndName(images4, name4,singername4,audio4)
     playpause();
 })
 listeninghistory5.addEventListener('click', function () {
     playerloaded = true;
-    changeImageAndName(images5, name5,)
+    changeImageAndName(images5, name5,singername5,audio5)
     playpause();
 })
 listeninghistory6.addEventListener('click', function () {
     playerloaded = true;
-    changeImageAndName(images6, name6)
+    changeImageAndName(images6, name6,singername6,audio6)
     playpause();
 })
 listeninghistory7.addEventListener('click', function () {
     playerloaded = true;
-    changeImageAndName(images7, name7)
+    changeImageAndName(images7, name7,singername7,audio7)
     playpause();
     
 })
 listeninghistory8.addEventListener('click', function () {
     playerloaded = true;
-    changeImageAndName(images8, name8)
+    changeImageAndName(images8, name8,singername8,audio8)
     playpause();
 })
 listeninghistory1.addEventListener('mouseout', function () {
@@ -242,7 +258,7 @@ listeninghistory8.addEventListener('mouseout', function () {
     firstpart.style.background = 'linear-gradient(to bottom, #24333E, black)'
 })
 let navigationbar = document.querySelector('.bottom-nav')
-function changeImageAndName(imageSrc, name) {
+function changeImageAndName(imageSrc, name,singername,audiofile) {
     navigationbar.innerHTML = `<div class="songname"
     style="position: relative;justify-content: start;text-align: start;display: flex;flex-direction: row;">
     <img src=${imageSrc} alt="Krsna" class="krsna"
@@ -252,7 +268,7 @@ function changeImageAndName(imageSrc, name) {
         <a href="#aamjahemunde" class="playingsongname">${name}</a>
         <div class="singername"
             style="color: gray;position: relative;top: 10px;font-size: 10px;font-weight: 600;display: flex;flex-direction: column;font-family: sans-serif;">
-            Parmish Verma
+            ${singername}
         </div>
 
     </div>
@@ -260,7 +276,7 @@ function changeImageAndName(imageSrc, name) {
 <div class="controls"
     style="position: absolute;justify-content: center;text-align: center;left: 50%;top: 10px;display: flex;flex-direction: column;">
     <div class="navigation">
-        <audio src="songs/aamjahemunde.mp3" class="audioplay" id="audio"></audio>
+        <audio src=${audiofile} class="audioplay" id="audio"></audio>
         <a href="#previous" class="nav-prev"
             style="position: relative;top: 5px;padding-right: 10px;text-decoration: none;" id="playaudio">
             <svg data-encore-id="icon" role="img" aria-hidden="true" height="16" width="16"
