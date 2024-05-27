@@ -58,7 +58,12 @@ listeninghistory5.innerHTML += `<div class="singername">${names}</div>`
 listeninghistory6.innerHTML += `<div class="singername">This is KR$NA</div>`
 listeninghistory7.innerHTML += `<div class="singername">This is Parmish Verma</div>`
 listeninghistory8.innerHTML += `<div class="singername">Daily Mix #1</div>`
-profilepic.innerHTML += '<img src="https://source.unsplash.com/random/30x30?sig=3" alt="ProfilePicture" class="profilepicture" height="20px" width="20px" style="position: relative;justify-content: center;text-align: center;top: 22%;left: 22%;border-radius: 50%;">'
+try {
+    profilepic.innerHTML += '<img src="favicon.ico" alt="ProfilePicture" class="profilepicture" height="20px" width="20px" style="position: relative;justify-content: center;text-align: center;top: 22%;left: 22%;border-radius: 50%;">'
+} catch (error) {
+    console.log(error.message)
+    profilepic.innerHTML += '<img src="play.png" alt="ProfilePicture" class="profilepicture" height="20px" width="20px" style="position: relative;justify-content: center;text-align: center;top: 22%;left: 22%;border-radius: 50%;">'
+}
 let playlistImg1 = '';
 let playlistName1 = '';
 let playlistImg2 = '';
@@ -67,20 +72,20 @@ let playlistImg3 = '';
 let playlistName3 = '';
 let playlistImg4 = '';
 let playlistName4 = '';
-let imageslinks=['https://i.scdn.co/image/ab67706f0000000233fab13281f6d0d067511882','https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO3iW9AR-default.jpg','https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO3ckHLO-default.jpg','https://i.scdn.co/image/ab67706f00000002754d1154dfbc2662171cb5c3','https://image-cdn-ak.spotifycdn.com/image/ab67706c0000da84f2c5413e0ce355f28e6a6540','https://i.scdn.co/image/ab67706f000000024783416ea0e27510ecc91c76','https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO1aUtIB-default.jpg'];
-let playnames=['This is Parmish Verma','This is KR$NA','This is Shubh','This is Badshah','Sad Songs','Trending Punjabi Songs','This is Imran Khan'];
-let play1=Math.floor(Math.random()*imageslinks.length);
+let imageslinks = ['https://i.scdn.co/image/ab67706f0000000233fab13281f6d0d067511882', 'https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO3iW9AR-default.jpg', 'https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO3ckHLO-default.jpg', 'https://i.scdn.co/image/ab67706f00000002754d1154dfbc2662171cb5c3', 'https://image-cdn-ak.spotifycdn.com/image/ab67706c0000da84f2c5413e0ce355f28e6a6540', 'https://i.scdn.co/image/ab67706f000000024783416ea0e27510ecc91c76', 'https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO1aUtIB-default.jpg'];
+let playnames = ['This is Parmish Verma', 'This is KR$NA', 'This is Shubh', 'This is Badshah', 'Sad Songs', 'Trending Punjabi Songs', 'This is Imran Khan'];
+let play1 = Math.floor(Math.random() * imageslinks.length);
 console.log(play1);
-let play2=Math.floor(Math.random()*imageslinks.length);
+let play2 = Math.floor(Math.random() * imageslinks.length);
 console.log(play2);
-let play3=Math.floor(Math.random()*imageslinks.length);
+let play3 = Math.floor(Math.random() * imageslinks.length);
 console.log(play3);
-let play4=Math.floor(Math.random()*imageslinks.length);
+let play4 = Math.floor(Math.random() * imageslinks.length);
 console.log(play4);
-function getplaylistname1() { 
+function getplaylistname1() {
     //putting playlist 1 image
-    let images=document.querySelector('.secondpart')
-    images.innerHTML+=`<div class="playlists1">
+    let images = document.querySelector('.secondpart')
+    images.innerHTML += `<div class="playlists1">
     <img src="${imageslinks[play1]}" alt="parmish verma" height="200px" width="200px" style="border-radius: 10px;">
 </div>
 <br>
@@ -89,10 +94,10 @@ function getplaylistname1() {
 </div>
 <br><br>`
 }
-function getplaylistname2() { 
+function getplaylistname2() {
     //putting playlist 1 image
-    let images=document.querySelector('.secondpart')
-    images.innerHTML+=`<div class="playlists2">
+    let images = document.querySelector('.secondpart')
+    images.innerHTML += `<div class="playlists2">
     <img src="${imageslinks[play2]}" alt="parmish verma" height="200px" width="200px" style="border-radius: 10px;">
 </div>
 <br>
@@ -101,10 +106,10 @@ function getplaylistname2() {
 </div>
 <br><br>`
 }
-function getplaylistname3() { 
+function getplaylistname3() {
     //putting playlist 1 image
-    let images=document.querySelector('.secondpart')
-    images.innerHTML+=`<div class="playlists3">
+    let images = document.querySelector('.secondpart')
+    images.innerHTML += `<div class="playlists3">
     <img src="${imageslinks[play3]}" alt="parmish verma" height="200px" width="200px" style="border-radius: 10px;">
 </div>
 <br>
@@ -113,10 +118,10 @@ function getplaylistname3() {
 </div>
 <br><br>`
 }
-function getplaylistname4() { 
+function getplaylistname4() {
     //putting playlist 1 image
-    let images=document.querySelector('.secondpart')
-    images.innerHTML+=`<div class="playlists4">
+    let images = document.querySelector('.secondpart')
+    images.innerHTML += `<div class="playlists4">
     <img src="${imageslinks[play4]}" alt="parmish verma" height="200px" width="200px" style="border-radius: 10px;">
 </div>
 <br>
@@ -130,52 +135,62 @@ getplaylistname1();
 getplaylistname2();
 getplaylistname3();
 getplaylistname4();
-let firstpart=document.querySelector('.firstrightpart')
-listeninghistory1.addEventListener('mouseover',function(){
-    firstpart.style.background='linear-gradient(to bottom, #28282E, black)'
+let firstpart = document.querySelector('.firstrightpart')
+listeninghistory1.addEventListener('mouseover', function () {
+    firstpart.style.background = 'linear-gradient(to bottom, #28282E, black)'
 })
-listeninghistory1.addEventListener('mouseout',function(){
-    firstpart.style.background='linear-gradient(to bottom, #24333E, black)'
+listeninghistory1.addEventListener('mouseout', function () {
+    firstpart.style.background = 'linear-gradient(to bottom, #24333E, black)'
 })
-listeninghistory2.addEventListener('mouseover',function(){
-    firstpart.style.background='linear-gradient(to bottom, #530C06, black)'
+listeninghistory2.addEventListener('mouseover', function () {
+    firstpart.style.background = 'linear-gradient(to bottom, #530C06, black)'
 })
-listeninghistory2.addEventListener('mouseout',function(){
-    firstpart.style.background='linear-gradient(to bottom, #24333E, black)'
+listeninghistory2.addEventListener('mouseout', function () {
+    firstpart.style.background = 'linear-gradient(to bottom, #24333E, black)'
 })
-listeninghistory3.addEventListener('mouseover',function(){
-    firstpart.style.background='linear-gradient(to bottom, #26455E, black)'
+listeninghistory3.addEventListener('mouseover', function () {
+    firstpart.style.background = 'linear-gradient(to bottom, #26455E, black)'
 })
-listeninghistory3.addEventListener('mouseout',function(){
-    firstpart.style.background='linear-gradient(to bottom, #24333E, black)'
+listeninghistory3.addEventListener('mouseout', function () {
+    firstpart.style.background = 'linear-gradient(to bottom, #24333E, black)'
 })
-listeninghistory4.addEventListener('mouseover',function(){
-    firstpart.style.background='linear-gradient(to bottom, #025802, black)'
+listeninghistory4.addEventListener('mouseover', function () {
+    firstpart.style.background = 'linear-gradient(to bottom, #025802, black)'
 })
-listeninghistory4.addEventListener('mouseout',function(){
-    firstpart.style.background='linear-gradient(to bottom, #24333E, black)'
+listeninghistory4.addEventListener('mouseout', function () {
+    firstpart.style.background = 'linear-gradient(to bottom, #24333E, black)'
 })
-listeninghistory5.addEventListener('mouseover',function(){
-    firstpart.style.background='linear-gradient(to bottom, #411411, black)'
+listeninghistory5.addEventListener('mouseover', function () {
+    firstpart.style.background = 'linear-gradient(to bottom, #411411, black)'
 })
-listeninghistory5.addEventListener('mouseout',function(){
-    firstpart.style.background='linear-gradient(to bottom, #24333E, black)'
+listeninghistory5.addEventListener('mouseout', function () {
+    firstpart.style.background = 'linear-gradient(to bottom, #24333E, black)'
 })
-listeninghistory6.addEventListener('mouseover',function(){
-    firstpart.style.background='linear-gradient(to bottom, #411411, black)'
+listeninghistory6.addEventListener('mouseover', function () {
+    firstpart.style.background = 'linear-gradient(to bottom, #411411, black)'
 })
-listeninghistory6.addEventListener('mouseout',function(){
-    firstpart.style.background='linear-gradient(to bottom, #24333E, black)'
+listeninghistory6.addEventListener('mouseout', function () {
+    firstpart.style.background = 'linear-gradient(to bottom, #24333E, black)'
 })
-listeninghistory7.addEventListener('mouseover',function(){
-    firstpart.style.background='linear-gradient(to bottom, #1A202F, black)'
+listeninghistory7.addEventListener('mouseover', function () {
+    firstpart.style.background = 'linear-gradient(to bottom, #1A202F, black)'
 })
-listeninghistory7.addEventListener('mouseout',function(){
-    firstpart.style.background='linear-gradient(to bottom, #24333E, black)'
+listeninghistory7.addEventListener('mouseout', function () {
+    firstpart.style.background = 'linear-gradient(to bottom, #24333E, black)'
 })
-listeninghistory8.addEventListener('mouseover',function(){
-    firstpart.style.background='linear-gradient(to bottom, #3A363F, black)'
+listeninghistory8.addEventListener('mouseover', function () {
+    firstpart.style.background = 'linear-gradient(to bottom, #3A363F, black)'
 })
-listeninghistory8.addEventListener('mouseout',function(){
-    firstpart.style.background='linear-gradient(to bottom, #24333E, black)'
+listeninghistory8.addEventListener('mouseout', function () {
+    firstpart.style.background = 'linear-gradient(to bottom, #24333E, black)'
 })
+// listeninghistory1.addEventListener('mouseover', function () {
+//     listeninghistory1.innerHTML += `<div class="equaliser" style="position: relative; left:85%;top: 30%;">
+//     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+//         <path class="bar" d="M3.99902 14H5.99902V0H3.99902V14Z" fill="#1DB954"/>
+//         <path class="bar" d="M-0.000976562 14H1.99902V4H-0.000976562V14Z" fill="#1DB954"/>
+//         <path class="bar" d="M12 7V14H14V7H12Z" fill="#1DB954"/>
+//         <path class="bar" d="M8.00002 14H10V10H8.00002V14Z" fill="#1DB954"/>
+//     </svg>
+// </div>`
+// })
