@@ -12,6 +12,7 @@ let listeninghistory6 = document.querySelector('#history6')
 let listeninghistory7 = document.querySelector('#history7')
 let listeninghistory8 = document.querySelector('#history8')
 let placetoinsert = document.querySelector('.container')
+let time='';
 async function getRandomColor() {
     for (let i = 0; i < 6; i++) {
         color += letters[Math.floor(Math.random() * 18)];
@@ -28,13 +29,13 @@ function printToday() {
         history.innerHTML += `This Weekend`
     }
     else {
-        history.innerHTML += `This Week`
+        history.innerHTML += `This Entire Week`
     }
 }
 async function main() {
     // await getRandomColor();
     printToday();
-    console.log(color);
+    // console.log(color);
     let rightside = document.querySelector('.firstrightpart')
     let appbar = document.querySelector('.appbar')
     appbar.style.backgroundColor = color;
@@ -42,7 +43,7 @@ async function main() {
 }
 main();
 let name5 = 'Leo';
-let singername5='Shubh';
+let singername5 = 'Shubh';
 let images1 = 'https://i.scdn.co/image/ab67616100005174debeea13700496b7d2b345d9'
 let images2 = 'https://i.scdn.co/image/ab67616d00001e02d045f5b403653ae1d59e46bb'
 let images3 = 'https://i.scdn.co/image/ab67616d00001e02d5bf86c4e1fd46800b122641'
@@ -60,19 +61,19 @@ listeninghistory6.innerHTML += `<img src="${images6}" alt="Krsna" class="krsna" 
 listeninghistory7.innerHTML += `<img src=${images7} alt="Krsna" class="krsna" height="50px" style="border-radius: 5px;">`
 listeninghistory8.innerHTML += `<img src=${images8} alt="Krsna" class="krsna" height="50px" style="border-radius: 5px;">`
 let name1 = 'Prarthana'
-let singername1='KR$NA'
+let singername1 = 'KR$NA'
 let name2 = 'Joota Japani'
-let singername2='KR$NA'
+let singername2 = 'KR$NA'
 let name3 = 'True Stories'
-let singername3='AP Dhillon'
+let singername3 = 'AP Dhillon'
 let name4 = 'Trending Songs India'
-let singername4='Album'
+let singername4 = 'Album'
 let name6 = 'This is KR$NA'
-let singername6='Album'
+let singername6 = 'Album'
 let name7 = 'This is Parmish Verma'
-let singername7='Parmish Verma'
+let singername7 = 'Parmish Verma'
 let name8 = 'Daily Mix #1'
-let singername8='Album'
+let singername8 = 'Album'
 listeninghistory1.innerHTML += `<div class="singername">${name1}</div>`
 listeninghistory2.innerHTML += `<div class="singername">${name2}</div>`
 listeninghistory3.innerHTML += `<div class="singername">${name3}</div>`
@@ -95,24 +96,24 @@ let playlistImg3 = '';
 let playlistName3 = '';
 let playlistImg4 = '';
 let playlistName4 = '';
-let audio1='songs/Prarthana_320(PagalWorld.com.sb).mp3'
-let audio2='songs/jootajapani.mp3'
-let audio3='songs/truestories.mp3'
-let audio4='songs/subhanallah.mp3'
-let audio5='songs/safetyoff.mp3'
-let audio6='songs/khattaflow.mp3'
-let audio7='songs/aamjahemunde.mp3'
-let audio8='songs/Prarthana_320(PagalWorld.com.sb).mp3'
+let audio1 = 'songs/Prarthana_320(PagalWorld.com.sb).mp3'
+let audio2 = 'songs/jootajapani.mp3'
+let audio3 = 'songs/truestories.mp3'
+let audio4 = 'songs/subhanallah.mp3'
+let audio5 = 'songs/safetyoff.mp3'
+let audio6 = 'songs/khattaflow.mp3'
+let audio7 = 'songs/aamjahemunde.mp3'
+let audio8 = 'songs/Prarthana_320(PagalWorld.com.sb).mp3'
 let imageslinks = ['https://i.scdn.co/image/ab67706f0000000233fab13281f6d0d067511882', 'https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO3iW9AR-default.jpg', 'https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO3ckHLO-default.jpg', 'https://i.scdn.co/image/ab67706f00000002754d1154dfbc2662171cb5c3', 'https://image-cdn-ak.spotifycdn.com/image/ab67706c0000da84f2c5413e0ce355f28e6a6540', 'https://i.scdn.co/image/ab67706f000000024783416ea0e27510ecc91c76', 'https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO1aUtIB-default.jpg'];
 let playnames = ['This is Parmish Verma', 'This is KR$NA', 'This is Shubh', 'This is Badshah', 'Sad Songs', 'Trending Punjabi Songs', 'This is Imran Khan'];
 let play1 = Math.floor(Math.random() * imageslinks.length);
-console.log(play1);
+// console.log(play1);
 let play2 = Math.floor(Math.random() * imageslinks.length);
-console.log(play2);
+// console.log(play2);
 let play3 = Math.floor(Math.random() * imageslinks.length);
-console.log(play3);
+// console.log(play3);
 let play4 = Math.floor(Math.random() * imageslinks.length);
-console.log(play4);
+// console.log(play4);
 function getplaylistname1() {
     //putting playlist 1 image
     let images = document.querySelector('.secondpart')
@@ -173,43 +174,45 @@ listeninghistory1.addEventListener('mouseover', function () {
 })
 listeninghistory1.addEventListener('click', function () {
     playerloaded = true;
-    changeImageAndName(images1, name1,singername1,audio1)
+    changeImageAndName(images1, name1, singername1, audio1)
+    
     playpause();
 })
 listeninghistory2.addEventListener('click', function () {
     playerloaded = true;
-    changeImageAndName(images2, name2,singername2,audio2)
+    changeImageAndName(images2, name2, singername2, audio2)
     playpause();
 })
 listeninghistory3.addEventListener('click', function () {
     playerloaded = true;
-    changeImageAndName(images3, name3,singername3,audio3)
+    changeImageAndName(images3, name3, singername3, audio3)
+
     playpause();
 })
 listeninghistory4.addEventListener('click', function () {
     playerloaded = true;
-    changeImageAndName(images4, name4,singername4,audio4)
+    changeImageAndName(images4, name4, singername4, audio4)
     playpause();
 })
 listeninghistory5.addEventListener('click', function () {
     playerloaded = true;
-    changeImageAndName(images5, name5,singername5,audio5)
+    changeImageAndName(images5, name5, singername5, audio5)
     playpause();
 })
 listeninghistory6.addEventListener('click', function () {
     playerloaded = true;
-    changeImageAndName(images6, name6,singername6,audio6)
+    changeImageAndName(images6, name6, singername6, audio6)
     playpause();
 })
 listeninghistory7.addEventListener('click', function () {
     playerloaded = true;
-    changeImageAndName(images7, name7,singername7,audio7)
+    changeImageAndName(images7, name7, singername7, audio7)
     playpause();
-    
+
 })
 listeninghistory8.addEventListener('click', function () {
     playerloaded = true;
-    changeImageAndName(images8, name8,singername8,audio8)
+    changeImageAndName(images8, name8, singername8, audio8)
     playpause();
 })
 listeninghistory1.addEventListener('mouseout', function () {
@@ -258,7 +261,7 @@ listeninghistory8.addEventListener('mouseout', function () {
     firstpart.style.background = 'linear-gradient(to bottom, #24333E, black)'
 })
 let navigationbar = document.querySelector('.bottom-nav')
-function changeImageAndName(imageSrc, name,singername,audiofile) {
+function changeImageAndName(imageSrc, name, singername, audiofile) {
     navigationbar.innerHTML = `<div class="songname"
     style="position: relative;justify-content: start;text-align: start;display: flex;flex-direction: row;">
     <img src=${imageSrc} alt="Krsna" class="krsna"
@@ -307,18 +310,20 @@ function changeImageAndName(imageSrc, name,singername,audiofile) {
     <div class="slider" style="position: relative;top: 10px;display: flex;flex-direction: row;">
         <div class="inititaltimer"
             style="color: gray;font-size: 12px;font-weight: 500;padding-right: 10px;">00:00</div>
-        <input type="range" min="0" max="100" value="0" id="volumeSlider">
+        <input type="range" min="0" max="100" value="0" id="volumeSlider" class="slider">
         <div class="endingtimer" style="color: gray;font-size: 12px;font-weight: 500;padding-left: 10px;">
             4:15</div>
     </div>
 </div>
 <br><br><br>`
 }
-function playpause(){
-    
+
+var isplaying = false;
+function playpause() {
+
     var audiobutton = document.querySelector('.nav-play')
     var audioplay = document.querySelector('.audioplay')
-    var isplaying = false;
+
     var playbutton = document.getElementById('playpause');
     var playsvg = `<svg data-encore-id="icon" role="img" aria-hidden="true" height="16" width="16"
 viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 dYnaPI">
@@ -330,15 +335,15 @@ viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 dYnaPI">
     d="M2.7 1a.7.7 0 0 0-.7.7v12.6a.7.7 0 0 0 .7.7h2.6a.7.7 0 0 0 .7-.7V1.7a.7.7 0 0 0-.7-.7H2.7zm8 0a.7.7 0 0 0-.7.7v12.6a.7.7 0 0 0 .7.7h2.6a.7.7 0 0 0 .7-.7V1.7a.7.7 0 0 0-.7-.7h-2.6z"
     fill="white"></path>
 </svg>`
+
     audiobutton.addEventListener('click', function () {
         if (isplaying == false) {
-            console.log(isplaying);
+            // console.log(isplaying);
             audioplay.play()
             isplaying = true;
             playbutton.innerHTML = pausesvg
-
         } else if (isplaying == true) {
-            console.log(isplaying);
+            // console.log(isplaying);
             audioplay.pause()
             isplaying = false
             playbutton.innerHTML = playsvg
