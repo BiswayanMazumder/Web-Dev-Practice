@@ -26,10 +26,10 @@ function printToday() {
     const dayName = daysOfWeek[today.getDay()];
     // console.log("Today is " + dayName);
     if (dayName == 'Saturday' || dayName == 'Sunday') {
-        history.innerHTML += `This Weekend`
+        history.innerHTML += `🎉 It's ${dayName} and the weekend vibes are soaring high! 🎉`
     }
     else {
-        history.innerHTML += `This Entire Week`
+        history.innerHTML += `🎉 Welcome to Trendy ${dayName}! 🎉`
     }
 }
 async function main() {
