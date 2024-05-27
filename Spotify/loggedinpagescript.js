@@ -1,4 +1,4 @@
-console.log('Welcome to logged in page')
+// console.log('Welcome to logged in page')
 const letters = '0123456789ABCDEF';
 let color = '#';
 let profilepic = document.querySelector('.profilepicture')
@@ -24,7 +24,7 @@ function printToday() {
     const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     const today = new Date();
     const dayName = daysOfWeek[today.getDay()];
-    console.log("Today is " + dayName);
+    // console.log("Today is " + dayName);
     if (dayName == 'Saturday' || dayName == 'Sunday') {
         history.innerHTML += `This Weekend`
     }
