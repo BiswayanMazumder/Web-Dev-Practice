@@ -151,29 +151,50 @@ getplaylistname2();
 getplaylistname3();
 getplaylistname4();
 let firstpart = document.querySelector('.firstrightpart')
+var playerloaded = false;
 listeninghistory1.addEventListener('mouseover', function () {
     firstpart.style.background = 'linear-gradient(to bottom, #28282E, black)'
 })
+listeninghistory1.addEventListener('click', function () {
+    playerloaded = true;
+    changeImageAndName(images1, name1)
+    playpause();
+})
 listeninghistory2.addEventListener('click', function () {
-    changeImageAndName(images2, name2)
+    playerloaded = true;
+    changeImageAndName(images2, name2,)
+    playpause();
 })
 listeninghistory3.addEventListener('click', function () {
-    changeImageAndName(images3, name3)
+    playerloaded = true;
+    changeImageAndName(images3, name3,)
+    playpause();
 })
 listeninghistory4.addEventListener('click', function () {
-    changeImageAndName(images4, name4)
+    playerloaded = true;
+    changeImageAndName(images4, name4,)
+    playpause();
 })
 listeninghistory5.addEventListener('click', function () {
-    changeImageAndName(images5, name5)
+    playerloaded = true;
+    changeImageAndName(images5, name5,)
+    playpause();
 })
 listeninghistory6.addEventListener('click', function () {
+    playerloaded = true;
     changeImageAndName(images6, name6)
+    playpause();
 })
 listeninghistory7.addEventListener('click', function () {
+    playerloaded = true;
     changeImageAndName(images7, name7)
+    playpause();
+    
 })
 listeninghistory8.addEventListener('click', function () {
+    playerloaded = true;
     changeImageAndName(images8, name8)
+    playpause();
 })
 listeninghistory1.addEventListener('mouseout', function () {
     firstpart.style.background = 'linear-gradient(to bottom, #24333E, black)'
@@ -221,83 +242,93 @@ listeninghistory8.addEventListener('mouseout', function () {
     firstpart.style.background = 'linear-gradient(to bottom, #24333E, black)'
 })
 let navigationbar = document.querySelector('.bottom-nav')
-// function changeImageAndName(imageSrc, name){
-//     navigationbar.innerHTML+=`<div class="songname"
-//     style="position: relative;justify-content: start;text-align: start;display: flex;flex-direction: row;">
-//     <img src=${imageSrc} alt="Krsna" class="krsna"
-//         height="50px" style="border-radius: 5px;padding-left: 5px;top: 10px;position: relative;">
-//     <div class="songname"
-//         style="color: white;margin-left: 10px;position: relative;top: 15px;font-size: 14px;font-weight: 600;display: flex;flex-direction: column;font-family: sans-serif;">
-//         ${name}
-//         <div class="singername"
-//             style="color: gray;position: relative;top: 10px;font-size: 10px;font-weight: 600;display: flex;flex-direction: column;font-family: sans-serif;">
-//             KR$NA, Raftaar
-//         </div>
-//     </div>
-// </div>
-// <div class="controls"
-//     style="position: absolute;justify-content: center;text-align: center;left: 50%;top: 10px;display: flex;flex-direction: column;">
-//     <div class="navigation">
-//         <a href="#previous" class="nav-prev"
-//             style="position: relative;top: 5px;padding-right: 10px;text-decoration: none;">
-//             <svg data-encore-id="icon" role="img" aria-hidden="true" height="16" width="16"
-//                 viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 dYnaPI">
-//                 <path
-//                     d="M3.3 1a.7.7 0 0 1 .7.7v5.15l9.95-5.744a.7.7 0 0 1 1.05.606v12.575a.7.7 0 0 1-1.05.607L4 9.149V14.3a.7.7 0 0 1-.7.7H1.7a.7.7 0 0 1-.7-.7V1.7a.7.7 0 0 1 .7-.7h1.6z"
-//                     fill="grey"></path>
-//             </svg>
-//         </a>
-//         <a href="#play" class="nav-play" style="position: relative;top: 5px;text-decoration: none;">
-//             <svg data-encore-id="icon" role="img" aria-hidden="true" height="16" width="16"
-//                 viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 dYnaPI">
-//                 <path
-//                     d="M2.7 1a.7.7 0 0 0-.7.7v12.6a.7.7 0 0 0 .7.7h2.6a.7.7 0 0 0 .7-.7V1.7a.7.7 0 0 0-.7-.7H2.7zm8 0a.7.7 0 0 0-.7.7v12.6a.7.7 0 0 0 .7.7h2.6a.7.7 0 0 0 .7-.7V1.7a.7.7 0 0 0-.7-.7h-2.6z"
-//                     fill="white"></path>
-//             </svg>
-//         </a>
-//         <a href="#next" class="nav-forward"
-//             style="position: relative;top: 5px;position: relative;top: 5px;padding-left: 10px;text-decoration: none;">
-//             <svg data-encore-id="icon" role="img" aria-hidden="true" height="16" width="16"
-//                 viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 dYnaPI">
-//                 <path
-//                     d="M12.7 1a.7.7 0 0 0-.7.7v5.15L2.05 1.107A.7.7 0 0 0 1 1.712v12.575a.7.7 0 0 0 1.05.607L12 9.149V14.3a.7.7 0 0 0 .7.7h1.6a.7.7 0 0 0 .7-.7V1.7a.7.7 0 0 0-.7-.7h-1.6z"
-//                     fill="grey"></path>
-//             </svg>
-//         </a>
-//     </div>
-//     <div class="slider" style="position: relative;top: 10px;display: flex;flex-direction: row;">
-//     <div class="inititaltimer" style="color: gray;font-size: 12px;font-weight: 500;padding-right: 10px;">00:00</div>
-//     <input type="range" min="0" max="100" value="0" id="volumeSlider">
-//     <div class="endingtimer" style="color: gray;font-size: 12px;font-weight: 500;padding-left: 10px;">4:15</div>
-//     </div>
-// </div>
-// <br><br><br>`
-// }
-var audiobutton = document.querySelector('.nav-play')
-var audioplay = document.querySelector('.audioplay')
-var isplaying = false;
-var playbutton = document.querySelector('#playpause');
-var playsvg = `<svg data-encore-id="icon" role="img" aria-hidden="true" height="16" width="16"
+function changeImageAndName(imageSrc, name) {
+    navigationbar.innerHTML = `<div class="songname"
+    style="position: relative;justify-content: start;text-align: start;display: flex;flex-direction: row;">
+    <img src=${imageSrc} alt="Krsna" class="krsna"
+        height="50px" style="border-radius: 5px;padding-left: 5px;top: 10px;position: relative;">
+    <div class="songname"
+        style="color: white;margin-left: 10px;position: relative;top: 15px;font-size: 14px;font-weight: 600;display: flex;flex-direction: column;font-family: sans-serif;">
+        <a href="#aamjahemunde" class="playingsongname">${name}</a>
+        <div class="singername"
+            style="color: gray;position: relative;top: 10px;font-size: 10px;font-weight: 600;display: flex;flex-direction: column;font-family: sans-serif;">
+            Parmish Verma
+        </div>
+
+    </div>
+</div>
+<div class="controls"
+    style="position: absolute;justify-content: center;text-align: center;left: 50%;top: 10px;display: flex;flex-direction: column;">
+    <div class="navigation">
+        <audio src="songs/aamjahemunde.mp3" class="audioplay" id="audio"></audio>
+        <a href="#previous" class="nav-prev"
+            style="position: relative;top: 5px;padding-right: 10px;text-decoration: none;" id="playaudio">
+            <svg data-encore-id="icon" role="img" aria-hidden="true" height="16" width="16"
+                viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 dYnaPI">
+                <path
+                    d="M3.3 1a.7.7 0 0 1 .7.7v5.15l9.95-5.744a.7.7 0 0 1 1.05.606v12.575a.7.7 0 0 1-1.05.607L4 9.149V14.3a.7.7 0 0 1-.7.7H1.7a.7.7 0 0 1-.7-.7V1.7a.7.7 0 0 1 .7-.7h1.6z"
+                    fill="grey"></path>
+            </svg>
+        </a>
+        <a href="#play" class="nav-play" style="position: relative;top: 5px;text-decoration: none;"
+            id="playpause">
+            <svg data-encore-id="icon" role="img" aria-hidden="true" height="16" width="16"
+                viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 dYnaPI">
+                <path d="M3 2v12l10-6-10-6z" fill="white" />
+            </svg>
+
+        </a>
+        <a href="#next" class="nav-forward"
+            style="position: relative;top: 5px;position: relative;top: 5px;padding-left: 10px;text-decoration: none;">
+            <svg data-encore-id="icon" role="img" aria-hidden="true" height="16" width="16"
+                viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 dYnaPI">
+                <path
+                    d="M12.7 1a.7.7 0 0 0-.7.7v5.15L2.05 1.107A.7.7 0 0 0 1 1.712v12.575a.7.7 0 0 0 1.05.607L12 9.149V14.3a.7.7 0 0 0 .7.7h1.6a.7.7 0 0 0 .7-.7V1.7a.7.7 0 0 0-.7-.7h-1.6z"
+                    fill="grey"></path>
+            </svg>
+        </a>
+    </div>
+    <div class="slider" style="position: relative;top: 10px;display: flex;flex-direction: row;">
+        <div class="inititaltimer"
+            style="color: gray;font-size: 12px;font-weight: 500;padding-right: 10px;">00:00</div>
+        <input type="range" min="0" max="100" value="0" id="volumeSlider">
+        <div class="endingtimer" style="color: gray;font-size: 12px;font-weight: 500;padding-left: 10px;">
+            4:15</div>
+    </div>
+</div>
+<br><br><br>`
+}
+function playpause(){
+    
+    var audiobutton = document.querySelector('.nav-play')
+    var audioplay = document.querySelector('.audioplay')
+    var isplaying = false;
+    var playbutton = document.getElementById('playpause');
+    var playsvg = `<svg data-encore-id="icon" role="img" aria-hidden="true" height="16" width="16"
 viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 dYnaPI">
 <path d="M3 2v12l10-6-10-6z" fill="white"/>
 </svg>`
-var pausesvg = `<svg data-encore-id="icon" role="img" aria-hidden="true" height="16" width="16"
+    var pausesvg = `<svg data-encore-id="icon" role="img" aria-hidden="true" height="16" width="16"
 viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 dYnaPI">
 <path
     d="M2.7 1a.7.7 0 0 0-.7.7v12.6a.7.7 0 0 0 .7.7h2.6a.7.7 0 0 0 .7-.7V1.7a.7.7 0 0 0-.7-.7H2.7zm8 0a.7.7 0 0 0-.7.7v12.6a.7.7 0 0 0 .7.7h2.6a.7.7 0 0 0 .7-.7V1.7a.7.7 0 0 0-.7-.7h-2.6z"
     fill="white"></path>
 </svg>`
-audiobutton.addEventListener('click', function () {
-    if (isplaying == false) {
-        audioplay.play()
-        isplaying = true;
-        playbutton.innerHTML = pausesvg
-        console.log(isplaying);
-    } else if (isplaying == true) {
-        audioplay.pause()
-        isplaying = false
-        playbutton.innerHTML = playsvg
-        console.log(isplaying);
-    }
+    audiobutton.addEventListener('click', function () {
+        if (isplaying == false) {
+            console.log(isplaying);
+            audioplay.play()
+            isplaying = true;
+            playbutton.innerHTML = pausesvg
 
-})
+        } else if (isplaying == true) {
+            console.log(isplaying);
+            audioplay.pause()
+            isplaying = false
+            playbutton.innerHTML = playsvg
+
+        }
+
+    })
+
+}
