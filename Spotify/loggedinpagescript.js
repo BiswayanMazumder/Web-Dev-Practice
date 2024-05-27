@@ -275,14 +275,16 @@ let navigationbar=document.querySelector('.bottom-nav')
 // }
 var audiobutton=document.querySelector('.nav-play')
 var audioplay=document.querySelector('.audioplay')
-var ispause=false;
+var isplaying=false;
 audiobutton.addEventListener('click', function(){
-    if(ispause){
-        audioplay.pause()
-        ispause=true;
-    }else{
+    if(isplaying==false){
         audioplay.play()
-        ispause=false
+        isplaying=true;
+        console.log(isplaying);
+    }else if(isplaying==true){
+        audioplay.pause()
+        isplaying=false
+        console.log(isplaying);
     }
-    console.log('Paused')
+    
 })

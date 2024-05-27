@@ -7,13 +7,15 @@
     flex-direction: column;
     height: 99.2vh;
     /* overflow-y: scroll; */
-    overflow-y: scroll; 
+    overflow-y: scroll;
     scrollbar-width: none;
     -ms-overflow-style: none;
 }
+
 .container .rightside::-webkit-scrollbar {
     display: none;
 }
+
 .container .firstrightpart {
     height: 98%;
     overflow: hidden;
@@ -23,7 +25,7 @@
     margin-top: 12px;
     margin-left: 10px;
     margin-right: 10px;
-    overflow-y: scroll; 
+    overflow-y: scroll;
     border-radius: 5px;
     scrollbar-width: none;
     -ms-overflow-style: none;
@@ -119,23 +121,27 @@
     display: flex;
     flex-direction: row;
 }
+
 .rightside .firstrightpart .historylistening {
     padding-left: 30px;
     padding-top: 30px;
     display: flex;
     flex-direction: row;
 }
+
 .rightside .firstrightpart .popularartists .showall {
     display: flex;
     flex-direction: row;
     margin-left: auto;
-    padding-right:20px;
+    padding-right: 20px;
 }
-@media screen and (min-width:2000px){
-    .rightside .firstrightpart .popularartists .showall{
+
+@media screen and (min-width:2000px) {
+    .rightside .firstrightpart .popularartists .showall {
         padding-right: 150px;
     }
 }
+
 .rightside .firstrightpart .popularartists .showall .showalltext .showmore {
     display: flex;
     top: 10px;
@@ -170,10 +176,11 @@
     border-radius: 50%;
     box-shadow: 2px 5px 5px #1e1e1e;
 }
+
 .rightside .firstrightpart .popularalbums {
     height: 200px;
     width: 200px;
-    border-radius:5px;
+    border-radius: 5px;
     box-shadow: 2px 5px 5px #1e1e1e;
 }
 
@@ -202,11 +209,13 @@
     box-shadow: 1px 1px 10px #1DB954;
     border-radius: 5px;
 }
+
 .rightside .firstrightpart .pritam:hover .playbutton {
     display: flex;
-    
+
 }
-.listeningdetails{
+
+.listeningdetails {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -214,7 +223,8 @@
     justify-content: start;
     text-align: start;
 }
-.rightside .firstrightpart .history{
+
+.rightside .firstrightpart .history {
     background-color: #222222;
     border-radius: 5px;
     margin-left: 13px;
@@ -222,20 +232,30 @@
     margin-bottom: 10px;
     padding-left: 1px;
     height: 50px;
-    width:232px;
+    width: 232px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
-.rightside .firstrightpart .history:hover{
+
+.rightside .firstrightpart .history:hover {
     background-color: #32292A;
     /* border: 0.3px solid #1DB954; */
 }
-.rightside .firstrightpart .history .singername{
+
+.rightside .firstrightpart .history .singername {
     color: white;
     position: relative;
     top: 16px;
     font-weight: 500;
     font-size: 12px;
     padding-left: 10px;
+}
+
+.playingsongname {
+    color: whitesmoke;
+    text-decoration: none;
+}
+.playingsongname:hover{
+    text-decoration: underline;
 }
