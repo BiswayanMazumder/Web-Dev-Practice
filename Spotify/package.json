@@ -1,0 +1,15 @@
+{
+  "name": "spotify",
+  "version": "1.0.0",
+  "description": "this is spotify",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Biswayan",
+  "license": "ISC",
+  "dependencies": {
+    "datex.js": "^1.0.12"
+  }
+}
