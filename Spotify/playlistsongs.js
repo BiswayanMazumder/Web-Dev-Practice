@@ -2,10 +2,12 @@
 let playbutton = document.getElementById('Arijitplaylist')
 let navigationbar = document.querySelector('.bottom-nav')
 let arijitsongs = ['arijit/chaleya.mp3', 'arijit/galtisemistake.mp3', 'arijit/humariadhurikahani.mp3', 'arijit/luttputtgaya.mp3', 'arijit/omahi.mp3', 'arijit/satrangi.mp3']
-let songnames = ['Chaleya', 'Galti Se Mistake', 'Humari Adhuri Kahani', 'Lutt Puttgaya', 'O Mahi', 'Satrangi']
+let songnames = ['Chaleya', 'Galti Se Mistake', 'Humari Adhuri Kahani', 'Lutt Putt Gaya', 'O Mahi', 'Satranga']
+let songimages=['https://c.saavncdn.com/026/Chaleya-From-Jawan-Hindi-2023-20230814014337-500x500.jpg','https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR738jkhZFCLwDl6rjC3aMMkjVlfMUna3f6zg&s','https://stat4.bollywoodhungama.in/wp-content/uploads/2016/03/427275663.jpg','https://static.theprint.in/wp-content/uploads/2023/11/ANI-20231121142014.jpg','https://c.saavncdn.com/058/O-Maahi-From-Dunki-Hindi-2023-20231211171007-500x500.jpg','https://i1.sndcdn.com/artworks-5m5KwEnQsyUXxPaD-juuvfQ-t500x500.jpg']
 let navbar = document.querySelector('.bottom-nav')
 let playingsong = arijitsongs[0]
 let playingsongname = songnames[0];
+let playingsongimage=songimages[0]
 let currentIndex = 0; 
 function movenext() {
     var nextbutton = document.querySelector('.nav-forward');
@@ -16,11 +18,12 @@ function movenext() {
             currentIndex += 1;
             playingsong = arijitsongs[currentIndex];
             playingsongname = songnames[currentIndex];
-            playnextsong(playingsongname, playingsong);
+            playingsongimage=songimages[currentIndex]
+            playnextsong(playingsongname, playingsong,playingsongimage); 
             document.title=`${songnames[currentIndex]} - Arijit Singh`;
-            console.log("Current Index:", currentIndex);
-            console.log("Playing Song:", playingsong);
-            console.log("Playing Song Name:", playingsongname);
+            // console.log("Current Index:", currentIndex);
+            // console.log("Playing Song:", playingsong);
+            // console.log("Playing Song Name:", playingsongname);
             arijitplaying = false;
             playpause();
             movenext()
@@ -39,11 +42,12 @@ function moveprev(){
             currentIndex -= 1;
             playingsong = arijitsongs[currentIndex];
             playingsongname = songnames[currentIndex];
-            playnextsong(playingsongname, playingsong);
+            playingsongimage=songimages[currentIndex]
+            playnextsong(playingsongname, playingsong,playingsongimage);
             document.title=`${songnames[currentIndex]} - Arijit Singh`;
-            console.log("Current Index:", currentIndex);
-            console.log("Playing Song:", playingsong);
-            console.log("Playing Song Name:", playingsongname);
+            // console.log("Current Index:", currentIndex);
+            // console.log("Playing Song:", playingsong);
+            // console.log("Playing Song Name:", playingsongname);
             arijitplaying = false;
             playpause();
             moveprev()
@@ -54,10 +58,10 @@ function moveprev(){
         }
     });
 }
-function playnextsong(songname,songfile){
+function playnextsong(songname,songfile,songimage){
     navigationbar.innerHTML = `<div class="songname"
     style="position: relative;justify-content: start;text-align: start;display: flex;flex-direction: row;">
-    <img src="https://i.scdn.co/image/ab676161000051740261696c5df3be99da6ed3f3" alt="Arijit Singh" class="krsna"
+    <img src=${songimage} alt="Arijit Singh" class="krsna"
         height="50px" style="border-radius: 5px;padding-left: 5px;top: 10px;position: relative;">
     <div class="songname"
         style="color: white;margin-left: 10px;position: relative;top: 15px;font-size: 14px;font-weight: 600;display: flex;flex-direction: column;font-family: sans-serif;">
