@@ -174,44 +174,52 @@ listeninghistory1.addEventListener('mouseover', function () {
 })
 listeninghistory1.addEventListener('click', function () {
     playerloaded = true;
+    document.title=name1;
     changeImageAndName(images1, name1, singername1, audio1)
     
     playpause();
 })
 listeninghistory2.addEventListener('click', function () {
     playerloaded = true;
+    document.title=name2;
     changeImageAndName(images2, name2, singername2, audio2)
     playpause();
 })
 listeninghistory3.addEventListener('click', function () {
     playerloaded = true;
+    document.title=name3;
     changeImageAndName(images3, name3, singername3, audio3)
 
     playpause();
 })
 listeninghistory4.addEventListener('click', function () {
     playerloaded = true;
+    document.title=name4;
     changeImageAndName(images4, name4, singername4, audio4)
     playpause();
 })
 listeninghistory5.addEventListener('click', function () {
     playerloaded = true;
+    document.title=name5;
     changeImageAndName(images5, name5, singername5, audio5)
     playpause();
 })
 listeninghistory6.addEventListener('click', function () {
     playerloaded = true;
+    document.title=name6;
     changeImageAndName(images6, name6, singername6, audio6)
     playpause();
 })
 listeninghistory7.addEventListener('click', function () {
     playerloaded = true;
+    document.title=name7;
     changeImageAndName(images7, name7, singername7, audio7)
     playpause();
 
 })
 listeninghistory8.addEventListener('click', function () {
     playerloaded = true;
+    document.title=name8;
     changeImageAndName(images8, name8, singername8, audio8)
     playpause();
 })
