@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
-import { getAuth, createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import { getAuth, createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 const firebaseConfig = {
     apiKey: "AIzaSyAy0-j5ZJJl6VST50_Y2JV_0MJKqhc3-7w",
     authDomain: "grovito-admin.firebaseapp.com",
@@ -19,6 +19,26 @@ console.log("Login Page reached")
 let googlebutton = document.getElementById("GoogleLogin");
 let emailaddress = document.getElementById("emailaddress");
 let passwords = document.getElementById("Password");
+function getuser(){
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+  const provider = new GoogleAuthProvider();
+  const auth = getAuth();
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        const uid = user.uid;
+        // isloggedin=true;
+        console.log('signed in')
+        window.location.replace("loggedinpage.html")
+        // ...
+      } else {
+        // User is signed out
+        // ...
+        console.log('signed out')
+      }
+    });
+  }
+  getuser()
 googlebutton.addEventListener("click",function(){
   // alert("Google Login Started")
   const auth = getAuth();

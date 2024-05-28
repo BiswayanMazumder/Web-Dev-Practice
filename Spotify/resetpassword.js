@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
-import { getAuth, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import { getAuth, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, sendPasswordResetEmail, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 const firebaseConfig = {
     apiKey: "AIzaSyAy0-j5ZJJl6VST50_Y2JV_0MJKqhc3-7w",
     authDomain: "grovito-admin.firebaseapp.com",
@@ -20,6 +20,26 @@ let reset = document.getElementById("ResetPassword");
 let isadded = false;
 let emailsent = false;
 let successmessage = document.querySelector(".subtext");
+function getuser(){
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const provider = new GoogleAuthProvider();
+    const auth = getAuth();
+      onAuthStateChanged(auth, (user) => {
+        if (user) {
+          const uid = user.uid;
+          // isloggedin=true;
+          console.log('signed in')
+          window.location.replace("loggedinpage.html")
+          // ...
+        } else {
+          // User is signed out
+          // ...
+          console.log('signed out')
+        }
+      });
+    }
+    getuser()
 reset.addEventListener("click", function () {
     let emailAddress = document.getElementById("emailaddress");
     const auth = getAuth();
