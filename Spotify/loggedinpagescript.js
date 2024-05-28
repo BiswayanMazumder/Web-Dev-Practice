@@ -1,4 +1,5 @@
 // console.log('Welcome to logged in page')
+
 const letters = '0123456789ABCDEF';
 let color = '#';
 let profilepic = document.querySelector('.profilepicture')

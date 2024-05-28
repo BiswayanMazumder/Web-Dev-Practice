@@ -1,57 +1,89 @@
-*{
+* {
     padding: 0;
     margin: 0;
 }
-body{
-    background-color: #121212;
+
+body {
     color: white;
-    font-family: sans-serif;
-}
-.container{
-    position: relative;
-    height: 100vh;
-    width: 100vw;
-}
-.appbar{
-    width: 8px;
-    height: auto;
-    top: 50px;
-    left: 20px;
-    /* background-color: red; */
-    position: relative;
-
-    
-}
-.signup {
-    height: 100vh;
-    width: auto;
-    position: absolute;
-    top: 68%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: transparent;
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: start;
-    font-weight: 700;
-    font-size: 28px;
-}
-
-.label{
     font-size: 16px;
-    position: relative;
-    top: 40px;
-    display: flex;
-    flex-direction: column;
-}
-.container .email {
-    background-color: transparent;
-    border: 0.3px solid gray;
-    height: 30px;
-    top: 10px;
-    border-radius: 5px;
-    position: relative;
-    width: 100%; /* Set width to 100% */
-}
+    font-family: sans-serif;
+    font-weight: 700;
+    background-color: #202020;
+    overflow-y: scroll;
+    overflow: scroll;
+    .appbar {
+        background-color: #121212;
+        height: 100px;
+        position: relative;
+        width: 100%;
+        /* border-radius: 5px; */
+        display: flex;
+        flex-direction: row;
+    }
 
+    .appbar .logo .Logo{
+        top: 30%;
+        position: relative;
+        padding-left: 40px;
+    }
+
+    .container {
+        background-color: #121212;
+        height: 1000px;
+        width: 700px;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        margin: 0 auto; 
+        top: 50px;
+        margin-bottom: 150px; 
+        /* min-width: 800px; */
+      }
+      .container .glogin .loginbuttons{
+        background-color: transparent;
+        border-radius:25px;
+        height: 50px;
+        width:400px;
+        position: relative;
+        color: white;
+        font-size: 16px;
+        font-weight: 700;
+        font-family: sans-serif;
+        border: 0.1px solid gray;
+      }
+      .container .glogin{
+        position:absolute;
+        top: 22%;
+      }
+      .container .glogin .email{
+        margin-top: 15px;
+        height: 50px;
+        border-radius: 10px;
+        border: 1px solid gray;
+        position: relative;
+        background-color: transparent;
+        
+      }
+      .container .glogin .email:hover{
+        border: 1px solid white;
+      }
+      .container .glogin .email::placeholder{
+        color: white;
+        font-family: sans-serif;
+        font-weight: 700;
+        padding-left: 10px;
+      }
+      .container .glogin .loginbuttons:hover{
+        border:1px solid white;
+      }
+      @media screen and (max-width: 600px) {
+        .container .loginbuttons{
+            position:absolute;
+            top: 30%;
+          }
+        
+      }
+      .container .glogin .forgot .forgotpw:hover{
+        color:#1DB954;
+      }
+}
