@@ -1,3 +1,20 @@
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
+import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-auth.js";
+const firebaseConfig = {
+    apiKey: "AIzaSyAy0-j5ZJJl6VST50_Y2JV_0MJKqhc3-7w",
+    authDomain: "grovito-admin.firebaseapp.com",
+    projectId: "grovito-admin",
+    storageBucket: "grovito-admin.appspot.com",
+    messagingSenderId: "914981071784",
+    appId: "1:914981071784:web:6312a727ac7602b2c78b9d",
+    measurementId: "G-G4DXEDMJT8"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+
 console.log("Login Page reached")
 let googlebutton=document.getElementById("GoogleLogin");
 let emailaddress=document.getElementById("emailaddress");
