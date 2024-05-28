@@ -288,7 +288,7 @@ function changeImageAndName(imageSrc, name, singername, audiofile) {
 <div class="controls"
     style="position: absolute;justify-content: center;text-align: center;left: 50%;top: 10px;display: flex;flex-direction: column;">
     <div class="navigation">
-        <audio src=${audiofile} class="audioplay" id="audio"></audio>
+        <audio src=${audiofile} class="audioplay" id="audio" autoplay></audio>
         <a href="#previous" class="nav-prev"
             style="position: relative;top: 5px;padding-right: 10px;text-decoration: none;" id="playaudio">
             <svg data-encore-id="icon" role="img" aria-hidden="true" height="16" width="16"
@@ -301,9 +301,11 @@ function changeImageAndName(imageSrc, name, singername, audiofile) {
         <a href="#play" class="nav-play" style="position: relative;top: 5px;text-decoration: none;"
             id="playpause">
             <svg data-encore-id="icon" role="img" aria-hidden="true" height="16" width="16"
-                viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 dYnaPI">
-                <path d="M3 2v12l10-6-10-6z" fill="white" />
-            </svg>
+viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 dYnaPI">
+<path
+    d="M2.7 1a.7.7 0 0 0-.7.7v12.6a.7.7 0 0 0 .7.7h2.6a.7.7 0 0 0 .7-.7V1.7a.7.7 0 0 0-.7-.7H2.7zm8 0a.7.7 0 0 0-.7.7v12.6a.7.7 0 0 0 .7.7h2.6a.7.7 0 0 0 .7-.7V1.7a.7.7 0 0 0-.7-.7h-2.6z"
+    fill="white"></path>
+</svg>
 
         </a>
         <a href="#next" class="nav-forward"
@@ -327,7 +329,7 @@ function changeImageAndName(imageSrc, name, singername, audiofile) {
 <br><br><br>`
 }
 
-var isplaying = false;
+var isplaying = true;
 function playpause() {
 
     var audiobutton = document.querySelector('.nav-play')
