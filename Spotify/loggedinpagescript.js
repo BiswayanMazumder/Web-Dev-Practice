@@ -37,7 +37,7 @@ function getuser(){
       });
     }
 getuser();
-let logout=document.querySelector('.login')
+let logout=document.querySelector('#signout')
 logout.addEventListener('click', function(){
     const auth = getAuth();
     

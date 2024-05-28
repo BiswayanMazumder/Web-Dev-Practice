@@ -168,8 +168,14 @@
                         </a> -->
                         <div class="buttons">
                             <a href="#logout" class="signin"
+                                style="text-decoration: none; color: grey; font-weight: bolder;margin-right: 10px;">
+                                <div class="login"style="text-decoration: none; color: black; font-weight: bolder;font-size: 12px;" id="rzp-button1">
+                                    Get Premium
+                                </div>
+                            </a>
+                            <a href="#logout" class="signin"
                                 style="text-decoration: none; color: grey; font-weight: bolder;">
-                                <div class="login">
+                                <div class="login" style="text-decoration: none; color: black; font-weight: bolder;font-size: 12px;" id="signout">
                                     Logout
                                 </div>
                             </a>
@@ -579,6 +585,24 @@
     </div>
     <script src="loggedinpagescript.js" type="module" defer></script>
     <script src="playlistsongs.js"type="module" defer></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+var options = {
+    "key": "rzp_test_LWOeujcY4CFvGk", // Enter the Key ID generated from the Dashboard
+    "amount": "120000",
+    "currency": "INR",
+    "name": "Grovito",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgz5EMEfoCRrQXJVOkaRfKbf0PNiI6TflGUA&s",
+    "theme": {
+        "color": "#1DB954"
+    }
+};
+var rzp1 = new Razorpay(options);
+document.getElementById('rzp-button1').onclick = function(e){
+    rzp1.open();
+    e.preventDefault();
+}
+</script>
 </body>
 
 </html>
