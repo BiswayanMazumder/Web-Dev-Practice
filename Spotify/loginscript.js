@@ -19,6 +19,26 @@ const provider = new GoogleAuthProvider();
 let googlebutton=document.getElementById("GoogleLogin");
 let emailaddress=document.getElementById("emailaddress");
 let passwords=document.getElementById("Password");
+function getuser(){
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+  const provider = new GoogleAuthProvider();
+  const auth = getAuth();
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        const uid = user.uid;
+        // isloggedin=true;
+        console.log('signed in')
+        window.location.replace("loggedinpage.html")
+        // ...
+      } else {
+        // User is signed out
+        // ...
+        console.log('signed out')
+      }
+    });
+  }
+  getuser()
 googlebutton.addEventListener("click",function(){
     // alert("Google Login Started")
     const auth = getAuth();
@@ -56,14 +76,24 @@ phonebutton.addEventListener("click",function(){
     alert("Phone Login Started")
 })
 let loginbutton=document.getElementById("EmailLogin");
+let Buttons=document.querySelector('.Buttons')
 loginbutton.addEventListener("click",function(event){
     event.preventDefault();
     // alert("Email Login Started")
     const auth = getAuth();
     const email = emailaddress.value;
     const password=passwords.value;
+    const originalContent = `<button class="loginbuttons" id="EmailLogin" style="color: black; background-color: #1DB954;border: #1DB954;">Login</button>`;
     // console.log(passwords.value)
-    signInWithEmailAndPassword(auth, email, password)
+    if(email=="" && password==""){
+      
+        Buttons.innerHTML =`<div class="errors" style="color: red;position: relative;text-align: center;">Please enter credentials</div>`
+        setTimeout(() => {
+          Buttons.innerHTML = originalContent;
+        }, 5000);
+      
+    }else{
+      signInWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
     // Signed in 
     const user = userCredential.user;
@@ -75,7 +105,12 @@ loginbutton.addEventListener("click",function(event){
     const errorCode = error.code;
     const errorMessage = error.message;
     // alert(errorMessage)
+    Buttons.innerHTML =`<div class="errors" style="color: red;position: relative;text-align: center;">Please enter correct credentials</div>`
+        setTimeout(() => {
+          Buttons.innerHTML = originalContent;
+        }, 5000);
   });
+    }
 })
 // let githubbutton=document.getElementById("GithubLogin");
 // githubbutton.addEventListener("click",function(){
