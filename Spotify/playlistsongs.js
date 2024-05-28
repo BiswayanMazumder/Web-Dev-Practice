@@ -16,6 +16,7 @@ function movenext() {
             playingsong = arijitsongs[currentIndex];
             playingsongname = songnames[currentIndex];
             playnextsong(playingsongname, playingsong);
+            document.title=`${songnames[currentIndex]} - Arijit Singh`;
             console.log("Current Index:", currentIndex);
             console.log("Playing Song:", playingsong);
             console.log("Playing Song Name:", playingsongname);
@@ -38,6 +39,7 @@ function moveprev(){
             playingsong = arijitsongs[currentIndex];
             playingsongname = songnames[currentIndex];
             playnextsong(playingsongname, playingsong);
+            document.title=`${songnames[currentIndex]} - Arijit Singh`;
             console.log("Current Index:", currentIndex);
             console.log("Playing Song:", playingsong);
             console.log("Playing Song Name:", playingsongname);
@@ -45,6 +47,7 @@ function moveprev(){
             playpause();
             moveprev()
             movenext()
+            
         } else if(currentIndex==0) {
             console.log('End of list');
         }
@@ -111,6 +114,7 @@ viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 dYnaPI">
 playbutton.addEventListener('click', function() {
     // console.log(songname)
     playnextsong(playingsongname,playingsong);
+    document.title=`${songnames[currentIndex]} - Arijit Singh`;
     playpause()
     movenext()
     moveprev()
