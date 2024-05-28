@@ -19,6 +19,7 @@ function getuser(){
     const analytics = getAnalytics(app);
     const provider = new GoogleAuthProvider();
     const auth = getAuth();
+    
       onAuthStateChanged(auth, (user) => {
         if (user) {
           const uid = user.uid;
@@ -36,6 +37,19 @@ function getuser(){
       });
     }
 getuser();
+let logout=document.querySelector('.login')
+logout.addEventListener('click', function(){
+    const auth = getAuth();
+    
+    auth.signOut().then(() => {
+        // Sign-out successful.
+        window.location.replace('index.html');
+    }).catch((error) => {
+        // An error happened.
+        console.error('Error during sign out:', error);
+    });
+});
+
 const letters = '0123456789ABCDEF';
 let color = '#';
 let profilepic = document.querySelector('.profilepicture')
@@ -400,3 +414,4 @@ viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 dYnaPI">
     })
 
 }
+
