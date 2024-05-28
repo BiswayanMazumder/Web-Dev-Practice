@@ -40,7 +40,7 @@ loginbutton.addEventListener("click", function (event) {
     const auth = getAuth();
     const email = emailaddress.value;
     const password=passwords.value;
-    console.log(passwords.value)
+    // console.log(passwords.value)
     createUserWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
     // Signed in 

@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
-import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-auth.js";
+import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 const firebaseConfig = {
     apiKey: "AIzaSyAy0-j5ZJJl6VST50_Y2JV_0MJKqhc3-7w",
     authDomain: "grovito-admin.firebaseapp.com",
@@ -14,11 +14,10 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
-
 console.log("Login Page reached")
 let googlebutton=document.getElementById("GoogleLogin");
 let emailaddress=document.getElementById("emailaddress");
-let password=document.getElementById("Password");
+let passwords=document.getElementById("Password");
 googlebutton.addEventListener("click",function(){
     alert("Google Login Started")
 })
@@ -35,17 +34,26 @@ phonebutton.addEventListener("click",function(){
     alert("Phone Login Started")
 })
 let loginbutton=document.getElementById("EmailLogin");
-loginbutton.addEventListener("click",function(){
+loginbutton.addEventListener("click",function(event){
+    event.preventDefault();
     // alert("Email Login Started")
-    if(emailaddress.value=="biswayanmazumder27@gmail.com" && password.value=="123456789"){
-        console.log("Email address  found")
-        // console.log(document.querySelector(".glogin").innerHTML)
-        window.location.href="loggedinpage.html"
-    }
-    else{
-        window.location.href="loggedinpage.html"
-        console.log("Email address not found")
-    }
+    const auth = getAuth();
+    const email = emailaddress.value;
+    const password=passwords.value;
+    // console.log(passwords.value)
+    signInWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+    // alert('Creating User')
+    window.location.href="loggedinpage.html"
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // alert(errorMessage)
+  });
 })
 // let githubbutton=document.getElementById("GithubLogin");
 // githubbutton.addEventListener("click",function(){
