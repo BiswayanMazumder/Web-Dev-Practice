@@ -22,13 +22,34 @@ function movenext() {
             arijitplaying = false;
             playpause();
             movenext()
+            moveprev()
         } else {
             console.log('End of list');
         }
     });
 }
-
-
+function moveprev(){
+    var prevbutton = document.querySelector('#previousaudio');
+    
+    prevbutton.addEventListener('click', function () {
+        // alert('prev clicked')
+        if (currentIndex>0) {
+            currentIndex -= 1;
+            playingsong = arijitsongs[currentIndex];
+            playingsongname = songnames[currentIndex];
+            playnextsong(playingsongname, playingsong);
+            console.log("Current Index:", currentIndex);
+            console.log("Playing Song:", playingsong);
+            console.log("Playing Song Name:", playingsongname);
+            arijitplaying = false;
+            playpause();
+            moveprev()
+            movenext()
+        } else if(currentIndex==0) {
+            console.log('End of list');
+        }
+    });
+}
 function playnextsong(songname,songfile){
     navigationbar.innerHTML = `<div class="songname"
     style="position: relative;justify-content: start;text-align: start;display: flex;flex-direction: row;">
@@ -49,12 +70,12 @@ function playnextsong(songname,songfile){
     <div class="navigation">
         <audio src=${songfile} class="audioplay" id="audio" autoplay></audio>
         <a href="#previous" class="nav-prev"
-            style="position: relative;top: 5px;padding-right: 10px;text-decoration: none;" id="playaudio">
+            style="position: relative;top: 5px;padding-right: 10px;text-decoration: none;" id="previousaudio">
             <svg data-encore-id="icon" role="img" aria-hidden="true" height="16" width="16"
                 viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 dYnaPI">
                 <path
                     d="M3.3 1a.7.7 0 0 1 .7.7v5.15l9.95-5.744a.7.7 0 0 1 1.05.606v12.575a.7.7 0 0 1-1.05.607L4 9.149V14.3a.7.7 0 0 1-.7.7H1.7a.7.7 0 0 1-.7-.7V1.7a.7.7 0 0 1 .7-.7h1.6z"
-                    fill="grey"></path>
+                    fill="white"></path>
             </svg>
         </a>
         <a href="#play" class="nav-play" style="position: relative;top: 5px;text-decoration: none;"
@@ -92,6 +113,7 @@ playbutton.addEventListener('click', function() {
     playnextsong(playingsongname,playingsong);
     playpause()
     movenext()
+    moveprev()
 })
 var arijitplaying = true;
 
