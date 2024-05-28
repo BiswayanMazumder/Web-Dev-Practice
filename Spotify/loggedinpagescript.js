@@ -72,9 +72,9 @@ let singername4 = 'Album'
 let name6 = 'This is KR$NA'
 let singername6 = 'Album'
 let name7 = 'This is Parmish Verma'
-let singername7 = 'Tayc, Shreya Ghosal'
+let singername8 = 'Tayc, Shreya Ghosal'
 let name8 = 'Yimmy Yimmy'
-let singername8 = 'Album'
+let singername7 = 'Album'
 listeninghistory1.innerHTML += `<div class="singername">${name1}</div>`
 listeninghistory2.innerHTML += `<div class="singername">${name2}</div>`
 listeninghistory3.innerHTML += `<div class="singername">${name3}</div>`
