@@ -1,5 +1,6 @@
 // console.log("playlists loaded")
 let playbutton = document.getElementById('Arijitplaylist')
+let navigationbar = document.querySelector('.bottom-nav')
 let arijitsongs = ['arijit/chaleya.mp3', 'arijit/galtisemistake.mp3', 'arijit/humariadhurikahani.mp3', 'arijit/luttputtgaya.mp3', 'arijit/omahi.mp3', 'arijit/satrangi.mp3']
 let songnames = ['Chaleya', 'Galti Se Mistake', 'Humari Adhuri Kahani', 'Lutt Puttgaya', 'O Mahi', 'Satrangi']
 let navbar = document.querySelector('.bottom-nav')
