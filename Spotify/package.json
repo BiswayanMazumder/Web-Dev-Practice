@@ -10,8 +10,10 @@
   "author": "Biswayan",
   "license": "ISC",
   "dependencies": {
+    "@clerk/clerk-js": "^5.5.3",
     "@vercel/speed-insights": "^1.0.11",
     "datex.js": "^1.0.12",
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "firebase": "^10.12.2"
   }
 }
