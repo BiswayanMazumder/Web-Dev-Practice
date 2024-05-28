@@ -72,9 +72,10 @@ applebutton.addEventListener("click",function(){
     alert("Apple Login Started")
 })
 let phonebutton=document.getElementById("PhoneLogin");
-phonebutton.addEventListener("click",function(){
-    alert("Phone Login Started")
-})
+// phonebutton.addEventListener("click",function(){
+//     // alert("Phone Login Started")
+//     window.location.href="phonelogin.html"
+// })
 let loginbutton=document.getElementById("EmailLogin");
 let Buttons=document.querySelector('.Buttons')
 loginbutton.addEventListener("click",function(event){

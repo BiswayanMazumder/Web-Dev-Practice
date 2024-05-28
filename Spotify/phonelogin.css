@@ -1,0 +1,89 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    color: white;
+    font-size: 16px;
+    font-family: sans-serif;
+    font-weight: 700;
+    background-color: #202020;
+    overflow-y: scroll;
+    overflow: scroll;
+    .appbar {
+        background-color: #121212;
+        height: 100px;
+        position: relative;
+        width: 100%;
+        /* border-radius: 5px; */
+        display: flex;
+        flex-direction: row;
+    }
+
+    .appbar .logo .Logo{
+        top: 30%;
+        position: relative;
+        padding-left: 40px;
+    }
+
+    .container {
+        background-color: #121212;
+        height: 600px;
+        width: 700px;
+        /* position: relative; */
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        margin: 0 auto; 
+        top: 50px;
+        /* min-width: 800px; */
+      }
+      .container .glogin .loginbuttons{
+        background-color: transparent;
+        border-radius:25px;
+        height: 50px;
+        width:400px;
+        position: relative;
+        color: white;
+        font-size: 16px;
+        font-weight: 700;
+        font-family: sans-serif;
+        border: 0.1px solid gray;
+      }
+      .container .glogin{
+        position:absolute;
+        top: 22%;
+      }
+      .container .glogin .email{
+        margin-top: 15px;
+        height: 50px;
+        border-radius: 10px;
+        border: 1px solid gray;
+        position: relative;
+        background-color: transparent;
+        
+      }
+      .container .glogin .email:hover{
+        border: 1px solid white;
+      }
+      .container .glogin .email::placeholder{
+        color: white;
+        font-family: sans-serif;
+        font-weight: 700;
+        padding-left: 10px;
+      }
+      .container .glogin .loginbuttons:hover{
+        border:1px solid white;
+      }
+      @media screen and (max-width: 600px) {
+        .container .loginbuttons{
+            position:absolute;
+            top: 30%;
+          }
+        
+      }
+      .container .glogin .forgot .forgotpw:hover{
+        color:#1DB954;
+      }
+}

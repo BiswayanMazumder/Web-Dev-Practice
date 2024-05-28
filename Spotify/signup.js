@@ -52,9 +52,9 @@ applebutton.addEventListener("click", function () {
     alert("Apple Login Started")
 })
 let phonebutton = document.getElementById("PhoneLogin");
-phonebutton.addEventListener("click", function () {
-    alert("Phone Login Started")
-})
+// phonebutton.addEventListener("click", function () {
+//     alert("Phone Login Started")
+// })
 let loginbutton = document.getElementById("EmailLogin");
 loginbutton.addEventListener("click", function (event) {
     event.preventDefault();
