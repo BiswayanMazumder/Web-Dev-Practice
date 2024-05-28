@@ -1,26 +1,45 @@
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
+import { getAuth, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+const firebaseConfig = {
+    apiKey: "AIzaSyAy0-j5ZJJl6VST50_Y2JV_0MJKqhc3-7w",
+    authDomain: "grovito-admin.firebaseapp.com",
+    projectId: "grovito-admin",
+    storageBucket: "grovito-admin.appspot.com",
+    messagingSenderId: "914981071784",
+    appId: "1:914981071784:web:6312a727ac7602b2c78b9d",
+    measurementId: "G-G4DXEDMJT8"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+const provider = new GoogleAuthProvider();
 console.log("Reset Password Page reached")
 let reset = document.getElementById("ResetPassword");
 let isadded = false;
-let emailsent=false;
+let emailsent = false;
+let successmessage = document.querySelector(".subtext");
 reset.addEventListener("click", function () {
     let emailAddress = document.getElementById("emailaddress");
+    const auth = getAuth();
+    const email = emailAddress.value;
+    sendPasswordResetEmail(auth, email)
+        .then(() => {
+            // Password reset email sent!
+            console.log('sent')
+            successmessage.innerHTML += `<div class="errormessage" style="position: relative;justify-content: center;text-align: center;color: #1DB954;font-weight: 700;">
+    Password Reset Email Sent successfully
+</div>`
 
-    if (emailAddress.value.includes("@")) {
-        console.log("Email found");
-        console.log(emailAddress.value);
-        if (!isadded) {
-            document.querySelector(".textfield").innerHTML += "<div class='error' style='color: green;font-size: 15px;font-weight: 700;position: relative;text-align: start;justify-content: start;'>Reset Email Sent Successfully</div>";
-            emailsent = true;
-        }
-        emailAddress.style.border = "1px solid gray";
-    } else {
-        console.log("Email not found");
-        emailAddress.style.border = "2px solid red";
-        if (!isadded) {
-            document.querySelector(".textfield").innerHTML += "<div class='error' style='color: red;font-size: 15px;font-weight: 500;position: relative;text-align: start;justify-content: start;'>This field is required</div>";
-            isadded = true;
-        }
-    }
+            // ..
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.log(errorMessage)
+            // ..
+        });
 });
 
 
