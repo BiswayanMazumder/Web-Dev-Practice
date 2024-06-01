@@ -61,7 +61,7 @@ function moveprev(){
 function playnextsong(songname,songfile,songimage){
     navigationbar.innerHTML = `<div class="songname"
     style="position: relative;justify-content: start;text-align: start;display: flex;flex-direction: row;">
-    <img src=${songimage} alt="Arijit Singh" class="krsna"
+    <img src=${songimage} alt=${songname} class="krsna"
         height="50px" style="border-radius: 5px;padding-left: 5px;top: 10px;position: relative;">
     <div class="songname"
         style="color: white;margin-left: 10px;position: relative;top: 15px;font-size: 14px;font-weight: 600;display: flex;flex-direction: column;font-family: sans-serif;">
