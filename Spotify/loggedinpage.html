@@ -602,6 +602,21 @@ document.getElementById('rzp-button1').onclick = function(e){
     rzp1.open();
     e.preventDefault();
 }
+rzp1.on('payment.success', function(response) {
+    console.log("Payment successful:");
+});
+
+rzp1.on('payment.error', function(response) {
+    console.log("Payment error:", response.error);
+});
+
+rzp1.on('external_wallet', function(response) {
+    console.log("External wallet chosen:", response);
+});
+
+rzp1.on('rzp_event', function(response) {
+    console.log("Razorpay event:", response);
+});
 </script>
 </body>
 
