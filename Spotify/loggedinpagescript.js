@@ -415,4 +415,60 @@ viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 dYnaPI">
     })
 
 }
+var options = {
+    "key": "rzp_test_LWOeujcY4CFvGk", // Enter the Key ID generated from the Dashboard
+    "amount": "120000", // Amount is in currency subunits. Default currency is INR.
+    "currency": "INR",
+    "name": "Grovito",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgz5EMEfoCRrQXJVOkaRfKbf0PNiI6TflGUA&s",
+    "theme": {
+        "color": "#1DB954"
+    },
+    "handler": function (response){
+        console.log("Handler triggered with response:", response);
+        checkPaymentStatus('success');
+    }
+};
+
+var rzp1 = new Razorpay(options);
+
+document.getElementById('rzp-button1').onclick = function(e){
+    paymentStatus().then(function(status) {
+        checkPaymentStatus(status);
+    }).catch(function(status) {
+        checkPaymentStatus(status);
+    });
+    rzp1.open();
+    e.preventDefault();
+};
+
+var paymentStatus = function() {
+    return new Promise((resolve, reject) => {
+        rzp1.on('payment.error', function(response) {
+            console.log("Payment failed:", response);
+            reject('failed');
+        });
+
+        rzp1.on('payment.success', function(response) {
+            console.log("Payment successful:", response);
+            resolve('success');
+        });
+
+        rzp1.on('external_wallet', function(response) {
+            console.log("External wallet chosen:", response);
+        });
+
+        rzp1.on('rzp_event', function(response) {
+            console.log("Razorpay event:", response);
+        });
+    });
+};
+
+function checkPaymentStatus(status) {
+    if (status === 'failed') {
+        console.log('failed');
+    } else {
+        console.log('success');
+    }
+}
 

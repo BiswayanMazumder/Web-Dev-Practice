@@ -589,39 +589,6 @@
 <script>
     window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
 </script>
-<script defer src="/_vercel/speed-insights/script.js"></script>
-<script>
-var options = {
-    "key": "rzp_test_LWOeujcY4CFvGk", // Enter the Key ID generated from the Dashboard
-    "amount": "120000",
-    "currency": "INR",
-    "name": "Grovito",
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgz5EMEfoCRrQXJVOkaRfKbf0PNiI6TflGUA&s",
-    "theme": {
-        "color": "#1DB954"
-    }
-};
-var rzp1 = new Razorpay(options);
-document.getElementById('rzp-button1').onclick = function(e){
-    rzp1.open();
-    e.preventDefault();
-}
-rzp1.on('payment.success', function(response) {
-    console.log("Payment successful:");
-});
-
-rzp1.on('payment.error', function(response) {
-    console.log("Payment error:", response.error);
-});
-
-rzp1.on('external_wallet', function(response) {
-    console.log("External wallet chosen:", response);
-});
-
-rzp1.on('rzp_event', function(response) {
-    console.log("Razorpay event:", response);
-});
-</script>
 </body>
 
 </html>
