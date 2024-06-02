@@ -23,7 +23,7 @@ function getuser(){
       onAuthStateChanged(auth, (user) => {
         if (user) {
           const uid = user.uid;
-          console.log(uid);
+        //   console.log(uid);
         //   isloggedin=true;
           console.log('signed in')
         //   window.location.replace("loggedinpage.html")
