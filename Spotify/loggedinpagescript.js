@@ -2,6 +2,9 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
 import { getAuth, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, sendPasswordResetEmail, onAuthStateChanged  } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import { getFirestore,collection,addDoc,setDoc,doc,getDocs } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+// import { collection, addDoc, } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js"; 
+// import { setDoc } from "firebase/firestore";
 const firebaseConfig = {
     apiKey: "AIzaSyAy0-j5ZJJl6VST50_Y2JV_0MJKqhc3-7w",
     authDomain: "grovito-admin.firebaseapp.com",
@@ -11,11 +14,12 @@ const firebaseConfig = {
     appId: "1:914981071784:web:6312a727ac7602b2c78b9d",
     measurementId: "G-G4DXEDMJT8"
 };
-
+// const db = getFirestore(app);
 // Initialize Firebase
 var functioncalled=false;
-function getuser(){
-    const app = initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+async function getuser(){
     const analytics = getAnalytics(app);
     const provider = new GoogleAuthProvider();
     const auth = getAuth();
@@ -37,7 +41,8 @@ function getuser(){
         }
       });
     }
-getuser();
+await getuser();
+
 let logout=document.querySelector('#signout')
 logout.addEventListener('click', function(){
     const auth = getAuth();
@@ -415,6 +420,31 @@ viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 dYnaPI">
     })
 
 }
+async function premiumsuccess() {
+    const auth = getAuth();
+    try {
+        onAuthStateChanged(auth, async (user) => {
+            if (user) {
+                const uid = user.uid;
+                // console.log(uid);
+                try {
+                    // Create a reference to the document with the user's UID
+                    await setDoc(doc(db, "users", uid), {
+                        Subscribed: true
+                    });
+
+                    // console.log("Document written with ID: ", uid);
+                } catch (e) {
+                    console.error("Error adding document: ", e);
+                }
+            } else {
+                console.error("No user is signed in");
+            }
+        });
+    } catch (e) {
+        console.error("Error with auth state change: ", e);
+    }
+}
 var options = {
     "key": "rzp_test_LWOeujcY4CFvGk", // Enter the Key ID generated from the Dashboard
     "amount": "120000", // Amount is in currency subunits. Default currency is INR.
@@ -433,6 +463,7 @@ var options = {
 var rzp1 = new Razorpay(options);
 
 document.getElementById('rzp-button1').onclick = function(e){
+    // premiumsuccess()
     paymentStatus().then(function(status) {
         checkPaymentStatus(status);
     }).catch(function(status) {
@@ -464,11 +495,12 @@ var paymentStatus = function() {
     });
 };
 
-function checkPaymentStatus(status) {
+async function checkPaymentStatus(status) {
     if (status === 'failed') {
         console.log('failed');
     } else {
         console.log('success');
+        await premiumsuccess();
     }
 }
 
