@@ -1,8 +1,9 @@
 // console.log('Welcome to logged in page')
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
-import { getAuth, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, sendPasswordResetEmail, onAuthStateChanged  } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-import { getFirestore,collection,addDoc,setDoc,doc,getDocs } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+import { getAuth, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, sendPasswordResetEmail, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import { getFirestore, collection, addDoc, setDoc, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
 // import { collection, addDoc, } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js"; 
 // import { setDoc } from "firebase/firestore";
 const firebaseConfig = {
@@ -16,37 +17,59 @@ const firebaseConfig = {
 };
 // const db = getFirestore(app);
 // Initialize Firebase
-var functioncalled=false;
+var functioncalled = false;
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
-async function getuser(){
+async function getuser() {
     const analytics = getAnalytics(app);
     const provider = new GoogleAuthProvider();
     const auth = getAuth();
-    
-      onAuthStateChanged(auth, (user) => {
-        if (user) {
-          const uid = user.uid;
-        //   console.log(uid);
-        //   isloggedin=true;
-          console.log('signed in')
-        //   window.location.replace("loggedinpage.html")
-          functioncalled = true;
-          // ...
-        } else {
-          // User is signed out
-          // ...
-          window.location.replace("index.html")
-          console.log('signed out')
-        }
-      });
-    }
-await getuser();
 
-let logout=document.querySelector('#signout')
-logout.addEventListener('click', function(){
+    onAuthStateChanged(auth, (user) => {
+        if (user) {
+            const uid = user.uid;
+            //   console.log(uid);
+            //   isloggedin=true;
+            console.log('signed in')
+            //   window.location.replace("loggedinpage.html")
+            functioncalled = true;
+            // ...
+        } else {
+            // User is signed out
+            // ...
+            window.location.replace("index.html")
+            console.log('signed out')
+        }
+    });
+}
+await getuser();
+var issubed = false;
+async function checksubsStatus() {
     const auth = getAuth();
-    
+    onAuthStateChanged(auth, async (user) => {
+        const uid = user.uid;
+        try {
+            const userDocRef = doc(db, "users", uid);
+            const docSnap = await getDoc(userDocRef);
+            if (docSnap.exists()) {
+                issubed = docSnap.data().Subscribed;
+                console.log("Document data:", docSnap.data().Subscribed);
+            }
+            if(issubed) {
+                premiumbutton.innerHTML=``
+            }
+        } catch (e) {
+            console.log(e.message);
+        }
+    });
+}
+setInterval(checksubsStatus, 5000);
+let premiumbutton=document.querySelector("#premiumbutton")
+
+let logout = document.querySelector('#signout')
+logout.addEventListener('click', function () {
+    const auth = getAuth();
+
     auth.signOut().then(() => {
         // Sign-out successful.
         window.location.replace('index.html');
@@ -69,7 +92,7 @@ let listeninghistory6 = document.querySelector('#history6')
 let listeninghistory7 = document.querySelector('#history7')
 let listeninghistory8 = document.querySelector('#history8')
 let placetoinsert = document.querySelector('.container')
-let time='';
+let time = '';
 async function getRandomColor() {
     for (let i = 0; i < 6; i++) {
         color += letters[Math.floor(Math.random() * 18)];
@@ -231,52 +254,52 @@ listeninghistory1.addEventListener('mouseover', function () {
 })
 listeninghistory1.addEventListener('click', function () {
     playerloaded = true;
-    document.title=name1;
+    document.title = name1;
     changeImageAndName(images1, name1, singername1, audio1)
-    
+
     playpause();
 })
 listeninghistory2.addEventListener('click', function () {
     playerloaded = true;
-    document.title=name2;
+    document.title = name2;
     changeImageAndName(images2, name2, singername2, audio2)
     playpause();
 })
 listeninghistory3.addEventListener('click', function () {
     playerloaded = true;
-    document.title=name3;
+    document.title = name3;
     changeImageAndName(images3, name3, singername3, audio3)
 
     playpause();
 })
 listeninghistory4.addEventListener('click', function () {
     playerloaded = true;
-    document.title=name4;
+    document.title = name4;
     changeImageAndName(images4, name4, singername4, audio4)
     playpause();
 })
 listeninghistory5.addEventListener('click', function () {
     playerloaded = true;
-    document.title=name5;
+    document.title = name5;
     changeImageAndName(images5, name5, singername5, audio5)
     playpause();
 })
 listeninghistory6.addEventListener('click', function () {
     playerloaded = true;
-    document.title=name6;
+    document.title = name6;
     changeImageAndName(images6, name6, singername6, audio6)
     playpause();
 })
 listeninghistory7.addEventListener('click', function () {
     playerloaded = true;
-    document.title=name7;
+    document.title = name7;
     changeImageAndName(images7, name7, singername7, audio7)
     playpause();
 
 })
 listeninghistory8.addEventListener('click', function () {
     playerloaded = true;
-    document.title=name8;
+    document.title = name8;
     changeImageAndName(images8, name8, singername8, audio8)
     playpause();
 })
@@ -432,7 +455,7 @@ async function premiumsuccess() {
                     await setDoc(doc(db, "users", uid), {
                         Subscribed: true
                     });
-
+                    checksubsStatus();
                     // console.log("Document written with ID: ", uid);
                 } catch (e) {
                     console.error("Error adding document: ", e);
@@ -445,6 +468,8 @@ async function premiumsuccess() {
         console.error("Error with auth state change: ", e);
     }
 }
+
+
 var options = {
     "key": "rzp_test_LWOeujcY4CFvGk", // Enter the Key ID generated from the Dashboard
     "amount": "120000", // Amount is in currency subunits. Default currency is INR.
@@ -454,7 +479,7 @@ var options = {
     "theme": {
         "color": "#1DB954"
     },
-    "handler": function (response){
+    "handler": function (response) {
         console.log("Handler triggered with response:", response);
         checkPaymentStatus('success');
     }
@@ -462,34 +487,34 @@ var options = {
 
 var rzp1 = new Razorpay(options);
 
-document.getElementById('rzp-button1').onclick = function(e){
+document.getElementById('rzp-button1').onclick = function (e) {
     // premiumsuccess()
-    paymentStatus().then(function(status) {
+    paymentStatus().then(function (status) {
         checkPaymentStatus(status);
-    }).catch(function(status) {
+    }).catch(function (status) {
         checkPaymentStatus(status);
     });
     rzp1.open();
     e.preventDefault();
 };
 
-var paymentStatus = function() {
+var paymentStatus = function () {
     return new Promise((resolve, reject) => {
-        rzp1.on('payment.error', function(response) {
+        rzp1.on('payment.error', function (response) {
             console.log("Payment failed:", response);
             reject('failed');
         });
 
-        rzp1.on('payment.success', function(response) {
+        rzp1.on('payment.success', function (response) {
             console.log("Payment successful:", response);
             resolve('success');
         });
 
-        rzp1.on('external_wallet', function(response) {
+        rzp1.on('external_wallet', function (response) {
             console.log("External wallet chosen:", response);
         });
 
-        rzp1.on('rzp_event', function(response) {
+        rzp1.on('rzp_event', function (response) {
             console.log("Razorpay event:", response);
         });
     });
