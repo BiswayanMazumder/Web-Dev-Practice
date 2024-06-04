@@ -44,6 +44,7 @@ async function getuser() {
 }
 await getuser();
 var issubed = false;
+let premiumsubs=document.querySelector('#premiumuser')
 async function checksubsStatus() {
     const auth = getAuth();
     onAuthStateChanged(auth, async (user) => {
@@ -57,13 +58,14 @@ async function checksubsStatus() {
             }
             if(issubed) {
                 premiumbutton.innerHTML=``
+                premiumsubs.innerHTML=`<img src="https://pics.paypal.com/00/c/gifts/gb/spotify2.png" alt="" style="height: 40px; padding-left: 10px;position: relative;padding-top: 10px;" >`
             }
         } catch (e) {
             console.log(e.message);
         }
     });
 }
-setInterval(checksubsStatus, 5000);
+setInterval(checksubsStatus, 3000);
 let premiumbutton=document.querySelector("#premiumbutton")
 
 let logout = document.querySelector('#signout')
@@ -528,4 +530,3 @@ async function checkPaymentStatus(status) {
         await premiumsuccess();
     }
 }
-
