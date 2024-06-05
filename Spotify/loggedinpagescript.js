@@ -88,7 +88,7 @@ async function checksubsStatus() {
             const docSnap = await getDoc(userDocRef);
             if (docSnap.exists()) {
                 issubed = docSnap.data().Subscribed;
-                console.log("Document data:", docSnap.data().Subscribed);
+                // console.log("Document data:", docSnap.data().Subscribed);
             }
             if (issubed) {
                 premiumbutton.innerHTML = ``
