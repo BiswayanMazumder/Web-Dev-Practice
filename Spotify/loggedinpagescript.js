@@ -388,7 +388,7 @@ function changeImageAndName(imageSrc, name, singername, audiofile) {
         height="50px" style="border-radius: 5px;padding-left: 5px;top: 10px;position: relative;">
     <div class="songname"
         style="color: white;margin-left: 10px;position: relative;top: 15px;font-size: 14px;font-weight: 600;display: flex;flex-direction: column;font-family: sans-serif;">
-        <a href="#aamjahemunde" class="playingsongname">${name}</a>
+        <a href=#${name} class="playingsongname">${name}</a>
         <div class="singername"
             style="color: gray;position: relative;top: 10px;font-size: 10px;font-weight: 600;display: flex;flex-direction: column;font-family: sans-serif;">
             ${singername}
