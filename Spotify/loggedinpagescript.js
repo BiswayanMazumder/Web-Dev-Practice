@@ -20,6 +20,8 @@ const firebaseConfig = {
 var functioncalled = false;
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+var username = '';
+var profilePicture = '';
 async function getuser() {
     const analytics = getAnalytics(app);
     const provider = new GoogleAuthProvider();
@@ -28,10 +30,22 @@ async function getuser() {
     onAuthStateChanged(auth, (user) => {
         if (user) {
             const uid = user.uid;
-            //   console.log(uid);
-            //   isloggedin=true;
+            username = user.displayName;
+            profilePicture = user.photoURL;
+            console.log("Username: " + username);
+            console.log("Profile Picture URL: " + profilePicture);
             console.log('signed in')
-            //   window.location.replace("loggedinpage.html")
+            const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            const today = new Date();
+            const dayName = daysOfWeek[today.getDay()];
+            // console.log("Today is " + dayName);
+            if (dayName == 'Saturday' || dayName == 'Sunday') {
+                history.innerHTML += `🎉 It's ${dayName} and the weekend vibes are soaring high! ${username} 🎉`
+            }
+            else {
+                console.log('Username: ' + username);
+                history.innerHTML += `🎉 Welcome to Trendy ${dayName}! ${username} 🎉 `
+            }
             functioncalled = true;
             // ...
         } else {
@@ -44,7 +58,7 @@ async function getuser() {
 }
 await getuser();
 var issubed = false;
-let premiumsubs=document.querySelector('#premiumuser')
+let premiumsubs = document.querySelector('#premiumuser')
 async function checksubsStatus() {
     const auth = getAuth();
     onAuthStateChanged(auth, async (user) => {
@@ -56,9 +70,9 @@ async function checksubsStatus() {
                 issubed = docSnap.data().Subscribed;
                 console.log("Document data:", docSnap.data().Subscribed);
             }
-            if(issubed) {
-                premiumbutton.innerHTML=``
-                premiumsubs.innerHTML=`<img src="https://pics.paypal.com/00/c/gifts/gb/spotify2.png" alt="" style="height: 40px; padding-left: 10px;position: relative;padding-top: 10px;" >`
+            if (issubed) {
+                premiumbutton.innerHTML = ``
+                premiumsubs.innerHTML = `<img src="https://pics.paypal.com/00/c/gifts/gb/spotify2.png" alt="" style="height: 40px; padding-left: 10px;position: relative;padding-top: 10px;" >`
             }
         } catch (e) {
             console.log(e.message);
@@ -66,7 +80,7 @@ async function checksubsStatus() {
     });
 }
 setInterval(checksubsStatus, 3000);
-let premiumbutton=document.querySelector("#premiumbutton")
+let premiumbutton = document.querySelector("#premiumbutton")
 
 let logout = document.querySelector('#signout')
 logout.addEventListener('click', function () {
@@ -111,12 +125,13 @@ function printToday() {
         history.innerHTML += `🎉 It's ${dayName} and the weekend vibes are soaring high! 🎉`
     }
     else {
-        history.innerHTML += `🎉 Welcome to Trendy ${dayName}! 🎉`
+        console.log('Username: ' + username);
+        history.innerHTML += `🎉 Welcome to Trendy ${dayName}! 🎉 ${username}`
     }
 }
 async function main() {
     // await getRandomColor();
-    printToday();
+    // printToday();
     // console.log(color);
     let rightside = document.querySelector('.firstrightpart')
     let appbar = document.querySelector('.appbar')
