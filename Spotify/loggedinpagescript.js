@@ -39,12 +39,32 @@ async function getuser() {
             const today = new Date();
             const dayName = daysOfWeek[today.getDay()];
             // console.log("Today is " + dayName);
-            if (dayName == 'Saturday' || dayName == 'Sunday') {
-                history.innerHTML += `🎉 It's ${dayName} and the weekend vibes are soaring high! ${username} 🎉`
+            if(username!=null){
+                if (dayName == 'Saturday' || dayName == 'Sunday') {
+                    history.innerHTML += `🎉 It's ${dayName} and the weekend vibes are soaring high! ${username} 🎉`
+                }
+                else {
+                    console.log('Username: ' + username);
+                    history.innerHTML += `🎉 Welcome to Trendy ${dayName}!${username} 🎉 `
+                }
+            }else{
+                if (dayName == 'Saturday' || dayName == 'Sunday') {
+                    history.innerHTML += `🎉 It's ${dayName} and the weekend vibes are soaring high!  🎉`
+                }
+                else {
+                    console.log('Username: ' + username);
+                    history.innerHTML += `🎉 Welcome to Trendy ${dayName}! 🎉 `
+                }
             }
-            else {
-                console.log('Username: ' + username);
-                history.innerHTML += `🎉 Welcome to Trendy ${dayName}! ${username} 🎉 `
+            try {
+                if(profilePicture!=null){
+                    profilepic.innerHTML += `<img src="${profilePicture}" alt="ProfilePicture" class="profilepicture" height="20px" width="20px" style="position: relative;justify-content: center;text-align: center;top: 22%;left: 22%;border-radius: 50%;">`
+                }else{
+                    profilepic.innerHTML += '<img src="favicon.ico" alt="ProfilePicture" class="profilepicture" height="20px" width="20px" style="position: relative;justify-content: center;text-align: center;top: 22%;left: 22%;border-radius: 50%;">'
+                }
+            } catch (error) {
+                console.log(error.message)
+                profilepic.innerHTML += '<img src="play.png" alt="ProfilePicture" class="profilepicture" height="20px" width="20px" style="position: relative;justify-content: center;text-align: center;top: 22%;left: 22%;border-radius: 50%;">'
             }
             functioncalled = true;
             // ...
@@ -179,12 +199,7 @@ listeninghistory5.innerHTML += `<div class="singername">${name5}</div>`
 listeninghistory6.innerHTML += `<div class="singername">${name6}</div>`
 listeninghistory7.innerHTML += `<div class="singername">${name7}</div>`
 listeninghistory8.innerHTML += `<div class="singername">${name8}</div>`
-try {
-    profilepic.innerHTML += '<img src="favicon.ico" alt="ProfilePicture" class="profilepicture" height="20px" width="20px" style="position: relative;justify-content: center;text-align: center;top: 22%;left: 22%;border-radius: 50%;">'
-} catch (error) {
-    console.log(error.message)
-    profilepic.innerHTML += '<img src="play.png" alt="ProfilePicture" class="profilepicture" height="20px" width="20px" style="position: relative;justify-content: center;text-align: center;top: 22%;left: 22%;border-radius: 50%;">'
-}
+
 let playlistImg1 = '';
 let playlistName1 = '';
 let playlistImg2 = '';
