@@ -32,9 +32,9 @@ async function getuser() {
             const uid = user.uid;
             username = user.displayName;
             profilePicture = user.photoURL;
-            console.log("Username: " + username);
-            console.log("Profile Picture URL: " + profilePicture);
-            console.log('signed in')
+            // console.log("Username: " + username);
+            // console.log("Profile Picture URL: " + profilePicture);
+            // console.log('signed in')
             const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
             const today = new Date();
             const dayName = daysOfWeek[today.getDay()];
@@ -45,7 +45,7 @@ async function getuser() {
                 }
                 else {
                     console.log('Username: ' + username);
-                    history.innerHTML += `🎉 Welcome to Trendy ${dayName}!${username} 🎉 `
+                    history.innerHTML += `🎉 Welcome to Trendy ${dayName}! ${username} 🎉 `
                 }
             }else{
                 if (dayName == 'Saturday' || dayName == 'Sunday') {
