@@ -110,6 +110,7 @@ async function fetchlastplayed() {
 
             }
             // console.log("Document data:", songname, singer, songfile, poster);
+            document.title=songname;
             navigationbar.innerHTML = `<div class="songname"
     style="position: relative;justify-content: start;text-align: start;display: flex;flex-direction: row;">
     <img src=${poster} alt="Krsna" class="krsna"
