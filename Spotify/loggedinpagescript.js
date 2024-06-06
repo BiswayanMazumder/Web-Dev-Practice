@@ -452,7 +452,33 @@ listeninghistory8.addEventListener('mouseout', function () {
     firstpart.style.background = 'linear-gradient(to bottom, #24333E, black)'
 })
 let navigationbar = document.querySelector('.bottom-nav')
-function changeImageAndName(imageSrc, name, singername, audiofile) {
+async function changeImageAndName(imageSrc, name, singername, audiofile) {
+    const auth = getAuth();
+    try {
+        onAuthStateChanged(auth, async (user) => {
+            if (user) {
+                const uid = user.uid;
+                // console.log(uid);
+                try {
+                    // Create a reference to the document with the user's UID
+                    await setDoc(doc(db, "Currently Playing", uid), {
+                        'Song Name':name,
+                        'Song Image':imageSrc,
+                        'Singer Name':singername,
+                        'Song Audio':audiofile,
+                     }); 
+                    //  console.log('written')
+                    // console.log("Document written with ID: ", uid);
+                } catch (e) {
+                    console.error("Error adding document: ", e);
+                }
+            } else {
+                console.error("No user is signed in");
+            }
+        });
+    } catch (e) {
+        console.error("Error with auth state change: ", e);
+    }
     navigationbar.innerHTML = `<div class="songname"
     style="position: relative;justify-content: start;text-align: start;display: flex;flex-direction: row;">
     <img src=${imageSrc} alt="Krsna" class="krsna"
