@@ -236,7 +236,7 @@ async function checksubsStatus() {
     onAuthStateChanged(auth, async (user) => {
         const uid = user.uid;
         try {
-            const userDocRef = doc(db, "users", uid);
+            const userDocRef = doc(db, "Premium_Status", uid);
             const docSnap = await getDoc(userDocRef);
             if (docSnap.exists()) {
                 issubed = docSnap.data().Subscribed;
@@ -633,7 +633,7 @@ async function premiumsuccess() {
                 // console.log(uid);
                 try {
                     // Create a reference to the document with the user's UID
-                    await setDoc(doc(db, "users", uid), {
+                    await setDoc(doc(db, "Premium_Status", uid), {
                         Subscribed: true
                     });
                     checksubsStatus();
