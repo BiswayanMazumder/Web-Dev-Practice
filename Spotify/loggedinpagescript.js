@@ -452,6 +452,31 @@ listeninghistory8.addEventListener('mouseout', function () {
     firstpart.style.background = 'linear-gradient(to bottom, #24333E, black)'
 })
 let navigationbar = document.querySelector('.bottom-nav')
+var songname='';
+var singer='';
+var songfile='';
+var poster='';
+async function fetchlastplayed(){
+    const auth = getAuth();
+    onAuthStateChanged(auth, async (user) => {
+        const uid = user.uid;
+        try {
+            const userDocRef = doc(db, "Currently Playing", uid);
+            const docSnap = await getDoc(userDocRef);
+            if (docSnap.exists()) {
+                songname = docSnap.data().Song_Name;
+                singer= docSnap.data().Singer_Name;
+                songfile=docSnap.data().Song_Audio;
+                poster=docSnap.data().Song_Image;
+
+            }
+            // console.log("Document data:", songname,singer,songfile,poster);
+        } catch (e) {
+            console.log(e.message);
+        }
+    });
+}
+await fetchlastplayed();
 async function changeImageAndName(imageSrc, name, singername, audiofile) {
     const auth = getAuth();
     try {
@@ -462,10 +487,10 @@ async function changeImageAndName(imageSrc, name, singername, audiofile) {
                 try {
                     // Create a reference to the document with the user's UID
                     await setDoc(doc(db, "Currently Playing", uid), {
-                        'Song Name':name,
-                        'Song Image':imageSrc,
-                        'Singer Name':singername,
-                        'Song Audio':audiofile,
+                        'Song_Name':name,
+                        'Song_Image':imageSrc,
+                        'Singer_Name':singername,
+                        'Song_Audio':audiofile,
                      }); 
                     //  console.log('written')
                     // console.log("Document written with ID: ", uid);
