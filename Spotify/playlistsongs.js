@@ -1,4 +1,21 @@
-// console.log("playlists loaded")
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
+import { getAuth, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, sendPasswordResetEmail, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import { getFirestore, collection, addDoc, setDoc, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+const firebaseConfig = {
+    apiKey: "AIzaSyAy0-j5ZJJl6VST50_Y2JV_0MJKqhc3-7w",
+    authDomain: "grovito-admin.firebaseapp.com",
+    projectId: "grovito-admin",
+    storageBucket: "grovito-admin.appspot.com",
+    messagingSenderId: "914981071784",
+    appId: "1:914981071784:web:6312a727ac7602b2c78b9d",
+    measurementId: "G-G4DXEDMJT8"
+};
+// const db = getFirestore(app);
+// Initialize Firebase
+var functioncalled = false;
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
 let playbutton = document.getElementById('Arijitplaylist')
 let navigationbar = document.querySelector('.bottom-nav')
 let arijitsongs = ['arijit/chaleya.mp3', 'arijit/galtisemistake.mp3', 'arijit/humariadhurikahani.mp3', 'arijit/luttputtgaya.mp3', 'arijit/omahi.mp3', 'arijit/satrangi.mp3']
@@ -59,6 +76,32 @@ function moveprev(){
     });
 }
 function playnextsong(songname,songfile,songimage){
+    const auth = getAuth();
+    try {
+        onAuthStateChanged(auth, async (user) => {
+            if (user) {
+                const uid = user.uid;
+                // console.log(uid);
+                try {
+                    // Create a reference to the document with the user's UID
+                    await setDoc(doc(db, "Currently Playing", uid), {
+                        'Song_Name': songname,
+                        'Song_Image': songimage,
+                        'Singer_Name': 'Arijit Singh',
+                        'Song_Audio': songfile,
+                    });
+                    //  console.log('written')
+                    // console.log("Document written with ID: ", uid);
+                } catch (e) {
+                    console.error("Error adding document: ", e);
+                }
+            } else {
+                console.error("No user is signed in");
+            }
+        });
+    } catch (e) {
+        console.error("Error with auth state change: ", e);
+    }
     navigationbar.innerHTML = `<div class="songname"
     style="position: relative;justify-content: start;text-align: start;display: flex;flex-direction: row;">
     <img src=${songimage} alt=${songname} class="krsna"
