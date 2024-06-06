@@ -61,6 +61,39 @@ var songname='';
 var singer='';
 var songfile='';
 var poster='';
+let name5 = 'Leo';
+let singername5 = 'Shubh';
+let images1 = 'https://i.scdn.co/image/ab67616100005174debeea13700496b7d2b345d9'
+let images2 = 'https://i.scdn.co/image/ab67616d00001e02d045f5b403653ae1d59e46bb'
+let images3 = 'https://i.scdn.co/image/ab67616d00001e02d5bf86c4e1fd46800b122641'
+let images4 = 'https://i.scdn.co/image/ab67616d00001e02af9e8dfd99c2150e692cd96e'
+let images5 = 'https://i.scdn.co/image/ab67616d00001e023bf0683f6ac36cc954339d03'
+let images6 = 'https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO3iW9AR-default.jpg'
+let images7 = 'https://i.scdn.co/image/ab67706f0000000233fab13281f6d0d067511882'
+let images8 = 'https://i.scdn.co/image/ab67616d0000b273577ab4960248918a9ebc7f73'
+
+let audio1 = 'songs/Prarthana_320(PagalWorld.com.sb).mp3'
+let audio2 = 'songs/jootajapani.mp3'
+let audio3 = 'songs/truestories.mp3'
+let audio4 = 'songs/gulabisadi.mp3'
+let audio5 = 'songs/safetyoff.mp3'
+let audio6 = 'songs/khattaflow.mp3'
+let audio7 = 'songs/aamjahemunde.mp3'
+let audio8 = 'songs/yimmyyimmy.mp3'
+let name1 = 'Prarthana'
+let singername1 = 'KR$NA'
+let name2 = 'Joota Japani'
+let singername2 = 'KR$NA'
+let name3 = 'True Stories'
+let singername3 = 'AP Dhillon'
+let name4 = 'Gulabi Sadi'
+let singername4 = 'Album'
+let name6 = 'This is KR$NA'
+let singername6 = 'Album'
+let name7 = 'This is Parmish Verma'
+let singername8 = 'Tayc, Shreya Ghosal'
+let name8 = 'Yimmy Yimmy'
+let singername7 = 'Album'
 async function fetchlastplayed(){
     const auth = getAuth();
     onAuthStateChanged(auth, async (user) => {
@@ -75,7 +108,7 @@ async function fetchlastplayed(){
                 poster=docSnap.data().Song_Image;
 
             }
-            // console.log("Document data:", songname,singer,songfile,poster);
+            console.log("Document data:", songname,singer,songfile,poster);
         } catch (e) {
             console.log(e.message);
         }
@@ -83,7 +116,7 @@ async function fetchlastplayed(){
 }
 setInterval(() => {
     fetchlastplayed();
-}, 3000);
+}, 5000);
 async function fetchusername() {
     profilepic.innerHTML = '<img src="favicon.ico" alt="ProfilePicture" class="profilepicture" height="20px" width="20px" style="position: relative;justify-content: center;text-align: center;top: 22%;left: 22%;border-radius: 50%;">'
     const auth = getAuth();
@@ -256,16 +289,7 @@ async function main() {
     rightside.style.backgroundColor = color;
 }
 main();
-let name5 = 'Leo';
-let singername5 = 'Shubh';
-let images1 = 'https://i.scdn.co/image/ab67616100005174debeea13700496b7d2b345d9'
-let images2 = 'https://i.scdn.co/image/ab67616d00001e02d045f5b403653ae1d59e46bb'
-let images3 = 'https://i.scdn.co/image/ab67616d00001e02d5bf86c4e1fd46800b122641'
-let images4 = 'https://i.scdn.co/image/ab67616d00001e02af9e8dfd99c2150e692cd96e'
-let images5 = 'https://i.scdn.co/image/ab67616d00001e023bf0683f6ac36cc954339d03'
-let images6 = 'https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO3iW9AR-default.jpg'
-let images7 = 'https://i.scdn.co/image/ab67706f0000000233fab13281f6d0d067511882'
-let images8 = 'https://i.scdn.co/image/ab67616d0000b273577ab4960248918a9ebc7f73'
+
 listeninghistory1.innerHTML += `<img src=${images1} alt="Krsna" class="krsna" height="50px" style="border-radius: 5px;">`
 listeninghistory2.innerHTML += `<img src=${images2} alt="Krsna" class="krsna" height="50px" style="border-radius: 5px;">`
 listeninghistory3.innerHTML += `<img src=${images3} alt="Krsna" class="krsna" height="50px" style="border-radius: 5px;">`
@@ -274,20 +298,7 @@ listeninghistory5.innerHTML += `<img src=${images5} alt="Krsna" class="krsna" he
 listeninghistory6.innerHTML += `<img src="${images6}" alt="Krsna" class="krsna" height="50px" style="border-radius: 5px;">`
 listeninghistory7.innerHTML += `<img src=${images7} alt="Krsna" class="krsna" height="50px" style="border-radius: 5px;">`
 listeninghistory8.innerHTML += `<img src=${images8} alt="Krsna" class="krsna" height="50px" style="border-radius: 5px;">`
-let name1 = 'Prarthana'
-let singername1 = 'KR$NA'
-let name2 = 'Joota Japani'
-let singername2 = 'KR$NA'
-let name3 = 'True Stories'
-let singername3 = 'AP Dhillon'
-let name4 = 'Gulabi Sadi'
-let singername4 = 'Album'
-let name6 = 'This is KR$NA'
-let singername6 = 'Album'
-let name7 = 'This is Parmish Verma'
-let singername8 = 'Tayc, Shreya Ghosal'
-let name8 = 'Yimmy Yimmy'
-let singername7 = 'Album'
+
 listeninghistory1.innerHTML += `<div class="singername">${name1}</div>`
 listeninghistory2.innerHTML += `<div class="singername">${name2}</div>`
 listeninghistory3.innerHTML += `<div class="singername">${name3}</div>`
@@ -305,14 +316,6 @@ let playlistImg3 = '';
 let playlistName3 = '';
 let playlistImg4 = '';
 let playlistName4 = '';
-let audio1 = 'songs/Prarthana_320(PagalWorld.com.sb).mp3'
-let audio2 = 'songs/jootajapani.mp3'
-let audio3 = 'songs/truestories.mp3'
-let audio4 = 'songs/gulabisadi.mp3'
-let audio5 = 'songs/safetyoff.mp3'
-let audio6 = 'songs/khattaflow.mp3'
-let audio7 = 'songs/aamjahemunde.mp3'
-let audio8 = 'songs/yimmyyimmy.mp3'
 let imageslinks = ['https://i.scdn.co/image/ab67706f0000000233fab13281f6d0d067511882', 'https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO3iW9AR-default.jpg', 'https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO3ckHLO-default.jpg', 'https://i.scdn.co/image/ab67706f00000002754d1154dfbc2662171cb5c3', 'https://image-cdn-ak.spotifycdn.com/image/ab67706c0000da84f2c5413e0ce355f28e6a6540', 'https://i.scdn.co/image/ab67706f000000024783416ea0e27510ecc91c76', 'https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO1aUtIB-default.jpg'];
 let playnames = ['This is Parmish Verma', 'This is KR$NA', 'This is Shubh', 'This is Badshah', 'Sad Songs', 'Trending Punjabi Songs', 'This is Imran Khan'];
 let play1 = Math.floor(Math.random() * imageslinks.length);
