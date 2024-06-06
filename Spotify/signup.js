@@ -1,6 +1,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
 import { getAuth, createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import { getFirestore, collection, addDoc, setDoc, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 const firebaseConfig = {
     apiKey: "AIzaSyAy0-j5ZJJl6VST50_Y2JV_0MJKqhc3-7w",
     authDomain: "grovito-admin.firebaseapp.com",
@@ -14,8 +15,9 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
+const db = getFirestore(app);
 const provider = new GoogleAuthProvider();
-console.log("Login Page reached")
+// console.log("Login Page reached")
 let googlebutton = document.getElementById("GoogleLogin");
 let emailaddress = document.getElementById("emailaddress");
 let passwords = document.getElementById("Password");
@@ -76,27 +78,33 @@ let phonebutton = document.getElementById("PhoneLogin");
 //     alert("Phone Login Started")
 // })
 let loginbutton = document.getElementById("EmailLogin");
+let username=document.querySelector('#username')
 loginbutton.addEventListener("click", function (event) {
-    event.preventDefault();
-    // alert("Email Login Started")
-    const auth = getAuth();
-    const email = emailaddress.value;
-    const password=passwords.value;
-    // console.log(passwords.value)
-    createUserWithEmailAndPassword(auth, email, password)
-  .then((userCredential) => {
-    // Signed in 
-    const user = userCredential.user;
-    // alert('Creating User')
-    window.location.href="loggedinpage.html"
-    // ...
-  })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    // alert(errorMessage)
-  });
-})
+  event.preventDefault();
+  const auth = getAuth();
+  
+  if (username.value !== "" && emailaddress.value !== "" && passwords.value !== "") {
+      const email = emailaddress.value;
+      const password = passwords.value;
+      
+      createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+          const user = userCredential.user;
+          localStorage.setItem('username',username.value);
+          localStorage.setItem('email',email);
+          localStorage.setItem('password',passwords.value);
+          window.location.replace("loggedinpage.html")
+      })
+      .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          console.error("Error creating user: ", errorCode, errorMessage);
+      });
+  } else {
+      alert("Please fill all the fields");
+  }
+});
+
 // let githubbutton=document.getElementById("GithubLogin");
 // githubbutton.addEventListener("click",function(){
 //     alert("Github Login Started")

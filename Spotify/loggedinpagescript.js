@@ -21,6 +21,38 @@ var functioncalled = false;
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 var username = '';
+const Username=localStorage.getItem('username');
+const password = localStorage.getItem('password');
+const email = localStorage.getItem('email');
+console.log(password, Username, email);
+async function writeuserdetails() {
+    const auth = getAuth();
+    try {
+        onAuthStateChanged(auth, async (user) => {
+            if (user) {
+                const uid = user.uid;
+                // console.log(uid);
+                try {
+                    // Create a reference to the document with the user's UID
+                    await setDoc(doc(db, "User Details", uid), {
+                        'Username':Username,
+                        'Email':email,
+                        'Password':password,
+                        'Profile Picture':profilePicture,
+                    });
+                    // console.log("Document written with ID: ", uid);
+                } catch (e) {
+                    console.error("Error adding document: ", e);
+                }
+            } else {
+                console.error("No user is signed in");
+            }
+        });
+    } catch (e) {
+        console.error("Error with auth state change: ", e);
+    }
+}
+await writeuserdetails();
 var profilePicture = '';
 async function getuser() {
     const analytics = getAnalytics(app);
@@ -49,11 +81,11 @@ async function getuser() {
                 }
             }else{
                 if (dayName == 'Saturday' || dayName == 'Sunday') {
-                    history.innerHTML += `🎉 It's ${dayName} and the weekend vibes are soaring high!  🎉`
+                    history.innerHTML += `🎉 It's ${dayName} and the weekend vibes are soaring high! ${Username}🎉`
                 }
                 else {
                     console.log('Username: ' + username);
-                    history.innerHTML += `🎉 Welcome to Trendy ${dayName}! 🎉 `
+                    history.innerHTML += `🎉 Welcome to Trendy ${dayName}! ${Username}🎉 `
                 }
             }
             try {
