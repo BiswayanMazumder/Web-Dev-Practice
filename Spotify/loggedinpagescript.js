@@ -95,6 +95,7 @@ let name7 = 'This is Parmish Verma'
 let singername8 = 'Tayc, Shreya Ghosal'
 let name8 = 'Yimmy Yimmy'
 let singername7 = 'Album'
+var lastplayed = false;
 async function fetchlastplayed() {
     const auth = getAuth();
     onAuthStateChanged(auth, async (user) => {
@@ -107,11 +108,14 @@ async function fetchlastplayed() {
                 singer = docSnap.data().Singer_Name;
                 songfile = docSnap.data().Song_Audio;
                 poster = docSnap.data().Song_Image;
-
+                lastplayed = true;
             }
+
+            document.title = songname;
+            // console.log("Document data:", lastplayed);
             // console.log("Document data:", songname, singer, songfile, poster);
-            document.title=songname;
-            navigationbar.innerHTML = `<div class="songname"
+            if (lastplayed) {
+                navigationbar.innerHTML = `<div class="songname"
     style="position: relative;justify-content: start;text-align: start;display: flex;flex-direction: row;">
     <img src=${poster} alt="Krsna" class="krsna"
         height="50px" style="border-radius: 5px;padding-left: 5px;top: 10px;position: relative;">
@@ -133,12 +137,14 @@ async function fetchlastplayed() {
     
 </div>
 <br><br><br>`
+            }
         } catch (e) {
             console.log(e.message);
         }
     });
 }
 await fetchlastplayed();
+// console.log("Document data:", lastplayed);
 async function fetchusername() {
     profilepic.innerHTML = '<img src="favicon.ico" alt="ProfilePicture" class="profilepicture" height="20px" width="20px" style="position: relative;justify-content: center;text-align: center;top: 22%;left: 22%;border-radius: 50%;">'
     const auth = getAuth();
