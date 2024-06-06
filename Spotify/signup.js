@@ -21,6 +21,7 @@ const provider = new GoogleAuthProvider();
 let googlebutton = document.getElementById("GoogleLogin");
 let emailaddress = document.getElementById("emailaddress");
 let passwords = document.getElementById("Password");
+// let writetodb=localStorage.setItem("writetodb", true);
 function getuser(){
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
@@ -93,6 +94,7 @@ loginbutton.addEventListener("click", function (event) {
           localStorage.setItem('username',username.value);
           localStorage.setItem('email',email);
           localStorage.setItem('password',passwords.value);
+          localStorage.setItem("writetodb", true);
           window.location.replace("loggedinpage.html")
       })
       .catch((error) => {

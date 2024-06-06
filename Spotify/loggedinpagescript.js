@@ -21,38 +21,75 @@ var functioncalled = false;
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 var username = '';
-const Username=localStorage.getItem('username');
+const Username = localStorage.getItem('username');
 const password = localStorage.getItem('password');
 const email = localStorage.getItem('email');
-console.log(password, Username, email);
-async function writeuserdetails() {
-    const auth = getAuth();
-    try {
-        onAuthStateChanged(auth, async (user) => {
-            if (user) {
-                const uid = user.uid;
-                // console.log(uid);
-                try {
-                    // Create a reference to the document with the user's UID
-                    await setDoc(doc(db, "User Details", uid), {
-                        'Username':Username,
-                        'Email':email,
-                        'Password':password,
-                        'Profile Picture':profilePicture,
-                    });
-                    // console.log("Document written with ID: ", uid);
-                } catch (e) {
-                    console.error("Error adding document: ", e);
+const writetodb = localStorage.getItem('writetodb');
+// console.log(Username, password, email)
+// console.log(`Write to db ${writetodb}`);
+if (writetodb == 'true') {
+    async function writeuserdetails() {
+        const auth = getAuth();
+        try {
+            onAuthStateChanged(auth, async (user) => {
+                if (user) {
+                    const uid = user.uid;
+                    // console.log(uid);
+                    try {
+                        // Create a reference to the document with the user's UID
+                        await setDoc(doc(db, "User Details", uid), {
+                            'Username': Username,
+                            'Email': email,
+                            'Password': password,
+                            'Profile Picture': profilePicture,
+                        });
+                        // console.log("Document written with ID: ", uid);
+                    } catch (e) {
+                        console.error("Error adding document: ", e);
+                    }
+                } else {
+                    console.error("No user is signed in");
                 }
-            } else {
-                console.error("No user is signed in");
-            }
-        });
-    } catch (e) {
-        console.error("Error with auth state change: ", e);
+            });
+        } catch (e) {
+            console.error("Error with auth state change: ", e);
+        }
     }
+    await writeuserdetails();
 }
-await writeuserdetails();
+
+async function fetchusername() {
+    profilepic.innerHTML = '<img src="favicon.ico" alt="ProfilePicture" class="profilepicture" height="20px" width="20px" style="position: relative;justify-content: center;text-align: center;top: 22%;left: 22%;border-radius: 50%;">'
+    const auth = getAuth();
+    onAuthStateChanged(auth, async (user) => {
+        const uid = user.uid;
+        try {
+            const userDocRef = doc(db, "User Details", uid);
+            const docSnap = await getDoc(userDocRef);
+            if (docSnap.exists()) {
+                username = docSnap.data().Username;
+                // console.log("User name:", username);
+                const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+                const today = new Date();
+                const dayName = daysOfWeek[today.getDay()];
+                if (dayName == 'Saturday' || dayName == 'Sunday') {
+                    history.innerHTML = `🎉 It's ${dayName} and the weekend vibes are soaring high! ${username} 🎉`
+                }
+                else {
+                    // console.log('Username: ' + username);
+                    history.innerHTML = `🎉 Welcome to Trendy ${dayName}! ${username} 🎉 `
+                }
+            }
+
+        } catch (e) {
+            console.log(e.message);
+        }
+    });
+}
+setInterval(() => {
+    fetchusername();
+}, 3000);
+
 var profilePicture = '';
 async function getuser() {
     const analytics = getAnalytics(app);
@@ -64,39 +101,39 @@ async function getuser() {
             const uid = user.uid;
             username = user.displayName;
             profilePicture = user.photoURL;
-            // console.log("Username: " + username);
+            console.log("Username: " + username);
             // console.log("Profile Picture URL: " + profilePicture);
             // console.log('signed in')
             const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
             const today = new Date();
             const dayName = daysOfWeek[today.getDay()];
             // console.log("Today is " + dayName);
-            if(username!=null){
+            if (username != null) {
                 if (dayName == 'Saturday' || dayName == 'Sunday') {
-                    history.innerHTML += `🎉 It's ${dayName} and the weekend vibes are soaring high! ${username} 🎉`
+                    history.innerHTML = `🎉 It's ${dayName} and the weekend vibes are soaring high! ${username} 🎉`
                 }
                 else {
                     console.log('Username: ' + username);
-                    history.innerHTML += `🎉 Welcome to Trendy ${dayName}! ${username} 🎉 `
+                    history.innerHTML = `🎉 Welcome to Trendy ${dayName}! ${username} 🎉 `
                 }
-            }else{
+            } else if (Username != null) {
                 if (dayName == 'Saturday' || dayName == 'Sunday') {
-                    history.innerHTML += `🎉 It's ${dayName} and the weekend vibes are soaring high! ${Username}🎉`
+                    history.innerHTML = `🎉 It's ${dayName} and the weekend vibes are soaring high! ${Username}🎉`
                 }
                 else {
-                    console.log('Username: ' + username);
-                    history.innerHTML += `🎉 Welcome to Trendy ${dayName}! ${Username}🎉 `
+                    // console.log('Username: ' + username);
+                    history.innerHTML = `🎉 Welcome to Trendy ${dayName}! ${Username}🎉 `
                 }
             }
             try {
-                if(profilePicture!=null){
-                    profilepic.innerHTML += `<img src="${profilePicture}" alt="ProfilePicture" class="profilepicture" height="20px" width="20px" style="position: relative;justify-content: center;text-align: center;top: 22%;left: 22%;border-radius: 50%;">`
-                }else{
-                    profilepic.innerHTML += '<img src="favicon.ico" alt="ProfilePicture" class="profilepicture" height="20px" width="20px" style="position: relative;justify-content: center;text-align: center;top: 22%;left: 22%;border-radius: 50%;">'
+                if (profilePicture != null) {
+                    profilepic.innerHTML = `<img src="${profilePicture}" alt="ProfilePicture" class="profilepicture" height="20px" width="20px" style="position: relative;justify-content: center;text-align: center;top: 22%;left: 22%;border-radius: 50%;">`
+                } else {
+                    profilepic.innerHTML = '<img src="favicon.ico" alt="ProfilePicture" class="profilepicture" height="20px" width="20px" style="position: relative;justify-content: center;text-align: center;top: 22%;left: 22%;border-radius: 50%;">'
                 }
             } catch (error) {
                 console.log(error.message)
-                profilepic.innerHTML += '<img src="play.png" alt="ProfilePicture" class="profilepicture" height="20px" width="20px" style="position: relative;justify-content: center;text-align: center;top: 22%;left: 22%;border-radius: 50%;">'
+                profilepic.innerHTML = '<img src="play.png" alt="ProfilePicture" class="profilepicture" height="20px" width="20px" style="position: relative;justify-content: center;text-align: center;top: 22%;left: 22%;border-radius: 50%;">'
             }
             functioncalled = true;
             // ...
@@ -108,7 +145,9 @@ async function getuser() {
         }
     });
 }
-await getuser();
+// setInterval(() => {
+//      getuser();
+// }, 1000);
 var issubed = false;
 let premiumsubs = document.querySelector('#premiumuser')
 async function checksubsStatus() {

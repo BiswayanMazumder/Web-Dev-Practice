@@ -17,6 +17,7 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const analytics = getAnalytics(app);
 const provider = new GoogleAuthProvider();
+// let writetodb=localStorage.setItem("writetodb", false);
 // console.log("Login Page reached")
 let googlebutton = document.getElementById("GoogleLogin");
 let emailaddress = document.getElementById("emailaddress");
@@ -31,6 +32,8 @@ function getuser() {
       const uid = user.uid;
       // isloggedin=true;
       console.log('signed in')
+      // localStorage.setItem('username','username.value');
+      localStorage.setItem('writetodb', false);
       window.location.replace("loggedinpage.html")
       // ...
     } else {
@@ -51,6 +54,7 @@ googlebutton.addEventListener("click", function () {
       const credential = GoogleAuthProvider.credentialFromResult(result);
       const token = credential.accessToken;
       const user = result.user;
+      localStorage.setItem('writetodb', false);
       window.location.replace('loggedinpage.html')
     })
     .catch((error) => {

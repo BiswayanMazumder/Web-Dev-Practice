@@ -13,6 +13,7 @@ const firebaseConfig = {
 
 // Initialize Firebase
 var isloggedin=false;
+let writetodb=localStorage.setItem("writetodb", false);
 function getuser(){
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
