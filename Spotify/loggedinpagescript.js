@@ -25,6 +25,7 @@ const Username = localStorage.getItem('username');
 const password = localStorage.getItem('password');
 const email = localStorage.getItem('email');
 const writetodb = localStorage.getItem('writetodb');
+let navigationbar = document.querySelector('.bottom-nav')
 // console.log(Username, password, email)
 // console.log(`Write to db ${writetodb}`);
 if (writetodb == 'true') {
@@ -57,10 +58,10 @@ if (writetodb == 'true') {
     }
     await writeuserdetails();
 }
-var songname='';
-var singer='';
-var songfile='';
-var poster='';
+var songname = '';
+var singer = '';
+var songfile = '';
+var poster = '';
 let name5 = 'Leo';
 let singername5 = 'Shubh';
 let images1 = 'https://i.scdn.co/image/ab67616100005174debeea13700496b7d2b345d9'
@@ -94,7 +95,7 @@ let name7 = 'This is Parmish Verma'
 let singername8 = 'Tayc, Shreya Ghosal'
 let name8 = 'Yimmy Yimmy'
 let singername7 = 'Album'
-async function fetchlastplayed(){
+async function fetchlastplayed() {
     const auth = getAuth();
     onAuthStateChanged(auth, async (user) => {
         const uid = user.uid;
@@ -103,20 +104,40 @@ async function fetchlastplayed(){
             const docSnap = await getDoc(userDocRef);
             if (docSnap.exists()) {
                 songname = docSnap.data().Song_Name;
-                singer= docSnap.data().Singer_Name;
-                songfile=docSnap.data().Song_Audio;
-                poster=docSnap.data().Song_Image;
+                singer = docSnap.data().Singer_Name;
+                songfile = docSnap.data().Song_Audio;
+                poster = docSnap.data().Song_Image;
 
             }
-            console.log("Document data:", songname,singer,songfile,poster);
+            // console.log("Document data:", songname, singer, songfile, poster);
+            navigationbar.innerHTML = `<div class="songname"
+    style="position: relative;justify-content: start;text-align: start;display: flex;flex-direction: row;">
+    <img src=${poster} alt="Krsna" class="krsna"
+        height="50px" style="border-radius: 5px;padding-left: 5px;top: 10px;position: relative;">
+    <div class="songname"
+        style="color: white;margin-left: 10px;position: relative;top: 15px;font-size: 14px;font-weight: 600;display: flex;flex-direction: column;font-family: sans-serif;">
+        <a href=#${songname} class="playingsongname">${songname}</a>
+        <div class="singername"
+            style="color: gray;position: relative;top: 10px;font-size: 10px;font-weight: 600;display: flex;flex-direction: column;font-family: sans-serif;">
+            ${singer}
+        </div>
+
+    </div>
+</div>
+<div class="controls"
+    style="position: absolute;justify-content: center;text-align: center;left: 50%;top: 10px;display: flex;flex-direction: column;">
+    <div class="navigation">
+        <audio src=${songfile} class="audioplay" id="audio" autoplay controls></audio>
+     </div>   
+    
+</div>
+<br><br><br>`
         } catch (e) {
             console.log(e.message);
         }
     });
 }
-setInterval(() => {
-    fetchlastplayed();
-}, 5000);
+await fetchlastplayed();
 async function fetchusername() {
     profilepic.innerHTML = '<img src="favicon.ico" alt="ProfilePicture" class="profilepicture" height="20px" width="20px" style="position: relative;justify-content: center;text-align: center;top: 22%;left: 22%;border-radius: 50%;">'
     const auth = getAuth();
@@ -480,7 +501,7 @@ listeninghistory8.addEventListener('mouseover', function () {
 listeninghistory8.addEventListener('mouseout', function () {
     firstpart.style.background = 'linear-gradient(to bottom, #24333E, black)'
 })
-let navigationbar = document.querySelector('.bottom-nav')
+
 
 async function changeImageAndName(imageSrc, name, singername, audiofile) {
     const auth = getAuth();
@@ -492,11 +513,11 @@ async function changeImageAndName(imageSrc, name, singername, audiofile) {
                 try {
                     // Create a reference to the document with the user's UID
                     await setDoc(doc(db, "Currently Playing", uid), {
-                        'Song_Name':name,
-                        'Song_Image':imageSrc,
-                        'Singer_Name':singername,
-                        'Song_Audio':audiofile,
-                     }); 
+                        'Song_Name': name,
+                        'Song_Image': imageSrc,
+                        'Singer_Name': singername,
+                        'Song_Audio': audiofile,
+                    });
                     //  console.log('written')
                     // console.log("Document written with ID: ", uid);
                 } catch (e) {
