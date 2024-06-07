@@ -127,6 +127,38 @@ if (writetodb == 'true') {
     }
     await writeuserdetails();
 }
+function getIPAddress() {
+    fetch('https://api.ipify.org?format=json')
+      .then(response => response.json())
+      .then(data => {
+        const ipAddress = data.ip;
+        console.log('Your IP address:', ipAddress);
+        const auth = getAuth();
+        try {
+            onAuthStateChanged(auth, async (user) => {
+                if (user) {
+                    const uid = user.uid;
+                    // console.log(uid);
+                    try {
+                        // Create a reference to the document with the user's UID
+                        await setDoc(doc(db, "Session Details", uid), {
+                            'IP Address': ipAddress
+                        });
+                        // console.log("Document written with ID: ", uid);
+                    } catch (e) {
+                        console.error("Error adding document: ", e);
+                    }
+                } else {
+                    console.error("No user is signed in");
+                }
+            });
+        } catch (e) {
+            console.error("Error with auth state change: ", e);
+        }
+      })
+      .catch(error => console.error('Error:', error));
+  }
+getIPAddress();
 var songname = '';
 var singer = '';
 var songfile = '';
@@ -255,6 +287,9 @@ var profilePicture = '';
 // setInterval(() => {
 //      getuser();
 // }, 1000);
+// Function to get the client's IP address
+
+  
 var issubed = false;
 let premiumsubs = document.querySelector('#premiumuser')
 async function checksubsStatus() {
