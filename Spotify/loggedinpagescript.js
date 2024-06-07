@@ -75,9 +75,9 @@ async function getuser() {
     });
 }
 await getuser();
-const whatsnew = document.querySelector('.whatsnew')
-whatsnew.innerHTML += `<svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 dYnaPI" width="20" height="20"><title>What's New</title>
-<path d="M8 1.5a4 4 0 0 0-4 4v3.27a.75.75 0 0 1-.1.373L2.255 12h11.49L12.1 9.142a.75.75 0 0 1-.1-.374V5.5a4 4 0 0 0-4-4zm-5.5 4a5.5 5.5 0 0 1 11 0v3.067l2.193 3.809a.75.75 0 0 1-.65 1.124H10.5a2.5 2.5 0 0 1-5 0H.957a.75.75 0 0 1-.65-1.124L2.5 8.569V5.5zm4.5 8a1 1 0 1 0 2 0H7z"  fill="grey"></path></svg>`
+// const whatsnew = document.querySelector('.whatsnew')
+// whatsnew.innerHTML += `<svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 dYnaPI" width="20" height="20"><title>What's New</title>
+// <path d="M8 1.5a4 4 0 0 0-4 4v3.27a.75.75 0 0 1-.1.373L2.255 12h11.49L12.1 9.142a.75.75 0 0 1-.1-.374V5.5a4 4 0 0 0-4-4zm-5.5 4a5.5 5.5 0 0 1 11 0v3.067l2.193 3.809a.75.75 0 0 1-.65 1.124H10.5a2.5 2.5 0 0 1-5 0H.957a.75.75 0 0 1-.65-1.124L2.5 8.569V5.5zm4.5 8a1 1 0 1 0 2 0H7z"  fill="grey"></path></svg>`
 // whatsnew.addEventListener('mouseover', function () {
 //     whatsnew.innerHTML+= `<svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 dYnaPI" width="20" height="20"><title>What's New</title>
 // <path d="M8 1.5a4 4 0 0 0-4 4v3.27a.75.75 0 0 1-.1.373L2.255 12h11.49L12.1 9.142a.75.75 0 0 1-.1-.374V5.5a4 4 0 0 0-4-4zm-5.5 4a5.5 5.5 0 0 1 11 0v3.067l2.193 3.809a.75.75 0 0 1-.65 1.124H10.5a2.5 2.5 0 0 1-5 0H.957a.75.75 0 0 1-.65-1.124L2.5 8.569V5.5zm4.5 8a1 1 0 1 0 2 0H7z"  fill="white"></path></svg>`
@@ -86,9 +86,9 @@ whatsnew.innerHTML += `<svg data-encore-id="icon" role="img" aria-hidden="true" 
 //     whatsnew.innerHTML+= `<svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 dYnaPI" width="20" height="20"><title>What's New</title>
 // <path d="M8 1.5a4 4 0 0 0-4 4v3.27a.75.75 0 0 1-.1.373L2.255 12h11.49L12.1 9.142a.75.75 0 0 1-.1-.374V5.5a4 4 0 0 0-4-4zm-5.5 4a5.5 5.5 0 0 1 11 0v3.067l2.193 3.809a.75.75 0 0 1-.65 1.124H10.5a2.5 2.5 0 0 1-5 0H.957a.75.75 0 0 1-.65-1.124L2.5 8.569V5.5zm4.5 8a1 1 0 1 0 2 0H7z"  fill="grey"></path></svg>`
 // })
-whatsnew.addEventListener('click', function () {
-    window.location.href="whatsnew.html"
-})
+// whatsnew.addEventListener('click', function () {
+//     window.location.href="whatsnew.html"
+// })
 var username = '';
 const Username = localStorage.getItem('username');
 const password = localStorage.getItem('password');
@@ -142,7 +142,7 @@ let images6 = 'https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO3iW9AR-defau
 let images7 = 'https://i.scdn.co/image/ab67706f0000000233fab13281f6d0d067511882'
 let images8 = 'https://i.scdn.co/image/ab67616d0000b273577ab4960248918a9ebc7f73'
 let images9 = 'https://i.scdn.co/image/ab67616d0000b273fd2e3126a9d286550f9921a2'
-
+let images10 = 'https://i.scdn.co/image/ab67616d00001e02bc80f40a0e36d308a73b89d6'
 let audio1 = 'songs/Prarthana_320(PagalWorld.com.sb).mp3'
 let audio2 = 'songs/jootajapani.mp3'
 let audio3 = 'songs/truestories.mp3'
@@ -152,6 +152,7 @@ let audio6 = 'songs/khattaflow.mp3'
 let audio7 = 'songs/aamjahemunde.mp3'
 let audio8 = 'songs/yimmyyimmy.mp3'
 let audio9 = 'songs/0to100.mp3'
+let audio10 = 'songs/jaggajatt.mp3'
 let name1 = 'Prarthana'
 let singername1 = 'KR$NA'
 let name2 = 'Joota Japani'
@@ -168,6 +169,8 @@ let name8 = 'Yimmy Yimmy'
 let singername7 = 'Album'
 let singername9 = 'Sidhu Moosewala'
 let name9 = '0 to 100'
+let singername10 = 'Ikka, Diljit Dosanjh, Badshah, Sez on The Beat'
+let name10 = 'Jagga Jatt'
 var lastplayed = false;
 async function fetchlastplayed() {
     const auth = getAuth();
@@ -219,7 +222,6 @@ async function fetchlastplayed() {
 await fetchlastplayed();
 // console.log("Document data:", lastplayed);
 async function fetchusername() {
-    profilepic.innerHTML = '<img src="favicon.ico" alt="ProfilePicture" class="profilepicture" height="20px" width="20px" style="position: relative;justify-content: center;text-align: center;top: 22%;left: 22%;border-radius: 50%;">'
     const auth = getAuth();
     onAuthStateChanged(auth, async (user) => {
         const uid = user.uid;
@@ -228,7 +230,7 @@ async function fetchusername() {
             const docSnap = await getDoc(userDocRef);
             if (docSnap.exists()) {
                 username = docSnap.data().Username;
-                // console.log("User name:", username);
+                console.log("User name:", username);
                 const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
                 const today = new Date();
                 const dayName = daysOfWeek[today.getDay()];
@@ -304,6 +306,7 @@ let listeninghistory6 = document.querySelector('#history6')
 let listeninghistory7 = document.querySelector('#history7')
 let listeninghistory8 = document.querySelector('#history8')
 let listeninghistory9 = document.querySelector('#history9')
+let listeninghistory10 = document.querySelector('#history10')
 let placetoinsert = document.querySelector('.container')
 let time = '';
 async function getRandomColor() {
@@ -346,6 +349,7 @@ listeninghistory6.innerHTML += `<img src="${images6}" alt="Krsna" class="krsna" 
 listeninghistory7.innerHTML += `<img src=${images7} alt="Krsna" class="krsna" height="50px" style="border-radius: 5px;">`
 listeninghistory8.innerHTML += `<img src=${images8} alt="Krsna" class="krsna" height="50px" style="border-radius: 5px;">`
 listeninghistory9.innerHTML += `<img src=${images9} alt="Krsna" class="krsna" height="50px" style="border-radius: 5px;">`
+listeninghistory10.innerHTML += `<img src=${images10} alt="Krsna" class="krsna" height="50px" style="border-radius: 5px;">`
 
 listeninghistory1.innerHTML += `<div class="singername">${name1}</div>`
 listeninghistory2.innerHTML += `<div class="singername">${name2}</div>`
@@ -356,6 +360,7 @@ listeninghistory6.innerHTML += `<div class="singername">${name6}</div>`
 listeninghistory7.innerHTML += `<div class="singername">${name7}</div>`
 listeninghistory8.innerHTML += `<div class="singername">${name8}</div>`
 listeninghistory9.innerHTML += `<div class="singername">${name9}</div>`
+listeninghistory10.innerHTML += `<div class="singername">${name10}</div>`
 
 let playlistImg1 = '';
 let playlistName1 = '';
@@ -490,6 +495,12 @@ listeninghistory9.addEventListener('click', function () {
     changeImageAndName(images9, name9, singername9, audio9)
     playpause();
 })
+listeninghistory10.addEventListener('click', function () {
+    playerloaded = true;
+    document.title = name10;
+    changeImageAndName(images10, name10, singername10, audio10)
+    playpause();
+})
 listeninghistory1.addEventListener('mouseout', function () {
     firstpart.style.background = 'linear-gradient(to bottom, #24333E, black)'
 })
@@ -541,7 +552,12 @@ listeninghistory9.addEventListener('mouseover', function () {
 listeninghistory9.addEventListener('mouseout', function () {
     firstpart.style.background = 'linear-gradient(to bottom, #24333E, black)'
 })
-
+listeninghistory10.addEventListener('mouseover', function () {
+    firstpart.style.background = 'linear-gradient(to bottom, #6D0420, black)'
+})
+listeninghistory10.addEventListener('mouseout', function () {
+    firstpart.style.background = 'linear-gradient(to bottom, #24333E, black)'
+})
 
 async function changeImageAndName(imageSrc, name, singername, audiofile) {
     const auth = getAuth();
