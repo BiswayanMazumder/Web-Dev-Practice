@@ -20,6 +20,61 @@ const firebaseConfig = {
 var functioncalled = false;
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+async function getuser() {
+    const analytics = getAnalytics(app);
+    const provider = new GoogleAuthProvider();
+    const auth = getAuth();
+
+    onAuthStateChanged(auth, (user) => {
+        if (user) {
+            const uid = user.uid;
+            username = user.displayName;
+            profilePicture = user.photoURL;
+            console.log("Welcome Mr," + username);
+            // console.log("Profile Picture URL: " + profilePicture);
+            // console.log('signed in')
+            const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            const today = new Date();
+            const dayName = daysOfWeek[today.getDay()];
+            // console.log("Today is " + dayName);
+            if (username != null) {
+                if (dayName == 'Saturday' || dayName == 'Sunday') {
+                    history.innerHTML = `🎉 It's ${dayName} and the weekend vibes are soaring high! ${username} 🎉`
+                }
+                else {
+                    console.log('Username: ' + username);
+                    history.innerHTML = `🎉 Welcome to Trendy ${dayName}! ${username} 🎉 `
+                }
+            } else if (Username != null) {
+                if (dayName == 'Saturday' || dayName == 'Sunday') {
+                    history.innerHTML = `🎉 It's ${dayName} and the weekend vibes are soaring high! ${Username}🎉`
+                }
+                else {
+                    // console.log('Username: ' + username);
+                    history.innerHTML = `🎉 Welcome to Trendy ${dayName}! ${Username}🎉 `
+                }
+            }
+            try {
+                if (profilePicture != null) {
+                    profilepic.innerHTML = `<img src="${profilePicture}" alt="ProfilePicture" class="profilepicture" height="20px" width="20px" style="position: relative;justify-content: center;text-align: center;top: 22%;left: 22%;border-radius: 50%;">`
+                } else {
+                    profilepic.innerHTML = '<img src="favicon.ico" alt="ProfilePicture" class="profilepicture" height="20px" width="20px" style="position: relative;justify-content: center;text-align: center;top: 22%;left: 22%;border-radius: 50%;">'
+                }
+            } catch (error) {
+                console.log(error.message)
+                profilepic.innerHTML = '<img src="play.png" alt="ProfilePicture" class="profilepicture" height="20px" width="20px" style="position: relative;justify-content: center;text-align: center;top: 22%;left: 22%;border-radius: 50%;">'
+            }
+            functioncalled = true;
+            // ...
+        } else {
+            // User is signed out
+            // ...
+            window.location.replace("index.html")
+            // console.log('signed out')
+        }
+    });
+}
+await getuser();
 var username = '';
 const Username = localStorage.getItem('username');
 const password = localStorage.getItem('password');
@@ -177,65 +232,10 @@ async function fetchusername() {
         }
     });
 }
-setInterval(() => {
-    fetchusername();
-}, 3000);
+fetchusername();
 
 var profilePicture = '';
-async function getuser() {
-    const analytics = getAnalytics(app);
-    const provider = new GoogleAuthProvider();
-    const auth = getAuth();
 
-    onAuthStateChanged(auth, (user) => {
-        if (user) {
-            const uid = user.uid;
-            username = user.displayName;
-            profilePicture = user.photoURL;
-            console.log("Username: " + username);
-            // console.log("Profile Picture URL: " + profilePicture);
-            // console.log('signed in')
-            const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-            const today = new Date();
-            const dayName = daysOfWeek[today.getDay()];
-            // console.log("Today is " + dayName);
-            if (username != null) {
-                if (dayName == 'Saturday' || dayName == 'Sunday') {
-                    history.innerHTML = `🎉 It's ${dayName} and the weekend vibes are soaring high! ${username} 🎉`
-                }
-                else {
-                    console.log('Username: ' + username);
-                    history.innerHTML = `🎉 Welcome to Trendy ${dayName}! ${username} 🎉 `
-                }
-            } else if (Username != null) {
-                if (dayName == 'Saturday' || dayName == 'Sunday') {
-                    history.innerHTML = `🎉 It's ${dayName} and the weekend vibes are soaring high! ${Username}🎉`
-                }
-                else {
-                    // console.log('Username: ' + username);
-                    history.innerHTML = `🎉 Welcome to Trendy ${dayName}! ${Username}🎉 `
-                }
-            }
-            try {
-                if (profilePicture != null) {
-                    profilepic.innerHTML = `<img src="${profilePicture}" alt="ProfilePicture" class="profilepicture" height="20px" width="20px" style="position: relative;justify-content: center;text-align: center;top: 22%;left: 22%;border-radius: 50%;">`
-                } else {
-                    profilepic.innerHTML = '<img src="favicon.ico" alt="ProfilePicture" class="profilepicture" height="20px" width="20px" style="position: relative;justify-content: center;text-align: center;top: 22%;left: 22%;border-radius: 50%;">'
-                }
-            } catch (error) {
-                console.log(error.message)
-                profilepic.innerHTML = '<img src="play.png" alt="ProfilePicture" class="profilepicture" height="20px" width="20px" style="position: relative;justify-content: center;text-align: center;top: 22%;left: 22%;border-radius: 50%;">'
-            }
-            functioncalled = true;
-            // ...
-        } else {
-            // User is signed out
-            // ...
-            window.location.replace("index.html")
-            console.log('signed out')
-        }
-    });
-}
 // setInterval(() => {
 //      getuser();
 // }, 1000);
@@ -573,7 +573,7 @@ async function changeImageAndName(imageSrc, name, singername, audiofile) {
 <div class="controls"
     style="position: absolute;justify-content: center;text-align: center;left: 50%;top: 10px;display: flex;flex-direction: column;">
     <div class="navigation">
-        <audio src=${audiofile} class="audioplay" id="audio" autoplay></audio>
+        <audio src=${audiofile} class="audioplay" id="audio_player" autoplay></audio>
         <a href="#previous" class="nav-prev"
             style="position: relative;top: 5px;padding-right: 10px;text-decoration: none;" id="playaudio">
             <svg data-encore-id="icon" role="img" aria-hidden="true" height="16" width="16"
@@ -616,10 +616,8 @@ viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 dYnaPI">
 
 var isplaying = true;
 function playpause() {
-
     var audiobutton = document.querySelector('.nav-play')
     var audioplay = document.querySelector('.audioplay')
-
     var playbutton = document.getElementById('playpause');
     var playsvg = `<svg data-encore-id="icon" role="img" aria-hidden="true" height="16" width="16"
 viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 dYnaPI">
@@ -636,6 +634,7 @@ viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 dYnaPI">
         if (isplaying == false) {
             // console.log(isplaying);
             audioplay.play()
+            // console.log(audioplay.duration())
             isplaying = true;
             playbutton.innerHTML = pausesvg
         } else if (isplaying == true) {
