@@ -72,6 +72,7 @@ let images5 = 'https://i.scdn.co/image/ab67616d00001e023bf0683f6ac36cc954339d03'
 let images6 = 'https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO3iW9AR-default.jpg'
 let images7 = 'https://i.scdn.co/image/ab67706f0000000233fab13281f6d0d067511882'
 let images8 = 'https://i.scdn.co/image/ab67616d0000b273577ab4960248918a9ebc7f73'
+let images9 = 'https://i.scdn.co/image/ab67616d0000b273fd2e3126a9d286550f9921a2'
 
 let audio1 = 'songs/Prarthana_320(PagalWorld.com.sb).mp3'
 let audio2 = 'songs/jootajapani.mp3'
@@ -81,6 +82,7 @@ let audio5 = 'songs/safetyoff.mp3'
 let audio6 = 'songs/khattaflow.mp3'
 let audio7 = 'songs/aamjahemunde.mp3'
 let audio8 = 'songs/yimmyyimmy.mp3'
+let audio9 = 'songs/0to100.mp3'
 let name1 = 'Prarthana'
 let singername1 = 'KR$NA'
 let name2 = 'Joota Japani'
@@ -95,6 +97,8 @@ let name7 = 'This is Parmish Verma'
 let singername8 = 'Tayc, Shreya Ghosal'
 let name8 = 'Yimmy Yimmy'
 let singername7 = 'Album'
+let singername9 = 'Sidhu Moosewala'
+let name9 = '0 to 100'
 var lastplayed = false;
 async function fetchlastplayed() {
     const auth = getAuth();
@@ -285,6 +289,7 @@ let listeninghistory5 = document.querySelector('#history5')
 let listeninghistory6 = document.querySelector('#history6')
 let listeninghistory7 = document.querySelector('#history7')
 let listeninghistory8 = document.querySelector('#history8')
+let listeninghistory9 = document.querySelector('#history9')
 let placetoinsert = document.querySelector('.container')
 let time = '';
 async function getRandomColor() {
@@ -326,6 +331,7 @@ listeninghistory5.innerHTML += `<img src=${images5} alt="Krsna" class="krsna" he
 listeninghistory6.innerHTML += `<img src="${images6}" alt="Krsna" class="krsna" height="50px" style="border-radius: 5px;">`
 listeninghistory7.innerHTML += `<img src=${images7} alt="Krsna" class="krsna" height="50px" style="border-radius: 5px;">`
 listeninghistory8.innerHTML += `<img src=${images8} alt="Krsna" class="krsna" height="50px" style="border-radius: 5px;">`
+listeninghistory9.innerHTML += `<img src=${images9} alt="Krsna" class="krsna" height="50px" style="border-radius: 5px;">`
 
 listeninghistory1.innerHTML += `<div class="singername">${name1}</div>`
 listeninghistory2.innerHTML += `<div class="singername">${name2}</div>`
@@ -335,6 +341,7 @@ listeninghistory5.innerHTML += `<div class="singername">${name5}</div>`
 listeninghistory6.innerHTML += `<div class="singername">${name6}</div>`
 listeninghistory7.innerHTML += `<div class="singername">${name7}</div>`
 listeninghistory8.innerHTML += `<div class="singername">${name8}</div>`
+listeninghistory9.innerHTML += `<div class="singername">${name9}</div>`
 
 let playlistImg1 = '';
 let playlistName1 = '';
@@ -463,6 +470,12 @@ listeninghistory8.addEventListener('click', function () {
     changeImageAndName(images8, name8, singername8, audio8)
     playpause();
 })
+listeninghistory9.addEventListener('click', function () {
+    playerloaded = true;
+    document.title = name9;
+    changeImageAndName(images9, name9, singername9, audio9)
+    playpause();
+})
 listeninghistory1.addEventListener('mouseout', function () {
     firstpart.style.background = 'linear-gradient(to bottom, #24333E, black)'
 })
@@ -506,6 +519,12 @@ listeninghistory8.addEventListener('mouseover', function () {
     firstpart.style.background = 'linear-gradient(to bottom, #884B27, black)'
 })
 listeninghistory8.addEventListener('mouseout', function () {
+    firstpart.style.background = 'linear-gradient(to bottom, #24333E, black)'
+})
+listeninghistory9.addEventListener('mouseover', function () {
+    firstpart.style.background = 'linear-gradient(to bottom, #025802, black)'
+})
+listeninghistory9.addEventListener('mouseout', function () {
     firstpart.style.background = 'linear-gradient(to bottom, #24333E, black)'
 })
 
