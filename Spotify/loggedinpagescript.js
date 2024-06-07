@@ -191,7 +191,7 @@ async function fetchlastplayed() {
 <div class="controls"
     style="position: absolute;justify-content: center;text-align: center;left: 50%;top: 10px;display: flex;flex-direction: column;">
     <div class="navigation">
-        <audio src=${songfile} class="audioplay" id="audio" autoplay controls></audio>
+        <audio src=${songfile} class="audioplay" id="audio" controls></audio>
      </div>   
     
 </div>
