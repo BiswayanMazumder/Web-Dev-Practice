@@ -155,7 +155,7 @@ async function writeactivetoken() {
 
                 if (docSnap.exists()) {
                     const active_tokens = docSnap.data().User_Token;
-                    console.log('Fetched Token: ' + active_tokens);
+                    // console.log('Fetched Token: ' + active_tokens);
                     localStorage.setItem('token',active_tokens);
                 } else {
                     try {
@@ -164,7 +164,7 @@ async function writeactivetoken() {
                             'User_Token': token
                         });
                         localStorage.setItem('token',token);
-                        console.log('Fetched Token1: ' + token);
+                        // console.log('Fetched Token1: ' + token);
                     } catch (e) {
                         console.error("Error adding document: ", e);
                     }
@@ -180,8 +180,8 @@ async function writeactivetoken() {
 
 await writeactivetoken();
 const tokens = localStorage.getItem('token');
-console.log('Tokens fetched: ' + tokens);
-console.log('Fetched Token2: ' + active_tokens);
+// console.log('Tokens fetched: ' + tokens);
+// console.log('Fetched Token2: ' + active_tokens);
 var songname = '';
 var singer = '';
 var songfile = '';
