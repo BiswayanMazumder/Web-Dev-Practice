@@ -10,7 +10,7 @@
   "author": "Biswayan",
   "license": "ISC",
   "dependencies": {
-    "@clerk/clerk-js": "^5.5.3",
+    "@clerk/clerk-js": "^5.6.0",
     "@vercel/speed-insights": "^1.0.11",
     "datex.js": "^1.0.12",
     "express": "^4.19.2",
