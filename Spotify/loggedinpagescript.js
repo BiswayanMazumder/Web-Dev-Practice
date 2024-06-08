@@ -40,6 +40,7 @@ async function getuser() {
             if (username != null) {
                 if (dayName == 'Saturday' || dayName == 'Sunday') {
                     history.innerHTML = `🎉 It's ${dayName} and the weekend vibes are soaring high! ${username} 🎉`
+                    // console.log('username'+username);
                 }
                 else {
                     console.log('Username: ' + username);
@@ -139,7 +140,7 @@ if (writetodb == 'true') {
     }
     await writeuserdetails();
 }
-var active_tokens='';
+var active_tokens = '';
 async function writeactivetoken() {
     try {
         const response = await fetch('https://api.ipify.org?format=json');
@@ -156,14 +157,14 @@ async function writeactivetoken() {
                 if (docSnap.exists()) {
                     const active_tokens = docSnap.data().User_Token;
                     // console.log('Fetched Token: ' + active_tokens);
-                    localStorage.setItem('token',active_tokens);
+                    localStorage.setItem('token', active_tokens);
                 } else {
                     try {
                         // Create a reference to the document with the user's UID
                         await setDoc(doc(db, "Session Details", uid), {
                             'User_Token': token
                         });
-                        localStorage.setItem('token',token);
+                        localStorage.setItem('token', token);
                         // console.log('Fetched Token1: ' + token);
                     } catch (e) {
                         console.error("Error adding document: ", e);
@@ -363,7 +364,7 @@ logout.addEventListener('click', async function () {
 
         // If Firestore deletion is successful, proceed with sign out
         await auth.signOut();
-        
+
         // Sign-out successful.
         localStorage.removeItem('token');
         window.location.replace('index.html');
@@ -655,7 +656,10 @@ listeninghistory11.addEventListener('mouseover', function () {
 listeninghistory11.addEventListener('mouseout', function () {
     firstpart.style.background = 'linear-gradient(to bottom, #24333E, black)'
 })
-
+let videoplayer = document.querySelector('.video-container');
+videoplayer.innerHTML = ` <center>
+                            <video src="videos/iguess.mp4" autoplay loop muted></video>
+                        </center>`
 async function changeImageAndName(imageSrc, name, singername, audiofile) {
     const auth = getAuth();
     try {
