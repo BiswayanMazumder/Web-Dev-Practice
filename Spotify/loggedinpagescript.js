@@ -140,50 +140,48 @@ if (writetodb == 'true') {
     await writeuserdetails();
 }
 var active_tokens='';
-function writeactivetoken() {
-    fetch('https://api.ipify.org?format=json')
-        .then(response => response.json())
-        .then(data => {
-            const ipAddress = data.ip;
-            // console.log('Your IP address:', ipAddress);
-            const auth = getAuth();
-            try {
-                onAuthStateChanged(auth, async (user) => {
-                    if (user) {
-                        const uid = user.uid;
-                        const userDocRef = doc(db, "Session Details", uid);
-                        const docSnap = await getDoc(userDocRef);
-                        if (docSnap.exists()) {
-                            active_tokens = docSnap.data().User_Token;
-                        }
-                        else{
-                            try {
-                                // Create a reference to the document with the user's UID
-                                await setDoc(doc(db, "Session Details", uid), {
-                                    'User_Token': token
-                                });
-                                console.log('TOkens '+token);
-                                
-                                // console.log("Document written with ID: ", uid);
-                            } catch (e) {
-                                console.error("Error adding document: ", e);
-                            }
-                        }
-                    } else {
-                        console.error("No user is signed in");
-                    }
+async function writeactivetoken() {
+    try {
+        const response = await fetch('https://api.ipify.org?format=json');
+        const data = await response.json();
+        const ipAddress = data.ip;
+
+        const auth = getAuth();
+        onAuthStateChanged(auth, async (user) => {
+            if (user) {
+                const uid = user.uid;
+                const userDocRef = doc(db, "Session Details", uid);
+                const docSnap = await getDoc(userDocRef);
+
+                if (docSnap.exists()) {
+                    const active_tokens = docSnap.data().User_Token;
                     console.log('Fetched Token: ' + active_tokens);
-                });
-                
-            } catch (e) {
-                console.error("Error with auth state change: ", e);
+                    localStorage.setItem('token',active_tokens);
+                } else {
+                    try {
+                        // Create a reference to the document with the user's UID
+                        await setDoc(doc(db, "Session Details", uid), {
+                            'User_Token': token
+                        });
+                        localStorage.setItem('token',token);
+                        console.log('Fetched Token1: ' + token);
+                    } catch (e) {
+                        console.error("Error adding document: ", e);
+                    }
+                }
+            } else {
+                console.error("No user is signed in");
             }
-        })
-        .catch(error => console.error('Error:', error));
+        });
+    } catch (error) {
+        console.error('Error:', error);
+    }
 }
-writeactivetoken();
+
+await writeactivetoken();
 const tokens = localStorage.getItem('token');
 console.log('Tokens fetched: ' + tokens);
+console.log('Fetched Token2: ' + active_tokens);
 var songname = '';
 var singer = '';
 var songfile = '';
