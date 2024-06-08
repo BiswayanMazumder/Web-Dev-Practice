@@ -198,6 +198,7 @@ let images7 = 'https://i.scdn.co/image/ab67706f0000000233fab13281f6d0d067511882'
 let images8 = 'https://i.scdn.co/image/ab67616d0000b273577ab4960248918a9ebc7f73'
 let images9 = 'https://i.scdn.co/image/ab67616d0000b273fd2e3126a9d286550f9921a2'
 let images10 = 'https://i.scdn.co/image/ab67616d00001e02bc80f40a0e36d308a73b89d6'
+let images11 = 'https://i.scdn.co/image/ab67616d00001e028ad8f5243d6534e03b656c8b'
 let audio1 = 'songs/Prarthana_320(PagalWorld.com.sb).mp3'
 let audio2 = 'songs/jootajapani.mp3'
 let audio3 = 'songs/truestories.mp3'
@@ -208,6 +209,7 @@ let audio7 = 'songs/aamjahemunde.mp3'
 let audio8 = 'songs/yimmyyimmy.mp3'
 let audio9 = 'songs/0to100.mp3'
 let audio10 = 'songs/jaggajatt.mp3'
+let audio11 = 'songs/starboy_remix.mp3'
 let name1 = 'Prarthana'
 let singername1 = 'KR$NA'
 let name2 = 'Joota Japani'
@@ -226,6 +228,8 @@ let singername9 = 'Sidhu Moosewala'
 let name9 = '0 to 100'
 let singername10 = 'Ikka, Diljit Dosanjh, Badshah, Sez on The Beat'
 let name10 = 'Jagga Jatt'
+let name11 = 'StarBoy Remix'
+let singername11 = 'The Weeknd'
 var lastplayed = false;
 async function fetchlastplayed() {
     const auth = getAuth();
@@ -275,7 +279,6 @@ async function fetchlastplayed() {
     });
 }
 await fetchlastplayed();
-// console.log("Document data:", lastplayed);
 async function fetchusername() {
     const auth = getAuth();
     onAuthStateChanged(auth, async (user) => {
@@ -386,6 +389,7 @@ let listeninghistory7 = document.querySelector('#history7')
 let listeninghistory8 = document.querySelector('#history8')
 let listeninghistory9 = document.querySelector('#history9')
 let listeninghistory10 = document.querySelector('#history10')
+let listeninghistory11 = document.querySelector('#history11')
 let placetoinsert = document.querySelector('.container')
 let time = '';
 async function getRandomColor() {
@@ -429,6 +433,7 @@ listeninghistory7.innerHTML += `<img src=${images7} alt="Krsna" class="krsna" he
 listeninghistory8.innerHTML += `<img src=${images8} alt="Krsna" class="krsna" height="50px" style="border-radius: 5px;">`
 listeninghistory9.innerHTML += `<img src=${images9} alt="Krsna" class="krsna" height="50px" style="border-radius: 5px;">`
 listeninghistory10.innerHTML += `<img src=${images10} alt="Krsna" class="krsna" height="50px" style="border-radius: 5px;">`
+listeninghistory11.innerHTML += `<img src=${images11} alt="Krsna" class="krsna" height="50px" style="border-radius: 5px;">`
 
 listeninghistory1.innerHTML += `<div class="singername">${name1}</div>`
 listeninghistory2.innerHTML += `<div class="singername">${name2}</div>`
@@ -440,6 +445,7 @@ listeninghistory7.innerHTML += `<div class="singername">${name7}</div>`
 listeninghistory8.innerHTML += `<div class="singername">${name8}</div>`
 listeninghistory9.innerHTML += `<div class="singername">${name9}</div>`
 listeninghistory10.innerHTML += `<div class="singername">${name10}</div>`
+listeninghistory11.innerHTML += `<div class="singername">${name11}</div>`
 
 let playlistImg1 = '';
 let playlistName1 = '';
@@ -580,6 +586,12 @@ listeninghistory10.addEventListener('click', function () {
     changeImageAndName(images10, name10, singername10, audio10)
     playpause();
 })
+listeninghistory11.addEventListener('click', function () {
+    playerloaded = true;
+    document.title = name11;
+    changeImageAndName(images11, name11, singername11, audio11)
+    playpause();
+})
 listeninghistory1.addEventListener('mouseout', function () {
     firstpart.style.background = 'linear-gradient(to bottom, #24333E, black)'
 })
@@ -635,6 +647,12 @@ listeninghistory10.addEventListener('mouseover', function () {
     firstpart.style.background = 'linear-gradient(to bottom, #6D0420, black)'
 })
 listeninghistory10.addEventListener('mouseout', function () {
+    firstpart.style.background = 'linear-gradient(to bottom, #24333E, black)'
+})
+listeninghistory11.addEventListener('mouseover', function () {
+    firstpart.style.background = 'linear-gradient(to bottom, #6D0420, black)'
+})
+listeninghistory11.addEventListener('mouseout', function () {
     firstpart.style.background = 'linear-gradient(to bottom, #24333E, black)'
 })
 
