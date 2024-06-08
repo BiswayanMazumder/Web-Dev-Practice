@@ -2,7 +2,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
 import { getAuth, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, sendPasswordResetEmail, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-import { getFirestore, collection, addDoc, setDoc, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+import { getFirestore, collection, addDoc, setDoc, doc, getDoc, deleteDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 // import { collection, addDoc, } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js"; 
 // import { setDoc } from "firebase/firestore";
@@ -97,6 +97,18 @@ const writetodb = localStorage.getItem('writetodb');
 let navigationbar = document.querySelector('.bottom-nav')
 // console.log(Username, password, email)
 // console.log(`Write to db ${writetodb}`);
+function generateToken(length) {
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let token = '';
+    for (let i = 0; i < length; i++) {
+        const randomIndex = Math.floor(Math.random() * characters.length);
+        token += characters[randomIndex];
+    }
+    return token;
+}
+const token = generateToken(10);
+// console.log(token);
+
 if (writetodb == 'true') {
     async function writeuserdetails() {
         const auth = getAuth();
@@ -127,38 +139,51 @@ if (writetodb == 'true') {
     }
     await writeuserdetails();
 }
-function getIPAddress() {
+var active_tokens='';
+function writeactivetoken() {
     fetch('https://api.ipify.org?format=json')
-      .then(response => response.json())
-      .then(data => {
-        const ipAddress = data.ip;
-        // console.log('Your IP address:', ipAddress);
-        const auth = getAuth();
-        try {
-            onAuthStateChanged(auth, async (user) => {
-                if (user) {
-                    const uid = user.uid;
-                    // console.log(uid);
-                    try {
-                        // Create a reference to the document with the user's UID
-                        await setDoc(doc(db, "Session Details", uid), {
-                            'IP Address': ipAddress
-                        });
-                        // console.log("Document written with ID: ", uid);
-                    } catch (e) {
-                        console.error("Error adding document: ", e);
+        .then(response => response.json())
+        .then(data => {
+            const ipAddress = data.ip;
+            // console.log('Your IP address:', ipAddress);
+            const auth = getAuth();
+            try {
+                onAuthStateChanged(auth, async (user) => {
+                    if (user) {
+                        const uid = user.uid;
+                        const userDocRef = doc(db, "Session Details", uid);
+                        const docSnap = await getDoc(userDocRef);
+                        if (docSnap.exists()) {
+                            active_tokens = docSnap.data().User_Token;
+                        }
+                        else{
+                            try {
+                                // Create a reference to the document with the user's UID
+                                await setDoc(doc(db, "Session Details", uid), {
+                                    'User_Token': token
+                                });
+                                console.log('TOkens '+token);
+                                
+                                // console.log("Document written with ID: ", uid);
+                            } catch (e) {
+                                console.error("Error adding document: ", e);
+                            }
+                        }
+                    } else {
+                        console.error("No user is signed in");
                     }
-                } else {
-                    console.error("No user is signed in");
-                }
-            });
-        } catch (e) {
-            console.error("Error with auth state change: ", e);
-        }
-      })
-      .catch(error => console.error('Error:', error));
-  }
-getIPAddress();
+                    console.log('Fetched Token: ' + active_tokens);
+                });
+                
+            } catch (e) {
+                console.error("Error with auth state change: ", e);
+            }
+        })
+        .catch(error => console.error('Error:', error));
+}
+writeactivetoken();
+const tokens = localStorage.getItem('token');
+console.log('Tokens fetched: ' + tokens);
 var songname = '';
 var singer = '';
 var songfile = '';
@@ -289,7 +314,7 @@ var profilePicture = '';
 // }, 1000);
 // Function to get the client's IP address
 
-  
+
 var issubed = false;
 let premiumsubs = document.querySelector('#premiumuser')
 async function checksubsStatus() {
@@ -316,17 +341,38 @@ setInterval(checksubsStatus, 3000);
 let premiumbutton = document.querySelector("#premiumbutton")
 
 let logout = document.querySelector('#signout')
-logout.addEventListener('click', function () {
+logout.addEventListener('click', async function () {
     const auth = getAuth();
 
-    auth.signOut().then(() => {
+    try {
+        const user = await new Promise((resolve, reject) => {
+            onAuthStateChanged(auth, (user) => {
+                if (user) {
+                    resolve(user);
+                } else {
+                    reject(new Error("No user is signed in"));
+                }
+            });
+        });
+
+        if (user) {
+            const uid = user.uid;
+            await deleteDoc(doc(db, "Session Details", uid));
+        }
+
+        // If Firestore deletion is successful, proceed with sign out
+        await auth.signOut();
+        
         // Sign-out successful.
+        localStorage.removeItem('token');
         window.location.replace('index.html');
-    }).catch((error) => {
-        // An error happened.
-        console.error('Error during sign out:', error);
-    });
+    } catch (e) {
+        // Handle errors appropriately
+        console.error("Error during sign out process:", e);
+    }
 });
+
+
 
 const letters = '0123456789ABCDEF';
 let color = '#';
