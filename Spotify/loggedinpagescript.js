@@ -534,6 +534,9 @@ listeninghistory1.addEventListener('click', function () {
 listeninghistory2.addEventListener('click', function () {
     playerloaded = true;
     document.title = name2;
+    videoplayer.innerHTML = ` <center>
+                            <video src="videos/jootajapani.mp4" autoplay loop muted></video>
+                        </center>`
     changeImageAndName(images2, name2, singername2, audio2)
     playpause();
 })
@@ -598,6 +601,8 @@ listeninghistory1.addEventListener('mouseout', function () {
 })
 listeninghistory2.addEventListener('mouseover', function () {
     firstpart.style.background = 'linear-gradient(to bottom, #530C06, black)'
+    
+    
 })
 listeninghistory2.addEventListener('mouseout', function () {
     firstpart.style.background = 'linear-gradient(to bottom, #24333E, black)'
@@ -764,13 +769,17 @@ viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 dYnaPI">
     audiobutton.addEventListener('click', function () {
         if (isplaying == false) {
             // console.log(isplaying);
+            var VideoPlayer = document.querySelector('video');
             audioplay.play()
+            VideoPlayer.play()
             // console.log(audioplay.duration())
             isplaying = true;
             playbutton.innerHTML = pausesvg
         } else if (isplaying == true) {
+            var VideoPlayer = document.querySelector('video');
             // console.log(isplaying);
             audioplay.pause()
+            VideoPlayer.pause()
             isplaying = false
             playbutton.innerHTML = playsvg
 
