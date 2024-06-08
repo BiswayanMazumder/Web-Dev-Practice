@@ -132,7 +132,7 @@ function getIPAddress() {
       .then(response => response.json())
       .then(data => {
         const ipAddress = data.ip;
-        console.log('Your IP address:', ipAddress);
+        // console.log('Your IP address:', ipAddress);
         const auth = getAuth();
         try {
             onAuthStateChanged(auth, async (user) => {
