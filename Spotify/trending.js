@@ -279,7 +279,7 @@ async function fetchlastplayed() {
         }
     });
 }
-await fetchlastplayed();
+// await fetchlastplayed();
 async function fetchusername() {
     const auth = getAuth();
     onAuthStateChanged(auth, async (user) => {
@@ -307,7 +307,7 @@ async function fetchusername() {
         }
     });
 }
-fetchusername();
+// fetchusername();
 
 var profilePicture = '';
 
@@ -319,29 +319,6 @@ var profilePicture = '';
 
 var issubed = false;
 let premiumsubs = document.querySelector('#premiumuser')
-async function checksubsStatus() {
-    const auth = getAuth();
-    onAuthStateChanged(auth, async (user) => {
-        const uid = user.uid;
-        try {
-            const userDocRef = doc(db, "Premium_Status", uid);
-            const docSnap = await getDoc(userDocRef);
-            if (docSnap.exists()) {
-                issubed = docSnap.data().Subscribed;
-                // console.log("Document data:", docSnap.data().Subscribed);
-            }
-            if (issubed) {
-                premiumbutton.innerHTML = ``
-                premiumsubs.innerHTML = `<img src="https://pics.paypal.com/00/c/gifts/gb/spotify2.png" alt="" style="height: 40px; padding-left: 10px;position: relative;padding-top: 10px;" >`
-            }
-        } catch (e) {
-            console.log(e.message);
-        }
-    });
-}
-setInterval(checksubsStatus, 3000);
-let premiumbutton = document.querySelector("#premiumbutton")
-
 let logout = document.querySelector('#signout')
 logout.addEventListener('click', async function () {
     const auth = getAuth();
@@ -380,17 +357,6 @@ const letters = '0123456789ABCDEF';
 let color = '#';
 let profilepic = document.querySelector('.profilepicture')
 let history = document.querySelector('.historylistening')
-let listeninghistory1 = document.querySelector('#history1')
-let listeninghistory2 = document.querySelector('#history2')
-let listeninghistory3 = document.querySelector('#history3')
-let listeninghistory4 = document.querySelector('#history4')
-let listeninghistory5 = document.querySelector('#history5')
-let listeninghistory6 = document.querySelector('#history6')
-let listeninghistory7 = document.querySelector('#history7')
-let listeninghistory8 = document.querySelector('#history8')
-let listeninghistory9 = document.querySelector('#history9')
-let listeninghistory10 = document.querySelector('#history10')
-let listeninghistory11 = document.querySelector('#history11')
 let placetoinsert = document.querySelector('.container')
 let time = '';
 async function getRandomColor() {
@@ -424,29 +390,9 @@ async function main() {
 }
 main();
 
-listeninghistory1.innerHTML += `<img src=${images1} alt="Krsna" class="krsna" height="50px" style="border-radius: 5px;">`
-listeninghistory2.innerHTML += `<img src=${images2} alt="Krsna" class="krsna" height="50px" style="border-radius: 5px;">`
-listeninghistory3.innerHTML += `<img src=${images3} alt="Krsna" class="krsna" height="50px" style="border-radius: 5px;">`
-listeninghistory4.innerHTML += `<img src=${images4} alt="Krsna" class="krsna" height="50px" style="border-radius: 5px;">`
-listeninghistory5.innerHTML += `<img src=${images5} alt="Krsna" class="krsna" height="50px" style="border-radius: 5px;">`
-listeninghistory6.innerHTML += `<img src="${images6}" alt="Krsna" class="krsna" height="50px" style="border-radius: 5px;">`
-listeninghistory7.innerHTML += `<img src=${images7} alt="Krsna" class="krsna" height="50px" style="border-radius: 5px;">`
-listeninghistory8.innerHTML += `<img src=${images8} alt="Krsna" class="krsna" height="50px" style="border-radius: 5px;">`
-listeninghistory9.innerHTML += `<img src=${images9} alt="Krsna" class="krsna" height="50px" style="border-radius: 5px;">`
-listeninghistory10.innerHTML += `<img src=${images10} alt="Krsna" class="krsna" height="50px" style="border-radius: 5px;">`
-listeninghistory11.innerHTML += `<img src=${images11} alt="Krsna" class="krsna" height="50px" style="border-radius: 5px;">`
 
-listeninghistory1.innerHTML += `<div class="singername">${name1}</div>`
-listeninghistory2.innerHTML += `<div class="singername">${name2}</div>`
-listeninghistory3.innerHTML += `<div class="singername">${name3}</div>`
-listeninghistory4.innerHTML += `<div class="singername">${name4}</div>`
-listeninghistory5.innerHTML += `<div class="singername">${name5}</div>`
-listeninghistory6.innerHTML += `<div class="singername">${name6}</div>`
-listeninghistory7.innerHTML += `<div class="singername">${name7}</div>`
-listeninghistory8.innerHTML += `<div class="singername">${name8}</div>`
-listeninghistory9.innerHTML += `<div class="singername">${name9}</div>`
-listeninghistory10.innerHTML += `<div class="singername">${name10}</div>`
-listeninghistory11.innerHTML += `<div class="singername">${name11}</div>`
+
+
 
 let playlistImg1 = '';
 let playlistName1 = '';
@@ -521,143 +467,7 @@ getplaylistname3();
 getplaylistname4();
 let firstpart = document.querySelector('.firstrightpart')
 var playerloaded = false;
-listeninghistory1.addEventListener('mouseover', function () {
-    firstpart.style.background = 'linear-gradient(to bottom, #28282E, black)'
-})
-listeninghistory1.addEventListener('click', function () {
-    playerloaded = true;
-    document.title = name1;
-    changeImageAndName(images1, name1, singername1, audio1)
 
-    playpause();
-})
-listeninghistory2.addEventListener('click', function () {
-    playerloaded = true;
-    document.title = name2;
-    changeImageAndName(images2, name2, singername2, audio2)
-    playpause();
-})
-listeninghistory3.addEventListener('click', function () {
-    playerloaded = true;
-    document.title = name3;
-    changeImageAndName(images3, name3, singername3, audio3)
-
-    playpause();
-})
-listeninghistory4.addEventListener('click', function () {
-    playerloaded = true;
-    document.title = name4;
-    changeImageAndName(images4, name4, singername4, audio4)
-    playpause();
-})
-listeninghistory5.addEventListener('click', function () {
-    playerloaded = true;
-    document.title = name5;
-    changeImageAndName(images5, name5, singername5, audio5)
-    playpause();
-})
-listeninghistory6.addEventListener('click', function () {
-    playerloaded = true;
-    document.title = name6;
-    changeImageAndName(images6, name6, singername6, audio6)
-    playpause();
-})
-listeninghistory7.addEventListener('click', function () {
-    playerloaded = true;
-    document.title = name7;
-    changeImageAndName(images7, name7, singername7, audio7)
-    playpause();
-
-})
-listeninghistory8.addEventListener('click', function () {
-    playerloaded = true;
-    document.title = name8;
-    changeImageAndName(images8, name8, singername8, audio8)
-    playpause();
-})
-listeninghistory9.addEventListener('click', function () {
-    playerloaded = true;
-    document.title = name9;
-    changeImageAndName(images9, name9, singername9, audio9)
-    playpause();
-})
-listeninghistory10.addEventListener('click', function () {
-    playerloaded = true;
-    document.title = name10;
-    changeImageAndName(images10, name10, singername10, audio10)
-    playpause();
-})
-listeninghistory11.addEventListener('click', function () {
-    playerloaded = true;
-    document.title = name11;
-    changeImageAndName(images11, name11, singername11, audio11)
-    playpause();
-})
-listeninghistory1.addEventListener('mouseout', function () {
-    firstpart.style.background = 'linear-gradient(to bottom, #24333E, black)'
-})
-listeninghistory2.addEventListener('mouseover', function () {
-    firstpart.style.background = 'linear-gradient(to bottom, #530C06, black)'
-    
-    
-})
-listeninghistory2.addEventListener('mouseout', function () {
-    firstpart.style.background = 'linear-gradient(to bottom, #24333E, black)'
-})
-listeninghistory3.addEventListener('mouseover', function () {
-    firstpart.style.background = 'linear-gradient(to bottom, #26455E, black)'
-})
-listeninghistory3.addEventListener('mouseout', function () {
-    firstpart.style.background = 'linear-gradient(to bottom, #24333E, black)'
-})
-listeninghistory4.addEventListener('mouseover', function () {
-    firstpart.style.background = 'linear-gradient(to bottom, #025802, black)'
-})
-listeninghistory4.addEventListener('mouseout', function () {
-    firstpart.style.background = 'linear-gradient(to bottom, #24333E, black)'
-})
-listeninghistory5.addEventListener('mouseover', function () {
-    firstpart.style.background = 'linear-gradient(to bottom, #411411, black)'
-})
-listeninghistory5.addEventListener('mouseout', function () {
-    firstpart.style.background = 'linear-gradient(to bottom, #24333E, black)'
-})
-listeninghistory6.addEventListener('mouseover', function () {
-    firstpart.style.background = 'linear-gradient(to bottom, #411411, black)'
-})
-listeninghistory6.addEventListener('mouseout', function () {
-    firstpart.style.background = 'linear-gradient(to bottom, #24333E, black)'
-})
-listeninghistory7.addEventListener('mouseover', function () {
-    firstpart.style.background = 'linear-gradient(to bottom, #1A202F, black)'
-})
-listeninghistory7.addEventListener('mouseout', function () {
-    firstpart.style.background = 'linear-gradient(to bottom, #24333E, black)'
-})
-listeninghistory8.addEventListener('mouseover', function () {
-    firstpart.style.background = 'linear-gradient(to bottom, #884B27, black)'
-})
-listeninghistory8.addEventListener('mouseout', function () {
-    firstpart.style.background = 'linear-gradient(to bottom, #24333E, black)'
-})
-listeninghistory9.addEventListener('mouseover', function () {
-    firstpart.style.background = 'linear-gradient(to bottom, #025802, black)'
-})
-listeninghistory9.addEventListener('mouseout', function () {
-    firstpart.style.background = 'linear-gradient(to bottom, #24333E, black)'
-})
-listeninghistory10.addEventListener('mouseover', function () {
-    firstpart.style.background = 'linear-gradient(to bottom, #6D0420, black)'
-})
-listeninghistory10.addEventListener('mouseout', function () {
-    firstpart.style.background = 'linear-gradient(to bottom, #24333E, black)'
-})
-listeninghistory11.addEventListener('mouseover', function () {
-    firstpart.style.background = 'linear-gradient(to bottom, #6D0420, black)'
-})
-listeninghistory11.addEventListener('mouseout', function () {
-    firstpart.style.background = 'linear-gradient(to bottom, #24333E, black)'
-})
 async function changeImageAndName(imageSrc, name, singername, audiofile) {
     const auth = getAuth();
     try {

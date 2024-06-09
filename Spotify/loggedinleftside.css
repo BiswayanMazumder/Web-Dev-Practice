@@ -102,7 +102,9 @@ body {
     font-size: 16px;
     padding-left: 20px;
 }
-
+.container .firstpart .home:hover {
+    color: white;
+}
 .container .firstpart .searchicon:hover {
     color: white;
 }
