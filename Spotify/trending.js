@@ -33,28 +33,9 @@ async function getuser() {
             console.log("Welcome Mr," + username);
             // console.log("Profile Picture URL: " + profilePicture);
             // console.log('signed in')
-            const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-            const today = new Date();
-            const dayName = daysOfWeek[today.getDay()];
+            
             // console.log("Today is " + dayName);
-            if (username != null) {
-                if (dayName == 'Saturday' || dayName == 'Sunday') {
-                    history.innerHTML = `🎉 It's ${dayName} and the weekend vibes are soaring high! ${username} 🎉`
-                    // console.log('username'+username);
-                }
-                else {
-                    console.log('Username: ' + username);
-                    history.innerHTML = `🎉 Welcome to Trendy ${dayName}! ${username} 🎉 `
-                }
-            } else if (Username != null) {
-                if (dayName == 'Saturday' || dayName == 'Sunday') {
-                    history.innerHTML = `🎉 It's ${dayName} and the weekend vibes are soaring high! ${Username}🎉`
-                }
-                else {
-                    // console.log('Username: ' + username);
-                    history.innerHTML = `🎉 Welcome to Trendy ${dayName}! ${Username}🎉 `
-                }
-            }
+            
             try {
                 if (profilePicture != null) {
                     profilepic.innerHTML = `<img src="${profilePicture}" alt="ProfilePicture" class="profilepicture" height="20px" width="20px" style="position: relative;justify-content: center;text-align: center;top: 22%;left: 22%;border-radius: 50%;">`
@@ -366,19 +347,7 @@ async function getRandomColor() {
     return color;
 }
 let days = '';
-function printToday() {
-    const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-    const today = new Date();
-    const dayName = daysOfWeek[today.getDay()];
-    // console.log("Today is " + dayName);
-    if (dayName == 'Saturday' || dayName == 'Sunday') {
-        history.innerHTML += `🎉 It's ${dayName} and the weekend vibes are soaring high! 🎉`
-    }
-    else {
-        console.log('Username: ' + username);
-        history.innerHTML += `🎉 Welcome to Trendy ${dayName}! 🎉 ${username}`
-    }
-}
+
 async function main() {
     // await getRandomColor();
     // printToday();
