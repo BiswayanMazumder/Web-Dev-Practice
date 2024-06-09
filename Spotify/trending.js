@@ -236,8 +236,8 @@ async function fetchtrending1(){
                 if (docSnap.exists()) {
                     const trending1song = docSnap.data().Name;
                     const videotrending1 = docSnap.data().preview;
-                    console.log(trending1song);
-                    console.log('Video '+videotrending1);
+                    // console.log(trending1song);
+                    // console.log('Video '+videotrending1);
                     trending1.innerHTML=`<div class="songname" style="color: #1DB954; font-weight: 600; font-size: 24px;margin-left: 10px;">
                             #1 ${trending1song}
                         </div>
@@ -267,8 +267,8 @@ async function fetchtrending2(){
                 if (docSnap.exists()) {
                     const trending1song = docSnap.data().Name;
                     const videotrending1 = docSnap.data().preview;
-                    console.log(trending1song);
-                    console.log('Video '+videotrending1);
+                    // console.log(trending1song);
+                    // console.log('Video '+videotrending1);
                     trending2.innerHTML=`<div class="songname" style="color: #1DB954; font-weight: 600; font-size: 24px;margin-left: 10px;">
                             #2 ${trending1song}
                         </div>
@@ -298,8 +298,8 @@ async function fetchtrending3(){
                 if (docSnap.exists()) {
                     const trending1song = docSnap.data().Name;
                     const videotrending1 = docSnap.data().preview;
-                    console.log(trending1song);
-                    console.log('Video '+videotrending1);
+                    // console.log(trending1song);
+                    // console.log('Video '+videotrending1);
                     trending3.innerHTML=`<div class="songname" style="color: #1DB954; font-weight: 600; font-size: 24px;margin-left: 10px;">
                             #3 ${trending1song}
                         </div>
@@ -329,8 +329,8 @@ async function fetchtrending4(){
                 if (docSnap.exists()) {
                     const trending1song = docSnap.data().Name;
                     const videotrending1 = docSnap.data().preview;
-                    console.log(trending1song);
-                    console.log('Video '+videotrending1);
+                    // console.log(trending1song);
+                    // console.log('Video '+videotrending1);
                     trending4.innerHTML=`<div class="songname" style="color: #1DB954; font-weight: 600; font-size: 24px;margin-left: 10px;">
                             #4 ${trending1song}
                         </div>
