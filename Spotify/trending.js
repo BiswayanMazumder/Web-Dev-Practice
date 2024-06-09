@@ -29,7 +29,7 @@ async function getuser() {
         if (user) {
             const uid = user.uid;
             username = user.displayName;
-            profilePicture = user.photoURL;
+            const profilePicture = user.photoURL;
             console.log("Welcome Mr," + username);
             // console.log("Profile Picture URL: " + profilePicture);
             // console.log('signed in')
@@ -57,247 +57,6 @@ async function getuser() {
     });
 }
 await getuser();
-// const whatsnew = document.querySelector('.whatsnew')
-// whatsnew.innerHTML += `<svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 dYnaPI" width="20" height="20"><title>What's New</title>
-// <path d="M8 1.5a4 4 0 0 0-4 4v3.27a.75.75 0 0 1-.1.373L2.255 12h11.49L12.1 9.142a.75.75 0 0 1-.1-.374V5.5a4 4 0 0 0-4-4zm-5.5 4a5.5 5.5 0 0 1 11 0v3.067l2.193 3.809a.75.75 0 0 1-.65 1.124H10.5a2.5 2.5 0 0 1-5 0H.957a.75.75 0 0 1-.65-1.124L2.5 8.569V5.5zm4.5 8a1 1 0 1 0 2 0H7z"  fill="grey"></path></svg>`
-// whatsnew.addEventListener('mouseover', function () {
-//     whatsnew.innerHTML+= `<svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 dYnaPI" width="20" height="20"><title>What's New</title>
-// <path d="M8 1.5a4 4 0 0 0-4 4v3.27a.75.75 0 0 1-.1.373L2.255 12h11.49L12.1 9.142a.75.75 0 0 1-.1-.374V5.5a4 4 0 0 0-4-4zm-5.5 4a5.5 5.5 0 0 1 11 0v3.067l2.193 3.809a.75.75 0 0 1-.65 1.124H10.5a2.5 2.5 0 0 1-5 0H.957a.75.75 0 0 1-.65-1.124L2.5 8.569V5.5zm4.5 8a1 1 0 1 0 2 0H7z"  fill="white"></path></svg>`
-// })
-// whatsnew.addEventListener('mouseout', function () {
-//     whatsnew.innerHTML+= `<svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 dYnaPI" width="20" height="20"><title>What's New</title>
-// <path d="M8 1.5a4 4 0 0 0-4 4v3.27a.75.75 0 0 1-.1.373L2.255 12h11.49L12.1 9.142a.75.75 0 0 1-.1-.374V5.5a4 4 0 0 0-4-4zm-5.5 4a5.5 5.5 0 0 1 11 0v3.067l2.193 3.809a.75.75 0 0 1-.65 1.124H10.5a2.5 2.5 0 0 1-5 0H.957a.75.75 0 0 1-.65-1.124L2.5 8.569V5.5zm4.5 8a1 1 0 1 0 2 0H7z"  fill="grey"></path></svg>`
-// })
-// whatsnew.addEventListener('click', function () {
-//     window.location.href="whatsnew.html"
-// })
-var username = '';
-const Username = localStorage.getItem('username');
-const password = localStorage.getItem('password');
-const email = localStorage.getItem('email');
-const writetodb = localStorage.getItem('writetodb');
-let navigationbar = document.querySelector('.bottom-nav')
-// console.log(Username, password, email)
-// console.log(`Write to db ${writetodb}`);
-function generateToken(length) {
-    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    let token = '';
-    for (let i = 0; i < length; i++) {
-        const randomIndex = Math.floor(Math.random() * characters.length);
-        token += characters[randomIndex];
-    }
-    return token;
-}
-const token = generateToken(10);
-// console.log(token);
-
-if (writetodb == 'true') {
-    async function writeuserdetails() {
-        const auth = getAuth();
-        try {
-            onAuthStateChanged(auth, async (user) => {
-                if (user) {
-                    const uid = user.uid;
-                    // console.log(uid);
-                    try {
-                        // Create a reference to the document with the user's UID
-                        await setDoc(doc(db, "User Details", uid), {
-                            'Username': Username,
-                            'Email': email,
-                            'Password': password,
-                            'Profile Picture': profilePicture,
-                        });
-                        // console.log("Document written with ID: ", uid);
-                    } catch (e) {
-                        console.error("Error adding document: ", e);
-                    }
-                } else {
-                    console.error("No user is signed in");
-                }
-            });
-        } catch (e) {
-            console.error("Error with auth state change: ", e);
-        }
-    }
-    await writeuserdetails();
-}
-var active_tokens = '';
-async function writeactivetoken() {
-    try {
-        const response = await fetch('https://api.ipify.org?format=json');
-        const data = await response.json();
-        const ipAddress = data.ip;
-
-        const auth = getAuth();
-        onAuthStateChanged(auth, async (user) => {
-            if (user) {
-                const uid = user.uid;
-                const userDocRef = doc(db, "Session Details", uid);
-                const docSnap = await getDoc(userDocRef);
-
-                if (docSnap.exists()) {
-                    const active_tokens = docSnap.data().User_Token;
-                    // console.log('Fetched Token: ' + active_tokens);
-                    localStorage.setItem('token', active_tokens);
-                } else {
-                    try {
-                        // Create a reference to the document with the user's UID
-                        await setDoc(doc(db, "Session Details", uid), {
-                            'User_Token': token
-                        });
-                        localStorage.setItem('token', token);
-                        // console.log('Fetched Token1: ' + token);
-                    } catch (e) {
-                        console.error("Error adding document: ", e);
-                    }
-                }
-            } else {
-                console.error("No user is signed in");
-            }
-        });
-    } catch (error) {
-        console.error('Error:', error);
-    }
-}
-
-await writeactivetoken();
-const tokens = localStorage.getItem('token');
-// console.log('Tokens fetched: ' + tokens);
-// console.log('Fetched Token2: ' + active_tokens);
-var songname = '';
-var singer = '';
-var songfile = '';
-var poster = '';
-let name5 = 'Safety Off';
-let singername5 = 'Shubh';
-let images1 = 'https://i.scdn.co/image/ab67616100005174debeea13700496b7d2b345d9'
-let images2 = 'https://i.scdn.co/image/ab67616d00001e02d045f5b403653ae1d59e46bb'
-let images3 = 'https://i.scdn.co/image/ab67616d00001e02d5bf86c4e1fd46800b122641'
-let images4 = 'https://i.scdn.co/image/ab67616d00001e02af9e8dfd99c2150e692cd96e'
-let images5 = 'https://i.scdn.co/image/ab67616d00001e023bf0683f6ac36cc954339d03'
-let images6 = 'https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO3iW9AR-default.jpg'
-let images7 = 'https://i.scdn.co/image/ab67706f0000000233fab13281f6d0d067511882'
-let images8 = 'https://i.scdn.co/image/ab67616d0000b273577ab4960248918a9ebc7f73'
-let images9 = 'https://i.scdn.co/image/ab67616d0000b273fd2e3126a9d286550f9921a2'
-let images10 = 'https://i.scdn.co/image/ab67616d00001e02bc80f40a0e36d308a73b89d6'
-let images11 = 'https://i.scdn.co/image/ab67616d00001e028ad8f5243d6534e03b656c8b'
-let audio1 = 'songs/Prarthana_320(PagalWorld.com.sb).mp3'
-let audio2 = 'songs/jootajapani.mp3'
-let audio3 = 'songs/truestories.mp3'
-let audio4 = 'songs/gulabisadi.mp3'
-let audio5 = 'songs/safetyoff.mp3'
-let audio6 = 'songs/khattaflow.mp3'
-let audio7 = 'songs/aamjahemunde.mp3'
-let audio8 = 'songs/yimmyyimmy.mp3'
-let audio9 = 'songs/0to100.mp3'
-let audio10 = 'songs/jaggajatt.mp3'
-let audio11 = 'songs/starboy_remix.mp3'
-let name1 = 'Prarthana'
-let singername1 = 'KR$NA'
-let name2 = 'Joota Japani'
-let singername2 = 'KR$NA'
-let name3 = 'True Stories'
-let singername3 = 'AP Dhillon'
-let name4 = 'Gulabi Sadi'
-let singername4 = 'Album'
-let name6 = 'This is KR$NA'
-let singername6 = 'Album'
-let name7 = 'This is Parmish Verma'
-let singername8 = 'Tayc, Shreya Ghosal'
-let name8 = 'Yimmy Yimmy'
-let singername7 = 'Album'
-let singername9 = 'Sidhu Moosewala'
-let name9 = '0 to 100'
-let singername10 = 'Ikka, Diljit Dosanjh, Badshah, Sez on The Beat'
-let name10 = 'Jagga Jatt'
-let name11 = 'StarBoy Remix'
-let singername11 = 'The Weeknd'
-var lastplayed = false;
-async function fetchlastplayed() {
-    const auth = getAuth();
-    onAuthStateChanged(auth, async (user) => {
-        const uid = user.uid;
-        try {
-            const userDocRef = doc(db, "Currently Playing", uid);
-            const docSnap = await getDoc(userDocRef);
-            if (docSnap.exists()) {
-                songname = docSnap.data().Song_Name;
-                singer = docSnap.data().Singer_Name;
-                songfile = docSnap.data().Song_Audio;
-                poster = docSnap.data().Song_Image;
-                lastplayed = true;
-            }
-
-            document.title = songname;
-            // console.log("Document data:", lastplayed);
-            // console.log("Document data:", songname, singer, songfile, poster);
-            if (lastplayed) {
-                navigationbar.innerHTML = `<div class="songname"
-    style="position: relative;justify-content: start;text-align: start;display: flex;flex-direction: row;">
-    <img src=${poster} alt="Krsna" class="krsna"
-        height="50px" style="border-radius: 5px;padding-left: 5px;top: 10px;position: relative;">
-    <div class="songname"
-        style="color: white;margin-left: 10px;position: relative;top: 15px;font-size: 14px;font-weight: 600;display: flex;flex-direction: column;font-family: sans-serif;">
-        <a href=#${songname} class="playingsongname">${songname}</a>
-        <div class="singername"
-            style="color: gray;position: relative;top: 10px;font-size: 10px;font-weight: 600;display: flex;flex-direction: column;font-family: sans-serif;">
-            ${singer}
-        </div>
-
-    </div>
-</div>
-<div class="controls"
-    style="position: absolute;justify-content: center;text-align: center;left: 50%;top: 10px;display: flex;flex-direction: column;">
-    <div class="navigation">
-        <audio src=${songfile} class="audioplay" id="audio" controls></audio>
-     </div>   
-    
-</div>
-<br><br><br>`
-            }
-        } catch (e) {
-            console.log(e.message);
-        }
-    });
-}
-// await fetchlastplayed();
-async function fetchusername() {
-    const auth = getAuth();
-    onAuthStateChanged(auth, async (user) => {
-        const uid = user.uid;
-        try {
-            const userDocRef = doc(db, "User Details", uid);
-            const docSnap = await getDoc(userDocRef);
-            if (docSnap.exists()) {
-                username = docSnap.data().Username;
-                console.log("User name:", username);
-                const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-                const today = new Date();
-                const dayName = daysOfWeek[today.getDay()];
-                if (dayName == 'Saturday' || dayName == 'Sunday') {
-                    history.innerHTML = `🎉 It's ${dayName} and the weekend vibes are soaring high! ${username} 🎉`
-                }
-                else {
-                    // console.log('Username: ' + username);
-                    history.innerHTML = `🎉 Welcome to Trendy ${dayName}! ${username} 🎉 `
-                }
-            }
-
-        } catch (e) {
-            console.log(e.message);
-        }
-    });
-}
-// fetchusername();
-
-var profilePicture = '';
-
-// setInterval(() => {
-//      getuser();
-// }, 1000);
-// Function to get the client's IP address
-
-
 var issubed = false;
 let premiumsubs = document.querySelector('#premiumuser')
 let logout = document.querySelector('#signout')
@@ -436,130 +195,6 @@ getplaylistname3();
 getplaylistname4();
 let firstpart = document.querySelector('.firstrightpart')
 var playerloaded = false;
-
-async function changeImageAndName(imageSrc, name, singername, audiofile) {
-    const auth = getAuth();
-    try {
-        onAuthStateChanged(auth, async (user) => {
-            if (user) {
-                const uid = user.uid;
-                // console.log(uid);
-                try {
-                    // Create a reference to the document with the user's UID
-                    await setDoc(doc(db, "Currently Playing", uid), {
-                        'Song_Name': name,
-                        'Song_Image': imageSrc,
-                        'Singer_Name': singername,
-                        'Song_Audio': audiofile,
-                    });
-                    //  console.log('written')
-                    // console.log("Document written with ID: ", uid);
-                } catch (e) {
-                    console.error("Error adding document: ", e);
-                }
-            } else {
-                console.error("No user is signed in");
-            }
-        });
-    } catch (e) {
-        console.error("Error with auth state change: ", e);
-    }
-    navigationbar.innerHTML = `<div class="songname"
-    style="position: relative;justify-content: start;text-align: start;display: flex;flex-direction: row;">
-    <img src=${imageSrc} alt="Krsna" class="krsna"
-        height="50px" style="border-radius: 5px;padding-left: 5px;top: 10px;position: relative;">
-    <div class="songname"
-        style="color: white;margin-left: 10px;position: relative;top: 15px;font-size: 14px;font-weight: 600;display: flex;flex-direction: column;font-family: sans-serif;">
-        <a href=#${name} class="playingsongname">${name}</a>
-        <div class="singername"
-            style="color: gray;position: relative;top: 10px;font-size: 10px;font-weight: 600;display: flex;flex-direction: column;font-family: sans-serif;">
-            ${singername}
-        </div>
-
-    </div>
-</div>
-<div class="controls"
-    style="position: absolute;justify-content: center;text-align: center;left: 50%;top: 10px;display: flex;flex-direction: column;">
-    <div class="navigation">
-        <audio src=${audiofile} class="audioplay" id="audio_player" autoplay></audio>
-        <a href="#previous" class="nav-prev"
-            style="position: relative;top: 5px;padding-right: 10px;text-decoration: none;" id="playaudio">
-            <svg data-encore-id="icon" role="img" aria-hidden="true" height="16" width="16"
-                viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 dYnaPI">
-                <path
-                    d="M3.3 1a.7.7 0 0 1 .7.7v5.15l9.95-5.744a.7.7 0 0 1 1.05.606v12.575a.7.7 0 0 1-1.05.607L4 9.149V14.3a.7.7 0 0 1-.7.7H1.7a.7.7 0 0 1-.7-.7V1.7a.7.7 0 0 1 .7-.7h1.6z"
-                    fill="grey"></path>
-            </svg>
-        </a>
-        <a href="#play" class="nav-play" style="position: relative;top: 5px;text-decoration: none;"
-            id="playpause">
-            <svg data-encore-id="icon" role="img" aria-hidden="true" height="16" width="16"
-viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 dYnaPI">
-<path
-    d="M2.7 1a.7.7 0 0 0-.7.7v12.6a.7.7 0 0 0 .7.7h2.6a.7.7 0 0 0 .7-.7V1.7a.7.7 0 0 0-.7-.7H2.7zm8 0a.7.7 0 0 0-.7.7v12.6a.7.7 0 0 0 .7.7h2.6a.7.7 0 0 0 .7-.7V1.7a.7.7 0 0 0-.7-.7h-2.6z"
-    fill="white"></path>
-</svg>
-
-        </a>
-        <a href="#next" class="nav-forward"
-            style="position: relative;top: 5px;position: relative;top: 5px;padding-left: 10px;text-decoration: none;">
-            <svg data-encore-id="icon" role="img" aria-hidden="true" height="16" width="16"
-                viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 dYnaPI">
-                <path
-                    d="M12.7 1a.7.7 0 0 0-.7.7v5.15L2.05 1.107A.7.7 0 0 0 1 1.712v12.575a.7.7 0 0 0 1.05.607L12 9.149V14.3a.7.7 0 0 0 .7.7h1.6a.7.7 0 0 0 .7-.7V1.7a.7.7 0 0 0-.7-.7h-1.6z"
-                    fill="grey"></path>
-            </svg>
-        </a>
-    </div>
-    <div class="slider" style="position: relative;top: 10px;display: flex;flex-direction: row;">
-        <div class="inititaltimer"
-            style="color: gray;font-size: 12px;font-weight: 500;padding-right: 10px;">00:00</div>
-        <input type="range" min="0" max="100" value="0" id="volumeSlider" class="slider">
-        <div class="endingtimer" style="color: gray;font-size: 12px;font-weight: 500;padding-left: 10px;">
-            4:15</div>
-    </div>
-</div>
-<br><br><br>`
-}
-
-var isplaying = true;
-function playpause() {
-    var audiobutton = document.querySelector('.nav-play')
-    var audioplay = document.querySelector('.audioplay')
-    var playbutton = document.getElementById('playpause');
-    var playsvg = `<svg data-encore-id="icon" role="img" aria-hidden="true" height="16" width="16"
-viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 dYnaPI">
-<path d="M3 2v12l10-6-10-6z" fill="white"/>
-</svg>`
-    var pausesvg = `<svg data-encore-id="icon" role="img" aria-hidden="true" height="16" width="16"
-viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 dYnaPI">
-<path
-    d="M2.7 1a.7.7 0 0 0-.7.7v12.6a.7.7 0 0 0 .7.7h2.6a.7.7 0 0 0 .7-.7V1.7a.7.7 0 0 0-.7-.7H2.7zm8 0a.7.7 0 0 0-.7.7v12.6a.7.7 0 0 0 .7.7h2.6a.7.7 0 0 0 .7-.7V1.7a.7.7 0 0 0-.7-.7h-2.6z"
-    fill="white"></path>
-</svg>`
-
-    audiobutton.addEventListener('click', function () {
-        if (isplaying == false) {
-            // console.log(isplaying);
-            var VideoPlayer = document.querySelector('video');
-            audioplay.play()
-            // VideoPlayer.play()
-            // console.log(audioplay.duration())
-            isplaying = true;
-            playbutton.innerHTML = pausesvg
-        } else if (isplaying == true) {
-            var VideoPlayer = document.querySelector('video');
-            // console.log(isplaying);
-            audioplay.pause()
-            // VideoPlayer.pause()
-            isplaying = false
-            playbutton.innerHTML = playsvg
-
-        }
-
-    })
-
-}
 async function premiumsuccess() {
     const auth = getAuth();
     try {
@@ -585,63 +220,131 @@ async function premiumsuccess() {
         console.error("Error with auth state change: ", e);
     }
 }
+let trending1=document.querySelector('.trending1')
+let trending2=document.querySelector('.trending2')
+let trending3=document.querySelector('.trending3')
+let trending4=document.querySelector('.trending4')
+async function fetchtrending1(){
+    try {
+        const auth = getAuth();
+        onAuthStateChanged(auth, async (user) => {
+            if (user) {
+                const uid = user.uid;
+                const userDocRef = doc(db, "Trending", "Trending1");
+                const docSnap = await getDoc(userDocRef);
 
-
-var options = {
-    "key": "rzp_test_LWOeujcY4CFvGk", // Enter the Key ID generated from the Dashboard
-    "amount": "120000", // Amount is in currency subunits. Default currency is INR.
-    "currency": "INR",
-    "name": "Grovito",
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgz5EMEfoCRrQXJVOkaRfKbf0PNiI6TflGUA&s",
-    "theme": {
-        "color": "#1DB954"
-    },
-    "handler": function (response) {
-        console.log("Handler triggered with response:", response);
-        checkPaymentStatus('success');
-    }
-};
-
-var rzp1 = new Razorpay(options);
-
-document.getElementById('rzp-button1').onclick = function (e) {
-    // premiumsuccess()
-    paymentStatus().then(function (status) {
-        checkPaymentStatus(status);
-    }).catch(function (status) {
-        checkPaymentStatus(status);
-    });
-    rzp1.open();
-    e.preventDefault();
-};
-
-var paymentStatus = function () {
-    return new Promise((resolve, reject) => {
-        rzp1.on('payment.error', function (response) {
-            console.log("Payment failed:", response);
-            reject('failed');
+                if (docSnap.exists()) {
+                    const trending1song = docSnap.data().Name;
+                    const videotrending1 = docSnap.data().preview;
+                    console.log(trending1song);
+                    console.log('Video '+videotrending1);
+                    trending1.innerHTML=`<div class="songname" style="color: #1DB954; font-weight: 600; font-size: 24px;margin-left: 10px;">
+                            #1 ${trending1song}
+                        </div>
+                        <br><br>
+                        <center>
+                            <video src=${videotrending1} autoplay loop muted width="640" height="360"></video>
+                        </center>`
+                }
+            } else {
+                console.error("No user is signed in");
+            }
         });
-
-        rzp1.on('payment.success', function (response) {
-            console.log("Payment successful:", response);
-            resolve('success');
-        });
-
-        rzp1.on('external_wallet', function (response) {
-            console.log("External wallet chosen:", response);
-        });
-
-        rzp1.on('rzp_event', function (response) {
-            console.log("Razorpay event:", response);
-        });
-    });
-};
-
-async function checkPaymentStatus(status) {
-    if (status === 'failed') {
-        console.log('failed');
-    } else {
-        console.log('success');
-        await premiumsuccess();
+    } catch (error) {
+        console.log(error)
     }
 }
+await fetchtrending1();
+async function fetchtrending2(){
+    try {
+        const auth = getAuth();
+        onAuthStateChanged(auth, async (user) => {
+            if (user) {
+                const uid = user.uid;
+                const userDocRef = doc(db, "Trending", "Trending2");
+                const docSnap = await getDoc(userDocRef);
+
+                if (docSnap.exists()) {
+                    const trending1song = docSnap.data().Name;
+                    const videotrending1 = docSnap.data().preview;
+                    console.log(trending1song);
+                    console.log('Video '+videotrending1);
+                    trending2.innerHTML=`<div class="songname" style="color: #1DB954; font-weight: 600; font-size: 24px;margin-left: 10px;">
+                            #2 ${trending1song}
+                        </div>
+                        <br><br>
+                        <center>
+                            <video src=${videotrending1} autoplay loop muted width="640" height="360"></video>
+                        </center>`
+                }
+            } else {
+                console.error("No user is signed in");
+            }
+        });
+    } catch (error) {
+        console.log(error)
+    }
+}
+await fetchtrending2();
+async function fetchtrending3(){
+    try {
+        const auth = getAuth();
+        onAuthStateChanged(auth, async (user) => {
+            if (user) {
+                const uid = user.uid;
+                const userDocRef = doc(db, "Trending", "Trending3");
+                const docSnap = await getDoc(userDocRef);
+
+                if (docSnap.exists()) {
+                    const trending1song = docSnap.data().Name;
+                    const videotrending1 = docSnap.data().preview;
+                    console.log(trending1song);
+                    console.log('Video '+videotrending1);
+                    trending3.innerHTML=`<div class="songname" style="color: #1DB954; font-weight: 600; font-size: 24px;margin-left: 10px;">
+                            #3 ${trending1song}
+                        </div>
+                        <br><br>
+                        <center>
+                            <video src=${videotrending1} autoplay loop muted width="640" height="360"></video>
+                        </center>`
+                }
+            } else {
+                console.error("No user is signed in");
+            }
+        });
+    } catch (error) {
+        console.log(error)
+    }
+}
+await fetchtrending3();
+async function fetchtrending4(){
+    try {
+        const auth = getAuth();
+        onAuthStateChanged(auth, async (user) => {
+            if (user) {
+                const uid = user.uid;
+                const userDocRef = doc(db, "Trending", "Trending4");
+                const docSnap = await getDoc(userDocRef);
+
+                if (docSnap.exists()) {
+                    const trending1song = docSnap.data().Name;
+                    const videotrending1 = docSnap.data().preview;
+                    console.log(trending1song);
+                    console.log('Video '+videotrending1);
+                    trending4.innerHTML=`<div class="songname" style="color: #1DB954; font-weight: 600; font-size: 24px;margin-left: 10px;">
+                            #4 ${trending1song}
+                        </div>
+                        <br><br>
+                        <center>
+                            <video src=${videotrending1} autoplay loop muted width="640" height="360"></video>
+                        </center>`
+                }
+            } else {
+                console.error("No user is signed in");
+            }
+        });
+    } catch (error) {
+        console.log(error)
+    }
+}
+await fetchtrending4();
