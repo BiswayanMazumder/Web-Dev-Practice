@@ -27,24 +27,12 @@ async function getuser() {
 
     onAuthStateChanged(auth, (user) => {
         if (user) {
-            const uid = user.uid;
-            username = user.displayName;
-            const profilePicture = user.photoURL;
-            console.log("Welcome Mr," + username);
-            // console.log("Profile Picture URL: " + profilePicture);
-            // console.log('signed in')
-            
-            // console.log("Today is " + dayName);
-            
-            try {
-                if (profilePicture != null) {
-                    profilepic.innerHTML = `<img src="${profilePicture}" alt="ProfilePicture" class="profilepicture" height="20px" width="20px" style="position: relative;justify-content: center;text-align: center;top: 22%;left: 22%;border-radius: 50%;">`
-                } else {
-                    profilepic.innerHTML = '<img src="favicon.ico" alt="ProfilePicture" class="profilepicture" height="20px" width="20px" style="position: relative;justify-content: center;text-align: center;top: 22%;left: 22%;border-radius: 50%;">'
-                }
-            } catch (error) {
-                console.log(error.message)
-                profilepic.innerHTML = '<img src="play.png" alt="ProfilePicture" class="profilepicture" height="20px" width="20px" style="position: relative;justify-content: center;text-align: center;top: 22%;left: 22%;border-radius: 50%;">'
+            var dp=localStorage.getItem('profilepic');
+            console.log('profile '+dp)
+            if(dp==null){
+                profilepic.innerHTML = `<img src="favicon.ico" alt="ProfilePicture" class="profilepicture" height="20px" width="20px" style="position: relative;justify-content: center;text-align: center;top: 22%;left: 22%;border-radius: 50%;">`
+            }else{
+                 profilepic.innerHTML = '<img src="favicon.ico" alt="ProfilePicture" class="profilepicture" height="20px" width="20px" style="position: relative;justify-content: center;text-align: center;top: 22%;left: 22%;border-radius: 50%;">'
             }
             functioncalled = true;
             // ...

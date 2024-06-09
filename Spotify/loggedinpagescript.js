@@ -58,8 +58,10 @@ async function getuser() {
             try {
                 if (profilePicture != null) {
                     profilepic.innerHTML = `<img src="${profilePicture}" alt="ProfilePicture" class="profilepicture" height="20px" width="20px" style="position: relative;justify-content: center;text-align: center;top: 22%;left: 22%;border-radius: 50%;">`
+                    localStorage.setItem('profilepic', profilePicture);
                 } else {
                     profilepic.innerHTML = '<img src="favicon.ico" alt="ProfilePicture" class="profilepicture" height="20px" width="20px" style="position: relative;justify-content: center;text-align: center;top: 22%;left: 22%;border-radius: 50%;">'
+                    
                 }
             } catch (error) {
                 console.log(error.message)
