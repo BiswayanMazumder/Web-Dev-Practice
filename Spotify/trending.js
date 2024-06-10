@@ -27,12 +27,12 @@ async function getuser() {
 
     onAuthStateChanged(auth, (user) => {
         if (user) {
-            var dp=localStorage.getItem('profilepic');
-            console.log('profile '+dp)
-            if(dp==null){
+            var dp = localStorage.getItem('profilepic');
+            console.log('profile ' + dp)
+            if (dp == null) {
                 profilepic.innerHTML = `<img src="favicon.ico" alt="ProfilePicture" class="profilepicture" height="20px" width="20px" style="position: relative;justify-content: center;text-align: center;top: 22%;left: 22%;border-radius: 50%;">`
-            }else{
-                 profilepic.innerHTML = '<img src="favicon.ico" alt="ProfilePicture" class="profilepicture" height="20px" width="20px" style="position: relative;justify-content: center;text-align: center;top: 22%;left: 22%;border-radius: 50%;">'
+            } else {
+                profilepic.innerHTML = `<img src=${dp} alt="ProfilePicture" class="profilepicture" height="20px" width="20px" style="position: relative;justify-content: center;text-align: center;top: 22%;left: 22%;border-radius: 50%;">`
             }
             functioncalled = true;
             // ...
@@ -208,11 +208,11 @@ async function premiumsuccess() {
         console.error("Error with auth state change: ", e);
     }
 }
-let trending1=document.querySelector('.trending1')
-let trending2=document.querySelector('.trending2')
-let trending3=document.querySelector('.trending3')
-let trending4=document.querySelector('.trending4')
-async function fetchtrending1(){
+let trending1 = document.querySelector('.trending1')
+let trending2 = document.querySelector('.trending2')
+let trending3 = document.querySelector('.trending3')
+let trending4 = document.querySelector('.trending4')
+async function fetchtrending1() {
     try {
         const auth = getAuth();
         onAuthStateChanged(auth, async (user) => {
@@ -224,26 +224,53 @@ async function fetchtrending1(){
                 if (docSnap.exists()) {
                     const trending1song = docSnap.data().Name;
                     const videotrending1 = docSnap.data().preview;
-                    // console.log(trending1song);
+                    const songtrending1 = docSnap.data().song;
+                    // console.log('song'+songtrending1);
                     // console.log('Video '+videotrending1);
-                    trending1.innerHTML=`<div class="songname" style="color: #1DB954; font-weight: 600; font-size: 24px;margin-left: 10px;">
-                            #1 ${trending1song}
-                        </div>
+                    trending1.innerHTML = ` <div style="display: flex; justify-content: space-between; align-items: center; color: #1DB954; font-weight: 600; font-size: 24px; margin-left: 10px;">
+        <div style="flex-grow: 1;">#1 ${trending1song}</div>
+        <a href="#play" class="play1">
+                            <svg data-encore-id="icon" role="img" aria-hidden="true" height="16" width="16" viewBox="0 0 16 16" style="margin-left: auto;">
+                                <path d="M3 2v12l10-6-10-6z" fill="white" />
+                            </svg>
+                        </a>
+    </div>
                         <br><br>
                         <center>
                             <video src=${videotrending1} autoplay loop muted width="640" height="360"></video>
-                        </center>`
+                        </center>`;
+
+                    // Adding play/pause functionality
+                    const playButton = document.querySelector('.play1');
+                    let isPlaying = false;
+                    const audio = new Audio(songtrending1);
+
+                    playButton.addEventListener('click', () => {
+                        if (isPlaying) {
+                            audio.pause();
+                            playButton.innerHTML = `<svg data-encore-id="icon" role="img" aria-hidden="true" height="16" width="16" viewBox="0 0 16 16" style="margin-left: auto;">
+                                <path d="M3 2v12l10-6-10-6z" fill="white" />
+                            </svg>`;
+                        } else {
+                            audio.play();
+                            playButton.innerHTML = `<svg data-encore-id="icon" role="img" aria-hidden="true" height="16" width="16" viewBox="0 0 16 16" style="margin-left: auto;">
+                                <path d="M3 2h4v12H3V2zm6 0h4v12H9V2z" fill="white" />
+                            </svg>`;
+                        }
+                        isPlaying = !isPlaying;
+                    });
                 }
             } else {
                 console.error("No user is signed in");
             }
         });
     } catch (error) {
-        console.log(error)
+        console.log(error);
     }
 }
+
 await fetchtrending1();
-async function fetchtrending2(){
+async function fetchtrending2() {
     try {
         const auth = getAuth();
         onAuthStateChanged(auth, async (user) => {
@@ -251,19 +278,44 @@ async function fetchtrending2(){
                 const uid = user.uid;
                 const userDocRef = doc(db, "Trending", "Trending2");
                 const docSnap = await getDoc(userDocRef);
-
                 if (docSnap.exists()) {
                     const trending1song = docSnap.data().Name;
                     const videotrending1 = docSnap.data().preview;
+                    const songtrending1 = docSnap.data().song;
                     // console.log(trending1song);
                     // console.log('Video '+videotrending1);
-                    trending2.innerHTML=`<div class="songname" style="color: #1DB954; font-weight: 600; font-size: 24px;margin-left: 10px;">
-                            #2 ${trending1song}
-                        </div>
-                        <br><br>
-                        <center>
-                            <video src=${videotrending1} autoplay loop muted width="640" height="360"></video>
-                        </center>`
+                    trending2.innerHTML = ` <div style="display: flex; justify-content: space-between; align-items: center; color: #1DB954; font-weight: 600; font-size: 24px; margin-left: 10px;">
+                    <div style="flex-grow: 1;">#2 ${trending1song}</div>
+                    <a href="#play" class="play2">
+                                        <svg data-encore-id="icon" role="img" aria-hidden="true" height="16" width="16" viewBox="0 0 16 16" style="margin-left: auto;">
+                                            <path d="M3 2v12l10-6-10-6z" fill="white" />
+                                        </svg>
+                                    </a>
+                </div>
+                                    <br><br>
+                                    <center>
+                                        <video src=${videotrending1} autoplay loop muted width="640" height="360"></video>
+                                    </center>`;
+            
+                                // Adding play/pause functionality
+                                const playButton = document.querySelector('.play2');
+                                let isPlaying = false;
+                                const audio = new Audio(songtrending1);
+            
+                                playButton.addEventListener('click', () => {
+                                    if (isPlaying) {
+                                        audio.pause();
+                                        playButton.innerHTML = `<svg data-encore-id="icon" role="img" aria-hidden="true" height="16" width="16" viewBox="0 0 16 16" style="margin-left: auto;">
+                                            <path d="M3 2v12l10-6-10-6z" fill="white" />
+                                        </svg>`;
+                                    } else {
+                                        audio.play();
+                                        playButton.innerHTML = `<svg data-encore-id="icon" role="img" aria-hidden="true" height="16" width="16" viewBox="0 0 16 16" style="margin-left: auto;">
+                                            <path d="M3 2h4v12H3V2zm6 0h4v12H9V2z" fill="white" />
+                                        </svg>`;
+                                    }
+                                    isPlaying = !isPlaying;
+                                });
                 }
             } else {
                 console.error("No user is signed in");
@@ -274,7 +326,7 @@ async function fetchtrending2(){
     }
 }
 await fetchtrending2();
-async function fetchtrending3(){
+async function fetchtrending3() {
     try {
         const auth = getAuth();
         onAuthStateChanged(auth, async (user) => {
@@ -286,15 +338,41 @@ async function fetchtrending3(){
                 if (docSnap.exists()) {
                     const trending1song = docSnap.data().Name;
                     const videotrending1 = docSnap.data().preview;
+                    const songtrending1 = docSnap.data().song;
                     // console.log(trending1song);
                     // console.log('Video '+videotrending1);
-                    trending3.innerHTML=`<div class="songname" style="color: #1DB954; font-weight: 600; font-size: 24px;margin-left: 10px;">
-                            #3 ${trending1song}
-                        </div>
-                        <br><br>
-                        <center>
-                            <video src=${videotrending1} autoplay loop muted width="640" height="360"></video>
-                        </center>`
+                    trending3.innerHTML = ` <div style="display: flex; justify-content: space-between; align-items: center; color: #1DB954; font-weight: 600; font-size: 24px; margin-left: 10px;">
+                    <div style="flex-grow: 1;">#3 ${trending1song}</div>
+                    <a href="#play" class="play3">
+                                        <svg data-encore-id="icon" role="img" aria-hidden="true" height="16" width="16" viewBox="0 0 16 16" style="margin-left: auto;">
+                                            <path d="M3 2v12l10-6-10-6z" fill="white" />
+                                        </svg>
+                                    </a>
+                </div>
+                                    <br><br>
+                                    <center>
+                                        <video src=${videotrending1} autoplay loop muted width="640" height="360"></video>
+                                    </center>`;
+            
+                                // Adding play/pause functionality
+                                const playButton = document.querySelector('.play3');
+                                let isPlaying = false;
+                                const audio = new Audio(songtrending1);
+            
+                                playButton.addEventListener('click', () => {
+                                    if (isPlaying) {
+                                        audio.pause();
+                                        playButton.innerHTML = `<svg data-encore-id="icon" role="img" aria-hidden="true" height="16" width="16" viewBox="0 0 16 16" style="margin-left: auto;">
+                                            <path d="M3 2v12l10-6-10-6z" fill="white" />
+                                        </svg>`;
+                                    } else {
+                                        audio.play();
+                                        playButton.innerHTML = `<svg data-encore-id="icon" role="img" aria-hidden="true" height="16" width="16" viewBox="0 0 16 16" style="margin-left: auto;">
+                                            <path d="M3 2h4v12H3V2zm6 0h4v12H9V2z" fill="white" />
+                                        </svg>`;
+                                    }
+                                    isPlaying = !isPlaying;
+                                });
                 }
             } else {
                 console.error("No user is signed in");
@@ -305,7 +383,7 @@ async function fetchtrending3(){
     }
 }
 await fetchtrending3();
-async function fetchtrending4(){
+async function fetchtrending4() {
     try {
         const auth = getAuth();
         onAuthStateChanged(auth, async (user) => {
@@ -317,15 +395,39 @@ async function fetchtrending4(){
                 if (docSnap.exists()) {
                     const trending1song = docSnap.data().Name;
                     const videotrending1 = docSnap.data().preview;
-                    // console.log(trending1song);
-                    // console.log('Video '+videotrending1);
-                    trending4.innerHTML=`<div class="songname" style="color: #1DB954; font-weight: 600; font-size: 24px;margin-left: 10px;">
-                            #4 ${trending1song}
-                        </div>
-                        <br><br>
-                        <center>
-                            <video src=${videotrending1} autoplay loop muted width="640" height="360"></video>
-                        </center>`
+                    const songtrending1 = docSnap.data().song;
+                    trending4.innerHTML = ` <div style="display: flex; justify-content: space-between; align-items: center; color: #1DB954; font-weight: 600; font-size: 24px; margin-left: 10px;">
+                    <div style="flex-grow: 1;">#4 ${trending1song}</div>
+                    <a href="#play" class="play4">
+                                        <svg data-encore-id="icon" role="img" aria-hidden="true" height="16" width="16" viewBox="0 0 16 16" style="margin-left: auto;">
+                                            <path d="M3 2v12l10-6-10-6z" fill="white" />
+                                        </svg>
+                                    </a>
+                </div>
+                                    <br><br>
+                                    <center>
+                                        <video src=${videotrending1} autoplay loop muted width="640" height="360"></video>
+                                    </center>`;
+            
+                                // Adding play/pause functionality
+                                const playButton = document.querySelector('.play4');
+                                let isPlaying = false;
+                                const audio = new Audio(songtrending1);
+            
+                                playButton.addEventListener('click', () => {
+                                    if (isPlaying) {
+                                        audio.pause();
+                                        playButton.innerHTML = `<svg data-encore-id="icon" role="img" aria-hidden="true" height="16" width="16" viewBox="0 0 16 16" style="margin-left: auto;">
+                                            <path d="M3 2v12l10-6-10-6z" fill="white" />
+                                        </svg>`;
+                                    } else {
+                                        audio.play();
+                                        playButton.innerHTML = `<svg data-encore-id="icon" role="img" aria-hidden="true" height="16" width="16" viewBox="0 0 16 16" style="margin-left: auto;">
+                                            <path d="M3 2h4v12H3V2zm6 0h4v12H9V2z" fill="white" />
+                                        </svg>`;
+                                    }
+                                    isPlaying = !isPlaying;
+                                });
                 }
             } else {
                 console.error("No user is signed in");
