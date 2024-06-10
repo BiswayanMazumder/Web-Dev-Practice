@@ -37,7 +37,7 @@ async function getuser() {
             functioncalled = true;
             // ...
         } else {
-            // User is signed out
+            // User is signed out showing error
             // ...
             window.location.replace("index.html")
             // console.log('signed out')
