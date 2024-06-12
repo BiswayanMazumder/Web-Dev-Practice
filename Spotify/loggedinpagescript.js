@@ -274,9 +274,7 @@ async function fetchlastplayed() {
      </div>   
     
 </div>
- <div class="lyricsicons">
-                <a href="#lyrics"><img src="    https://cdn-icons-png.flaticon.com/512/6135/6135635.png " alt="" class="lyrics" height="40" width="50" style="color: white;"></a>  
-            </div>
+ 
 <br><br><br>`
             }
         } catch (e) {
@@ -284,6 +282,9 @@ async function fetchlastplayed() {
         }
     });
 }
+{/* <div class="lyricsicons">
+                <a href="#lyrics"><img src="    https://cdn-icons-png.flaticon.com/512/6135/6135635.png " alt="" class="lyrics" height="40" width="50" style="color: white;"></a>  
+            </div> */}
 await fetchlastplayed();
 async function fetchusername() {
     const auth = getAuth();
