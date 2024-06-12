@@ -294,7 +294,7 @@ body {
 .container .bottom-nav .lyricsicons{
     height: 40;
     position: relative;
-    margin-left: 55%;
+    margin-left: 63%;
     top: 15px;
     width: 50;
 }
@@ -306,7 +306,7 @@ body {
 }
 @media screen and (min-width:2000px) {
     .container .bottom-nav .lyricsicons {
-        margin-left: 53%;
+        margin-left: 57%;
     }
 
 }

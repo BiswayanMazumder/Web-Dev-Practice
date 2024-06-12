@@ -253,28 +253,31 @@ async function fetchlastplayed() {
             // console.log("Document data:", lastplayed);
             // console.log("Document data:", songname, singer, songfile, poster);
             if (lastplayed) {
-//                 navigationbar.innerHTML = `<div class="songname"
-//     style="position: relative;justify-content: start;text-align: start;display: flex;flex-direction: row;">
-//     <img src=${poster} alt="Krsna" class="krsna"
-//         height="50px" style="border-radius: 5px;padding-left: 5px;top: 10px;position: relative;">
-//     <div class="songname"
-//         style="color: white;margin-left: 10px;position: relative;top: 15px;font-size: 14px;font-weight: 600;display: flex;flex-direction: column;font-family: sans-serif;">
-//         <a href=#${songname} class="playingsongname">${songname}</a>
-//         <div class="singername"
-//             style="color: gray;position: relative;top: 10px;font-size: 10px;font-weight: 600;display: flex;flex-direction: column;font-family: sans-serif;">
-//             ${singer}
-//         </div>
+                navigationbar.innerHTML = `<div class="songname"
+    style="position: relative;justify-content: start;text-align: start;display: flex;flex-direction: row;">
+    <img src=${poster} alt="Krsna" class="krsna"
+        height="50px" style="border-radius: 5px;padding-left: 5px;top: 10px;position: relative;">
+    <div class="songname"
+        style="color: white;margin-left: 10px;position: relative;top: 15px;font-size: 14px;font-weight: 600;display: flex;flex-direction: column;font-family: sans-serif;">
+        <a href=#${songname} class="playingsongname">${songname}</a>
+        <div class="singername"
+            style="color: gray;position: relative;top: 10px;font-size: 10px;font-weight: 600;display: flex;flex-direction: column;font-family: sans-serif;">
+            ${singer}
+        </div>
 
-//     </div>
-// </div>
-// <div class="controls"
-//     style="position: absolute;justify-content: center;text-align: center;left: 50%;top: 10px;display: flex;flex-direction: column;">
-//     <div class="navigation">
-//         <audio src=${songfile} class="audioplay" id="audio" controls></audio>
-//      </div>   
+    </div>
+</div>
+<div class="controls"
+    style="position: absolute;justify-content: center;text-align: center;left: 50%;top: 10px;display: flex;flex-direction: column;">
+    <div class="navigation">
+        <audio src=${songfile} class="audioplay" id="audio" controls></audio>
+     </div>   
     
-// </div>
-// <br><br><br>`
+</div>
+ <div class="lyricsicons">
+                <img src="    https://cdn-icons-png.flaticon.com/512/6135/6135635.png " alt="" class="lyrics" height="40" width="50" style="color: white;">
+            </div>
+<br><br><br>`
             }
         } catch (e) {
             console.log(e.message);
