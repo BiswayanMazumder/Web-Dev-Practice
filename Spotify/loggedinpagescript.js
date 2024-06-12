@@ -61,7 +61,7 @@ async function getuser() {
                     localStorage.setItem('profilepic', profilePicture);
                 } else {
                     profilepic.innerHTML = '<img src="favicon.ico" alt="ProfilePicture" class="profilepicture" height="20px" width="20px" style="position: relative;justify-content: center;text-align: center;top: 22%;left: 22%;border-radius: 50%;">'
-                    
+
                 }
             } catch (error) {
                 console.log(error.message)
@@ -275,7 +275,7 @@ async function fetchlastplayed() {
     
 </div>
  <div class="lyricsicons">
-                <img src="    https://cdn-icons-png.flaticon.com/512/6135/6135635.png " alt="" class="lyrics" height="40" width="50" style="color: white;">
+                <a href="#lyrics"><img src="    https://cdn-icons-png.flaticon.com/512/6135/6135635.png " alt="" class="lyrics" height="40" width="50" style="color: white;"></a>  
             </div>
 <br><br><br>`
             }
@@ -603,8 +603,8 @@ listeninghistory1.addEventListener('mouseout', function () {
 })
 listeninghistory2.addEventListener('mouseover', function () {
     firstpart.style.background = 'linear-gradient(to bottom, #530C06, black)'
-    
-    
+
+
 })
 listeninghistory2.addEventListener('mouseout', function () {
     firstpart.style.background = 'linear-gradient(to bottom, #24333E, black)'
