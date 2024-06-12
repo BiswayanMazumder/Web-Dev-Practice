@@ -291,3 +291,22 @@ body {
     border-radius: 10px;
     padding-bottom: 50px;
 }
+.container .bottom-nav .lyricsicons{
+    height: 40;
+    position: relative;
+    margin-left: 55%;
+    top: 15px;
+    width: 50;
+}
+@media screen and (max-width:620px) {
+    .container .bottom-nav .lyricsicons {
+        margin-left: 55%;
+    }
+
+}
+@media screen and (min-width:2000px) {
+    .container .bottom-nav .lyricsicons {
+        margin-left: 53%;
+    }
+
+}
