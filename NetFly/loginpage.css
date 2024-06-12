@@ -71,8 +71,25 @@ body {
     top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
+    border-radius: 10px;
     /* opacity: 50%; */
-    font-weight: 700;
+    font-weight: bolder;
     font-size: 25px;
     color:white;
+    display: flex;
+    flex-direction: column;
+}
+.Banner .loginoptions .email{
+    top: 20px;
+    position: relative;
+    margin-right: 30px;
+    height: 50px;
+    border-radius: 5px;
+    border-color: white;
+    /* border: 2px 2px 2px solid white; */
+    border-width: 0.5px;
+    background-color: transparent;
+    color:grey;
+    font-size: 15px;
+    font-weight: 500;
 }
