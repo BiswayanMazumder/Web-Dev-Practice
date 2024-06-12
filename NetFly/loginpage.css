@@ -1,0 +1,78 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: grey !important;
+    font-family: sans-serif;
+}
+.Banner {
+    position: relative;
+    text-align: center;
+    color: white;
+    height: 100%;
+    font-weight: bolder;
+    display: flex;
+    flex-direction: column;
+
+}
+.Banner .Banner_Text {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: 900;
+    font-size: 3rem;
+    text-align: center;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+
+}
+
+@media only screen and (max-width: 1044px) {
+    .Banner .Banner_Text {
+        font-size: 2rem;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .Banner .Banner_Text {
+        font-size: 1rem;
+    }
+}
+
+.Banner .heading {
+    position: absolute;
+    top: 4%;
+    padding-left: 1px !important;
+    transform: translate(-25%, -40%);
+}
+.Banner .homeimage {
+    background-color: black;
+    height: 100vh;
+    filter: grayscale(30%) brightness(50%);
+
+}
+.Banner .loginoptions{
+    position: absolute;
+    justify-content: start;
+    text-align: start;
+    padding-left: 30px;
+    padding-top: 50px;
+    height: 70%;
+    width: 30%;
+    background-color: black;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* opacity: 50%; */
+    font-weight: 700;
+    font-size: 25px;
+    color:white;
+}
