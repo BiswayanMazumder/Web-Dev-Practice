@@ -20,7 +20,7 @@ trialbutton.addEventListener('click', async function(){
             },
             body: JSON.stringify(emailData)
         });
-        console.log(response)
+        // console.log(response)
         if (response.ok) {
             const result = await response.json();
             console.log('Email sent successfully:', result);
