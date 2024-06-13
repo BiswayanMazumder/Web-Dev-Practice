@@ -60,4 +60,8 @@ const firebaseConfig = {
         }, 5000);
       }
   })
+  let onecode=document.querySelector('.onecodelogin')
+  onecode.addEventListener('click',function(){
+    alert('Feature Coming Soon')
+  })
   
