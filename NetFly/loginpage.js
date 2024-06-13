@@ -44,7 +44,7 @@ const firebaseConfig = {
       if(emailfield.value!==""){
           sendPasswordResetEmail(auth, emailfield.value)
           .then(() => {
-            // Password reset email sent!
+           pwreset.innerHTML=`Password Reset Email Sent Successfully`
             // ..
           })
           .catch((error) => {
@@ -53,6 +53,11 @@ const firebaseConfig = {
             console.log(errorMessage)
             // ..
           });
+      }else{
+        pwreset.innerHTML=`Please Enter Your Email Address`
+        setInterval(() => {
+          pwreset.innerHTML=`Forgot Password?`
+        }, 5000);
       }
   })
   
