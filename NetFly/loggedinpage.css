@@ -76,3 +76,39 @@ body {
         top: 230px;
     }
 }
+@media only screen and (min-width: 2000px) {
+    .results{
+        position: absolute;
+        top: 530px;
+    }
+}
+.buttons{
+    position: relative;
+    width: 77px;
+    height: 32px;
+    z-index: 3; 
+    top: 330px;
+    display: flex;
+    flex-direction: row;
+    left: 30px;
+}
+.buttons .watchvideo{
+    position: relative;
+    width: 100px;
+    height: 40px;
+    font-weight: 700;
+    border-color: transparent;
+    font-size: 15px;
+    border-radius: 5px;
+}
+@media only screen and (min-width: 2000px) {
+    .buttons{
+        position: absolute;
+        top: 650px;
+    }
+}
+.buttons .watchvideo:hover{
+    background-color: red;
+    color: white;
+    font-weight: bold;
+}
