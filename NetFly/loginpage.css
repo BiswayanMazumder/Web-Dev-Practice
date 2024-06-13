@@ -59,7 +59,7 @@ body {
     filter: grayscale(30%) brightness(50%);
 
 }
-.Banner .loginoptions{
+.Banner .loginoptions {
     position: absolute;
     justify-content: start;
     text-align: start;
@@ -67,18 +67,18 @@ body {
     padding-top: 50px;
     height: 70%;
     width: 30%;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.5); /* Changed to a transparent black */
     top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 10px;
-    /* opacity: 50%; */
     font-weight: bolder;
     font-size: 25px;
-    color:white;
+    color: white;
     display: flex;
     flex-direction: column;
 }
+
 .Banner .loginoptions .email{
     top: 20px;
     position: relative;
@@ -116,11 +116,10 @@ body {
     height: 50px;
     border-radius: 8px;
     text-align: center;
-    border-color: grey;
+    border-color: transparent;
     /* border: 2px 2px 2px solid white; */
     border-width: 1px;
-    background-color: transparent;
-    background-color: gray;
+    background-color: rgba(70, 74, 74, 0.5); 
     color:white;
     font-size: 15px;
     font-weight: bold;
