@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: black;
+    font-family: sans-serif;
+}
+
+.bannerimage {
+    position: relative;
+}
+
+.navigationbar {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.03);
+    /* Optional: To add a background color for better visibility */
+}
+
+.navbuttons {
+    position: relative;
+    top: 45px;
+}
+
+.navbuttons a {
+    color: white;
+    text-decoration: none;
+    font-weight: 300;
+}
+
+.navbuttons a.home {
+    font-weight: 700;
+}
+
+.headingimg img {
+    width: 100%;
+}
+
+.bannername {
+    position: relative;
+    top: 200px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    z-index: 3;
+}
+@media only screen and (max-width: 800px) {
+    .bannerimage{
+        position: relative;
+        top: 50px;
+    }
+}
+.results{
+    position: absolute;
+    top: 500px;
+    justify-content: start;
+    left: 10px;
+    display: flex;
+    flex-direction: row;
+    color:white;
+    font-weight: 700;
+    text-align:center;
+    font-size: 20px;
+    z-index: 3;
+}
