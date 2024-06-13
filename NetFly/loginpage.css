@@ -4,7 +4,7 @@
 }
 
 body {
-    background-color: grey !important;
+    background-color: black !important;
     font-family: sans-serif;
 }
 .Banner {
@@ -87,9 +87,41 @@ body {
     border-radius: 5px;
     border-color: white;
     /* border: 2px 2px 2px solid white; */
-    border-width: 0.5px;
+    border-width: 1px;
     background-color: transparent;
     color:grey;
     font-size: 15px;
     font-weight: 500;
+}
+.Banner .loginoptions .signinbutton{
+    top: 20px;
+    position: relative;
+    margin-right: 30px;
+    height: 50px;
+    border-radius: 8px;
+    text-align: center;
+    border-color: red;
+    /* border: 2px 2px 2px solid white; */
+    border-width: 1px;
+    background-color: transparent;
+    background-color: red;
+    color:white;
+    font-size: 15px;
+    font-weight: bold;
+}
+.Banner .loginoptions .onecodelogin{
+    top: 20px;
+    position: relative;
+    margin-right: 30px;
+    height: 50px;
+    border-radius: 8px;
+    text-align: center;
+    border-color: grey;
+    /* border: 2px 2px 2px solid white; */
+    border-width: 1px;
+    background-color: transparent;
+    background-color: red;
+    color:white;
+    font-size: 15px;
+    font-weight: bold;
 }
