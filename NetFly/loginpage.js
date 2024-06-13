@@ -18,3 +18,40 @@ const firebaseConfig = {
   const db = getFirestore(app);
   const analytics = getAnalytics(app);
   const provider = new GoogleAuthProvider();
+  let emailfield=document.querySelector('#EmailAddress')
+  let passwordfield=document.querySelector('#password')
+  let loginbutton=document.querySelector('.signinbutton')
+  const auth = getAuth();
+  loginbutton.addEventListener("click",function(){
+    let email=emailfield.value
+    let password=passwordfield.value
+    signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      // Signed in
+      const user = userCredential.user;
+      console.log('logged in')
+      // ...
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.log(errorMessage)
+      // ..
+    });
+  })
+  let pwreset=document.querySelector('.forgetpw')
+  pwreset.addEventListener('click',function(){
+      if(emailfield.value!==""){
+          sendPasswordResetEmail(auth, emailfield.value)
+          .then(() => {
+            // Password reset email sent!
+            // ..
+          })
+          .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.log(errorMessage)
+            // ..
+          });
+      }
+  })
