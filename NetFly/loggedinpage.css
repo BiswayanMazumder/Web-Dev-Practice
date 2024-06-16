@@ -6,6 +6,7 @@
 body {
     background-color: black;
     font-family: sans-serif;
+
     ::-webkit-scrollbar {
         display: none;
     }
@@ -26,24 +27,7 @@ body {
     /* Optional: To add a background color for better visibility */
 }
 
-.navbuttons {
-    position: relative;
-    top: 45px;
-}
 
-.navbuttons a {
-    color: white;
-    text-decoration: none;
-    font-weight: 300;
-}
-
-.navbuttons a.home {
-    font-weight: 700;
-}
-
-.headingimg img {
-    width: 100%;
-}
 
 .bannername {
     position: relative;
@@ -130,18 +114,25 @@ body {
     top: 750px;
     scroll-behavior: smooth;
     display: flex;
-    overflow-x: auto; /* Allow horizontal scrolling */
-    white-space: nowrap; /* Prevent line breaks within the container */
+    overflow-x: auto;
+    /* Allow horizontal scrolling */
+    white-space: nowrap;
+    /* Prevent line breaks within the container */
     left: 30px;
-    right: 30px; /* Ensure it stretches to the right edge */
-    padding-bottom: 20px; /* Add padding to avoid scrollbar overlap */
+    right: 30px;
+    /* Ensure it stretches to the right edge */
+    padding-bottom: 20px;
+    /* Add padding to avoid scrollbar overlap */
 }
 
 .movieslist img {
     display: inline-block;
-    height: 200px; /* Adjust as needed */
-    width: auto; /* Maintain aspect ratio */
-    margin-right: 15px; /* Add some spacing between images */
+    height: 200px;
+    /* Adjust as needed */
+    width: auto;
+    /* Maintain aspect ratio */
+    margin-right: 15px;
+    /* Add some spacing between images */
 }
 
 @media only screen and (max-width: 1100px) and (min-width: 1000px) {
@@ -164,3 +155,4 @@ body {
         top: 1280px;
     }
 }
+
