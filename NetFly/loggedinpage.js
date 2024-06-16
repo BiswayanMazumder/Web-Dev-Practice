@@ -15,4 +15,9 @@ image1.addEventListener('click',function(){
     console.log('clicked bademiya')
     window.location.href="bademiyachotemiya.html"
 })
+let bannerimage=document.querySelector('.bannerimage')
 
+bannerimage.addEventListener('click',function(){
+    // console.log('clicked bademiya')
+    // window.location.href="bademiyachotemiya.html"
+})
