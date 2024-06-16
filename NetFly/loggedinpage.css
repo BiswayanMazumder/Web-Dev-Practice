@@ -6,7 +6,9 @@
 body {
     background-color: black;
     font-family: sans-serif;
-    overflow: hidden; /* Prevent the entire page from scrolling */
+    ::-webkit-scrollbar {
+        display: none;
+    }
 }
 
 .bannerimage {
