@@ -13,5 +13,6 @@ let image1 = document.querySelector('.img1');
 
 image1.addEventListener('click',function(){
     console.log('clicked bademiya')
+    window.location.href="bademiyachotemiya.html"
 })
 
