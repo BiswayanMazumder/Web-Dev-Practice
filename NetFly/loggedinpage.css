@@ -6,6 +6,7 @@
 body {
     background-color: black;
     font-family: sans-serif;
+    overflow: hidden; /* Prevent the entire page from scrolling */
 }
 
 .bannerimage {
@@ -51,48 +52,54 @@ body {
     flex-direction: row;
     z-index: 3;
 }
+
 @media only screen and (max-width: 1100px) {
-    .bannername{
+    .bannername {
         position: absolute;
         top: 100px;
     }
 }
-.results{
+
+.results {
     position: absolute;
     top: 400px;
     justify-content: start;
     left: 30px;
     display: flex;
     flex-direction: row;
-    color:white;
+    color: white;
     font-weight: 500;
-    text-align:start;
+    text-align: start;
     font-size: 20px;
     z-index: 3;
 }
+
 @media only screen and (max-width: 1100px) {
-    .results{
+    .results {
         position: absolute;
         top: 230px;
     }
 }
+
 @media only screen and (min-width: 2000px) {
-    .results{
+    .results {
         position: absolute;
         top: 530px;
     }
 }
-.buttons{
+
+.buttons {
     position: relative;
     width: 77px;
     height: 32px;
-    z-index: 3; 
+    z-index: 3;
     top: 330px;
     display: flex;
     flex-direction: row;
     left: 30px;
 }
-.buttons .watchvideo{
+
+.buttons .watchvideo {
     position: relative;
     width: 100px;
     height: 40px;
@@ -101,39 +108,56 @@ body {
     font-size: 15px;
     border-radius: 5px;
 }
+
 @media only screen and (min-width: 2000px) {
-    .buttons{
+    .buttons {
         position: absolute;
         top: 650px;
     }
 }
-.buttons .watchvideo:hover{
+
+.buttons .watchvideo:hover {
     background-color: red;
     color: white;
     font-weight: bold;
 }
-.movieslist{
+
+.movieslist {
     position: absolute;
-    z-index: 3; 
+    z-index: 3;
     top: 750px;
+    scroll-behavior: smooth;
     display: flex;
-    flex-direction: row;
+    overflow-x: auto; /* Allow horizontal scrolling */
+    white-space: nowrap; /* Prevent line breaks within the container */
     left: 30px;
+    right: 30px; /* Ensure it stretches to the right edge */
+    padding-bottom: 20px; /* Add padding to avoid scrollbar overlap */
 }
-@media only screen and (max-width: 1100px) and (min-width:1000px) {
-    .movieslist{
+
+.movieslist img {
+    display: inline-block;
+    height: 200px; /* Adjust as needed */
+    width: auto; /* Maintain aspect ratio */
+    margin-right: 15px; /* Add some spacing between images */
+}
+
+@media only screen and (max-width: 1100px) and (min-width: 1000px) {
+    .movieslist {
         position: absolute;
         top: 500px;
     }
 }
-@media only screen and (max-width: 800px){
-    .movieslist{
+
+@media only screen and (max-width: 800px) {
+    .movieslist {
         position: absolute;
         top: 400px;
     }
 }
+
 @media only screen and (min-width: 2000px) {
-    .movieslist{
+    .movieslist {
         position: absolute;
         top: 1280px;
     }
