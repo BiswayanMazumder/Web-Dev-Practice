@@ -19,6 +19,30 @@ const firebaseConfig = {
 var functioncalled = false;
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+var isloggedin=false;
+// let writetodb=localStorage.setItem("writetodb", false);
+function getuser(){
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+const provider = new GoogleAuthProvider();
+const auth = getAuth();
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      const uid = user.uid;
+      isloggedin=true;
+      console.log('signed in')
+    //   window.location.replace("loggedinpage.html")
+      // ...
+    } else {
+      // User is signed out
+      // ...
+      console.log('signed out')
+      window.location.replace("index.html")
+    }
+  });
+}
+getuser()
+
 // Select the elements
 let homepagevideo = document.querySelector('.headingimg');
 let mutebutton = document.querySelector('.mutebutton');
