@@ -10,7 +10,7 @@ body {
 .bannername {
     position: relative;
     z-index: 3;
-    top: 300px;
+    top: 200px;
 }
 @media screen and (max-width: 800px) {
     .bannername{
