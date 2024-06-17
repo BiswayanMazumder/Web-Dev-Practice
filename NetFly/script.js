@@ -17,7 +17,7 @@ const firebaseConfig = {
 // Initialize Firebase
 var functioncalled = false;
 // const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+// const db = getFirestore(app);
 var isloggedin=false;
 // let writetodb=localStorage.setItem("writetodb", false);
 function getuser(){
