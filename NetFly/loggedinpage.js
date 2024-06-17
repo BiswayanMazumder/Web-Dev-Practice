@@ -54,7 +54,7 @@ try {
 }
 let image1 = document.querySelector('.img1');
 let image2=document.querySelector('.img2');
-
+let image3=document.querySelector('.img3');
 image1.addEventListener('click', function () {
   console.log('clicked bademiya')
   try {
@@ -69,6 +69,16 @@ image2.addEventListener('click', function () {
   console.log('clicked vikings')
   try {
     localStorage.setItem('moviename', 'Vikings');
+    console.log('Value set in localStorage');
+    window.location.href = "movies.html"
+  } catch (error) {
+    console.log(error)
+  }
+})
+image3.addEventListener('click', function () {
+  console.log('clicked vikings')
+  try {
+    localStorage.setItem('moviename', 'El Chappo');
     console.log('Value set in localStorage');
     window.location.href = "movies.html"
   } catch (error) {
