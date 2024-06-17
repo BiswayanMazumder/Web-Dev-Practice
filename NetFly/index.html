@@ -5,9 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Netflix India – Watch TV Shows Online, Watch Movies Online</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <style>
+        body {
+            background-color: black;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        video {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    </style>
 </head>
-<body style="background-color: black;">
-    <video src="trailers/intro.mp4" autoplay id="intro" muted width="100%" ></video>
+<body>
+    <video src="trailers/intro.mp4" autoplay id="intro" muted></video>
     <script src="introscript.js" type="module" defer></script>
 </body>
 </html>
