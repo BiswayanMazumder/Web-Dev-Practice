@@ -53,13 +53,24 @@ try {
   console.log(error);
 }
 let image1 = document.querySelector('.img1');
+let image2=document.querySelector('.img2');
 
 image1.addEventListener('click', function () {
   console.log('clicked bademiya')
   try {
     localStorage.setItem('moviename', 'Bade Miyaan Chote Miyaan');
     console.log('Value set in localStorage');
-    window.location.href = "bademiyachotemiya.html"
+    window.location.href = "movies.html"
+  } catch (error) {
+    console.log(error)
+  }
+})
+image2.addEventListener('click', function () {
+  console.log('clicked bademiya')
+  try {
+    localStorage.setItem('moviename', 'Vikings');
+    console.log('Value set in localStorage');
+    // window.location.href = "bademiyachotemiya.html"
   } catch (error) {
     console.log(error)
   }
