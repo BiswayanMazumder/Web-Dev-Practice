@@ -37,7 +37,7 @@ function getuser() {
       // User is signed out
       // ...
       console.log('signed out')
-      window.location.replace("index.html")
+      window.location.replace("loginhomepage.html")
     }
   });
 }

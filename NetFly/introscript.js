@@ -15,28 +15,35 @@ const firebaseConfig = {
   };
   const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+function getuser() {
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const provider = new GoogleAuthProvider();
+    const auth = getAuth();
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        const uid = user.uid;
+        isloggedin = true;
+        console.log('signed in')
+          window.location.replace("loggedinpage.html")
+        // ...
+      } else {
+        // User is signed out
+        // ...
+        console.log('signed out')
+        window.location.replace("loginhomepage.html")
+      }
+    });
+  }
 // Initialize Firebase
 var functioncalled = false;
 // const db = getFirestore(app);
 var isloggedin=false;
-function getuser() {
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
-  const provider = new GoogleAuthProvider();
-  const auth = getAuth();
-  onAuthStateChanged(auth, (user) => {
-    if (user) {
-      const uid = user.uid;
-      isloggedin = true;
-      console.log('signed in')
-        window.location.replace("loggedinpage.html")
-      // ...
-    } else {
-      // User is signed out
-      // ...
-      console.log('signed out')
-      window.location.replace("loginhomepage.html")
-    }
+console.log('welcome');
+let intro=document.querySelector('#intro');
+// intro.muted = false;
+intro.addEventListener('ended', function () {
+    getuser();
   });
-}
-getuser();
+  
+

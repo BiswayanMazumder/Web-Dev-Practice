@@ -37,7 +37,7 @@ const auth = getAuth();
       // User is signed out
       // ...
       console.log('signed out')
-      window.location.replace("index.html")
+      window.location.replace("loginhomepage.html")
     }
   });
 }
@@ -68,5 +68,5 @@ let logout=document.querySelector('.watchvideo')
 logout.addEventListener('click',async function(){
   const auth = getAuth();
   await auth.signOut();
-  window.location.replace('index.html');
+  window.location.replace('loginhomepage.html');
 })
