@@ -58,10 +58,10 @@ image1.addEventListener('click', function () {
   console.log('clicked bademiya')
   try {
     localStorage.setItem('moviename', 'Bade Miyaan Chote Miyaan');
-    console.log('Value set in localStorage');l
+    console.log('Value set in localStorage');
     window.location.href = "bademiyachotemiya.html"
   } catch (error) {
-    console.log(e)
+    console.log(error)
   }
 })
 let bannerimage = document.querySelector('.bannerimage')
