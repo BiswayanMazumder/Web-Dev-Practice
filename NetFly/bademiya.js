@@ -134,7 +134,7 @@ async function fetchlikedetails() {
   const auth = getAuth();
   onAuthStateChanged(auth, async (user) => {
     const uid = user.uid;
-    const userDocRef = doc(db, "Bade Miyaan Chote Miyaan Likes", uid);
+    const userDocRef = doc(db, `${movienames} Likes`, uid);
     const docSnap = await getDoc(userDocRef);
 
     if (docSnap.exists()) {
@@ -168,7 +168,7 @@ likebutton.addEventListener("click", async function () {
         // console.log(uid);
         try {
           // Create a reference to the document with the user's UID
-          await setDoc(doc(db, "Bade Miyaan Chote Miyaan Likes", uid), {
+          await setDoc(doc(db, `${movienames} Likes`, uid), {
             'liked': is_liked,
             'UID': uid,
           });
