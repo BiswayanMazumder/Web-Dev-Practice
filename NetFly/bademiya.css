@@ -10,11 +10,14 @@ body {
     overflow-y: auto;
     color: white;
     font-family: Arial, sans-serif;
+    ::-webkit-scrollbar {
+        display: none;
+    }
 }
 
 .container {
     position: relative;
-    min-height: 150vh;
+    min-height: 200vh;
     /* overflow-x: scroll; */
 }
 
@@ -42,13 +45,13 @@ body {
     }
 }
 
-@media screen and (max-width: 1200px) and (min-width:800px) {
+@media screen and (max-width: 1200px) and (min-width: 800px) {
     .bannername {
         top: 80px;
     }
 }
 
-@media screen and (min-width:2000px) {
+@media screen and (min-width: 2000px) {
     .bannername {
         top: 500px;
     }
@@ -88,9 +91,7 @@ body {
     text-align: center;
     display: flex;
     justify-content: center;
-    top: 80px;
     flex-direction: row;
-    /* margin-left: 200px; */
     background-color: red;
     z-index: 3;
     align-items: center;
@@ -108,7 +109,7 @@ body {
     }
 }
 
-@media screen and (max-width: 1200px) and (min-width:800px) {
+@media screen and (max-width: 1200px) and (min-width: 800px) {
     .details {
         position: relative;
         z-index: 3;
@@ -116,17 +117,69 @@ body {
     }
 }
 
-@media screen and (min-width:2000px) {
+@media screen and (min-width: 2000px) {
     .details {
         position: relative;
         z-index: 3;
         top: 1000px;
     }
 }
+
 .related:hover {
     color: white;
 }
 
 .details-text:hover {
     color: rgb(72, 10, 10);
+}
+
+/* Updated relatedsection CSS for horizontal scrolling */
+.relatedsection {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    padding: 10px;
+    position: absolute;
+    top: 900px;
+    left: 50px;
+}
+
+.relatedsection > div {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+}
+
+.relatedsection img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+@media screen and (max-width: 800px) {
+    .relatedsection {
+        position: relative;
+        z-index: 3;
+        top: 100px;
+        left: 0;
+    }
+}
+
+@media screen and (max-width: 1200px) and (min-width: 800px) {
+    .relatedsection {
+        position: relative;
+        z-index: 3;
+        top: 120px;
+        left: 0;
+    }
+}
+
+@media screen and (min-width: 2000px) {
+    .relatedsection {
+        position: relative;
+        z-index: 3;
+        top: 950px;
+        left: 0;
+    }
 }
