@@ -197,5 +197,24 @@ sharebutton.addEventListener('click', () =>{
     
   }
 })
-
+let detailsection = document.querySelector('.details-text');
+let relatedsection=document.querySelector('.related');
+var isdetail=false;
+var isrelated=true;
+detailsection.addEventListener('click', function () {
+  console.log('clicked on detail section')
+  relatedsection.style.color = 'white';
+  isdetail=true;
+  isrelated=false;
+  console.log(isrelated,isdetail);
+  detailsection.style.color = 'rgb(72, 10, 10)';
+})
+relatedsection.addEventListener('click', function () {
+  console.log('clicked on detail section')
+  detailsection.style.color = 'white';
+  isdetail=false;
+  isrelated=true;
+  console.log(isrelated,isdetail);
+  relatedsection.style.color = 'rgb(72, 10, 10)';
+})
 
