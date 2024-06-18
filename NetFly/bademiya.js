@@ -206,7 +206,7 @@ detailsection.addEventListener('click', function () {
   relatedsection.style.color = 'white';
   isdetail=true;
   isrelated=false;
-  console.log(isrelated,isdetail);
+  // console.log(isrelated,isdetail);
   detailsection.style.color = 'rgb(72, 10, 10)';
 })
 relatedsection.addEventListener('click', function () {
@@ -214,7 +214,7 @@ relatedsection.addEventListener('click', function () {
   detailsection.style.color = 'white';
   isdetail=false;
   isrelated=true;
-  console.log(isrelated,isdetail);
+  // console.log(isrelated,isdetail);
   relatedsection.style.color = 'rgb(72, 10, 10)';
 })
 
