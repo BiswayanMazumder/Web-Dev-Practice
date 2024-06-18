@@ -71,7 +71,9 @@ body {
     color: white;
 }
 
-.mutebutton:hover, .likebutton:hover, .sharebutton:hover {
+.mutebutton:hover,
+.likebutton:hover,
+.sharebutton:hover {
     background-color: white;
     cursor: pointer;
 }
@@ -95,28 +97,36 @@ body {
     gap: 50px;
     top: 420px;
     left: 50%;
-    transform: translate(-50%,-50%);
-    }
-    @media screen and (max-width: 800px) {
+    transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width: 800px) {
     .details {
-    position: relative;
-    z-index: 3;
-    top: 140px;
+        position: relative;
+        z-index: 3;
+        top: 140px;
     }
-    }
-    
-    @media screen and (max-width: 1200px) and (min-width:800px) {
+}
+
+@media screen and (max-width: 1200px) and (min-width:800px) {
     .details {
-    position: relative;
-    z-index: 3;
-    top: 180px;
+        position: relative;
+        z-index: 3;
+        top: 180px;
     }
-    }
-    
-    @media screen and (min-width:2000px) {
+}
+
+@media screen and (min-width:2000px) {
     .details {
-    position: relative;
-    z-index: 3;
-    top: 1000px;
+        position: relative;
+        z-index: 3;
+        top: 1000px;
     }
-    }
+}
+.related:hover {
+    color: rgb(72, 10, 10);
+}
+
+.details-text:hover {
+    color: rgb(72, 10, 10);
+}
