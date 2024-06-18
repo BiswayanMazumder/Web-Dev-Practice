@@ -1,42 +1,59 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
     background-color: black;
     overflow-x: hidden;
+    overflow-y: auto;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    position: relative;
+    min-height: 150vh;
+    /* overflow-x: scroll; */
+}
+
+.navigationbar {
+    position: absolute;
+    top: 10px;
+    width: 100%;
+    z-index: 999;
 }
 
 .bannername {
     position: relative;
     z-index: 3;
     top: 200px;
+    padding: 20px;
 }
+
 @media screen and (max-width: 800px) {
-    .bannername{
-    position: relative;
-    z-index: 3;
-    top: 80px;
+    .bannername {
+        top: 80px;
     }
-    .bannername img{
+
+    .bannername img {
         width: 50%;
-    } 
-}
-@media screen and (max-width: 1200px)  and (min-width:800px) {
-    .bannername{
-    position: relative;
-    z-index: 3;
-    top: 80px;
     }
 }
+
+@media screen and (max-width: 1200px) and (min-width:800px) {
+    .bannername {
+        top: 80px;
+    }
+}
+
 @media screen and (min-width:2000px) {
-    .bannername{
-    position: relative;
-    z-index: 3;
-    top: 500px;
+    .bannername {
+        top: 500px;
     }
 }
+
 .watchvideos {
     position: relative;
     width: 100px;
@@ -46,11 +63,60 @@ body {
     font-size: 15px;
     left: 30px;
     border-radius: 5px;
+    cursor: pointer;
 }
-.watchvideos:hover{
+
+.watchvideos:hover {
     background-color: red;
-    color:white;
+    color: white;
 }
-.mutebutton:hover{
+
+.mutebutton:hover, .likebutton:hover, .sharebutton:hover {
     background-color: white;
+    cursor: pointer;
 }
+
+.details {
+    position: relative;
+    width: 90vw;
+    font-size: 20px;
+    font-weight: 700;
+    height: 80px;
+    border-radius: 15px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    top: 80px;
+    flex-direction: row;
+    /* margin-left: 200px; */
+    background-color: red;
+    z-index: 3;
+    align-items: center;
+    gap: 50px;
+    top: 420px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    }
+    @media screen and (max-width: 800px) {
+    .details {
+    position: relative;
+    z-index: 3;
+    top: 140px;
+    }
+    }
+    
+    @media screen and (max-width: 1200px) and (min-width:800px) {
+    .details {
+    position: relative;
+    z-index: 3;
+    top: 180px;
+    }
+    }
+    
+    @media screen and (min-width:2000px) {
+    .details {
+    position: relative;
+    z-index: 3;
+    top: 1000px;
+    }
+    }
