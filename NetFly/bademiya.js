@@ -62,6 +62,10 @@ let is_muted = true;
 
 var is_liked = false;
 let bannerimage=document.querySelector('.movieimages')
+var contentadvisory='';
+var audio='';
+var director='';
+var starring='';
 async function fetchbannervid() {
   const auth = getAuth();
   onAuthStateChanged(auth, async (user) => {
@@ -76,10 +80,14 @@ async function fetchbannervid() {
           var banner_img=docsnap.data().banner_image;
           var bio=docsnap.data().bio;
           var poster = docsnap.data().poster
+          contentadvisory=docsnap.data().Content_Advisory
+          audio=docsnap.data().audio;
+          director=docsnap.data().Director
+          starring=docsnap.data().starring
           // console.log('Banner video:', banner_video);
           // console.log('Banner image:', banner_img);
           // console.log('Bio:', bio);
-          // console.log(poster);
+          console.log(contentadvisory);
           bannerimage.innerHTML=`<img src=${banner_img} alt="">`
           about_movie.innerHTML=`${bio}`
           // bio.innerHTML=bio
@@ -128,8 +136,14 @@ async function fetchbannervid() {
 }
 
 // Ensure you call the async function in the proper context
-await fetchbannervid();
-
+if(contentadvisory=='' && director=='' && starring=='') {
+  setInterval(() => {
+    fetchbannervid();
+  }, 5000);
+}
+else{
+  fetchbannervid();
+}
 async function fetchlikedetails() {
   const auth = getAuth();
   onAuthStateChanged(auth, async (user) => {
@@ -217,14 +231,14 @@ detailsection.addEventListener('click', function () {
                     <b>Content Advisory</b>
                 </div>
                 <div class="contentadvisory" style="color: grey;font-weight: 500;">
-                    Explosives, Gore
+                    ${contentadvisory}
                 </div>
                 <br>
                 <div class="contentadvisory" style="font-size: 20px;">
                     <b>Audio languages</b>
                 </div>
                 <div class="contentadvisory" style="color: grey;font-weight: 500;">
-                    हिन्दी
+                    ${audio}
                 </div>
                 <br>
                 <div class="contentadvisory" style="font-size: 20px;">
@@ -238,14 +252,14 @@ detailsection.addEventListener('click', function () {
                     <b>Directors</b>
                 </div>
                 <div class="contentadvisory" style="color: grey;font-weight: 500;">
-                    English[CC]
+                    ${director}
                 </div>
                 <br>
                 <div class="contentadvisory" style="font-size: 20px;">
                     <b>Starring</b>
                 </div>
                 <div class="contentadvisory" style="color: grey;font-weight: 500;">
-                    English[CC]
+                    ${starring}
                 </div>
                 <br><br>
             </div> `;
