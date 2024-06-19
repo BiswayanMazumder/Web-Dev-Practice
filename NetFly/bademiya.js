@@ -202,6 +202,7 @@ let relatedsection=document.querySelector('.related');
 var isdetail=false;
 var isrelated=true;
 var relatedsectionpart=document.querySelector('.relatedsection');
+var deltailed=document.querySelector('.deletesection')
 detailsection.addEventListener('click', function () {
   console.log('clicked on detail section')
   relatedsection.style.color = 'white';
@@ -209,7 +210,45 @@ detailsection.addEventListener('click', function () {
   isrelated=false;
   console.log(isrelated,isdetail);
   detailsection.style.color = 'rgb(72, 10, 10)';
-  relatedsectionpart.innerHTML=``;
+  relatedsectionpart.innerHTML=``; 
+  deltailed.innerHTML= `More Info
+                <br><br>
+                <div class="contentadvisory" style="font-size: 20px;">
+                    <b>Content Advisory</b>
+                </div>
+                <div class="contentadvisory" style="color: grey;font-weight: 500;">
+                    Explosives, Gore
+                </div>
+                <br>
+                <div class="contentadvisory" style="font-size: 20px;">
+                    <b>Audio languages</b>
+                </div>
+                <div class="contentadvisory" style="color: grey;font-weight: 500;">
+                    हिन्दी
+                </div>
+                <br>
+                <div class="contentadvisory" style="font-size: 20px;">
+                    <b>Subtitles</b>
+                </div>
+                <div class="contentadvisory" style="color: grey;font-weight: 500;">
+                    English[CC]
+                </div>
+                <br>
+                <div class="contentadvisory" style="font-size: 20px;">
+                    <b>Directors</b>
+                </div>
+                <div class="contentadvisory" style="color: grey;font-weight: 500;">
+                    English[CC]
+                </div>
+                <br>
+                <div class="contentadvisory" style="font-size: 20px;">
+                    <b>Starring</b>
+                </div>
+                <div class="contentadvisory" style="color: grey;font-weight: 500;">
+                    English[CC]
+                </div>
+                <br><br>
+            </div> `;
 })
 relatedsection.addEventListener('click', function () {
   console.log('clicked on related section')
@@ -218,6 +257,7 @@ relatedsection.addEventListener('click', function () {
   isrelated=true;
   console.log(isrelated,isdetail);
   relatedsection.style.color = 'rgb(72, 10, 10)';
+  deltailed.innerHTML=``
   relatedsectionpart.innerHTML=`<div class="img1">
                     <img src="https://occ-0-2232-2186.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABXPXPdTM9wJrTqBea3f6VxXY9dUPOn12MpIlW6W0pK84a-s5Ig0zU_3AqAqimJprEpw5n5mekDUA7t115sU2AGBY6Kj1cnMQz2htxnWuhA9l0BQYgDefZFjcBuNEZSGk_ACw.jpg?r=973" alt="">
                 </div>

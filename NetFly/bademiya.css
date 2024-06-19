@@ -183,3 +183,54 @@ body {
         left: 0;
     }
 }
+.deletesection {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    padding: 10px;
+    position: absolute;
+    top: 910px;
+    left: 50px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.deletesection > div {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+}
+
+.deletesection img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+@media screen and (max-width: 800px) {
+    .deletesection {
+        position: relative;
+        z-index: 3;
+        top: 100px;
+        left: 0;
+    }
+}
+
+@media screen and (max-width: 1200px) and (min-width: 800px) {
+    .deletesection {
+        position: relative;
+        z-index: 3;
+        top: 120px;
+        left: 0;
+    }
+}
+
+@media screen and (min-width: 2000px) {
+    .deletesection {
+        position: relative;
+        z-index: 3;
+        top: 950px;
+        left: 0;
+    }
+}
