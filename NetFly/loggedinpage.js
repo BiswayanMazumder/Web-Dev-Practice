@@ -44,11 +44,11 @@ function getuser() {
 getuser()
 let homepagevideo = document.querySelector('.headingimg');
 try {
-  homepagevideo.innerHTML = `<video src="https://firebasestorage.googleapis.com/v0/b/netflix-5002f.appspot.com/o/Home%20Screen%20Videos%2FShaitaan%20_%20Official%20Trailer%20_%20Ajay%20Devgan%2C%20R%20Madhavan%20_%20Netflix%20India.mp4?alt=media&token=893132ca-d46c-44b6-ba19-4f85976366ed" width="100%" id="myVideo" autoplay muted ></video>`
-  let video = document.querySelector('#myVideo');
-  video.addEventListener('ended', function () {
-    homepagevideo.innerHTML = `<img src="https://occ-0-2232-2186.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABVJYlnJec-T_hc9slgKNgf6KfCpl_LtbF5mkDrOPJi3LDKjaMwphGKHfDJi0uOq44S_r7GSOcoV3rBTIgYiOeaFgOZ8-d6YM1PxA.webp?r=c4c" alt="" width="100%">`
-  })
+  homepagevideo.innerHTML = `<video src="https://avodmp4s3ww-a.akamaihd.net/ww_iad/a53f/f39e/b244/40b6-9978-7f5ab4f5a565/bab7f88a-6332-4821-bf53-7fda2e748673_video_720p_2500kbps_audio_aaclc_128kbps.mp4" width="100%" id="myVideo" autoplay muted ></video>`
+  // let video = document.querySelector('#myVideo');
+  // video.addEventListener('ended', function () {
+  //   homepagevideo.innerHTML = `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRihROyGk5x7V5K1Hq-D2SlRMfRtH_kJ-TlrQ&s" alt="" width="100%">`
+  // })
 } catch (error) {
   console.log(error);
 }
@@ -56,6 +56,8 @@ let image1 = document.querySelector('.img1');
 let image2=document.querySelector('.img2');
 let image3=document.querySelector('.img3');
 let image4=document.querySelector('.img4');
+let image5=document.querySelector('.img5');
+let image6=document.querySelector('.img6');
 image1.addEventListener('click', function () {
   console.log('clicked bademiya')
   try {
@@ -90,6 +92,26 @@ image4.addEventListener('click', function () {
   console.log('clicked vikings')
   try {
     localStorage.setItem('moviename', 'Pablo Escobar');
+    console.log('Value set in localStorage');
+    window.location.href = "movies.html"
+  } catch (error) {
+    console.log(error)
+  }
+})
+image5.addEventListener('click', function () {
+  console.log('clicked maidaan')
+  try {
+    localStorage.setItem('moviename', 'Maidaan');
+    console.log('Value set in localStorage');
+    window.location.href = "movies.html"
+  } catch (error) {
+    console.log(error)
+  }
+})
+image6.addEventListener('click', function () {
+  console.log('clicked mirzapur')
+  try {
+    localStorage.setItem('moviename', 'Mirzapur');
     console.log('Value set in localStorage');
     window.location.href = "movies.html"
   } catch (error) {

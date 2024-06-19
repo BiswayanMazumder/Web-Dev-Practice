@@ -84,16 +84,21 @@ async function fetchbannervid() {
           audio=docsnap.data().audio;
           director=docsnap.data().Director
           starring=docsnap.data().starring
+          var movie=docsnap.data().Movie;
+          // console.log('Movie: ' + movie)
+          localStorage.setItem('poster',poster);
+          localStorage.setItem('movielink', movie);
+          // console.log('Value set in localStorage');
           // console.log('Banner video:', banner_video);
           // console.log('Banner image:', banner_img);
           // console.log('Bio:', bio);
-          console.log(contentadvisory);
+          // console.log(contentadvisory);
           bannerimage.innerHTML=`<img src=${banner_img} alt="">`
           about_movie.innerHTML=`${bio}`
           // bio.innerHTML=bio
           try {
             // Set up the video element with autoplay and muted attributes
-            homepagevideo.innerHTML = `<video src=${banner_video} width="100%" id="myVideo" autoplay muted ></video>`;
+            homepagevideo.innerHTML = `<video src=${banner_video} width="100%" id="myVideo" autoplay muted></video>`;
           
             // Get reference to the video element
             let video = document.querySelector('#myVideo');
@@ -136,14 +141,8 @@ async function fetchbannervid() {
 }
 
 // Ensure you call the async function in the proper context
-if(contentadvisory=='' && director=='' && starring=='') {
-  setInterval(() => {
-    fetchbannervid();
-  }, 5000);
-}
-else{
-  fetchbannervid();
-}
+  await fetchbannervid();
+
 async function fetchlikedetails() {
   const auth = getAuth();
   onAuthStateChanged(auth, async (user) => {
@@ -308,6 +307,7 @@ relatedsection.addEventListener('click', function () {
                 
                 </div>`
 })
-
-
-
+let watchvideos=document.querySelector('.watchvideos')
+watchvideos.addEventListener('click',function(){
+  window.location.href="videoplayer.html"
+})
