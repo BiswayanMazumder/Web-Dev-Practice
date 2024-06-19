@@ -1,0 +1,15 @@
+{
+  "name": "netfly",
+  "version": "1.0.0",
+  "description": "online movie streaming",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Biswayan",
+  "license": "ISC",
+  "dependencies": {
+    "cloudinary-video-player": "^2.0.4",
+    "video.js": "^8.12.0"
+  }
+}
