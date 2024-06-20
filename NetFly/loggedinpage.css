@@ -206,21 +206,24 @@ body {
 }
 
 .trendingsection {
-    position: relative; /* Change to relative or another appropriate position */
+    position: relative;
+    /* Change to relative or another appropriate position */
     z-index: 3;
     color: white;
     font-size: 20px;
     font-weight: 600;
     top: 850px;
-    width: 100%; 
-    overflow: hidden; 
+    width: 100%;
+    overflow: hidden;
     padding-bottom: 20px;
 }
-.trending{
+
+.trending {
     position: relative;
     top: 50px;
     left: 30px;
 }
+
 @media screen and (max-width: 800px) {
     .trending {
         position: relative;
@@ -244,12 +247,18 @@ body {
         top: 20px;
     }
 }
+
 .trendingmovies {
-    display: flex; /* Ensure children are in a flex container */
-    overflow-x: auto; /* Enable horizontal scrolling */
-    overflow-y: hidden; /* Disable vertical scrolling */
-    white-space: nowrap; /* Prevent wrapping to new lines */
+    display: flex;
+    /* Ensure children are in a flex container */
+    overflow-x: auto;
+    /* Enable horizontal scrolling */
+    overflow-y: hidden;
+    /* Disable vertical scrolling */
+    white-space: nowrap;
+    /* Prevent wrapping to new lines */
 }
+
 .svg-icon {
     display: flex;
     position: relative;
@@ -280,6 +289,7 @@ body {
         top: 1360px;
     }
 }
+
 .trending1,
 .trending2,
 .trending3,
@@ -288,8 +298,10 @@ body {
     position: relative;
     flex-direction: row;
     justify-content: start;
-    margin: 100px 50px 0 50px; /* 50px top margin, 50px left and right margin */
+    margin: 100px 50px 0 50px;
+    /* 50px top margin, 50px left and right margin */
 }
+
 .internationmovies {
     position: absolute;
     z-index: 3;
@@ -310,10 +322,12 @@ body {
     font-size: 20px;
     font-weight: 600;
 }
-.imagesinternational{
+
+.imagesinternational {
     display: flex;
     flex-direction: row;
 }
+
 .internationmovies img {
     display: inline-block;
     height: 200px;
@@ -322,6 +336,54 @@ body {
     /* Maintain aspect ratio */
     margin-right: 15px;
     /* Add some spacing between images */
+}
+
+.international {
+    position: absolute;
+    color: white;
+    font-size: 20px;
+    top: 1400px;
+    left: 30px;
+    font-weight: 600;
+    z-index: 3;
+}
+
+@media only screen and (max-width: 1100px) and (min-width: 1000px) {
+    .international {
+        position: absolute;
+        top: 1150px;
+    }
+}
+
+@media only screen and (max-width: 800px) and (min-width:501px) {
+    .international {
+        position: absolute;
+        top:920px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .int {
+        position: absolute;
+        top: 800px;
+    }
+}
+
+@media only screen and (min-width: 2000px) {
+    .international {
+        position: absolute;
+        top: 1950px;
+    }
+}
+
+.int {
+    position: absolute;
+    color: white;
+    font-size: 20px;
+    top: 1400px;
+    left: 30px;
+    font-weight: 600;
+    z-index: 3;
 }
 
 @media only screen and (max-width: 1100px) and (min-width: 1000px) {
