@@ -98,7 +98,7 @@ async function fetchbannervid() {
           // bio.innerHTML=bio
           try {
             // Set up the video element with autoplay and muted attributes
-            homepagevideo.innerHTML = `<video src=${banner_video} width="100%" id="myVideo" autoplay muted></video>`;
+            homepagevideo.innerHTML = `<video src=${banner_video} width="100%" id="myVideo" autoplay muted loop></video>`;
           
             // Get reference to the video element
             let video = document.querySelector('#myVideo');
