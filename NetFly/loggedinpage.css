@@ -6,10 +6,15 @@
 body {
     background-color: black;
     font-family: sans-serif;
+    overflow-y: auto;
 
     ::-webkit-scrollbar {
         display: none;
     }
+}
+
+.container {
+    position: relative;
 }
 
 .bannerimage {
@@ -200,4 +205,63 @@ body {
 .watchvideo:hover {
     background-color: red;
     color: white;
+}
+
+.trendingsection {
+    position: relative; /* Change to relative or another appropriate position */
+    z-index: 3;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    top: 850px;
+    width: 100%; 
+    overflow: hidden; 
+    padding-bottom: 20px;
+}
+
+.trendingmovies {
+    display: flex; /* Ensure children are in a flex container */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    overflow-y: hidden; /* Disable vertical scrolling */
+    white-space: nowrap; /* Prevent wrapping to new lines */
+}
+.svg-icon {
+    display: flex;
+    position: relative;
+    justify-content: start;
+    /* Ensure SVG is displayed as a block element */
+}
+
+@media only screen and (max-width: 1100px) and (min-width: 1000px) {
+    .trendingsection {
+        top: 580px;
+    }
+}
+
+@media only screen and (max-width: 800px) and (min-width: 501px) {
+    .trendingsection {
+        top: 480px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .trendingsection {
+        top: 300px;
+    }
+}
+
+@media only screen and (min-width: 2000px) {
+    .trendingsection {
+        top: 1360px;
+    }
+}
+.trending1,
+.trending2,
+.trending3,
+.trending4 {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    justify-content: start;
+    margin: 100px 50px 0 50px; /* 50px top margin, 50px left and right margin */
 }
