@@ -28,8 +28,6 @@ body {
     display: flex;
     flex-direction: row;
     z-index: 1;
-    background: rgba(0, 0, 0, 0.03);
-    /* Optional: To add a background color for better visibility */
 }
 
 
@@ -218,7 +216,34 @@ body {
     overflow: hidden; 
     padding-bottom: 20px;
 }
+.trending{
+    position: relative;
+    top: 50px;
+    left: 30px;
+}
+@media screen and (max-width: 800px) {
+    .trending {
+        position: relative;
+        z-index: 3;
+        top: 70px;
+    }
+}
 
+@media screen and (max-width: 1200px) and (min-width: 800px) {
+    .trending {
+        position: relative;
+        z-index: 3;
+        top: 20px;
+    }
+}
+
+@media screen and (min-width: 2000px) {
+    .trending {
+        position: relative;
+        z-index: 3;
+        top: 20px;
+    }
+}
 .trendingmovies {
     display: flex; /* Ensure children are in a flex container */
     overflow-x: auto; /* Enable horizontal scrolling */
