@@ -1,0 +1,208 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: black !important;
+    font-family: sans-serif;
+}
+
+.Banner {
+    position: relative;
+    text-align: center;
+    color: white;
+    height: 100%;
+    font-weight: bolder;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.Banner .Banner_Text {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: 900;
+    font-size: 3rem;
+    text-align: center;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+
+}
+
+@media only screen and (max-width: 1044px) {
+    .Banner .Banner_Text {
+        font-size: 2rem;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .Banner .Banner_Text {
+        font-size: 1rem;
+    }
+}
+
+.Banner .heading {
+    position: absolute;
+    top: 4%;
+    padding-left: 1px !important;
+    transform: translate(-25%, -40%);
+}
+
+.Banner .homeimage {
+    background-color: black;
+    height: 100vh;
+    filter: grayscale(30%) brightness(50%);
+
+}
+
+.Banner .loginoptions {
+    position: absolute;
+    justify-content: start;
+    text-align: start;
+    padding-left: 30px;
+    padding-top: 50px;
+    height: 65%;
+    width: 30%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Changed to a transparent black */
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    font-weight: bolder;
+    font-size: 25px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+@media only screen and (max-width:800px) and (min-width:500px) {
+    .Banner .loginoptions {
+        position: absolute;
+        justify-content: start;
+        text-align: start;
+        padding-left: 30px;
+        padding-top: 50px;
+        height: 35%;
+        width: 55%;
+        background-color: rgba(0, 0, 0, 0.5);
+        /* Changed to a transparent black */
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 10px;
+        font-weight: bolder;
+        font-size: 25px;
+        color: white;
+        display: flex;
+        flex-direction: column;
+    }
+}
+@media only screen and (max-width:1200px) and (min-width:801px) {
+    .Banner .loginoptions {
+        position: absolute;
+        justify-content: start;
+        text-align: start;
+        padding-left: 30px;
+        padding-top: 50px;
+        height: 35%;
+        width: 55%;
+        background-color: rgba(0, 0, 0, 0.5);
+        /* Changed to a transparent black */
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 10px;
+        font-weight: bolder;
+        font-size: 25px;
+        color: white;
+        display: flex;
+        flex-direction: column;
+    }
+}
+@media only screen and (min-width:2000px) {
+    .Banner .loginoptions {
+        position: absolute;
+        justify-content: start;
+        text-align: start;
+        padding-left: 30px;
+        padding-top: 50px;
+        height: 40%;
+        width: 20%;
+        background-color: rgba(0, 0, 0, 0.5);
+        /* Changed to a transparent black */
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 10px;
+        font-weight: bolder;
+        font-size: 25px;
+        color: white;
+        display: flex;
+        flex-direction: column;
+    }
+}
+.Banner .loginoptions .email {
+    top: 20px;
+    position: relative;
+    margin-right: 30px;
+    height: 50px;
+    border-radius: 5px;
+    border-color: white;
+    /* border: 2px 2px 2px solid white; */
+    border-width: 1px;
+    background-color: transparent;
+    color: grey;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.Banner .loginoptions .signinbutton {
+    top: 20px;
+    position: relative;
+    margin-right: 30px;
+    height: 50px;
+    border-radius: 8px;
+    text-align: center;
+    border-color: red;
+    /* border: 2px 2px 2px solid white; */
+    border-width: 1px;
+    background-color: transparent;
+    background-color: red;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.Banner .loginoptions .onecodelogin {
+    top: 10px;
+    position: relative;
+    margin-right: 30px;
+    height: 50px;
+    border-radius: 8px;
+    text-align: center;
+    border-color: transparent;
+    /* border: 2px 2px 2px solid white; */
+    border-width: 1px;
+    background-color: rgba(70, 74, 74, 0.5);
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.Banner .loginoptions .remeberme {
+    top: 50px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    font-size: 15px;
+    font-weight: 400;
+}
