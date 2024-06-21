@@ -30,7 +30,7 @@ const firebaseConfig = {
       // Signed in
       const user = userCredential.user;
       console.log('logged in')
-      window.location.replace('loggedinpage.html');
+      window.location.replace('home.html');
       // ...
     })
     .catch((error) => {

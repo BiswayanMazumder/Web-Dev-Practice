@@ -22,7 +22,7 @@
                 <br>
                 <input type="password" class="email" placeholder="   Password" id="password">
                 <br>
-                <button class="signinbutton">Sign In</button>
+                <button class="signinbutton" id="rzp-button1">Sign In</button>
                 <br>
                 <div class="texts" style="position: relative;text-align: center;font-size: 15px;justify-content: center;">
                     OR
@@ -46,5 +46,10 @@
         </div>
     </div>
     <script src="loginpage.js" type="module" defer></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+    <script>
+        window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+    </script>
 </body>
 </html>

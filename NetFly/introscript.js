@@ -25,7 +25,7 @@ function getuser() {
         const uid = user.uid;
         isloggedin = true;
         console.log('signed in')
-          window.location.replace("loggedinpage.html")
+          window.location.replace("home.html")
         // ...
       } else {
         // User is signed out
