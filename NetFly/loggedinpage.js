@@ -239,6 +239,31 @@ async function gettrendingartist() {
   }
 }
 await gettrendingartist();
+var upcoming=document.querySelector('.upcomingsection')
+async function getupcoming() {
+  const options = {
+    method: 'GET',
+    headers: {
+      accept: 'application/json',
+      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0OWU3NjJhNjczNmYwY2Q0MmRlMzliZGI2YmZmMWJmNSIsInN1YiI6IjY1MDg1OGJiM2NkMTJjMDBlYjQ1ODk4OCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.9tPbUSb-HNcaxpQNV7fFApLUMVa0mI49PMqZC-DmhrU'
+    }
+  };
+
+  try {
+    const response = await fetch('https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1', options);
+    const data = await response.json();
+    const posterPaths = data.results.slice(0, 20).map(movie => movie.poster_path);
+    console.log(posterPaths);
+    for (let i = 0; i < posterPaths.length; i++) {
+      upcoming.innerHTML += `<img src=${'https://image.tmdb.org/t/p/w500'+posterPaths[i]} alt="Upcoming">`
+    }
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+await getupcoming();
+
 let image1 = document.querySelector('.img1');
 let image2=document.querySelector('.img2');
 let image3=document.querySelector('.img3');
