@@ -199,3 +199,13 @@ logout.addEventListener('click', async function () {
 let video = document.querySelector('#myVideo');
 let mutebutton = document.querySelector('.mutebutton');
 var is_muted=true;
+var international=document.querySelector('#international_hover')
+var inthover=document.querySelector('.inthover')
+international.addEventListener('mouseover',function(){
+  console.log('hovered')
+  inthover.innerHTML+=`<a href="#international" style="text-decoration: none;color: grey;font-size: 15px;font-weight: 600; padding-left: 20px;">Explore More</a>`
+})
+international.addEventListener('mouseout',function(){
+  console.log('out')
+  inthover.innerHTML=`<a href="#international" style="text-decoration: none;color: white;" id="international_hover">International TV Shows</a>`
+})
