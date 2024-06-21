@@ -3,12 +3,16 @@
     padding: 0;
 }
 body{
-    overflow-x: hidden;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.container{
+    height: 100vh;
+    width: 100vw; /* Ensure container takes full viewport width */
+    overflow-x: hidden; /* Prevent horizontal scroll */
 }
 .navbar{
     left: 50px;
-    position:relative;
+    position: relative;
     top: 20px;
 }
 .line {
@@ -31,19 +35,31 @@ body{
     flex-direction: row;
     left: 200px;
     flex-wrap: wrap;
+    max-width: calc(100vw - 200px); /* Prevent .plans from extending beyond the viewport */
+    box-sizing: border-box; /* Ensure padding and borders are included in the element's width and height */
 }
 .headingprem {
     height: 90px;
     width: 300px;
     border-radius: 20px;
     color: white;
-    background: linear-gradient(to right, #234E9C, #2F429A,#503585,#912253);
-}
-
-.headingprem{
-    position: relative;
-    /* left: 50px; */
+    background: linear-gradient(to right, #234E9C, #2F429A, #503585, #912253);
     font-size: 15px;
     font-weight: bold;
     padding-left: 20px;
+    margin-right: 20px; /* Add margin to separate multiple headingprem elements */
+}
+.bodyprem{
+    position: relative;
+    top: 30px;
+    color: grey;
+    left: 10px;
+}
+.head2{
+    color: #000;
+    font-weight: 500;
+}
+.premium {
+    position: relative;
+    justify-content: center;
 }
