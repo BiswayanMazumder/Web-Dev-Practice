@@ -4,7 +4,7 @@
 }
 
 body {
-    background-color: black;
+    background-color: #141414;
     font-family: sans-serif;
     overflow-y: auto;
 
@@ -298,7 +298,7 @@ body {
     position: relative;
     flex-direction: row;
     justify-content: start;
-    margin: 100px 50px 0 50px;
+    margin: 100px 20px 0 20px;
     /* 50px top margin, 50px left and right margin */
 }
 
