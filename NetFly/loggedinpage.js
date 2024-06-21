@@ -192,7 +192,7 @@ async function gettrendingartist() {
     const response = await fetch('https://api.themoviedb.org/3/trending/person/day?language=en-US', options);
     const data = await response.json();
     const posterPaths = data.results.slice(0, 10).map(movie => movie.profile_path);
-    // console.log('https://image.tmdb.org/t/p/w500'+posterPaths[9]);
+    // console.log(posterPaths[8]);
     trendingartist.innerHTML=` <div class="trending1">
     <svg id="rank-1" width="100px" height="200px" viewBox="-20 0 70 154" class="svg-icon svg-icon-rank-1 top-10-rank"><path stroke="#595959" stroke-linejoin="square" stroke-width="4" d="M35.377 152H72V2.538L2 19.362v30.341l33.377-8.459V152z"></path></svg>
     <img src=${'https://image.tmdb.org/t/p/w500'+posterPaths[0]} alt="" height="200px">
@@ -253,7 +253,7 @@ async function getupcoming() {
     const response = await fetch('https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1', options);
     const data = await response.json();
     const posterPaths = data.results.slice(0, 20).map(movie => movie.poster_path);
-    console.log(posterPaths);
+    // console.log(posterPaths);
     for (let i = 0; i < posterPaths.length; i++) {
       upcoming.innerHTML += `<img src=${'https://image.tmdb.org/t/p/w500'+posterPaths[i]} alt="Upcoming">`
     }
@@ -263,7 +263,52 @@ async function getupcoming() {
 }
 
 await getupcoming();
+var topmovies=document.querySelector('.topmoviessection')
+async function gettopmovies() {
+  const options = {
+    method: 'GET',
+    headers: {
+      accept: 'application/json',
+      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0OWU3NjJhNjczNmYwY2Q0MmRlMzliZGI2YmZmMWJmNSIsInN1YiI6IjY1MDg1OGJiM2NkMTJjMDBlYjQ1ODk4OCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.9tPbUSb-HNcaxpQNV7fFApLUMVa0mI49PMqZC-DmhrU'
+    }
+  };
 
+  try {
+    const response = await fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', options);
+    const data = await response.json();
+    const posterPaths = data.results.slice(0, 20).map(movie => movie.poster_path);
+    // console.log(posterPaths);
+    for (let i = 0; i < posterPaths.length; i++) {
+      topmovies.innerHTML += `<img src=${'https://image.tmdb.org/t/p/w500'+posterPaths[i]} alt="Upcoming">`
+    }
+  } catch (err) {
+    console.error(err);
+  }
+}
+await gettopmovies();
+var airing=document.querySelector('.airingsection')
+async function getairingtoday() {
+  const options = {
+    method: 'GET',
+    headers: {
+      accept: 'application/json',
+      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0OWU3NjJhNjczNmYwY2Q0MmRlMzliZGI2YmZmMWJmNSIsInN1YiI6IjY1MDg1OGJiM2NkMTJjMDBlYjQ1ODk4OCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.9tPbUSb-HNcaxpQNV7fFApLUMVa0mI49PMqZC-DmhrU'
+    }
+  };
+
+  try {
+    const response = await fetch('https://api.themoviedb.org/3/tv/airing_today?language=en-US&page=5&timezone=GMT%2B5%3A30', options);
+    const data = await response.json();
+    const posterPaths = data.results.slice(0, 20).map(movie => movie.poster_path);
+    // console.log(posterPaths);
+    for (let i = 0; i < posterPaths.length; i++) {
+      airing.innerHTML += `<img src=${'https://image.tmdb.org/t/p/w500'+posterPaths[i]} alt="Upcoming">`
+    }
+  } catch (err) {
+    console.error(err);
+  }
+}
+await getairingtoday();
 let image1 = document.querySelector('.img1');
 let image2=document.querySelector('.img2');
 let image3=document.querySelector('.img3');
