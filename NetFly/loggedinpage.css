@@ -375,7 +375,12 @@ body {
         top: 1950px;
     }
 }
-
+@media only screen and (max-width: 500px) {
+    .international {
+        position: absolute;
+        top: 750px;
+    }
+}
 .int {
     position: absolute;
     color: white;
@@ -411,5 +416,71 @@ body {
     .internationmovies {
         position: absolute;
         top: 2010px;
+    }
+}
+.trendingartist {
+    position: absolute;
+    z-index: 3;
+    top: 1800px;
+    
+    scroll-behavior: smooth;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden; /* Hide horizontal scrollbar if not needed */
+    white-space: nowrap;
+    left: 30px;
+    right: 30px;
+    padding-bottom: 20px;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.trendingartistsection {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    width: 100%; /* Ensure the section takes the full width */
+    white-space: nowrap;
+}
+
+.trendingartist img {
+    display: inline-block;
+    height: 200px;
+    width: auto;
+    margin-right: 15px;
+}
+@media only screen and (max-width: 1100px) and (min-width: 1000px) {
+    .trendingartist {
+        position: absolute;
+        top: 1500px;
+    }
+}
+
+@media only screen and (max-width: 800px) and (min-width:501px) {
+    .trendingartist {
+        position: absolute;
+        top: 1250px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .trendingartist {
+        position: absolute;
+        top: 800px;
+    }
+}
+
+@media only screen and (min-width: 2000px) {
+    .trendingartist {
+        position: absolute;
+        top: 2300px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .trendingartist {
+        position: absolute;
+        top: 1100px;
     }
 }
