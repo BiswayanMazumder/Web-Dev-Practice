@@ -128,7 +128,7 @@ async function gettrending() {
   };
 
   try {
-    const response = await fetch('https://api.themoviedb.org/3/trending/movie/day?language=en-US', options);
+    const response = await fetch('https://api.themoviedb.org/3/trending/all/day?language=en-US', options);
     const data = await response.json();
     const posterPaths = data.results.slice(0, 10).map(movie => movie.poster_path);
     // console.log('https://image.tmdb.org/t/p/w500'+posterPaths[9]);
