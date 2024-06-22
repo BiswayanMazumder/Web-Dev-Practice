@@ -8,7 +8,7 @@ body{
 .container{
     height: 100vh;
     width: 100vw; /* Ensure container takes full viewport width */
-    overflow-x: hidden; /* Prevent horizontal scroll */
+    overflow-x: scroll; /* Prevent horizontal scroll */
 }
 .navbar{
     left: 50px;
@@ -26,15 +26,15 @@ body{
 .header1{
     position: relative;
     top: 100px;
-    left: 200px;
+    left: 100px;
 }
 .plans{
     position: relative;
     top: 150px;
     display: flex;
     flex-direction: row;
-    left: 200px;
-    flex-wrap: wrap;
+    left: 100px;
+    flex-wrap: nowrap;
     max-width: calc(100vw - 200px); /* Prevent .plans from extending beyond the viewport */
     box-sizing: border-box; /* Ensure padding and borders are included in the element's width and height */
 }
