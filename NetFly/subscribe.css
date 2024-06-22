@@ -13,6 +13,12 @@ body{
     left: 50px;
     position: relative;
     top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 20px;
+    font-weight: bolder;
+    text-decoration: none;
 }
 .line {
     height: 0.1px;
@@ -38,6 +44,7 @@ body{
     box-sizing: border-box;
     height: 100vh;
     width: 100vw;
+    overflow: scroll;
     justify-content: center;
     scrollbar-width: none; /* For Firefox */
     -ms-overflow-style: none;  /* For Internet Explorer and Edge */
@@ -49,7 +56,7 @@ body{
 
 .headingprem {
     height: 90px;
-    width: 250px;
+    width: 130px;
     border-radius: 20px;
     color: white;
     background: linear-gradient(to right, #234E9C, #2F429A, #503585, #912253);

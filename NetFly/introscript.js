@@ -15,6 +15,24 @@ const firebaseConfig = {
   };
   const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+async function fetchUserDetails(uid) {
+    try {
+        const userDoc = await getDoc(doc(db, "users", uid));
+        if (userDoc.exists()) {
+        var isSubs=userDoc.data().isSubscribed 
+        if(isSubs){
+          window.location.replace("home.html")
+        }
+        else{
+          window.location.replace("subscribe.html")
+        }    
+        } else {
+            console.log("No such document!");
+        }
+    } catch (e) {
+        console.error("Error fetching document: ", e);
+    }
+}
 function getuser() {
     const app = initializeApp(firebaseConfig);
     const analytics = getAnalytics(app);
@@ -25,7 +43,7 @@ function getuser() {
         const uid = user.uid;
         isloggedin = true;
         console.log('signed in')
-          window.location.replace("home.html")
+          fetchUserDetails(user.uid)
         // ...
       } else {
         // User is signed out
