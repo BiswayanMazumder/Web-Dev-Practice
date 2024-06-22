@@ -22,24 +22,44 @@ const firebaseConfig = {
   let passwordfield=document.querySelector('#password')
   let loginbutton=document.querySelector('.signinbutton')
   const auth = getAuth();
-  loginbutton.addEventListener("click",function(){
-    let email=emailfield.value
-    let password=passwordfield.value
+  async function fetchUserDetails(uid) {
+    try {
+        const userDoc = await getDoc(doc(db, "users", uid));
+        if (userDoc.exists()) {
+        var isSubs=userDoc.data().isSubscribed 
+        if(isSubs){
+          window.location.replace("home.html")
+        }
+        else{
+          window.location.replace("subscribe.html")
+        }    
+        } else {
+            console.log("No such document!");
+        }
+    } catch (e) {
+        console.error("Error fetching document: ", e);
+    }
+}
+
+// Event listener for login button
+loginbutton.addEventListener("click",async function() {
+    let email = emailfield.value;
+    let password = passwordfield.value;
     signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
-      // Signed in
-      const user = userCredential.user;
-      console.log('logged in')
-      window.location.replace('home.html');
-      // ...
+        // Signed in
+        const user = userCredential.user;
+        console.log('logged in');
+        
+        // Fetch user details
+        fetchUserDetails(user.uid);
     })
     .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      console.log(errorMessage)
-      // ..
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorMessage);
     });
-  })
+});
   let pwreset=document.querySelector('.forgetpw')
   pwreset.addEventListener('click',function(){
       if(emailfield.value!==""){

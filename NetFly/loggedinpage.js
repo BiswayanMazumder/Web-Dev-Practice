@@ -42,6 +42,27 @@ function getuser() {
   });
 }
 getuser()
+async function checksubsStatus() {
+  const auth = getAuth();
+  onAuthStateChanged(auth, async (user) => {
+      const uid = user.uid;
+      try {
+          const userDocRef = doc(db, "users", uid);
+          const docSnap = await getDoc(userDocRef);
+          if (docSnap.exists()) {
+               var issubed = docSnap.data().isSubscribed;
+              console.log("Document data:", docSnap.data().isSubscribed);
+              if (!issubed) {
+                window.location.replace("subscribe.html")
+            }
+          }
+          
+      } catch (e) {
+          console.log(e.message);
+      }
+  });
+}
+await checksubsStatus();
 let homepagevideo = document.querySelector('.headingimg');
 try {
   homepagevideo.innerHTML = `<video src="https://avodmp4s3ww-a.akamaihd.net/ww_iad/a53f/f39e/b244/40b6-9978-7f5ab4f5a565/bab7f88a-6332-4821-bf53-7fda2e748673_video_720p_2500kbps_audio_aaclc_128kbps.mp4" width="100%" id="myVideo" autoplay muted loop></video>`

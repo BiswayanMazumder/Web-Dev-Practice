@@ -1,3 +1,19 @@
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
+import { getAuth, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, sendPasswordResetEmail, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import { getFirestore, collection, addDoc, setDoc, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+const firebaseConfig = {
+    apiKey: "AIzaSyBEzWmfzRUoRFRHlXNEssfR-3EtoElwjJc",
+    authDomain: "netflix-5002f.firebaseapp.com",
+    databaseURL: "https://netflix-5002f-default-rtdb.firebaseio.com",
+    projectId: "netflix-5002f",
+    storageBucket: "netflix-5002f.appspot.com",
+    messagingSenderId: "977326144598",
+    appId: "1:977326144598:web:52026ea69e60f526738ff7",
+    measurementId: "G-416W2YJ6K8"
+};
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
 console.log('Subscribe');
 var isprem = false;
 var isstand = false;
@@ -13,13 +29,38 @@ var premtick = document.querySelector('.premtick');
 var standtick = document.querySelector('.standardtick');
 var basictick = document.querySelector('.basictick');
 var mobiletick = document.querySelector('.mobiletick');
+async function premiumsuccess() {
+    const auth = getAuth();
+    try {
+        onAuthStateChanged(auth, async (user) => {
+            if (user) {
+                const uid = user.uid;
+                // console.log(uid);
+                try {
+                    // Create a reference to the document with the user's UID
+                    await setDoc(doc(db, "users", uid), {
+                        'isSubscribed': true
+                    });
+                    window.location.replace("home.html");
+                    // console.log("Document written with ID: ", uid);
+                } catch (e) {
+                    console.error("Error adding document: ", e);
+                }
+            } else {
+                console.error("No user is signed in");
+            }
+        });
+    } catch (e) {
+        console.error("Error with auth state change: ", e);
+    }
+}
 
-prem.addEventListener('click', function() {
+prem.addEventListener('click', function () {
     isprem = true;
     isstand = false;
     isbasic = false;
     ismobile = false;
-    
+
     if (isprem) {
         standtick.innerHTML = ``;
         basictick.innerHTML = ``;
@@ -28,12 +69,12 @@ prem.addEventListener('click', function() {
     }
 });
 
-stand.addEventListener('click', function() {
+stand.addEventListener('click', function () {
     isprem = false;
     isstand = true;
     isbasic = false;
     ismobile = false;
-    
+
     if (isstand) {
         premtick.innerHTML = ``;
         basictick.innerHTML = ``;
@@ -42,12 +83,12 @@ stand.addEventListener('click', function() {
     }
 });
 
-basic.addEventListener('click', function() {
+basic.addEventListener('click', function () {
     isprem = false;
     isstand = false;
     isbasic = true;
     ismobile = false;
-    
+
     if (isbasic) {
         premtick.innerHTML = ``;
         standtick.innerHTML = ``;
@@ -56,12 +97,12 @@ basic.addEventListener('click', function() {
     }
 });
 
-mobile.addEventListener('click', function() {
+mobile.addEventListener('click', function () {
     isprem = false;
     isstand = false;
     isbasic = false;
     ismobile = true;
-    
+
     if (ismobile) {
         premtick.innerHTML = ``;
         standtick.innerHTML = ``;
@@ -81,7 +122,7 @@ var options = {
     "theme": {
         "color": "#1DB954"
     },
-    "handler": function(response) {
+    "handler": function (response) {
         console.log("Handler triggered with response:", response);
         checkPaymentStatus('success');
     }
@@ -94,7 +135,7 @@ var options1 = {
     "theme": {
         "color": "#1DB954"
     },
-    "handler": function(response) {
+    "handler": function (response) {
         console.log("Handler triggered with response:", response);
         checkPaymentStatus('success');
     }
@@ -107,7 +148,7 @@ var options2 = {
     "theme": {
         "color": "#1DB954"
     },
-    "handler": function(response) {
+    "handler": function (response) {
         console.log("Handler triggered with response:", response);
         checkPaymentStatus('success');
     }
@@ -120,13 +161,13 @@ var options3 = {
     "theme": {
         "color": "#1DB954"
     },
-    "handler": function(response) {
+    "handler": function (response) {
         console.log("Handler triggered with response:", response);
         checkPaymentStatus('success');
     }
 };
 
-subscribe.onclick = function(e) {
+subscribe.onclick = function (e) {
     var rzp1;
     if (isprem) {
         rzp1 = new Razorpay(options);
@@ -141,18 +182,18 @@ subscribe.onclick = function(e) {
         e.preventDefault();
         return;
     }
-    
-    paymentStatus(rzp1).then(function(status) {
+
+    paymentStatus(rzp1).then(function (status) {
         checkPaymentStatus(status);
-    }).catch(function(status) {
+    }).catch(function (status) {
         checkPaymentStatus(status);
     });
-    
+
     rzp1.open();
     e.preventDefault();
 };
 
-subscribe.addEventListener('click', function() {
+subscribe.addEventListener('click', function () {
     if (isprem) {
         console.log('premium');
         footer.innerHTML = ``;
@@ -170,23 +211,23 @@ subscribe.addEventListener('click', function() {
     }
 });
 
-var paymentStatus = function(rzp1) {
+var paymentStatus = function (rzp1) {
     return new Promise((resolve, reject) => {
-        rzp1.on('payment.error', function(response) {
+        rzp1.on('payment.error', function (response) {
             console.log("Payment failed:", response);
             reject('failed');
         });
 
-        rzp1.on('payment.success', function(response) {
+        rzp1.on('payment.success', function (response) {
             console.log("Payment successful:", response);
             resolve('success');
         });
 
-        rzp1.on('external_wallet', function(response) {
+        rzp1.on('external_wallet', function (response) {
             console.log("External wallet chosen:", response);
         });
 
-        rzp1.on('rzp_event', function(response) {
+        rzp1.on('rzp_event', function (response) {
             console.log("Razorpay event:", response);
         });
     });
@@ -197,6 +238,6 @@ async function checkPaymentStatus(status) {
         console.log('failed');
     } else {
         console.log('success');
-        await premiumsuccess();
+        premiumsuccess();
     }
 }
