@@ -254,11 +254,15 @@
             <button class="subscribe">Next</button>
             <br><br>
             <div class="error" style="color: red;font-weight: bolder;">
-                
+
             </div>
         </div>
     </div>
-    <script src="subscribe.js"></script>
+    <script src="subscribe.js" type="module" defer></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script>
+        window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+    </script>
 </body>
 
 </html>
