@@ -7,7 +7,7 @@ body{
 }
 .container{
     height: 100vh;
-    width: 100vw; /* Ensure container takes full viewport width */
+    width: 90vw;
 }
 .navbar{
     left: 50px;
@@ -25,20 +25,20 @@ body{
 .header1{
     position: relative;
     top: 100px;
-    left: 100px;
+    left: 200px;
 }
 .plans {
     position: relative;
     top: 150px;
     display: flex;
     flex-direction: row;
-    left: 100px;
+    left: 200px;
     height:auto;
     flex-wrap: nowrap;
     overflow-x: auto;
     max-width: calc(100vw - 200px);
     box-sizing: border-box;
-    
+    height: 100vh;
     /* Hide the scrollbar */
     scrollbar-width: none; /* For Firefox */
     -ms-overflow-style: none;  /* For Internet Explorer and Edge */
@@ -50,7 +50,7 @@ body{
 
 .headingprem {
     height: 90px;
-    width: 300px;
+    width: 250px;
     border-radius: 20px;
     color: white;
     background: linear-gradient(to right, #234E9C, #2F429A, #503585, #912253);

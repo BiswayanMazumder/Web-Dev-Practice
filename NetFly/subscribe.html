@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix</title>
     <link rel="icon" type="image/x-icon" href="NetFly_Logo.png">
     <link rel="stylesheet" href="subscribe.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -19,11 +20,14 @@
         </div>
         <div class="plans">
             <a href="#prem" class="prem" style="text-decoration: none;">
-                <div class="premium">
+                <div class="premium" id="premiumplan">
                     <div class="headingprem">
                         <br>
                         Premium <br><br>
                         4K+HDR
+                        <div class="premtick" style="position: relative;left: 80%;bottom: 40px;">
+                            
+                        </div>
                     </div>
                     <div class="bodyprem">
                         <div class="head1">
@@ -70,12 +74,15 @@
                     </div>
                 </div>
             </a>
-            <a href="#prem" class="prem" style="text-decoration: none;">
-                <div class="premium">
+            <a href="#prem" class="stand" style="text-decoration: none;">
+                <div class="premium" id="Standardplan">
                     <div class="headingprem">
                         <br>
                         Standard <br><br>
                         1080p
+                        <div class="standardtick" style="position: relative;left: 80%;bottom: 40px;">
+                            
+                        </div>
                     </div>
                     <div class="bodyprem">
                         <div class="head1">
@@ -122,12 +129,15 @@
                     </div>
                 </div>
             </a>
-            <a href="#prem" class="prem" style="text-decoration: none;">
-                <div class="premium">
+            <a href="#prem" class="basic" style="text-decoration: none;">
+                <div class="premium" id="basicplan">
                     <div class="headingprem">
                         <br>
                         Basic <br><br>
                         720p
+                        <div class="basictick" style="position: relative;left: 80%;bottom: 40px;">
+                            
+                        </div>
                     </div>
                     <div class="bodyprem">
                         <div class="head1">
@@ -174,12 +184,15 @@
                     </div>
                 </div>
             </a>
-            <a href="#prem" class="prem" style="text-decoration: none;">
-                <div class="premium">
+            <a href="#prem" class="mobile" style="text-decoration: none;">
+                <div class="premium" id="mobileplan">
                     <div class="headingprem">
                         <br>
                         Mobile <br><br>
                         480p
+                        <div class="mobiletick" style="position: relative;left: 80%;bottom: 40px;">
+                            
+                        </div>
                     </div>
                     <div class="bodyprem">
                         <div class="head1">
@@ -223,10 +236,12 @@
                         <div class="head2">
                             1
                         </div>
+                        
                     </div>
                 </div>
             </a>
         </div>
     </div>
+    <script src="subscribe.js"></script>
 </body>
 </html>
