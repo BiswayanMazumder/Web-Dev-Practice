@@ -24,7 +24,7 @@ prem.addEventListener('click',function(){
         mobiletick.innerHTML=``
         premtick.innerHTML=`<svg width="24" height="22" viewBox="0 0 24 22" fill="none" class="success-icon" data-uia="success-svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.0183 21.0833C17.7761 21.0833 22.4438 16.5688 22.4438 11C22.4438 5.43112 17.7761 0.916656 12.0183 0.916656C6.26044 0.916656 1.59277 5.43112 1.59277 11C1.59277 16.5688 6.26044 21.0833 12.0183 21.0833ZM11.7407 14.3982L17.4273 8.89817L16.087 7.60181L11.0705 12.4536L8.89738 10.3518L7.55702 11.6482L10.4004 14.3982L11.0705 15.0463L11.7407 14.3982Z" fill="white"></path></svg>`
     }
-    console.log(isprem,isstand,isbasic,ismobile)
+    // console.log(isprem,isstand,isbasic,ismobile)
 })
 stand.addEventListener('click',function(){
     isprem=false;
@@ -63,5 +63,29 @@ mobile.addEventListener('click',function(){
         standtick.innerHTML=``
         basictick.innerHTML=`` 
         mobiletick.innerHTML=`<svg width="24" height="22" viewBox="0 0 24 22" fill="none" class="success-icon" data-uia="success-svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.0183 21.0833C17.7761 21.0833 22.4438 16.5688 22.4438 11C22.4438 5.43112 17.7761 0.916656 12.0183 0.916656C6.26044 0.916656 1.59277 5.43112 1.59277 11C1.59277 16.5688 6.26044 21.0833 12.0183 21.0833ZM11.7407 14.3982L17.4273 8.89817L16.087 7.60181L11.0705 12.4536L8.89738 10.3518L7.55702 11.6482L10.4004 14.3982L11.0705 15.0463L11.7407 14.3982Z" fill="white"></path></svg>`
+    }
+})
+var footer=document.querySelector('.error')
+var subscribe=document.querySelector('.subscribe')
+subscribe.addEventListener('click',function(){
+    if(isprem){
+        console.log('premium')
+        footer.innerHTML=``
+    }
+    else if(isstand){
+        console.log('standard')
+        footer.innerHTML=``
+    }
+    else if(isbasic){
+        console.log('basic')
+        footer.innerHTML=``
+    }
+    else if(ismobile){
+        console.log('mobile')
+        footer.innerHTML=``
+    }
+    else{
+        footer.innerHTML=`
+                Please select a plan `
     }
 })

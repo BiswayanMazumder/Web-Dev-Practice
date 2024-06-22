@@ -25,21 +25,20 @@ body{
 .header1{
     position: relative;
     top: 100px;
-    left: 200px;
+    justify-content: center;
+    position: relative;
+    text-align: center;
 }
 .plans {
     position: relative;
     top: 150px;
     display: flex;
     flex-direction: row;
-    left: 200px;
     height:auto;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    max-width: calc(100vw - 200px);
     box-sizing: border-box;
     height: 100vh;
-    /* Hide the scrollbar */
+    width: 100vw;
+    justify-content: center;
     scrollbar-width: none; /* For Firefox */
     -ms-overflow-style: none;  /* For Internet Explorer and Edge */
 }
@@ -72,4 +71,22 @@ body{
 .premium {
     position: relative;
     justify-content: center;
+}
+.footer{
+    width: 100vw;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+.subscribe{
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
+    font-size: 15px;
+    background-color: red;
+    color: white;
+    height: 50px;
+    width: 280px;
+    border-color: red;
+    border-radius: 5px;
 }
