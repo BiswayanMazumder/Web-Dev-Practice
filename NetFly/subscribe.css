@@ -8,7 +8,6 @@ body{
 .container{
     height: 100vh;
     width: 100vw; /* Ensure container takes full viewport width */
-    overflow-x: scroll; /* Prevent horizontal scroll */
 }
 .navbar{
     left: 50px;
@@ -28,16 +27,27 @@ body{
     top: 100px;
     left: 100px;
 }
-.plans{
+.plans {
     position: relative;
     top: 150px;
     display: flex;
     flex-direction: row;
     left: 100px;
+    height:auto;
     flex-wrap: nowrap;
-    max-width: calc(100vw - 200px); /* Prevent .plans from extending beyond the viewport */
-    box-sizing: border-box; /* Ensure padding and borders are included in the element's width and height */
+    overflow-x: auto;
+    max-width: calc(100vw - 200px);
+    box-sizing: border-box;
+    
+    /* Hide the scrollbar */
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none;  /* For Internet Explorer and Edge */
 }
+
+.plans::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Opera */
+}
+
 .headingprem {
     height: 90px;
     width: 300px;
