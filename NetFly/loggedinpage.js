@@ -448,3 +448,4 @@ international.addEventListener('mouseout',function(){
   console.log('out')
   inthover.innerHTML=`<a href="#international" style="text-decoration: none;color: white;" id="international_hover">International TV Shows</a>`
 })
+var geminiapikey="AIzaSyDoLEVxfNQ-_ZCfkHQLTfgRTA7v4a-jiDQ"
