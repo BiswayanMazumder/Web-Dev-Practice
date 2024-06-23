@@ -3,7 +3,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/fireba
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
 import { getAuth, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, sendPasswordResetEmail, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 import { getFirestore, collection, addDoc, setDoc, doc, getDoc, deleteDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-
+import { GoogleGenerativeAI } from "https://cdn.skypack.dev/@google/generative-ai";
 const firebaseConfig = {
   apiKey: "AIzaSyBEzWmfzRUoRFRHlXNEssfR-3EtoElwjJc",
   authDomain: "netflix-5002f.firebaseapp.com",
@@ -448,4 +448,18 @@ international.addEventListener('mouseout',function(){
   console.log('out')
   inthover.innerHTML=`<a href="#international" style="text-decoration: none;color: white;" id="international_hover">International TV Shows</a>`
 })
-var geminiapikey="AIzaSyDoLEVxfNQ-_ZCfkHQLTfgRTA7v4a-jiDQ"
+var API_KEY="AIzaSyDoLEVxfNQ-_ZCfkHQLTfgRTA7v4a-jiDQ"
+const genAI = new GoogleGenerativeAI(API_KEY);
+async function run() {
+  // The Gemini 1.5 models are versatile and work with both text-only and multimodal prompts
+  const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash"});
+
+  const prompt = "Write a story about a magic backpack."
+
+  const result = await model.generateContent(prompt);
+  const response = await result.response;
+  const text = response.text();
+  console.log(text);
+}
+
+// run()

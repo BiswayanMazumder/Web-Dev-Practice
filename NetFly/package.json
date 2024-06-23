@@ -9,7 +9,13 @@
   "author": "Biswayan",
   "license": "ISC",
   "dependencies": {
+    "@google/generative-ai": "^0.13.0",
     "cloudinary-video-player": "^2.0.4",
     "video.js": "^8.12.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.24.7",
+    "@babel/preset-env": "^7.24.7",
+    "babel-loader": "^9.1.3"
   }
 }
