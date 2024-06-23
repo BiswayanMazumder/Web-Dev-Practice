@@ -74,7 +74,7 @@ try {
   console.log(error);
 }
 var promptsent = "";
-var API_KEY = "AIzaSyDoLEVxfNQ-_ZCfkHQLTfgRTA7v4a-jiDQ"
+var API_KEY = "AIzaSyD9FFZGxR5hFuO2mV7LulBHsRIGmLNl6lc"
 const genAI = new GoogleGenerativeAI(API_KEY);
 async function readymessagebox() {
 
@@ -84,7 +84,7 @@ async function readymessagebox() {
     var sendbutton = document.querySelector('.sendmssg');
     console.log('rrecived buttno')
     sendbutton.addEventListener('click', function () {
-      console.log(query.value)
+      console.log('Query'+query.value)
       promptsent = query.value;
       async function genresponse() {
         const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
@@ -94,7 +94,11 @@ async function readymessagebox() {
         const result = await model.generateContent(prompt);
         const response = await result.response;
         const text = response.text();
-        console.log(text);
+        var usermessage = document.querySelector('.messages')
+        usermessage.innerHTML+=`<div class="clientmessage">
+                ${text}
+                </div>`
+        query.value = ''
       }
       genresponse();
 
@@ -124,7 +128,7 @@ messagebutton.addEventListener('click', function () {
                 </div>
             </div>`;
     ismessageopened = true;
-    // readymessagebox();
+    
     var query = document.querySelector('.query')
     console.log('recieved query')
     var sendbutton = document.querySelector('.sendmssg');
@@ -133,8 +137,10 @@ messagebutton.addEventListener('click', function () {
       usermessage.innerHTML+=`<div class="usermessage">
                 ${query.value}
                 </div>`
-       query.value = ''
+      console.log(query.value)
+       
     })
+    readymessagebox();
   }
   else if (ismessageopened) {
     messageprev.innerHTML = `

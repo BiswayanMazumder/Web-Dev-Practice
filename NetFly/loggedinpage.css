@@ -895,6 +895,18 @@ a {
     border-style: solid;
     border-color: grey transparent transparent transparent;
 }
+.clientmessage{
+    max-width: 80%;
+    background-color: blue;
+    color: white;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    word-wrap: break-word;
+    margin-bottom: 10px;
+    position: relative;
+    align-self: flex-start;
+}
 .message:after {
     content: '';
     position: absolute;
