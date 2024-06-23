@@ -85,7 +85,10 @@ var messagebutton=document.querySelector('.helpsection')
 messagebutton.addEventListener('click', function(){
   if(ismessageopened==false){
     messageprev.innerHTML = `<div class="messagebox">
-            
+                <div class="messages"></div>
+                <div class="typingsection">
+                    <input type="text" class="query">
+                </div>
             </div>`;
       ismessageopened=true;
   }

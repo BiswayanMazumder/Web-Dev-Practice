@@ -817,12 +817,28 @@ a {
     background: #f1f1f1;
     border-radius: 10px;
     padding: 15px;
-    width: 200px;
+    width:300px;
     margin: 20px;
+    justify-content: start;
     font-family: Arial, sans-serif;
     z-index: 3;
 }
-
+.typingsection{
+    position: relative;
+    /* bottom: 10px; */
+    height: 80px;
+    width: 300px;
+    top: 435px;
+    /* background-color: black; */
+}
+.query{
+    position: relative;
+    top: 27px;
+    height: 50px;
+    width: 280px;
+    font-weight: bold;
+    padding-left: 20px;
+}
 .message:after {
     content: '';
     position: absolute;
