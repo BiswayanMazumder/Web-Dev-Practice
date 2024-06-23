@@ -837,6 +837,8 @@ a {
     height: 50px;
     width: 280px;
     font-weight: bold;
+    border-color: black;
+    border-width: 0.1px;
     padding-left: 20px;
 }
 .message:after {
