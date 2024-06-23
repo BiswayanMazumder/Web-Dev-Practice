@@ -65,7 +65,7 @@ async function checksubsStatus() {
 await checksubsStatus();
 let homepagevideo = document.querySelector('.headingimg');
 try {
-  homepagevideo.innerHTML = `<video src="https://avodmp4s3ww-a.akamaihd.net/ww_iad/a53f/f39e/b244/40b6-9978-7f5ab4f5a565/bab7f88a-6332-4821-bf53-7fda2e748673_video_720p_2500kbps_audio_aaclc_128kbps.mp4" width="100%" id="myVideo" autoplay muted loop></video>`
+  homepagevideo.innerHTML = `<video src="https://avodmp4s3ww-a.akamaihd.net/ww_iad/0a67/1f97/64a4/48b5-9966-a1d54282a486/08102ed1-bae0-4edc-9ecf-ade35fb9b8bf_video_720p_2500kbps_audio_aaclc_128kbps.mp4" width="100%" id="myVideo" autoplay muted loop></video>`
   // let video = document.querySelector('#myVideo');
   // video.addEventListener('ended', function () {
   //   homepagevideo.innerHTML = `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRihROyGk5x7V5K1Hq-D2SlRMfRtH_kJ-TlrQ&s" alt="" width="100%">`
