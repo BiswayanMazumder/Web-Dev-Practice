@@ -790,6 +790,23 @@ a {
     }
 }
 
+.messagebox {
+    position: fixed;
+    bottom: 80px;
+    /* Adjust this value to your desired distance from the bottom */
+    right: 20px;
+    /* Adjust this value to your desired distance from the right */
+    background-color: white;
+    background: #f1f1f1;
+    border-radius: 10px;
+    padding: 15px;
+    width: 300px;
+    margin: 20px;
+    font-family: Arial, sans-serif;
+    z-index: 3;
+    height:500px;
+}
+
 .message {
     position: fixed;
     bottom: 80px;
@@ -805,19 +822,24 @@ a {
     font-family: Arial, sans-serif;
     z-index: 3;
 }
+
 .message:after {
     content: '';
     position: absolute;
-    bottom: -10px; /* Adjusted to position the arrow at the bottom */
-    right: 20px; /* Adjusted to position the arrow on the right side */
+    bottom: -10px;
+    /* Adjusted to position the arrow at the bottom */
+    right: 20px;
+    /* Adjusted to position the arrow on the right side */
     border-width: 10px;
     border-style: solid;
-    border-color: #f1f1f1 transparent transparent transparent; /* Adjusted for the right bottom arrow */
+    border-color: #f1f1f1 transparent transparent transparent;
+    /* Adjusted for the right bottom arrow */
 }
 
 .message-content {
     margin: 0;
 }
+
 .helpsection {
     height: 70px;
     width: 70px;

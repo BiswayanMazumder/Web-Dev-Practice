@@ -74,12 +74,29 @@ try {
   console.log(error);
 }
 var messageprev=document.querySelector('.messagepreview')
+var ismessageopened=false;
 setTimeout(function() {
   messageprev.innerHTML = `
       <div class="message">
           <p class="message-content">Hello how can I help you?</p>
       </div>`;
 }, 3000);
+var messagebutton=document.querySelector('.helpsection')
+messagebutton.addEventListener('click', function(){
+  if(ismessageopened==false){
+    messageprev.innerHTML = `<div class="messagebox">
+            
+            </div>`;
+      ismessageopened=true;
+  }
+  else if(ismessageopened){
+    messageprev.innerHTML = `
+      <div class="message">
+          <p class="message-content">Hello how can I help you?</p>
+      </div>`;
+      ismessageopened=false;
+  }
+})
 let trending=document.querySelector('.trendingmovies')
 async function fetchtrending(){
   const auth = getAuth();
