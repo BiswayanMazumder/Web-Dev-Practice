@@ -73,6 +73,33 @@ try {
 } catch (error) {
   console.log(error);
 }
+var promptsent="";
+var API_KEY="AIzaSyDoLEVxfNQ-_ZCfkHQLTfgRTA7v4a-jiDQ"
+const genAI = new GoogleGenerativeAI(API_KEY);
+async function readymessagebox(){
+  if(ismessageopened){
+    var query=document.querySelector('.query')
+    console.log('recieved query')
+    var sendbutton=document.querySelector('.sendmssg');
+    console.log('rrecived buttno')
+    sendbutton.addEventListener('click',function(){
+      console.log(query.value)
+      promptsent=query.value;
+      async function genresponse(){
+        const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash"});
+    
+      const prompt = promptsent;
+    
+      const result = await model.generateContent(prompt);
+      const response = await result.response;
+      const text = response.text();
+      console.log(text);
+      }
+      genresponse();
+      
+    })
+  }
+}
 var messageprev=document.querySelector('.messagepreview')
 var ismessageopened=false;
 setTimeout(function() {
@@ -80,17 +107,20 @@ setTimeout(function() {
       <div class="message">
           <p class="message-content">Hello how can I help you?</p>
       </div>`;
+      
 }, 3000);
 var messagebutton=document.querySelector('.helpsection')
 messagebutton.addEventListener('click', function(){
   if(ismessageopened==false){
-    messageprev.innerHTML = `<div class="messagebox">
+    messageprev.innerHTML = ` <div class="messagebox">
                 <div class="messages"></div>
                 <div class="typingsection">
                     <input type="text" class="query">
+                    <button class="sendmssg"></button>
                 </div>
             </div>`;
       ismessageopened=true;
+      readymessagebox();
   }
   else if(ismessageopened){
     messageprev.innerHTML = `
@@ -448,18 +478,5 @@ international.addEventListener('mouseout',function(){
   console.log('out')
   inthover.innerHTML=`<a href="#international" style="text-decoration: none;color: white;" id="international_hover">International TV Shows</a>`
 })
-var API_KEY="AIzaSyDoLEVxfNQ-_ZCfkHQLTfgRTA7v4a-jiDQ"
-const genAI = new GoogleGenerativeAI(API_KEY);
-async function run() {
-  // The Gemini 1.5 models are versatile and work with both text-only and multimodal prompts
-  const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash"});
-
-  const prompt = "Write a story about a magic backpack."
-
-  const result = await model.generateContent(prompt);
-  const response = await result.response;
-  const text = response.text();
-  console.log(text);
-}
 
 // run()
