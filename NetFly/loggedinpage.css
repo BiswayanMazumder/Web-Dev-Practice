@@ -846,12 +846,14 @@ a {
     padding-left: 20px;
 }
 .sendmssg{
-    background-color: red;
-    height: 20px;
+    /* background-color: red; */
+    height: 40px;
     position: relative;
+    border-color: white;
+    border-width: 0;
     top: 10px;
     left: 5px;
-    width: 50px;
+    width: 60px;
 }
 .message:after {
     content: '';
