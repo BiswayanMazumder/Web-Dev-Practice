@@ -73,6 +73,13 @@ try {
 } catch (error) {
   console.log(error);
 }
+var messageprev=document.querySelector('.messagepreview')
+setTimeout(function() {
+  messageprev.innerHTML = `
+      <div class="message">
+          <p class="message-content">Hello how can I help you?</p>
+      </div>`;
+}, 3000);
 let trending=document.querySelector('.trendingmovies')
 async function fetchtrending(){
   const auth = getAuth();

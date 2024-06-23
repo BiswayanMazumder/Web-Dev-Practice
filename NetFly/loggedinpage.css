@@ -711,16 +711,19 @@ body {
     text-decoration: none;
     list-style: none;
 }
-@media (min-width:1003px) and (max-width:1100px){
+
+@media (min-width:1003px) and (max-width:1100px) {
     .headeroptions {
         top: 25px;
     }
 }
+
 @media (min-width:2000px) {
     .headeroptions {
         top: 70px;
     }
 }
+
 /* Hide the .headeroptions if the screen width is 768px or less */
 @media (max-width: 999px) {
     .headeroptions {
@@ -732,16 +735,24 @@ a {
     text-decoration: none;
 }
 
-.tv ,.movies, .new, .language {
+.tv,
+.movies,
+.new,
+.language {
     font-size: 15px;
     font-weight: 500;
     color: white;
 }
-.tv:hover ,.movies:hover, .new:hover, .language:hover {
+
+.tv:hover,
+.movies:hover,
+.new:hover,
+.language:hover {
     color: grey;
     /* font-weight: 600; */
 }
-.categories{
+
+.categories {
     height: 40px;
     width: 200px;
     position: absolute;
@@ -754,8 +765,10 @@ a {
     background-color: transparent;
     top: 10px;
 }
+
 .categories::after {
-    content: '▼'; /* Unicode character for down arrow */
+    content: '▼';
+    /* Unicode character for down arrow */
     position: absolute;
     right: 10px;
     top: 50%;
@@ -763,25 +776,57 @@ a {
     pointer-events: none;
     color: black;
 }
+
 .categories option {
-    background-color: black; /* Change this to desired background color */
+    background-color: black;
+    /* Change this to desired background color */
     color: white;
     font-weight: 500;
 }
+
 @media (max-width: 1000px) {
     .categories {
         display: flex;
     }
+}
+
+.message {
+    position: fixed;
+    bottom: 80px;
+    /* Adjust this value to your desired distance from the bottom */
+    right: 20px;
+    /* Adjust this value to your desired distance from the right */
+    background-color: white;
+    background: #f1f1f1;
+    border-radius: 10px;
+    padding: 15px;
+    width: 200px;
+    margin: 20px;
+    font-family: Arial, sans-serif;
+    z-index: 3;
+}
+.message:after {
+    content: '';
+    position: absolute;
+    bottom: -10px; /* Adjusted to position the arrow at the bottom */
+    right: 20px; /* Adjusted to position the arrow on the right side */
+    border-width: 10px;
+    border-style: solid;
+    border-color: #f1f1f1 transparent transparent transparent; /* Adjusted for the right bottom arrow */
+}
+
+.message-content {
+    margin: 0;
 }
 .helpsection {
     height: 70px;
     width: 70px;
     border-radius: 50%;
     position: fixed;
-    bottom: 20px; /* Adjust this value to your desired distance from the bottom */
-    right: 20px;  /* Adjust this value to your desired distance from the right */
+    bottom: 20px;
+    /* Adjust this value to your desired distance from the bottom */
+    right: 20px;
+    /* Adjust this value to your desired distance from the right */
     background-color: white;
     z-index: 3;
 }
-
-
