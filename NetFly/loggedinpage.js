@@ -77,8 +77,8 @@ var promptsent = "";
 var API_KEY = "AIzaSyDoLEVxfNQ-_ZCfkHQLTfgRTA7v4a-jiDQ"
 const genAI = new GoogleGenerativeAI(API_KEY);
 async function readymessagebox() {
-  
-  if (ismessageopened) {    
+
+  if (ismessageopened) {
     var query = document.querySelector('.query')
     console.log('recieved query')
     var sendbutton = document.querySelector('.sendmssg');
@@ -113,14 +113,8 @@ setTimeout(function () {
 var messagebutton = document.querySelector('.helpsection')
 messagebutton.addEventListener('click', function () {
   if (ismessageopened == false) {
-    messageprev.innerHTML = `<div class="messagebox">
+    messageprev.innerHTML = ` <div class="messagebox">
                 <div class="messages">
-                    <div class="usermesssage">
-                        hii
-                    </div>
-                    <div class="usermesssage">
-                        hii
-                    </div>
                 </div>
                 <div class="typingsection">
                     <input type="text" class="query" placeholder="Enter a message....">
@@ -131,6 +125,16 @@ messagebutton.addEventListener('click', function () {
             </div>`;
     ismessageopened = true;
     // readymessagebox();
+    var query = document.querySelector('.query')
+    console.log('recieved query')
+    var sendbutton = document.querySelector('.sendmssg');
+    var usermessage = document.querySelector('.messages')
+    sendbutton.addEventListener('click', function () {
+      usermessage.innerHTML+=`<div class="usermessage">
+                ${query.value}
+                </div>`
+       query.value = ''
+    })
   }
   else if (ismessageopened) {
     messageprev.innerHTML = `
@@ -140,6 +144,7 @@ messagebutton.addEventListener('click', function () {
     ismessageopened = false;
   }
 })
+
 let trending = document.querySelector('.trendingmovies')
 async function fetchtrending() {
   const auth = getAuth();
