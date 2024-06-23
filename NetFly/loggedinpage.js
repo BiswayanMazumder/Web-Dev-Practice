@@ -113,10 +113,17 @@ setTimeout(function () {
 var messagebutton = document.querySelector('.helpsection')
 messagebutton.addEventListener('click', function () {
   if (ismessageopened == false) {
-    messageprev.innerHTML = ` <div class="messagebox">
-                <div class="messages"></div>
+    messageprev.innerHTML = `<div class="messagebox">
+                <div class="messages">
+                    <div class="usermesssage">
+                        hii
+                    </div>
+                    <div class="usermesssage">
+                        hii
+                    </div>
+                </div>
                 <div class="typingsection">
-                    <input type="text" class="query">
+                    <input type="text" class="query" placeholder="Enter a message....">
                     <button class="sendmssg">
                         <img src="send.png" alt="" height="40px" width="60px">
                     </button>
