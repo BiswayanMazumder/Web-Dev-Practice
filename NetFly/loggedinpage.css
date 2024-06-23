@@ -773,4 +773,15 @@ a {
         display: flex;
     }
 }
+.helpsection {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 20px; /* Adjust this value to your desired distance from the bottom */
+    right: 20px;  /* Adjust this value to your desired distance from the right */
+    background-color: white;
+    z-index: 3;
+}
+
 
