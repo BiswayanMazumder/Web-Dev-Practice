@@ -189,7 +189,19 @@ body {
     border-radius: 5px;
     font-weight: 600;
 }
-
+.mutebutton{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50px;
+    right: 200px;
+    color: black;
+    border-color: white;
+    border-width: 2px;
+    background-color: transparent;
+    font-weight: 600;
+}
 .watchvideo:hover {
     background-color: red;
     color: white;
