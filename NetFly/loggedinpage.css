@@ -734,11 +734,12 @@ a {
 
 .tv ,.movies, .new, .language {
     font-size: 15px;
-    font-weight: 600;
+    font-weight: 500;
     color: white;
 }
 .tv:hover ,.movies:hover, .new:hover, .language:hover {
     color: grey;
+    /* font-weight: 600; */
 }
 .categories{
     height: 40px;
