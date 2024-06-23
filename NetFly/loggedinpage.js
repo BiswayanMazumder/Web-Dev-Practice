@@ -120,7 +120,7 @@ messagebutton.addEventListener('click', function(){
                 </div>
             </div>`;
       ismessageopened=true;
-      readymessagebox();
+      // readymessagebox();
   }
   else if(ismessageopened){
     messageprev.innerHTML = `
