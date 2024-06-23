@@ -713,7 +713,7 @@ body {
 }
 
 /* Hide the .headeroptions if the screen width is 768px or less */
-@media (max-width: 769px) {
+@media (max-width: 999px) {
     .headeroptions {
         display: none;
     }
@@ -758,7 +758,7 @@ a {
     color: white;
     font-weight: 500;
 }
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
     .categories {
         display: flex;
     }
