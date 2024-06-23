@@ -713,7 +713,7 @@ body {
 }
 
 /* Hide the .headeroptions if the screen width is 768px or less */
-@media (max-width: 768px) {
+@media (max-width: 769px) {
     .headeroptions {
         display: none;
     }
@@ -730,5 +730,37 @@ a {
 }
 .tv:hover ,.movies:hover, .new:hover, .language:hover {
     color: grey;
+}
+.categories{
+    height: 40px;
+    width: 200px;
+    position: absolute;
+    left: 150px;
+    border-width: 2px;
+    font-weight: bolder;
+    border-radius: 10px;
+    color: black;
+    display: none;
+    background-color: transparent;
+    top: 10px;
+}
+.categories::after {
+    content: '▼'; /* Unicode character for down arrow */
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: black;
+}
+.categories option {
+    background-color: black; /* Change this to desired background color */
+    color: white;
+    font-weight: 500;
+}
+@media (max-width: 768px) {
+    .categories {
+        display: flex;
+    }
 }
 
