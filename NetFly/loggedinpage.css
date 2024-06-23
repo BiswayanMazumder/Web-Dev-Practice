@@ -700,8 +700,8 @@ body {
 
 .headeroptions {
     color: white;
-    position: absolute;
-    left: 200px;
+    position: relative;
+    left: 30px;
     top: 30px;
     display: flex;
     flex-direction: row;
@@ -711,7 +711,16 @@ body {
     text-decoration: none;
     list-style: none;
 }
-
+@media (min-width:1003px) and (max-width:1100px){
+    .headeroptions {
+        top: 25px;
+    }
+}
+@media (min-width:2000px) {
+    .headeroptions {
+        top: 70px;
+    }
+}
 /* Hide the .headeroptions if the screen width is 768px or less */
 @media (max-width: 999px) {
     .headeroptions {
