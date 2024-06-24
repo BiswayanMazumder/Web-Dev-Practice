@@ -7,7 +7,7 @@ body {
     background-color: #141414;
     font-family: sans-serif;
     overflow-y: auto;
-
+    overflow-x: hidden;
     ::-webkit-scrollbar {
         display: none;
     }
@@ -123,4 +123,21 @@ a {
     border: 2px solid white; /* Correctly sets the border width, style, and color */
     border-radius: 5px;
     font-weight: 600;
+}
+.searchbody{
+    position: relative;
+    top: 150px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    left: 50px;
+}
+.searchbody img {
+    display: inline-block;
+    height: 200px;
+    /* Adjust as needed */
+    width: auto;
+    /* Maintain aspect ratio */
+    margin-right: 15px;
+    /* Add some spacing between images */
 }
