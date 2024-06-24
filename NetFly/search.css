@@ -8,6 +8,7 @@ body {
     font-family: sans-serif;
     overflow-y: auto;
     overflow-x: hidden;
+    height: 105vh;
     ::-webkit-scrollbar {
         display: none;
     }
