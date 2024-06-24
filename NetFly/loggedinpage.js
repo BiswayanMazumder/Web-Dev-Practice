@@ -515,3 +515,7 @@ international.addEventListener('mouseout', function () {
 })
 
 // run()
+var searchicon=document.querySelector('.searchicon')
+searchicon.addEventListener('click',function(){
+  window.location.href="search.html"
+})
