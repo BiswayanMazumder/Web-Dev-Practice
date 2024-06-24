@@ -32,7 +32,7 @@ fetch('https://api.themoviedb.org/3/genre/tv/list?language=en', options)
     // Log the genrename array after all names have been collected
     // console.log('Genre names'+genrename);
     for(var i=0;i<genrename.length;i++){
-        genrelist.innerHTML+=`<option value="TV">${genrename[i]}</option>`
+        genrelist.innerHTML+=`<option value=${genrename[i]}>${genrename[i]}</option>`
     }
   })
   .catch(err => console.error('Fetch error:', err));
