@@ -58,19 +58,50 @@ async function getupcoming() {
   };
 
   try {
-    const response = await fetch('https://api.themoviedb.org/3/discover/tv?include_adult=false&include_null_first_air_dates=false&language=en-US&page=1&sort_by=popularity.desc', options);
+    const response = await fetch('https://api.themoviedb.org/3/discover/tv?include_adult=true&include_null_first_air_dates=false&language=en-US&page=1&sort_by=popularity.desc', options);
     const data = await response.json();
     const posterPaths = data.results.slice(0, 20).map(movie => movie.poster_path);
-    // console.log(posterPaths);
+    const namePaths = data.results.slice(0, 20).map(movie => movie.original_name);
+    console.log(namePaths);
+
     for (let i = 0; i < posterPaths.length; i++) {
-      upcoming.innerHTML += `<img src=${'https://image.tmdb.org/t/p/w500' + posterPaths[i]} alt="Upcoming">`
+      upcoming.innerHTML += `<div class="image${i}">
+      <img src=${'https://image.tmdb.org/t/p/w500' + posterPaths[i]} alt="Upcoming">
+      </div>`;
+    }
+
+    for (let i = 0; i < posterPaths.length; i++) {
+      let imageElement = document.querySelector(`.image${i}`);
+      if (imageElement) {
+        imageElement.addEventListener('mouseover', function() {
+          const infoDiv = document.createElement('div');
+          infoDiv.classList.add('image1');
+          infoDiv.style = 'position: relative; display: flex; flex-direction: column; color: white; text-align: center; font-size: 14px; font-weight: 600';
+          infoDiv.innerHTML = `
+                ${namePaths[i]}`;
+          imageElement.appendChild(infoDiv);
+        });
+
+        imageElement.addEventListener('mouseout', function() {
+          const infoDiv = imageElement.querySelector('.image1');
+          if (infoDiv) {
+            imageElement.removeChild(infoDiv);
+          }
+        });
+      } else {
+        console.error(`Element with class .image${i} not found.`);
+      }
     }
   } catch (err) {
     console.log(err);
   }
 }
 
-await getupcoming();
+document.addEventListener('DOMContentLoaded', function() {
+  getupcoming();
+});
+
+
 let trending = document.querySelector('.trendingmovies')
 async function gettrending() {
   const options = {
