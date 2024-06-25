@@ -62,7 +62,7 @@ async function getupcoming() {
     const data = await response.json();
     const posterPaths = data.results.slice(0, 20).map(movie => movie.poster_path);
     const namePaths = data.results.slice(0, 20).map(movie => movie.original_name);
-    console.log(namePaths);
+    // console.log(namePaths);
 
     for (let i = 0; i < posterPaths.length; i++) {
       upcoming.innerHTML += `<div class="image${i}">
