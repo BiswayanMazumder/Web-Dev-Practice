@@ -524,7 +524,7 @@ function navigateToPage() {
   var selectedValue = select.value;
 
   // Debugging: log the selected value to the console
-  console.log('Selected value:', selectedValue);
+  // console.log('Selected value:', selectedValue);
 
   var url;
   switch (selectedValue) {
@@ -546,7 +546,7 @@ function navigateToPage() {
   }
 
   // Debugging: log the URL to the console
-  console.log('Navigating to:', url);
+  // console.log('Navigating to:', url);
 
   // Perform the navigation
   window.location.href = url;
