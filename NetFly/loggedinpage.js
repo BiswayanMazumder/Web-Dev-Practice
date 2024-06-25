@@ -94,7 +94,7 @@ async function fetchapikeys(){
     const userDoc = await getDoc(doc(db, "Gemini", "API_KEYS"));
     if (userDoc.exists()) {
      apikeys=userDoc.data().api 
-    console.log('api'+apikeys)    
+    // console.log('api'+apikeys)    
     } else {
         console.log("No such document!");
     }
