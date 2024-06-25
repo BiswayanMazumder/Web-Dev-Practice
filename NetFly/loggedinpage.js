@@ -519,3 +519,38 @@ var searchicon=document.querySelector('.searchicon')
 searchicon.addEventListener('click',function(){
   window.location.href="search.html"
 })
+function navigateToPage() {
+  var select = document.getElementById('cat');
+  var selectedValue = select.value;
+
+  // Debugging: log the selected value to the console
+  console.log('Selected value:', selectedValue);
+
+  var url;
+  switch (selectedValue) {
+      case 'TV':
+          url = 'tvshows.html'; // URL for TV Shows
+          break;
+      case 'Movies':
+        url = 'tvshows.html'; // URL for Movies
+          break;
+      case 'New':
+        url = 'tvshows.html'; // URL for New & Popular
+          break;
+      case 'Language':
+        url = 'tvshows.html'; // URL for Browse By languages
+          break;
+      default:
+          url = '#'; // Default URL (optional)
+          break;
+  }
+
+  // Debugging: log the URL to the console
+  console.log('Navigating to:', url);
+
+  // Perform the navigation
+  window.location.href = url;
+}
+
+// Attach the event listener to the select element
+document.getElementById('cat').addEventListener('change', navigateToPage);
