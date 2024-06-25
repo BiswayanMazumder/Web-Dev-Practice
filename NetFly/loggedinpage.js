@@ -88,10 +88,24 @@ try {
   console.log(error);
 }
 var promptsent = "";
-var API_KEY = "AIzaSyD9FFZGxR5hFuO2mV7LulBHsRIGmLNl6lc"
-const genAI = new GoogleGenerativeAI(API_KEY);
+var apikeys='';
+async function fetchapikeys(){
+  try {
+    const userDoc = await getDoc(doc(db, "Gemini", "API_KEYS"));
+    if (userDoc.exists()) {
+     apikeys=userDoc.data().api 
+    console.log('api'+apikeys)    
+    } else {
+        console.log("No such document!");
+    }
+} catch (e) {
+    console.error("Error fetching document: ", e);
+}
+}
 async function readymessagebox() {
-
+  await fetchapikeys();
+  var API_KEY = apikeys;
+const genAI = new GoogleGenerativeAI(API_KEY);
   if (ismessageopened) {
     var query = document.querySelector('.query')
     console.log('recieved query')
