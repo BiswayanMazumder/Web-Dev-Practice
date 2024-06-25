@@ -39,7 +39,7 @@ fetch('https://api.themoviedb.org/3/genre/tv/list?language=en', options)
   var is_muted = true;
 let homepagevideo = document.querySelector('.headingimg');
 try {
-  homepagevideo.innerHTML = `<video src="https://s3-iad-2.cf.trailer.row.aiv-cdn.net/39bb/339f/ccf6/4feb-92a5-82a55bb3fd40/b3b18c5e-d796-4c95-aa6f-e739331b622f_video_900_audio_aaclc_128.mp4?Expires=1719286944&Signature=kr0npVhuQM~UnXAEptixMzsxfLnYP9lkkpkYTV3NGMpREyjB8BxfOuDd86GTVLzxx5a0~QpmTg10gFKXg0J2~ZO2Zk6TLg4Yw9ktcmiTlNKuUwYGXVWc4ZuXPJ75goQIbZSC~x~svNUuGKG5KkJwgC3YLT6IcrW6OCpLFNQR5Fl1rDMAOWRAJiRPMm9gn7gvolvC7~rpq177XdWqamfc5fulwEr8HR7U8LAiNfQLXzGbZ39UIL~sgLFAY4qHGDPe0cJ8MZPGjFZY~PZe-b-hteAmGeoRWhe3gig10qkgz-5uMIA7uKjPpdSwvZMl0b8dhATIWTLMZqgdeQgOY1Rn9g__&Key-Pair-Id=APKAJIYEUF5P2E3CCYTA" width="100%" id="myVideo" autoplay muted loop></video>`
+  homepagevideo.innerHTML = `<video src="https://s3-iad-2.cf.trailer.row.aiv-cdn.net/2661/c1a9/77c6/48f2-b632-a681ff99e50f/236776a5-8e98-482c-b60b-c1f47a0b4b9f_video_900_audio_aaclc_128.mp4?Expires=1719340322&Signature=TpDkm65YTOz1uTHi~1f7WLOXc9Q53I~XiLN85Wbfxwvix9P3PvOAeFIKdLIGJOjmb9nFN0rxzCgJiEyri2k7CCE8iOurT5JOfu1pPTm13bdN8Aw1SQcuzBAztYZKFBzW8O4v9aJIb0YdDR~m50FvzFmVp0NFANSDerc5ipHCQCoFRILBLlmH8O2SQhb6sV9806oceJ89HkvxxkCR7fil2bRsAprscmWTGZMUKlXHKW1IcuHAAz5-pl~8yI1kudk7uQ7lDK-hLggOeO6qx00pMG9A-37fghTKJ~tXE70yc51eq6lj8924X5lbD4t8GrkEIyTwld9NUmMTw09axw7jBA__&Key-Pair-Id=APKAJIYEUF5P2E3CCYTA" width="100%" id="myVideo" autoplay muted loop></video>`
   let video = document.querySelector('#myVideo');
   // video.addEventListener('ended', function () {
   //   homepagevideo.innerHTML = `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRihROyGk5x7V5K1Hq-D2SlRMfRtH_kJ-TlrQ&s" alt="" width="100%">`
