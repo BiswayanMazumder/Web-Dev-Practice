@@ -70,28 +70,28 @@ async function getupcoming() {
       </div>`;
     }
 
-    for (let i = 0; i < posterPaths.length; i++) {
-      let imageElement = document.querySelector(`.image${i}`);
-      if (imageElement) {
-        imageElement.addEventListener('mouseover', function() {
-          const infoDiv = document.createElement('div');
-          infoDiv.classList.add('image1');
-          infoDiv.style = 'position: relative; display: flex; flex-direction: column; color: white; text-align: center; font-size: 14px; font-weight: 600';
-          infoDiv.innerHTML = `
-                ${namePaths[i]}`;
-          imageElement.appendChild(infoDiv);
-        });
+    // for (let i = 0; i < posterPaths.length; i++) {
+    //   let imageElement = document.querySelector(`.image${i}`);
+    //   if (imageElement) {
+    //     imageElement.addEventListener('mouseover', function() {
+    //       const infoDiv = document.createElement('div');
+    //       infoDiv.classList.add('image1');
+    //       infoDiv.style = 'position: relative; display: flex; flex-direction: column; color: white; text-align: center; font-size: 14px; font-weight: 600';
+    //       infoDiv.innerHTML = `
+    //             ${namePaths[i]}`;
+    //       imageElement.appendChild(infoDiv);
+    //     });
 
-        imageElement.addEventListener('mouseout', function() {
-          const infoDiv = imageElement.querySelector('.image1');
-          if (infoDiv) {
-            imageElement.removeChild(infoDiv);
-          }
-        });
-      } else {
-        console.error(`Element with class .image${i} not found.`);
-      }
-    }
+    //     imageElement.addEventListener('mouseout', function() {
+    //       const infoDiv = imageElement.querySelector('.image1');
+    //       if (infoDiv) {
+    //         imageElement.removeChild(infoDiv);
+    //       }
+    //     });
+    //   } else {
+    //     console.error(`Element with class .image${i} not found.`);
+    //   }
+    // }
   } catch (err) {
     console.log(err);
   }
