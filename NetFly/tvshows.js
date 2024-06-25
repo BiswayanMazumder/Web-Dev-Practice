@@ -58,11 +58,11 @@ async function getupcoming() {
   };
 
   try {
-    const response = await fetch('https://api.themoviedb.org/3/discover/tv?include_adult=true&include_null_first_air_dates=false&language=en-US&page=1&sort_by=popularity.desc', options);
+    const response = await fetch('https://api.themoviedb.org/3/trending/movie/day?language=en-US', options);
     const data = await response.json();
     const posterPaths = data.results.slice(0, 20).map(movie => movie.poster_path);
-    const namePaths = data.results.slice(0, 20).map(movie => movie.original_name);
-    // console.log(namePaths);
+    const idPaths = data.results.slice(0, 20).map(movie => movie.id);
+    // console.log(idPaths);
 
     for (let i = 0; i < posterPaths.length; i++) {
       upcoming.innerHTML += `<div class="image${i}">
@@ -70,28 +70,18 @@ async function getupcoming() {
       </div>`;
     }
 
-    // for (let i = 0; i < posterPaths.length; i++) {
-    //   let imageElement = document.querySelector(`.image${i}`);
-    //   if (imageElement) {
-    //     imageElement.addEventListener('mouseover', function() {
-    //       const infoDiv = document.createElement('div');
-    //       infoDiv.classList.add('image1');
-    //       infoDiv.style = 'position: relative; display: flex; flex-direction: column; color: white; text-align: center; font-size: 14px; font-weight: 600';
-    //       infoDiv.innerHTML = `
-    //             ${namePaths[i]}`;
-    //       imageElement.appendChild(infoDiv);
-    //     });
-
-    //     imageElement.addEventListener('mouseout', function() {
-    //       const infoDiv = imageElement.querySelector('.image1');
-    //       if (infoDiv) {
-    //         imageElement.removeChild(infoDiv);
-    //       }
-    //     });
-    //   } else {
-    //     console.error(`Element with class .image${i} not found.`);
-    //   }
-    // }
+    for (let i = 0; i < posterPaths.length; i++) {
+      let imageElement = document.querySelector(`.image${i}`);
+      if (imageElement) {
+        imageElement.addEventListener('click', function() {
+          localStorage.setItem('id', idPaths[i]);
+          localStorage.setItem('poster', posterPaths[i]);
+          window.location.href="tvshow.html"
+        });
+      } else {
+        console.error(`Element with class .image${i} not found.`);
+      }
+    }
   } catch (err) {
     console.log(err);
   }
