@@ -193,7 +193,7 @@ body {
     color: white;
     font-size: 20px;
     font-weight: 600;
-    top: 950px;
+    top: 1020px;
     width: 100%;
     overflow: hidden;
     padding-bottom: 20px;
@@ -225,7 +225,7 @@ body {
     .trending {
         position: relative;
         z-index: 3;
-        top: 20px;
+        top: 70px;
     }
 }
 
