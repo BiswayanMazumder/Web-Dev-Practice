@@ -69,7 +69,7 @@ function getuser() {
     // Log the genrename array after all names have been collected
     // console.log('Genre names'+genreid);
     for(var i=0;i<genrename.length;i++){
-        categoriesbody.innerHTML+=`<div class="image${i}">
+        categoriesbody.innerHTML+=`<div class="image${i}" style="">
         <h4> ${genrename[i]}</h4>
         <img src=${catimg[i]} style="display: flex;flex-direction: column;text-align: center;justify-content: center;" >
                

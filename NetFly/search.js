@@ -111,6 +111,7 @@ style.textContent = `
   }
 `;
 document.head.appendChild(style);
+var searchtext=document.querySelector('.searchtext')
 async function checkmoviename(){
   var placeholdername=document.querySelector('.search')
   console.log(placeholdername.value)
@@ -129,8 +130,14 @@ async function checkmoviename(){
     const namePaths= data.results.slice(0, 20).map(movie => movie.original_title);
     console.log(namePaths)
     searchbody.innerHTML = '';
+    searchtext.innerHTML = '';
+    searchtext.innerHTML +=`<h2 style="color: white;">
+                Searched: ${placeholdername.value}
+
+            </h2>
+            <br><br>`
     for (var i = 0; i < posterPaths.length; i++) {
-      searchbody.innerHTML+=`<div class="image${i}" style="color: white; font-weight: 500; font-size: 15px;justify-content: center;text-align: center">
+      searchbody.innerHTML+=`<div class="image${i}" style="color: white; font-weight: 300; font-size: 12px;justify-content: center;text-align: center display: flex; flex-direction: column; text-align: center; justify-content: center">
     <img src="https://image.tmdb.org/t/p/w500${posterPaths[i]}" style="display: flex; flex-direction: column; text-align: center; justify-content: center;">
     <br>
     <h4 style="color: white;">${namePaths[i]}</h4>
