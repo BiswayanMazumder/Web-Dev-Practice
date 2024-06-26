@@ -38,6 +38,7 @@ function getuser() {
   getuser()
   var catimg=['https://image.tmdb.org/t/p/w400/ii8QGacT3MXESqBckQlyrATY0lT.jpg','https://image.tmdb.org/t/p/w400/rAiYTfKGqDCRIIqo664sY9XZIvQ.jpg','https://image.tmdb.org/t/p/w400/9cGSFGZVVLsrnbs0AFPDh6X2ynl.jpg','https://image.tmdb.org/t/p/w400/tlEFuIlaxRPXIYVHXbOSAMCfWqk.jpg','https://image.tmdb.org/t/p/w400/nMKdUUepR0i5zn0y1T4CsSB5chy.jpg','https://image.tmdb.org/t/p/w400/rr7E0NoGKxvbkb89eR1GwfoYjpA.jpg','https://image.tmdb.org/t/p/w400/h8C7KZwCJO5DN7jPifc7AoIjx7k.jpg','https://image.tmdb.org/t/p/w400/nNmJRkg8wWnRmzQDe2FwKbPIsJV.jpg','https://image.tmdb.org/t/p/w400/sixfWYfNegaGGHKdXrNNUHaMiAC.jpg','https://image.tmdb.org/t/p/w400/tcheoA2nPATCm2vvXw2hVQoaEFD.jpg','https://image.tmdb.org/t/p/w400/U8QRD7jvTXEYsUXq74IFKaSiL5.jpg','https://image.tmdb.org/t/p/w400/6VmFqApQRyZZzmiGOQq2C92jyvH.jpg','https://image.tmdb.org/t/p/w400/AmHOQ7rpHwiaUMRjKXztnauSJb7.jpg','https://image.tmdb.org/t/p/w400//jiQRyCFXAgLBjnbYQxz04dxGWvR.jpg','https://image.tmdb.org/t/p/w400//n6bUvigpRFqSwmPp1m2YADdbRBc.jpg','https://image.tmdb.org/t/p/w400//bPnPsyo09tLRnTOb7AlsBsgnbhP.jpg','https://image.tmdb.org/t/p/w400//2oZklIzUbvZXXzIFzv7Hi68d6xf.jpg']
   const genrename = [];
+  const genreid=[];
   var categoriesbody=document.querySelector('.categoriesbody')
   async function getgenrenames(){
     const options = {
@@ -62,10 +63,11 @@ function getuser() {
     genres.forEach(genre => {
     //   console.log(genre.name);
       genrename.push(genre.name);
+      genreid.push(genre.id);
     });
 
     // Log the genrename array after all names have been collected
-    // console.log('Genre names'+genrename);
+    // console.log('Genre names'+genreid);
     for(var i=0;i<genrename.length;i++){
         categoriesbody.innerHTML+=`<div class="cat">
         <h4> ${genrename[i]}</h4>
