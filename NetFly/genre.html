@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="genre.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="navigationbar"
+            style="position: absolute; top: 10px; width: 100%; display: flex; flex-direction: row; z-index: 999;">
+            <img src="Netflix logo.png" alt="Logo" height="10%" width="10%" class="logo">
+            <ul class="headeroptions">
+                <li><a href="home.html" class="movies">Home</a></li>
+                <li><a href="tvshows.html" class="tv">TV Shows</a></li>
+                <li><a href="categories.html" class="movies">Categories</a></li>
+
+            </ul>
+            <select name="Browse" id="cat" class="categories">
+                <option value="home">Home Page</option>
+                <option value="TV">TV Shows</option>
+                <option value="Movies">Categories</option>
+            </select>
+        </div>
+        <div class="categoriesbody">
+        </div>
+        <br>
+    </div>
+</body>
+<script src="genre.js" type="module" defer></script>
+
+</html>

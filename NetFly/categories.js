@@ -69,13 +69,30 @@ function getuser() {
     // Log the genrename array after all names have been collected
     // console.log('Genre names'+genreid);
     for(var i=0;i<genrename.length;i++){
-        categoriesbody.innerHTML+=`<div class="cat">
+        categoriesbody.innerHTML+=`<div class="image${i}">
         <h4> ${genrename[i]}</h4>
-        <img src=${catimg[i]} style="display: flex;flex-direction: column;text-align: center;justify-content: center;">
+        <img src=${catimg[i]} style="display: flex;flex-direction: column;text-align: center;justify-content: center;" >
                
-            </div>`
+        </div>`
     }
+    for (let i = 0; i < genrename.length; i++) {
+      let imageElement = document.querySelector(`.image${i}`);
+      if (imageElement) {
+        imageElement.addEventListener('click', function() {
+          localStorage.setItem('genreid',genreid[i]);
+          window.location.href=("genre.html");
+          // console.log(`Element with class ${genrename[i]} clicked.`);
+        });
+      } else {
+        // console.error(`Element with class .image${i} not found.`);
+      }
+    }
+    
+    
   })
   .catch(err => console.error('Fetch error:', err));
   }
-  await getgenrenames()
+  // await getgenrenames()
+  document.addEventListener('DOMContentLoaded', function() {
+    getgenrenames()
+  });
