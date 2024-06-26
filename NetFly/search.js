@@ -1,4 +1,42 @@
 console.log('Welcome to search');
+console.log('Welcome to netfly');
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
+import { getAuth, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, sendPasswordResetEmail, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import { getFirestore, collection, addDoc, setDoc, doc, getDoc, deleteDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+import { GoogleGenerativeAI } from "https://cdn.skypack.dev/@google/generative-ai";
+const firebaseConfig = {
+  apiKey: "AIzaSyBEzWmfzRUoRFRHlXNEssfR-3EtoElwjJc",
+  authDomain: "netflix-5002f.firebaseapp.com",
+  databaseURL: "https://netflix-5002f-default-rtdb.firebaseio.com",
+  projectId: "netflix-5002f",
+  storageBucket: "netflix-5002f.appspot.com",
+  messagingSenderId: "977326144598",
+  appId: "1:977326144598:web:52026ea69e60f526738ff7",
+  measurementId: "G-416W2YJ6K8"
+};
+var isloggedin=true;
+function getuser() {
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const provider = new GoogleAuthProvider();
+    const auth = getAuth();
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        const uid = user.uid;
+        isloggedin = true;
+        console.log('signed in')
+        //   window.location.replace("loggedinpage.html")
+        // ...
+      } else {
+        // User is signed out
+        // ...
+        console.log('signed out')
+        window.location.replace("loginhomepage.html")
+      }
+    });
+  }
+  getuser()
 var logo = document.querySelector('.logo');
 var searchbody = document.querySelector('.searchbody');
 
@@ -47,7 +85,7 @@ async function fetchMovies() {
   }
 }
 
-fetchMovies();
+// fetchMovies();
 
 // CSS for shimmer effect
 var style = document.createElement('style');
@@ -73,3 +111,36 @@ style.textContent = `
   }
 `;
 document.head.appendChild(style);
+async function checkmoviename(){
+  var placeholdername=document.querySelector('.search')
+  console.log(placeholdername.value)
+  const options = {
+    method: 'GET',
+    headers: {
+      accept: 'application/json',
+      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0OWU3NjJhNjczNmYwY2Q0MmRlMzliZGI2YmZmMWJmNSIsInN1YiI6IjY1MDg1OGJiM2NkMTJjMDBlYjQ1ODk4OCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.9tPbUSb-HNcaxpQNV7fFApLUMVa0mI49PMqZC-DmhrU'
+    }
+  };
+
+  try {
+    const response = await fetch(`https://api.themoviedb.org/3/search/movie?query=${placeholdername.value}&include_adult=true&language=en-US&page=1`, options);
+    const data = await response.json();
+    const posterPaths = data.results.slice(0, 20).map(movie => movie.poster_path);
+    const namePaths= data.results.slice(0, 20).map(movie => movie.original_title);
+    console.log(namePaths)
+    searchbody.innerHTML = '';
+    for (var i = 0; i < posterPaths.length; i++) {
+      searchbody.innerHTML+=`<div class="image${i}" style="color: white; font-weight: 500; font-size: 15px;justify-content: center;text-align: center">
+    <img src="https://image.tmdb.org/t/p/w500${posterPaths[i]}" style="display: flex; flex-direction: column; text-align: center; justify-content: center;">
+    <br>
+    <h4 style="color: white;">${namePaths[i]}</h4>
+</div>
+`
+    }
+  } catch (error) {
+    console.error('Error fetching data:', error);
+  }
+}
+setInterval(() => {
+  checkmoviename();
+}, 1000);
