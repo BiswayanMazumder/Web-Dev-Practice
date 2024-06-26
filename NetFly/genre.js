@@ -52,10 +52,10 @@ function getuser() {
       try {
         const response = await fetch(`https://api.themoviedb.org/3/discover/tv?include_adult=true&include_null_first_air_dates=true&language=en-US&sort_by=popularity.desc&with_genres=${genreid}`, options);
     const data = await response.json();
-    // const posterPaths = data.results.slice(0, 100).map(movie => movie.poster_path);
-    // const namePaths = data.results.slice(0, 100).map(movie => movie.original_name);
-    console.log(posterPaths);
-    console.log(namePaths);
+    const posterPaths = data.results.slice(0, 100).map(movie => movie.poster_path);
+    const namePaths = data.results.slice(0, 100).map(movie => movie.original_name);
+    // console.log(posterPaths);
+    // console.log(namePaths);
     for(var i=0;i<posterPaths.length;i++){
         categoriesbody.innerHTML+=`<div class="image${i}" style="font-weight: 500; font-size: 15px;">
         <img src=${'https://image.tmdb.org/t/p/w500' + posterPaths[i]}  style="display: flex;flex-direction: column;text-align: center;justify-content: center;">
@@ -64,7 +64,7 @@ function getuser() {
         </div>`
     }
       } catch (error) {
-        
+        console.log(error)
       }
   }
   // await getgenrenames()
