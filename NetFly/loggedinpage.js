@@ -546,7 +546,7 @@ function navigateToPage() {
           url = 'tvshows.html'; // URL for TV Shows
           break;
       case 'Movies':
-        url = 'tvshows.html'; // URL for Movies
+        url = 'categories.html'; // URL for Movies
           break;
       case 'New':
         url = 'tvshows.html'; // URL for New & Popular
