@@ -151,3 +151,47 @@ a {
     margin-right: 15px;
     /* Add some spacing between images */
 }
+.image-container {
+    position: relative;
+    color: white;
+    font-weight: 300;
+    font-size: 12px;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .movie-image {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px; /* Rounded corners */
+  }
+  
+  .image-container:hover {
+    transform: scale(1.3); /* Increase the scale for a more prominent pull-out effect */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3); /* Increase shadow for a deeper effect */
+    z-index: 10; /* Ensure the hovered element is on top */
+  }
+  
+  .description {
+    display: none;
+    position: absolute;
+    top: 100%; /* Position below the image */
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px; /* Increase padding for more content */
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    box-sizing: border-box; /* Ensure padding is included in the element's total width and height */
+  }
+  
+  .image-container:hover .description {
+    display: block;
+    opacity: 1;
+    transform: translateY(10px); /* Slightly pull down the description for better visibility */
+  }
+  
