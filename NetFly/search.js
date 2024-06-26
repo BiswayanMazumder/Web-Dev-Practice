@@ -109,9 +109,10 @@ style.textContent = `
   }
 `;
 document.head.appendChild(style);
-var searchtext = document.querySelector('.searchtext');
+var searchtext=document.querySelector('.searchtext')
 async function checkmoviename() {
   var placeholdername = document.querySelector('.search');
+  // console.log(placeholdername.value);
 
   const options = {
     method: 'GET',
@@ -127,6 +128,8 @@ async function checkmoviename() {
     const posterPaths = data.results.slice(0, 20).map(movie => movie.poster_path);
     const namePaths = data.results.slice(0, 20).map(movie => movie.original_title);
     const idPaths = data.results.slice(0, 20).map(movie => movie.id);
+    
+    // console.log(namePaths);
 
     searchbody.innerHTML = '';
     searchtext.innerHTML = '';
@@ -134,22 +137,20 @@ async function checkmoviename() {
 
     for (let i = 0; i < posterPaths.length; i++) {
       searchbody.innerHTML += `
-        <div class="image-container" style="position: relative; color: white; font-weight: 300; font-size: 12px; justify-content: center; text-align: center; display: flex; flex-direction: column; gap: 20px">
-          <img class="movie-image" src="https://image.tmdb.org/t/p/w500${posterPaths[i]}" style="display: flex; flex-direction: column; text-align: center; justify-content: center; padding-top: 30px">
+        <div class="image${i}" style="color: white; font-weight: 300; font-size: 12px; justify-content: center; text-align: center; display: flex; flex-direction: column;gap: 20px">
+          <img src="https://image.tmdb.org/t/p/w500${posterPaths[i]}" style="display: flex; flex-direction: column; text-align: center; justify-content: center;padding-top: 30px">
           <h4 style="color: white;">${namePaths[i]}</h4>
-          <div class="description" style="display: none; position: absolute; bottom: 0; left: 0; right: 0; background-color: rgba(0, 0, 0, 0.8); color: white; padding: 10px;">Description here...</div>
         </div>`;
     }
 
     for (let i = 0; i < posterPaths.length; i++) {
-      let imageElement = document.querySelector(`.image-container:nth-of-type(${i + 1})`);
+      let imageElement = document.querySelector(`.image${i}`);
       if (imageElement) {
         imageElement.addEventListener('click', function() {
           localStorage.setItem('id', idPaths[i]);
           localStorage.setItem('poster', posterPaths[i]);
           console.log(posterPaths[i]);
-          let description = imageElement.querySelector('.description');
-          description.style.display = 'block';
+          window.location.href = "tvshow.html";
         });
       } else {
         console.error(`Element with class .image${i} not found.`);
@@ -165,4 +166,3 @@ document.addEventListener('DOMContentLoaded', function() {
     checkmoviename();
   });
 });
-
