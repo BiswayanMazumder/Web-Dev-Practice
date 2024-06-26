@@ -1,0 +1,236 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    overflow-x: hidden;
+    overflow-y: auto;
+    color: white;
+    font-family: Arial, sans-serif;
+    ::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.container {
+    position: relative;
+    min-height: 200vh;
+    /* overflow-x: scroll; */
+}
+
+.navigationbar {
+    position: absolute;
+    top: 10px;
+    width: 100%;
+    z-index: 999;
+}
+
+.bannername {
+    position: relative;
+    z-index: 3;
+    top: 200px;
+    padding: 20px;
+}
+
+@media screen and (max-width: 800px) {
+    .bannername {
+        top: 80px;
+    }
+
+    .bannername img {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 1200px) and (min-width: 800px) {
+    .bannername {
+        top: 80px;
+    }
+}
+
+@media screen and (min-width: 2000px) {
+    .bannername {
+        top: 500px;
+    }
+}
+
+.watchvideos {
+    position: relative;
+    width: 100px;
+    height: 40px;
+    font-weight: 700;
+    border-color: transparent;
+    font-size: 15px;
+    left: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.watchvideos:hover {
+    background-color: red;
+    color: white;
+}
+
+.mutebutton:hover,
+.likebutton:hover,
+.sharebutton:hover {
+    background-color: white;
+    cursor: pointer;
+}
+
+.details {
+    position: relative;
+    width: 90vw;
+    font-size: 20px;
+    font-weight: 700;
+    height: 80px;
+    border-radius: 15px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    background-color: red;
+    z-index: 3;
+    align-items: center;
+    gap: 50px;
+    top: 630px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width: 800px) {
+    .details {
+        position: relative;
+        z-index: 3;
+        top: 630px;
+    }
+}
+
+@media screen and (max-width: 1200px) and (min-width: 800px) {
+    .details {
+        position: relative;
+        z-index: 3;
+        top:630px;
+    }
+}
+
+@media screen and (min-width: 2000px) {
+    .details {
+        position: relative;
+        z-index: 3;
+        top: 630px;
+    }
+}
+
+.related:hover {
+    color: white;
+}
+
+.details-text:hover {
+    color: rgb(72, 10, 10);
+}
+
+/* Updated relatedsection CSS for horizontal scrolling */
+.relatedsection {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    /* padding: 10px; */
+    position: relative;
+    top: 590px;
+    left: 50px;
+}
+
+.relatedsection > div {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+}
+
+.relatedsection img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* @media screen and (max-width: 800px) {
+    .relatedsection {
+        position: relative;
+        z-index: 3;
+        top: 100px;
+        left: 0;
+    }
+}
+
+@media screen and (max-width: 1200px) and (min-width: 800px) {
+    .relatedsection {
+        position: relative;
+        z-index: 3;
+        top: 120px;
+        left: 0;
+    }
+}
+
+@media screen and (min-width: 2000px) {
+    .relatedsection {
+        position: relative;
+        z-index: 3;
+        top: 950px;
+        left: 0;
+    }
+} */
+.deletesection {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    /* padding: 10px; */
+    position: relative;
+    top: 600px;
+    left: 50px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.deletesection > div {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+}
+
+.deletesection img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+@media screen and (max-width: 800px) {
+    .deletesection {
+        position: relative;
+        z-index: 3;
+        top: 100px;
+        left: 0;
+    }
+}
+
+@media screen and (max-width: 1200px) and (min-width: 800px) {
+    .deletesection {
+        position: relative;
+        z-index: 3;
+        top: 120px;
+        left: 0;
+    }
+}
+
+@media screen and (min-width: 2000px) {
+    .deletesection {
+        position: relative;
+        z-index: 3;
+        top: 950px;
+        left: 0;
+    }
+}
