@@ -1,5 +1,3 @@
-console.log('Welcome to search');
-console.log('Welcome to netfly');
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
 import { getAuth, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, sendPasswordResetEmail, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
@@ -112,9 +110,10 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 var searchtext=document.querySelector('.searchtext')
-async function checkmoviename(){
-  var placeholdername=document.querySelector('.search')
-  console.log(placeholdername.value)
+async function checkmoviename() {
+  var placeholdername = document.querySelector('.search');
+  // console.log(placeholdername.value);
+
   const options = {
     method: 'GET',
     headers: {
@@ -127,27 +126,44 @@ async function checkmoviename(){
     const response = await fetch(`https://api.themoviedb.org/3/search/movie?query=${placeholdername.value}&include_adult=true&language=en-US&page=1`, options);
     const data = await response.json();
     const posterPaths = data.results.slice(0, 20).map(movie => movie.poster_path);
-    const namePaths= data.results.slice(0, 20).map(movie => movie.original_title);
-    console.log(namePaths)
+    const namePaths = data.results.slice(0, 20).map(movie => movie.original_title);
+    const idPaths = data.results.slice(0, 20).map(movie => movie.id);
+    
+    // console.log(namePaths);
+
     searchbody.innerHTML = '';
     searchtext.innerHTML = '';
-    searchtext.innerHTML +=`<h2 style="color: white;">
-                Searched: ${placeholdername.value}
+    searchtext.innerHTML += `<h2 style="color: white;">Searched: ${placeholdername.value}</h2><br><br>`;
 
-            </h2>
-            <br><br>`
-    for (var i = 0; i < posterPaths.length; i++) {
-      searchbody.innerHTML+=`<div class="image${i}" style="color: white; font-weight: 300; font-size: 12px;justify-content: center;text-align: center display: flex; flex-direction: column; text-align: center; justify-content: center">
-    <img src="https://image.tmdb.org/t/p/w500${posterPaths[i]}" style="display: flex; flex-direction: column; text-align: center; justify-content: center;">
-    <br>
-    <h4 style="color: white;">${namePaths[i]}</h4>
-</div>
-`
+    for (let i = 0; i < posterPaths.length; i++) {
+      searchbody.innerHTML += `
+        <div class="image${i}" style="color: white; font-weight: 300; font-size: 12px; justify-content: center; text-align: center; display: flex; flex-direction: column;">
+          <img src="https://image.tmdb.org/t/p/w500${posterPaths[i]}" style="display: flex; flex-direction: column; text-align: center; justify-content: center;">
+          <br>
+          <h4 style="color: white;">${namePaths[i]}</h4>
+        </div>`;
+    }
+
+    for (let i = 0; i < posterPaths.length; i++) {
+      let imageElement = document.querySelector(`.image${i}`);
+      if (imageElement) {
+        imageElement.addEventListener('click', function() {
+          localStorage.setItem('id', idPaths[i]);
+          localStorage.setItem('poster', posterPaths[i]);
+          console.log(posterPaths[i]);
+          // window.location.href = "tvshow.html";
+        });
+      } else {
+        console.error(`Element with class .image${i} not found.`);
+      }
     }
   } catch (error) {
     console.error('Error fetching data:', error);
   }
 }
-setInterval(() => {
-  checkmoviename();
-}, 1000);
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelector('.search').addEventListener('input', function() {
+    checkmoviename();
+  });
+});
