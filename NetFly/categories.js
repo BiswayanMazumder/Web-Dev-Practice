@@ -47,7 +47,7 @@ function getuser() {
           Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0OWU3NjJhNjczNmYwY2Q0MmRlMzliZGI2YmZmMWJmNSIsInN1YiI6IjY1MDg1OGJiM2NkMTJjMDBlYjQ1ODk4OCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.9tPbUSb-HNcaxpQNV7fFApLUMVa0mI49PMqZC-DmhrU'
         }
       };
-      fetch('https://api.themoviedb.org/3/genre/movie/list?language=en', options)
+      fetch('https://api.themoviedb.org/3/genre/tv/list?language=en', options)
   .then(response => {
     if (!response.ok) {
       throw new Error('Network response was not ok');
