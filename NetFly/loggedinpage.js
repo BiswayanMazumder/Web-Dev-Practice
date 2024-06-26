@@ -380,16 +380,35 @@ async function getupcoming() {
     const response = await fetch('https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1', options);
     const data = await response.json();
     const posterPaths = data.results.slice(0, 20).map(movie => movie.poster_path);
-    // console.log(posterPaths);
+    const idPaths = data.results.slice(0, 20).map(movie => movie.id);
+    // console.log(idPaths);
+
     for (let i = 0; i < posterPaths.length; i++) {
-      upcoming.innerHTML += `<img src=${'https://image.tmdb.org/t/p/w500' + posterPaths[i]} alt="Upcoming">`
+      upcoming.innerHTML += `<div class="image${i}">
+      <img src=${'https://image.tmdb.org/t/p/w500' + posterPaths[i]} alt="Upcoming">
+      </div>`;
+    }
+
+    for (let i = 0; i < posterPaths.length; i++) {
+      let imageElement = document.querySelector(`.image${i}`);
+      if (imageElement) {
+        imageElement.addEventListener('click', function() {
+          localStorage.setItem('id', idPaths[i]);
+          localStorage.setItem('poster', posterPaths[i]);
+          window.location.href="tvshow.html"
+        });
+      } else {
+        console.error(`Element with class .image${i} not found.`);
+      }
     }
   } catch (err) {
-    console.error(err);
+    console.log(err);
   }
 }
-
-await getupcoming();
+getupcoming();
+document.addEventListener('DOMContentLoaded', function() {
+  
+});
 var topmovies = document.querySelector('.topmoviessection')
 async function gettopmovies() {
   const options = {
@@ -404,6 +423,7 @@ async function gettopmovies() {
     const response = await fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', options);
     const data = await response.json();
     const posterPaths = data.results.slice(0, 20).map(movie => movie.poster_path);
+    const idPaths = data.results.slice(0, 20).map(movie => movie.id);
     // console.log(posterPaths);
     for (let i = 0; i < posterPaths.length; i++) {
       topmovies.innerHTML += `<img src=${'https://image.tmdb.org/t/p/w500' + posterPaths[i]} alt="Upcoming">`
@@ -430,6 +450,18 @@ async function getairingtoday() {
     // console.log(posterPaths);
     for (let i = 0; i < posterPaths.length; i++) {
       airing.innerHTML += `<img src=${'https://image.tmdb.org/t/p/w500' + posterPaths[i]} alt="Upcoming">`
+    }
+    for (let i = 0; i < posterPaths.length; i++) {
+      let imageElement = document.querySelector(`.image${i}`);
+      if (imageElement) {
+        imageElement.addEventListener('click', function() {
+          localStorage.setItem('id', idPaths[i]);
+          localStorage.setItem('poster', posterPaths[i]);
+          window.location.href="tvshow.html"
+        });
+      } else {
+        console.error(`Element with class .image${i} not found.`);
+      }
     }
   } catch (err) {
     console.error(err);
